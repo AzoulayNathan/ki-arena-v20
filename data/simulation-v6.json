@@ -1,0 +1,50 @@
+[
+  {
+    "category": "starter",
+    "sessions": 200,
+    "wonOver12": 0,
+    "defeats": 200,
+    "exceptions": 0,
+    "avgNodes": 13.4,
+    "bossWins": 320,
+    "events": 291,
+    "recruits": 223,
+    "rest": 501
+  },
+  {
+    "category": "uncommon",
+    "sessions": 200,
+    "wonOver12": 0,
+    "defeats": 200,
+    "exceptions": 0,
+    "avgNodes": 15.9,
+    "bossWins": 388,
+    "events": 332,
+    "recruits": 226,
+    "rest": 586
+  },
+  {
+    "category": "rare",
+    "sessions": 200,
+    "wonOver12": 0,
+    "defeats": 200,
+    "exceptions": 0,
+    "avgNodes": 15.2,
+    "bossWins": 367,
+    "events": 294,
+    "recruits": 219,
+    "rest": 521
+  },
+  {
+    "category": "epic",
+    "sessions": 200,
+    "wonOver12": 0,
+    "defeats": 200,
+    "exceptions": 0,
+    "avgNodes": 20.8,
+    "bossWins": 527,
+    "events": 445,
+    "recruits": 221,
+    "rest": 737
+  }
+]

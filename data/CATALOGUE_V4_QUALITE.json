@@ -1,0 +1,24 @@
+{
+  "cartes_total": 600,
+  "personnages_canonises": 304,
+  "identites_nominales": 312,
+  "effets_total": 1380,
+  "raretes": {
+    "common": 198,
+    "uncommon": 162,
+    "rare": 126,
+    "epic": 90,
+    "legendary": 24
+  },
+  "series": {
+    "DB": 99,
+    "DBZ": 237,
+    "DBS": 264
+  },
+  "source_data": "encyclopédies secondaires; aucun scraping d'images protégé",
+  "identification": "Catalogue large mais exhaustivité NON garantie sans audit épisode par épisode",
+  "assets_valides": 0,
+  "assets_svg_generiques": 600,
+  "originaux_conserves": 282,
+  "nouvelles_cartes": 318
+}

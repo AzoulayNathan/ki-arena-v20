@@ -1,0 +1,26 @@
+# Ignore heavy local backups, raw PNG studio scrapes (>6 GB), and offline single-file HTML bundle (>48 MB)
+BACKUP_*/
+art-source-v20/
+qa/
+tests/
+modeles/
+assets/cards-db/
+assets/cards-hxh/
+assets/cards-naruto/
+assets/cards-onepiece/
+assets/cards-ultimate/
+assets/cards-ultimate-db/
+assets/cards-v2/
+assets/cards-v2-db/
+JOUER_KI_ARENA_*.html
+ATELIER_CARTES_*.html
+MODELE_CARTE_*.html
+MODELE_CARTE_*.jpg
+PRE_*_HASHES.json
+PRE_*_FILES_ALL.json
+FILE_MANIFEST_SHA256.json
+qa-baseline-*.log
+node_modules/
+.wrangler/
+_*
+*.zip

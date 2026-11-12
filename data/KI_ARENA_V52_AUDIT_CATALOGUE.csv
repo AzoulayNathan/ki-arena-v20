@@ -1,0 +1,601 @@
+﻿id;nom;serie;version;rang;rarete;stats_attaque;statut_source;portrait;alertes;validation_manuellement
+bulma-db-aventuriere;Bulma;DB;Aventurière;1.125;common;19;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+oolong-db-metamorphe;Oolong;DB;Métamorphe;1.25;common;19;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+plume-db-metamorphe;Plume;DB;Métamorphe;1.25;common;19;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+pilaf-db-empereur-autoproclame;Pilaf;DB;Empereur autoproclamé;1;common;18;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+shu-db-ninja-du-pilaf-gang;Shu;DB;Ninja du Pilaf Gang;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mai-db-pilaf-gang;Mai;DB;Pilaf Gang;1.4;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tortue-de-mer-db-compagnon-de-roshi;Tortue de mer;DB;Compagnon de Roshi;1.1;common;19;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+chichi-db-enfant-combattante;Chichi;DB;Enfant combattante;2.1;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bora-db-protecteur-de-karin;Bora;DB;Protecteur de Karin;2.5;common;26;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+upa-db-jeune-allie;Upa;DB;Jeune allié;1;common;18;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+suno-db-village-jingle;Suno;DB;Village Jingle;1;common;18;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+nam-db-tournoi-mondial;Nam;DB;Tournoi mondial;3.3;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ranfan-db-tournoi-mondial;Ranfan;DB;Tournoi mondial;1.6;common;22;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bacterien-db-tournoi-mondial;Bactérien;DB;Tournoi mondial;1.6;common;22;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+giran-db-tournoi-mondial;Giran;DB;Tournoi mondial;2.4;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-chappa-db-artiste-martial;Roi Chappa;DB;Artiste martial;2.8;common;29;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+colonel-silver-db-ruban-rouge;Colonel Silver;DB;Ruban Rouge;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+general-white-db-ruban-rouge;Général White;DB;Ruban Rouge;2;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ninja-murasaki-db-ruban-rouge;Ninja Murasaki;DB;Ruban Rouge;2.3;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+commandant-red-db-ruban-rouge;Commandant Red;DB;Ruban Rouge;1.1;common;19;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+conseiller-black-db-ruban-rouge;Conseiller Black;DB;Ruban Rouge;2.3;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+docteur-flappe-db-scientifique;Docteur Flappe;DB;Scientifique;1.3;common;19;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+lance-db-forme-gentille;Lance;DB;Forme gentille;1.3;common;19;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+lance-db-forme-agressive;Lance;DB;Forme agressive;2;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-gyumao-db-guerrier-du-mont-fry-pan;Roi Gyumao;DB;Guerrier du mont Fry-Pan;2.1;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+grand-pere-gohan-db-maitre-martial;Grand-père Gohan;DB;Maître martial;2.9;common;29;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yajirobe-dbz-guerrier-solitaire;Yajirobé;DBZ;Guerrier solitaire;3.3;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mister-satan-dbz-champion-du-monde;Mister Satan;DBZ;Champion du monde;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+spopovitch-dbz-serviteur-de-babidi;Spopovitch;DBZ;Serviteur de Babidi;3.3;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yamu-dbz-serviteur-de-babidi;Yamu;DBZ;Serviteur de Babidi;3;common;30;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bubbles-dbz-planete-de-kaio;Bubbles;DBZ;Planète de Kaio;1.6666666666666667;common;22;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gregory-dbz-planete-de-kaio;Gregory;DBZ;Planète de Kaio;2;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+monaka-dbs-livreur-intergalactique;Monaka;DBS;Livreur intergalactique;2.1379310344827585;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+chichi-dbz-vie-de-famille;Chichi;DBZ;Vie de famille;2.7;common;28;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+marron-dbz-fille-de-krilin;Marron;DBZ;Fille de Krilin;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+erasa-dbz-orange-star;Erasa;DBZ;Orange Star;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+sharpner-dbz-orange-star;Sharpner;DBZ;Orange Star;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dr-brief-dbz-capsule-corporation;Dr Brief;DBZ;Capsule Corporation;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+panchy-dbz-capsule-corporation;Panchy;DBZ;Capsule Corporation;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-furry-db-roi-de-la-terre;Roi Furry;DB;Roi de la Terre;1.1;common;19;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+colonel-violet-db-ruban-rouge;Colonel Violet;DB;Ruban Rouge;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+colonel-yellow-db-ruban-rouge;Colonel Yellow;DB;Ruban Rouge;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+sergent-metallic-db-muscle-tower;Sergent Metallic;DB;Muscle Tower;2.8;common;29;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+pamput-db-22e-tournoi;Pamput;DB;22e Tournoi;2.1;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+loup-garou-db-22e-tournoi;Loup-garou;DB;22e Tournoi;1.9;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piano-db-clan-du-roi-demon;Piano;DB;Clan du Roi Démon;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+idasa-dbz-tournoi-junior;Idasa;DBZ;Tournoi junior;1.7;common;22;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ikose-dbz-tournoi-junior;Ikose;DBZ;Tournoi junior;1.7;common;22;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bee-dbz-compagnon-de-boo;Bee;DBZ;Compagnon de Boo;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bibidi-dbz-sorcier-originel;Bibidi;DBZ;Sorcier originel;2.3;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jewel-dbz-25e-tournoi;Jewel;DBZ;25e Tournoi;2.8;common;29;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+killa-dbz-25e-tournoi;Killa;DBZ;25e Tournoi;3;common;30;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+nink-dbs-univers-4;Nink;DBS;Univers 4;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+napapa-dbs-univers-10;Napapa;DBS;Univers 10;4.2;common;40;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jirasen-dbs-univers-10;Jirasen;DBS;Univers 10;3;common;30;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+rylibeu-dbs-univers-10;Rylibeu;DBS;Univers 10;3.3;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+shantza-dbs-univers-4;Shantza;DBS;Univers 4;3.7;common;35;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dercori-dbs-univers-4;Dercori;DBS;Univers 4;3.3;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+rozie-dbs-univers-2;Rozie;DBS;Univers 2;4.4;common;42;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kakunsa-dbs-univers-2;Kakunsa;DBS;Univers 2;4.7;common;46;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+comfrey-dbs-univers-9;Comfrey;DBS;Univers 9;3.9;common;37;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+catopesra-dbs-univers-3;Catopesra;DBS;Univers 3;4.6;common;44;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ganos-dbs-univers-4;Ganos;DBS;Univers 4;4.4;common;42;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zuno-dbs-sage-intergalactique;Zuno;DBS;Sage intergalactique;2.3;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zarbuto-dbs-univers-2;Zarbuto;DBS;Univers 2;3.7;common;35;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zirloin-dbs-univers-2;Zirloin;DBS;Univers 2;3.7;common;35;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+akkuman-db-combattant-du-palais-d-enma;Akkuman;DB;Combattant du palais d'Enma;2;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+draculaman-db-guerrier-de-baba;Draculaman;DB;Guerrier de Baba;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+suke-san-db-homme-invisible-de-baba;Suke-san;DB;Homme invisible de Baba;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mummy-db-combattant-momie;Mummy;DB;Combattant momie;2.3;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+grand-pere-gohan-db-masque-chez-baba;Grand-père Gohan;DB;Masqué chez Baba;2.8;common;29;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+baba-la-voyante-db-tour-des-predictions;Baba la voyante;DB;Tour des prédictions;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-enma-dbz-bureau-des-ames;Roi Enma;DBZ;Bureau des âmes;2.7;common;28;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+shenron-db-dragon-des-sept-boules;Shenron;DB;Dragon des sept boules;2.4;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tsuru-sennin-db-maitre-de-la-grue;Tsuru Sennin;DB;Maître de la grue;1.9;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+pilaf-db-pilote-de-robot;Pilaf;DB;Pilote de robot;2;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+shu-db-combinaison-robot;Shu;DB;Combinaison robot;1.9;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mai-db-arsenal-de-pilaf;Mai;DB;Arsenal de Pilaf;2;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-piccolo-db-vieillard-affaibli;Roi Piccolo;DB;Vieillard affaibli;3.4;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tambourine-db-chasseur-des-combattants;Tambourine;DB;Chasseur des combattants;3.4;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cymbal-db-collecteur-des-dragon-balls;Cymbal;DB;Collecteur des Dragon Balls;3;common;30;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tambourine-db-premiere-apparition;Tambourine;DB;Première apparition;3.1;common;30;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+mutaito-db-maitre-du-mafuba;Mutaito;DB;Maître du Mafuba;3.8;common;36;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+pan-dbz-bebe;Pan;DBZ;Bébé;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bra-dbz-enfant-de-vegeta;Bra;DBZ;Enfant de Vegeta;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kibito-dbz-observateur-du-tournoi;Kibito;DBZ;Observateur du tournoi;4.3;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dende-dbz-gardien-de-la-terre;Dendé;DBZ;Gardien de la Terre;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mister-satan-dbz-sauveur-de-la-terre;Mister Satan;DBZ;Sauveur de la Terre;2.5;common;26;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+babidi-dbz-lecture-du-combat;Babidi;DBZ;Lecture du combat;4.2;common;40;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goten-dbz-avant-l-entrainement;Goten;DBZ;Avant l'entraînement;4;common;38;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+trunks-dbz-enfant-avant-tournoi;Trunks;DBZ;Enfant avant tournoi;3.8;common;36;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+kaioshin-de-l-est-dbz-observateur-du-tournoi;Kaioshin de l'Est;DBZ;Observateur du tournoi;3.8;common;36;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-vie-de-famille;Vegeta;DBZ;Vie de famille;5.7;uncommon;58;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-vie-quotidienne;Goku;DBZ;Vie quotidienne;9.1;rare;131;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+krilin-dbz-police-et-famille;Krilin;DBZ;Police et famille;6;uncommon;62;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-18-dbz-vie-de-famille;C-18;DBZ;Vie de famille;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bulma-dbs-laboratoire-capsule-corp;Bulma;DBS;Laboratoire Capsule Corp;2.4;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+beerus-dbs-en-visite-sur-terre;Beerus;DBS;En visite sur Terre;17;legendary;895;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+whis-dbs-guide-celeste;Whis;DBS;Guide céleste;19;legendary;1456;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+angela-dbz-lyceenne-de-satan-city;Angela;DBZ;Lycéenne de Satan City;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+maron-dbz-ancienne-compagne-de-krilin;Maron;DBZ;Ancienne compagne de Krilin;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+haru-dbs-enfant-de-la-resistance-du-futur;Haru;DBS;Enfant de la résistance du futur;2.7;common;28;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+maki-dbs-enfant-de-la-resistance-du-futur;Maki;DBS;Enfant de la résistance du futur;2.7;common;28;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cargo-dbz-enfant-de-namek;Cargo;DBZ;Enfant de Namek;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+lapin-carotte-db-chef-du-gang-des-lapins;Lapin Carotte;DB;Chef du gang des lapins;1.5;common;20;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+nok-dbz-28e-tenkaichi-budokai;Nok;DBZ;28e Tenkaichi Budokai;1.8;common;23;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+konkichi-db-voyageur-renard;Konkichi;DB;Voyageur renard;1.6;common;22;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+capitaine-chicken-dbz-28e-tournoi-mondial;Capitaine Chicken;DBZ;28e tournoi mondial;2;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+barry-kahn-dbs-acteur-de-television;Barry Kahn;DBS;Acteur de télévision;3;common;30;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tights-dbs-grande-s-ur-de-bulma;Tights;DBS;Grande sœur de Bulma;3;common;30;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+oni-guide-dbz-guide-du-bureau-d-enma;Oni Guide;DBZ;Guide du Bureau d'Enma;2.3;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+inoshikacho-db-chimere-du-tournoi;InoShikaCho;DB;Chimère du tournoi;2;common;24;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mez-dbz-ogre-de-l-autre-monde;Mez;DBZ;Ogre de l'Autre Monde;2.5;common;26;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+princesse-serpent-dbz-gardienne-de-la-route-du-serpent;Princesse Serpent;DBZ;Gardienne de la route du Serpent;2.7;common;28;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+puntar-dbz-25e-tournoi-mondial;Puntar;DBZ;25e tournoi mondial;2.8;common;29;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goz-dbz-ogre-de-l-autre-monde;Goz;DBZ;Ogre de l'Autre Monde;3;common;30;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+oregano-dbs-guerrier-univers-9;Oregano;DBS;Guerrier univers 9;3.9;common;37;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roselle-dbs-guerrier-volant-univers-9;Roselle;DBS;Guerrier volant univers 9;3.9;common;37;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-galactique-dbs-roi-de-la-patrouille-galactique;Roi galactique;DBS;Roi de la Patrouille galactique;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+hasky-db-chasseuse-de-primes;Hasky;DB;Chasseuse de primes;2.5;common;26;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+sorrel-dbs-rapide-combattante;Sorrel;DBS;Rapide combattante;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+pintar-dbz-25e-tenkaichi-budokai;Pintar;DBZ;25e Tenkaichi Budokai;3.3;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+buyon-db-gardien-de-muscle-tower;Buyon;DB;Gardien de Muscle Tower;2.6;common;28;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+chappil-dbs-armure-du-dragon;Chappil;DBS;Armure du dragon;4.4;common;42;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bulma-du-futur-dbs-scientifique-de-la-resistance;Bulma du futur;DBS;Scientifique de la résistance;2.4;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+potage-dbs-gardien-de-l-eau-miraculeuse;Potage;DBS;Gardien de l'eau miraculeuse;4.6;common;44;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yajirobe-du-futur-dbs-resistance-du-futur;Yajirobé du futur;DBS;Résistance du futur;4.6;common;44;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dyrasem-dbs-danseur-combattant;Dyrasem;DBS;Danseur combattant;4.6;common;44;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+hop-dbs-lame-feline;Hop;DBS;Lame féline;4.6;common;44;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+hyssop-dbs-glace-univers-9;Hyssop;DBS;Glace univers 9;4.6;common;44;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+rabanra-dbs-univers-2;Rabanra;DBS;Univers 2;4.6;common;44;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zircor-dbs-yogi-univers-10;Zircor;DBS;Yogi univers 10;4.6;common;44;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+aragne-dbs-guerrier-de-l-univers-11;Aragné;DBS;Guerrier de l'univers 11;4.7;common;46;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tsuno-dbz-ancien-du-village-namek;Tsuno;DBZ;Ancien du village namek;2.4;common;25;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bikal-dbs-guerriere-ailee;Bikal;DBS;Guerrière ailée;4.7;common;46;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+methiop-dbs-boxeur-univers-10;Methiop;DBS;Boxeur univers 10;4.7;common;46;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yurin-dbs-eleve-renegate-de-la-grue;Yurin;DBS;Élève renégate de la grue;4.9;common;47;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+moori-dbz-ancien-namek;Moori;DBZ;Ancien namek;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ginger-dbz-serviteur-garlic-jr;Ginger;DBZ;Serviteur Garlic Jr.;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+nikky-dbz-serviteur-garlic-jr;Nikky;DBZ;Serviteur Garlic Jr.;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yamcha-db-desert-allie-d-oolong;Yamcha;DB;Désert — allié d'Oolong;3.1;common;30;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+brianne-de-chateau-dbs-avant-metamorphose;Brianne de Château;DBS;Avant métamorphose;4.9;common;47;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+dium-dbs-guerrier-aile-univers-10;Dium;DBS;Guerrier ailé univers 10;4.9;common;47;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+murisam-dbs-combattant-univers-10;Murisam;DBS;Combattant univers 10;4.9;common;47;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+xiangca-dbs-illusionniste-de-l-univers-4;Xiangca;DBS;Illusionniste de l'univers 4;4.9;common;47;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+rubalt-dbs-agent-univers-10;Rubalt;DBS;Agent univers 10;5.1;common;49;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+sanka-coo-dbs-avant-kakunsa;Sanka Coo;DBS;Avant Kakunsa;5.1;uncommon;49;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+shosa-dbs-guerrier-furtif;Shosa;DBS;Guerrier furtif;5.1;uncommon;49;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zarbuto-dbs-combat-de-l-amour;Zarbuto;DBS;Combat de l'amour;5.1;uncommon;49;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+salt-dbz-gang-du-makyo;Salt;DBZ;Gang du Makyo;4.3;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-enfant-fuite-dans-les-montagnes;Gohan;DBZ;Enfant — fuite dans les montagnes;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+karin-dbz-haricots-senzu;Karin;DBZ;Haricots Senzu;4.3;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+caway-dbs-combattante-de-l-univers-4;Caway;DBS;Combattante de l'univers 4;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+paparoni-dbs-docteur-des-machines;Paparoni;DBS;Docteur des machines;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+prum-dbs-tireur-invisible;Prum;DBS;Tireur invisible;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+su-roas-dbs-avant-rozie;Sû Roas;DBS;Avant Rozie;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+mustard-dbz-gang-du-makyo;Mustard;DBZ;Gang du Makyo;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tapikar-dbz-tournoi-de-l-autre-monde;Tapikar;DBZ;Tournoi de l'Autre Monde;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+annin-db-gardienne-du-fourneau-magique;Annin;DB;Gardienne du fourneau magique;3.5;common;34;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+harmira-dbs-tireur-de-l-univers-2;Harmira;DBS;Tireur de l'univers 2;5.4;uncommon;54;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+za-priccio-dbs-univers-3;Za Priccio;DBS;Univers 3;5.4;uncommon;54;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+caterpy-dbz-tournoi-de-l-autre-monde;Caterpy;DBZ;Tournoi de l'Autre Monde;4.7;common;46;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+arqua-dbz-tournoi-de-l-autre-monde;Arqua;DBZ;Tournoi de l'Autre Monde;4.7;common;46;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vinegar-dbz-gang-du-makyo;Vinegar;DBZ;Gang du Makyo;4.7;common;46;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+grand-doyen-guru-dbz-ancien-de-namek;Grand Doyen Guru;DBZ;Ancien de Namek;4.8;common;47;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kiwi-dbz-soldat-de-freezer-namek;Kiwi;DBZ;Soldat de Freezer — Namek;4.8;common;47;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dr-rota-dbs-guerrier-magique;Dr Rota;DBS;Guerrier magique;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kettle-dbs-pride-troopers;Kettle;DBS;Pride Troopers;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+majora-dbs-guerrier-aveugle;Majora;DBS;Guerrier aveugle;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+murichim-dbs-chef-des-guerriers-univers-10;Murichim;DBS;Chef des guerriers univers 10;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+narirama-dbs-robot-multi-bras;Narirama;DBS;Robot multi-bras;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tupper-dbs-pride-troopers;Tupper;DBS;Pride Troopers;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zirloin-dbs-amas-d-energie-amoureuse;Zirloin;DBS;Amas d'énergie amoureuse;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+chapuchai-dbz-tournoi-de-l-autre-monde;Chapuchai;DBZ;Tournoi de l'Autre Monde;5;common;48;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+spice-dbz-gang-du-makyo;Spice;DBZ;Gang du Makyo;5;common;48;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+damom-dbs-petite-creature-redoutable;Damom;DBS;Petite créature redoutable;5.9;uncommon;60;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+koitsukai-dbs-robot-de-l-univers-3;Koitsukai;DBS;Robot de l'univers 3;5.9;uncommon;60;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+maitre-kaio-de-l-est-dbz-divinite-de-l-est;Maître Kaio de l'Est;DBZ;Divinité de l'est;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+maitre-kaio-du-sud-dbz-divinite-du-sud;Maître Kaio du Sud;DBZ;Divinité du sud;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+biarra-dbs-robot-cuirasse;Biarra;DBS;Robot cuirassé;6.1;uncommon;64;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+borareta-dbs-robot-de-l-univers-3;Borareta;DBS;Robot de l'univers 3;6.1;uncommon;64;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cocotte-dbs-pride-troopers;Cocotte;DBS;Pride Troopers;6.1;uncommon;64;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gamisalas-dbs-camouflage-parfait;Gamisalas;DBS;Camouflage parfait;6.1;uncommon;64;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+k-nsi-dbs-pride-troopers;K'nsi;DBS;Pride Troopers;6.1;uncommon;64;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+pancea-dbs-robot-de-l-univers-3;Pancéa;DBS;Robot de l'univers 3;6.1;uncommon;64;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zoire-dbs-pride-troopers;Zoire;DBS;Pride Troopers;6.1;uncommon;64;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+maitre-kaio-de-l-ouest-dbz-divinite-de-l-ouest;Maître Kaio de l'Ouest;DBZ;Divinité de l'ouest;5.3;uncommon;52;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tortue-geniale-dbz-face-aux-saiyans-soutien;Tortue Géniale;DBZ;Face aux Saiyans — soutien;4.3;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vewon-dbs-pride-troopers;Vewon;DBS;Pride Troopers;6.3;uncommon;66;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+maraikoh-dbz-tournoi-de-l-autre-monde;Maraikoh;DBZ;Tournoi de l'Autre Monde;5.5;uncommon;55;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mighty-mask-dbz-deguisement-de-goten-et-trunks;Mighty Mask;DBZ;Déguisement de Goten et Trunks;5.5;uncommon;55;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-enfant-attaque-kamehameha;Goku;DB;Enfant — attaque Kamehameha;4.25;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yamcha-dbz-cell-games-combattant-terrien;Yamcha;DBZ;Cell Games — combattant terrien;5.5;uncommon;55;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gotenks-dbz-base-premiere-fusion-ratee;Gotenks;DBZ;Base — première fusion ratée;5.5;uncommon;55;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+dende-dbs-gardien-du-sanctuaire;Dendé;DBS;Gardien du sanctuaire;6.6;uncommon;72;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+nigrissi-dbs-chef-des-guerriers-de-l-univers-3;Nigrissi;DBS;Chef des guerriers de l'univers 3;6.6;uncommon;72;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-db-enfant-du-roi-demon;Piccolo;DB;Enfant du Roi Démon;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jimizu-dbs-guerrier-de-l-univers-2;Jimizu;DBS;Guerrier de l'univers 2;6.8;uncommon;76;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-enfant-debut-d-aventure;Goku;DB;Enfant — début d'aventure;3.75;common;36;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+krilin-db-22e-tenkaichi-budokai;Krilin;DB;22e Tenkaichi Budokai;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yamcha-db-desert;Yamcha;DB;Désert;3.5;common;34;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tenshinhan-db-22e-tenkaichi-budokai;Tenshinhan;DB;22e Tenkaichi Budokai;4.3;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+chaozu-db-ecole-de-la-grue;Chaozu;DB;École de la grue;3.3;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tortue-geniale-db-22e-tenkaichi-budokai;Tortue Géniale;DB;22e Tenkaichi Budokai;4.3;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-8-db-cyborg-pacifique;C-8;DB;Cyborg pacifique;3.6;common;35;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+general-blue-db-ruban-rouge;Général Blue;DB;Ruban Rouge;3.5;common;34;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tao-pai-pai-db-assassin;Tao Pai Pai;DB;Assassin;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tambourine-db-demon-de-piccolo;Tambourine;DB;Démon de Piccolo;3.9;common;37;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cymbal-db-demon-de-piccolo;Cymbal;DB;Démon de Piccolo;3.3;common;32;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-saga-saiyans;Goku;DBZ;Saga Saiyans;5.5;uncommon;55;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+krilin-dbz-saga-saiyans;Krilin;DBZ;Saga Saiyans;6;uncommon;62;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yamcha-dbz-saga-saiyans;Yamcha;DBZ;Saga Saiyans;5.3;uncommon;52;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tenshinhan-dbz-saga-saiyans;Tenshinhan;DBZ;Saga Saiyans;6;uncommon;62;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+chaozu-dbz-saga-saiyans;Chaozu;DBZ;Saga Saiyans;4.7;common;46;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dende-dbz-guerisseur-de-namek;Dendé;DBZ;Guérisseur de Namek;4.2;common;40;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+videl-dbz-championne-en-herbe;Videl;DBZ;Championne en herbe;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kibito-dbz-assistant-du-kaioshin;Kibito;DBZ;Assistant du Kaioshin;5;common;48;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jaco-dbs-patrouille-galactique;Jaco;DBS;Patrouille galactique;6.3;uncommon;66;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+sorbet-dbs-armee-de-freezer;Sorbet;DBS;Armée de Freezer;5.6;uncommon;56;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tagoma-dbs-armee-de-freezer;Tagoma;DBS;Armée de Freezer;6.4;uncommon;68;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+shisami-dbs-armee-de-freezer;Shisami;DBS;Armée de Freezer;5.9;uncommon;60;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+botamo-dbs-univers-6;Botamo;DBS;Univers 6;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+magetta-dbs-univers-6;Magetta;DBS;Univers 6;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cabba-dbs-saiyan-base;Cabba;DBS;Saiyan — base;7.7;uncommon;94;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+caulifla-dbs-saiyan-base;Caulifla;DBS;Saiyan — base;7.5;uncommon;89;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-enfant-21e-tenkaichi;Goku;DB;Enfant — 21e Tenkaichi;3.5;common;34;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+krilin-db-21e-tenkaichi;Krilin;DB;21e Tenkaichi;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yamcha-db-23e-tenkaichi;Yamcha;DB;23e Tenkaichi;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tortue-geniale-db-jackie-chun;Tortue Géniale;DB;Jackie Chun;4.3;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+chichi-db-23e-tenkaichi;Chichi;DB;23e Tenkaichi;3.6;common;35;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mister-popo-db-gardien-du-palais;Mister Popo;DB;Gardien du palais;4.4;common;42;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+karin-db-maitre-de-la-tour;Karin;DB;Maître de la tour;3.6;common;35;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tao-pai-pai-db-cyborg;Tao Pai Pai;DB;Cyborg;4.4;common;42;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+puipui-dbz-serviteur-de-babidi;Puipui;DBZ;Serviteur de Babidi;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yakon-dbz-mangeur-de-lumiere;Yakon;DBZ;Mangeur de lumière;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+babidi-dbz-sorcier;Babidi;DBZ;Sorcier;4.8;common;47;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kaio-du-nord-dbz-mentor-saiyan;Kaio du Nord;DBZ;Mentor Saiyan;5;common;48;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-vegeta-dbz-roi-des-saiyans;Roi Vegeta;DBZ;Roi des Saiyans;6;uncommon;62;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goten-dbz-enfant;Goten;DBZ;Enfant;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-enfant;Trunks;DBZ;Enfant;5.3;uncommon;52;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vieux-kaioshin-dbz-ancien-dieu;Vieux Kaioshin;DBZ;Ancien dieu;5.2;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+grand-kaio-dbz-maitre-des-kaios;Grand Kaio;DBZ;Maître des Kaios;5.3;uncommon;52;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+apule-dbz-soldat-de-freezer;Apule;DBZ;Soldat de Freezer;4.3;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+lavender-dbs-trio-du-danger;Lavender;DBS;Trio du danger;7.5;uncommon;89;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+basil-dbs-trio-du-danger;Basil;DBS;Trio du danger;7.5;uncommon;89;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+obni-dbs-univers-10;Obni;DBS;Univers 10;6.8;uncommon;76;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cabba-dbs-super-saiyan;Cabba;DBS;Super Saiyan;8.9;rare;125;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+caulifla-dbs-super-saiyan;Caulifla;DBS;Super Saiyan;8.9;rare;125;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kale-dbs-saiyan-base;Kale;DBS;Saiyan — base;7.5;uncommon;89;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mai-dbs-resistance-du-futur;Mai;DBS;Résistance du futur;5.4;uncommon;54;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-base-tournoi-du-pouvoir;Goku;DBS;Base — Tournoi du Pouvoir;11;rare;209;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbs-base-tournoi-du-pouvoir;Vegeta;DBS;Base — Tournoi du Pouvoir;11.1;rare;214;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-entrainement-chez-karin;Goku;DB;Entraînement chez Karin;4.75;common;46;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-combat-contre-tao-pai-pai;Goku;DB;Combat contre Tao Pai Pai;5.125;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-entrainement-final-de-kami;Goku;DB;Entraînement final de Kami;5.6;uncommon;56;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+krilin-db-23e-tenkaichi-budokai;Krilin;DB;23e Tenkaichi Budokai;4;common;38;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tenshinhan-db-entrainement-avant-23e-tenkaichi;Tenshinhan;DB;Entraînement avant 23e Tenkaichi;5;common;48;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+yamcha-db-21e-tenkaichi-budokai;Yamcha;DB;21e Tenkaichi Budokai;3.8;common;36;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tortue-geniale-db-kamehameha-pleine-puissance;Tortue Géniale;DB;Kamehameha pleine puissance;4.3;common;41;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+yajirobe-db-garde-de-karin;Yajirobé;DB;Garde de Karin;3.8;common;36;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+shen-db-23e-tenkaichi-budokai;Shen;DB;23e Tenkaichi Budokai;5.1;uncommon;49;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-junior-db-23e-tenkaichi-budokai;Piccolo Junior;DB;23e Tenkaichi Budokai;5.4;uncommon;54;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+chaozu-db-23e-tenkaichi-budokai;Chaozu;DB;23e Tenkaichi Budokai;3.8;common;36;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-enfant-saga-saiyan;Gohan;DBZ;Enfant — saga Saiyan;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+raditz-dbz-invasion-de-la-terre;Raditz;DBZ;Invasion de la Terre;4.8;common;47;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+nappa-dbz-arrivee-sur-terre;Nappa;DBZ;Arrivée sur Terre;5.1;common;49;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+saibaiman-dbz-combat-de-l-invasion;Saibaiman;DBZ;Combat de l'invasion;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+krilin-dbz-sur-namek;Krilin;DBZ;Sur Namek;6;uncommon;62;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-sur-namek;Gohan;DBZ;Sur Namek;6.6;uncommon;72;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-combat-contre-zarbon;Vegeta;DBZ;Combat contre Zarbon;5.7;uncommon;58;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+recoome-dbz-duel-contre-vegeta;Recoome;DBZ;Duel contre Vegeta;7.7;uncommon;94;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+guldo-dbz-arret-du-temps;Guldo;DBZ;Arrêt du temps;6.2;uncommon;65;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jeice-dbz-duel-contre-goku;Jeice;DBZ;Duel contre Goku;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+burter-dbz-duel-contre-goku;Burter;DBZ;Duel contre Goku;7.8;uncommon;96;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+nail-dbz-gardien-du-grand-chef;Nail;DBZ;Gardien du Grand Chef;8.2;uncommon;106;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-entrainement-de-whis;Goku;DBS;Entraînement de Whis;11;rare;209;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+vegeta-dbs-entrainement-de-whis;Vegeta;DBS;Entraînement de Whis;11.1;rare;214;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+gohan-dbs-retour-a-l-entrainement;Gohan;DBS;Retour à l'entraînement;11.4;rare;229;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+monna-dbs-combattante-bouclier;Monna;DBS;Combattante bouclier;6.8;uncommon;76;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+watagash-dbs-parasite-de-l-espace;Watagash;DBS;Parasite de l'espace;7;uncommon;79;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roasie-dbs-forme-d-amour;Roasie;DBS;Forme d'amour;7;uncommon;79;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kakunsa-dbs-transformation-feline;Kakunsa;DBS;Transformation féline;7;uncommon;79;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+docteur-gero-dbz-createur-des-cyborgs;Docteur Gero;DBZ;Créateur des cyborgs;6.3;uncommon;66;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+krilin-dbz-apres-namek-preparation-cyborgs;Krilin;DBZ;Après Namek — préparation cyborgs;6;uncommon;62;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+maji-kayo-dbs-guerrier-malleable;Maji-Kayo;DBS;Guerrier malléable;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-19-dbz-cyborg-absorbeur;C-19;DBZ;Cyborg absorbeur;6.5;uncommon;70;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+drum-db-demon-du-roi-piccolo;Drum;DB;Démon du Roi Piccolo;5;common;48;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ganos-dbs-metamorphose-en-oiseau-geant;Ganos;DBS;Métamorphose en oiseau géant;7.5;uncommon;89;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+krilin-dbz-cell-games-soutien;Krilin;DBZ;Cell Games — soutien;6;uncommon;62;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tao-pai-pai-db-mercenaire-affrontement-goku;Tao Pai Pai;DB;Mercenaire — affrontement Goku;5.1;uncommon;49;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-enfant-transformation-geante-contre-pilaf;Goku;DB;Enfant — transformation géante contre Pilaf;5.125;uncommon;50;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+renso-dbs-ancien-capitaine-saiyan;Renso;DBS;Ancien capitaine saiyan;7.8;uncommon;96;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+olibu-dbz-tournoi-de-l-autre-monde;Olibu;DBZ;Tournoi de l'Autre Monde;7;uncommon;79;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+agu-dbs-kaioshin-univers-12;Agu;DBS;Kaioshin univers 12;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+anato-dbs-kaioshin-univers-1;Anato;DBS;Kaioshin univers 1;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+eyre-dbs-kaioshin-univers-3;Eyre;DBS;Kaioshin univers 3;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-adolescent-confrontation-roi-piccolo;Goku;DB;Adolescent — confrontation Roi Piccolo;5.375;uncommon;53;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+iru-dbs-kaioshin-univers-8;Iru;DBS;Kaioshin univers 8;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+khai-dbs-kaioshin-univers-11;Khai;DBS;Kaioshin univers 11;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kuru-dbs-kaioshin-univers-4;Kuru;DBS;Kaioshin univers 4;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ogma-dbs-kaioshin-univers-5;Ogma;DBS;Kaioshin univers 5;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+pell-dbs-kaioshin-univers-2;Pell;DBS;Kaioshin univers 2;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roh-dbs-kaioshin-univers-9;Roh;DBS;Kaioshin univers 9;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tenshinhan-dbs-entraineur-d-arts-martiaux;Tenshinhan;DBS;Entraîneur d'arts martiaux;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goten-dbz-super-saiyan-entrainement-chichi;Goten;DBZ;Super Saiyan — entraînement Chichi;7;uncommon;79;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kaioshin-du-nord-dbz-gardien-de-l-univers;Kaioshin du Nord;DBZ;Gardien de l'univers;7.2;uncommon;83;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kami-db-gardien-de-la-terre;Kami;DB;Gardien de la Terre;5.5;uncommon;55;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-grand-singe-premiere-transformation;Goku;DB;Grand singe — première transformation;5.5;uncommon;55;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+oob-dbz-reincarnation-de-majin-buu;Oob;DBZ;Réincarnation de Majin Buu;7.2;uncommon;83;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ribrianne-dbs-transformation-geante;Ribrianne;DBS;Transformation géante;8.2;uncommon;106;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kaioshin-de-l-ouest-dbz-gardienne-de-l-univers;Kaioshin de l'Ouest;DBZ;Gardienne de l'univers;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+buu-dbz-boo-gentil-vit-avec-mister-satan;Buu;DBZ;Boo gentil — vit avec Mister Satan;10.5;rare;185;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goten-dbz-super-saiyan-tournoi-junior;Goten;DBZ;Super Saiyan — tournoi junior;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-grand-singe-saga-saiyans;Gohan;DBZ;Grand singe — saga Saiyans;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cabba-dbs-base-tournoi-du-pouvoir;Cabba;DBS;Base — tournoi du Pouvoir;8.5;uncommon;114;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-18-dbz-cell-games-protegee-par-krilin;C-18;DBZ;Cell Games — protégée par Krilin;7.5;uncommon;89;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-23e-tenkaichi-technique-meteore;Goku;DB;23e Tenkaichi — technique météore;5.6;uncommon;56;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kahseral-dbs-officier-pride-troopers;Kahseral;DBS;Officier Pride Troopers;8.5;uncommon;114;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+lavender-dbs-poison-zeno-expo;Lavender;DBS;Poison — Zeno Expo;8.5;uncommon;114;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kami-dbz-fusion-definitive-avec-piccolo;Kami;DBZ;Fusion définitive avec Piccolo;7.5;uncommon;89;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+buu-dbz-boo-bon-apres-separation;Buu;DBZ;Boo bon — après séparation;10.5;rare;185;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+krilin-dbs-policier-retour-au-combat;Krilin;DBS;Policier — retour au combat;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zamasu-dbs-apprenti-kaioshin-univers-10;Zamasu;DBS;Apprenti Kaioshin univers 10;14.1;epic;443;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+saonel-dbs-namek-univers-6;Saonel;DBS;Namek univers 6;8.7;rare;119;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kaioshin-du-sud-dbz-gardien-de-l-univers;Kaioshin du Sud;DBZ;Gardien de l'univers;7.8;uncommon;96;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+garlic-jr-dbz-regne-du-makyo;Garlic Jr.;DBZ;Règne du Makyo;7.8;uncommon;96;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-enfant-potentiel-libere-par-guru;Gohan;DBZ;Enfant — potentiel libéré par Guru;11.7;rare;247;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+fuwa-dbs-kaioshin-univers-6;Fuwa;DBS;Kaioshin univers 6;8.9;rare;125;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gowasu-dbs-maitre-de-zamasu;Gowasu;DBS;Maître de Zamasu;8.9;rare;125;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+pilina-dbs-namek-univers-6;Pilina;DBS;Namek univers 6;8.9;rare;125;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-dbz-forme-imparfaite-absorption-humains;Cell;DBZ;Forme imparfaite — absorption humains;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-kaioken-2-saga-saiyans;Goku;DBZ;Kaioken ×2 — saga Saiyans;6.5;uncommon;70;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-18-dbz-futur-regne-des-cyborgs;C-18;DBZ;Futur — règne des cyborgs;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-jr-dbz-creation-de-cell-parfait;Cell Jr.;DBZ;Création de Cell parfait;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-great-saiyaman-costume-heroique;Gohan;DBZ;Great Saiyaman — costume héroïque;4.5;common;43;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-saga-freezer-recuperation-sur-namek;Vegeta;DBZ;Saga Freezer — récupération sur Namek;7;uncommon;79;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+basil-dbs-super-stimulant-zeno-expo;Basil;DBS;Super stimulant — Zeno Expo;9;rare;128;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ganos-dbs-oiseau-geant-tournoi-du-pouvoir;Ganos;DBS;Oiseau géant — Tournoi du Pouvoir;9;rare;128;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-super-saiyan-fusion-avec-goten;Trunks;DBZ;Super Saiyan — fusion avec Goten;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-17-dbz-futur-traque-des-humains;C-17;DBZ;Futur — traque des humains;8.2;uncommon;106;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-18-dbs-protection-de-krilin;C-18;DBS;Protection de Krilin;9.2;rare;134;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+frost-dbs-premiere-forme-univers-6;Frost;DBS;Première forme — Univers 6;9.2;rare;134;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+ribrianne-dbs-geante-tournoi-du-pouvoir;Ribrianne;DBS;Géante — Tournoi du Pouvoir;9.2;rare;134;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gotenks-dbz-base-fusion-reussie;Gotenks;DBZ;Base — fusion réussie;8.2;uncommon;106;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+caulifla-dbs-base-tournoi-du-pouvoir;Caulifla;DBS;Base — tournoi du Pouvoir;9.4;rare;142;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-16-dbz-heritage-pacifique-cell-games;C-16;DBZ;Héritage pacifique — Cell Games;8.3;uncommon;108;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-kaioken-3-contre-vegeta;Goku;DBZ;Kaioken ×3 — contre Vegeta;6.5;uncommon;70;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gotenks-dbz-fusion-normale-entrainement;Gotenks;DBZ;Fusion normale — entraînement;8.3;uncommon;108;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bergamo-dbs-croissance-geante-zeno-expo;Bergamo;DBS;Croissance géante — Zeno Expo;9.4;rare;142;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-jr-dbz-cell-games-essaim-des-sept;Cell Jr.;DBZ;Cell Games — essaim des sept;8.7;rare;119;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gowasu-dbs-kaioshin-univers-10;Gowasu;DBS;Kaioshin univers 10;9.7;rare;152;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-dbz-defenseur-de-goten-et-trunks;Piccolo;DBZ;Défenseur de Goten et Trunks;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-piccolo-db-jeunesse-restauree;Roi Piccolo;DB;Jeunesse restaurée;6;uncommon;62;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+koiceareta-dbs-fusion-des-trois-robots;Koicéareta;DBS;Fusion des trois robots;9.7;rare;152;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+arale-norimaki-db-genie-mecanique-de-penguin-village;Aralé Norimaki;DB;Génie mécanique de Penguin Village;6;uncommon;62;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bardock-dbz-guerrier-saiyan;Bardock;DBZ;Guerrier saiyan;8.8;rare;122;NON_VERIFIE;SVG provisoire;APPARITION_CANON_A_VERIFIER;A FAIRE
+goku-dbz-kaioken-4-kamehameha;Goku;DBZ;Kaioken ×4 — Kamehameha;6.5;uncommon;70;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kibito-shin-dbz-fusion-divine;Kibito Shin;DBZ;Fusion divine;8.8;rare;122;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-dbz-fusion-avec-nail-seconde-forme;Piccolo;DBZ;Fusion avec Nail — seconde forme;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+frost-dbs-forme-d-assaut-tournoi-univers-6;Frost;DBS;Forme d'assaut — tournoi univers 6;10.1;rare;168;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-db-23e-tenkaichi-budokai;Goku;DB;23e Tenkaichi Budokai;5.6;uncommon;56;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+muri-dbz-ancien-du-village-namek;Muri;DBZ;Ancien du village namek;5;common;48;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+tenshinhan-db-23e-tenkaichi-budokai;Tenshinhan;DB;23e Tenkaichi Budokai;5.6;uncommon;56;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-dbz-saga-saiyans;Piccolo;DBZ;Saga Saiyans;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-enfant-namek;Gohan;DBZ;Enfant — Namek;6.6;uncommon;72;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-saga-saiyans;Vegeta;DBZ;Saga Saiyans;5.7;uncommon;58;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+nappa-dbz-saiyan-d-elite;Nappa;DBZ;Saiyan d'élite;5.1;common;49;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+raditz-dbz-guerrier-saiyan;Raditz;DBZ;Guerrier Saiyan;4.8;common;47;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ginyu-dbz-capitaine;Ginyu;DBZ;Capitaine;9;rare;128;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+recoome-dbz-commando-ginyu;Recoome;DBZ;Commando Ginyu;7.8;uncommon;96;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jeice-dbz-commando-ginyu;Jeice;DBZ;Commando Ginyu;7.5;uncommon;89;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+burter-dbz-commando-ginyu;Burter;DBZ;Commando Ginyu;7.8;uncommon;96;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+guldo-dbz-commando-ginyu;Guldo;DBZ;Commando Ginyu;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-17-dbz-saga-androids;C-17;DBZ;Saga Androids;9.8;rare;156;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-18-dbz-saga-androids;C-18;DBZ;Saga Androids;9.7;rare;152;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-16-dbz-saga-androids;C-16;DBZ;Saga Androids;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dabra-dbz-roi-des-demons;Dabra;DBZ;Roi des démons;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kaioshin-dbz-dieu-de-l-est;Kaioshin;DBZ;Dieu de l'Est;8.7;rare;119;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+frost-dbs-univers-6;Frost;DBS;Univers 6;10.9;rare;204;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+hit-dbs-saut-temporel;Hit;DBS;Saut temporel;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ribrianne-dbs-univers-2;Ribrianne;DBS;Univers 2;10.8;rare;198;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-kaioken-20;Goku;DBZ;Kaioken ×20;6.5;uncommon;70;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-adolescent-super-saiyan;Gohan;DBZ;Adolescent — Super Saiyan;8.8;rare;122;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goten-dbz-super-saiyan;Goten;DBZ;Super Saiyan;8.8;rare;122;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-super-saiyan-enfant;Trunks;DBZ;Super Saiyan — enfant;9;rare;128;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-saga-namek;Vegeta;DBZ;Saga Namek;7;uncommon;79;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zarbon-dbz-forme-monstrueuse;Zarbon;DBZ;Forme monstrueuse;8.5;uncommon;114;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dodoria-dbz-garde-de-freezer;Dodoria;DBZ;Garde de Freezer;8;uncommon;101;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbz-premiere-forme;Freezer;DBZ;Première forme;6.9;uncommon;77;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+freezer-dbz-deuxieme-forme;Freezer;DBZ;Deuxième forme;7.35;uncommon;86;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbz-troisieme-forme;Freezer;DBZ;Troisième forme;7.75;uncommon;95;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-dbz-forme-imparfaite;Cell;DBZ;Forme imparfaite;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-dbz-forme-semi-parfaite;Cell;DBZ;Forme semi-parfaite;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-dbz-saga-namek;Piccolo;DBZ;Saga Namek;5.8;uncommon;59;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+buu-dbz-boo-malefique;Buu;DBZ;Boo maléfique;11.2;rare;218;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-guerrier-du-futur-base;Trunks;DBZ;Guerrier du futur — base;9.7;rare;152;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kale-dbs-super-saiyan;Kale;DBS;Super Saiyan;11.8;rare;253;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cabba-dbs-super-saiyan-2;Cabba;DBS;Super Saiyan 2;12.1;rare;272;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+bergamo-dbs-trio-du-danger;Bergamo;DBS;Trio du danger;11.3;rare;224;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-black-dbs-forme-de-base;Goku Black;DBS;Forme de base;13.1;epic;347;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbs-potentiel-libere;Gohan;DBS;Potentiel libéré;13.7;epic;402;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jiren-dbs-puissance-contenue;Jiren;DBS;Puissance contenue;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-super-saiyan-duel-final-contre-freezer;Goku;DBZ;Super Saiyan — duel final contre Freezer;8.6;uncommon;116;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-super-saiyan-androids;Vegeta;DBZ;Super Saiyan — Androids;9.1;rare;131;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-super-saiyan-salle-du-temps;Gohan;DBZ;Super Saiyan — Salle du temps;8.8;rare;122;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-super-saiyan-arrivee-du-futur;Trunks;DBZ;Super Saiyan — arrivée du futur;10.7;rare;193;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-dbz-fusion-avec-kami-duel-contre-c-17;Piccolo;DBZ;Fusion avec Kami — duel contre C-17;9.1;rare;131;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-16-dbz-face-a-cell;C-16;DBZ;Face à Cell;10.2;rare;172;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+ginyu-dbz-technique-du-changement-de-corps;Ginyu;DBZ;Technique du changement de corps;9.2;rare;134;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-retour-sur-terre-apres-namek;Goku;DBZ;Retour sur Terre après Namek;7.1;uncommon;80;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbz-retour-cyborg;Freezer;DBZ;Retour cyborg;8.25;uncommon;107;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-super-saiyan-2-cell-games;Gohan;DBZ;Super Saiyan 2 — Cell Games;10.3;rare;176;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-super-saiyan-2-tournoi;Goku;DBZ;Super Saiyan 2 — tournoi;10;rare;163;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+buu-dbz-innocent-face-a-babidi;Buu;DBZ;Innocent face à Babidi;10.5;rare;185;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-blue-univers-6;Goku;DBS;Super Saiyan Blue — Univers 6;14.3;epic;464;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbs-super-saiyan-blue-univers-6;Vegeta;DBS;Super Saiyan Blue — Univers 6;14.35;epic;470;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+hit-dbs-univers-6-tournoi;Hit;DBS;Univers 6 — tournoi;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbs-futur-resistance;Trunks;DBS;Futur — résistance;12.1;rare;272;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-black-dbs-faux-goku-revele;Goku Black;DBS;Faux Goku révélé;13.1;epic;347;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-grand-singe-invasion-terre;Vegeta;DBZ;Grand singe — invasion Terre;5.7;uncommon;58;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+magetta-dbs-metalman-tournoi-du-pouvoir;Magetta;DBS;Métalman — tournoi du pouvoir;10.2;rare;172;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-cold-dbz-empereur-de-l-armee-de-freezer;Roi Cold;DBZ;Empereur de l'armée de Freezer;9.2;rare;134;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-super-saiyan-face-a-c-19;Goku;DBZ;Super Saiyan — face à C-19;9.3;rare;138;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+buu-dbz-boo-malefique-transformation;Buu;DBZ;Boo maléfique — transformation;11.2;rare;218;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-kaioken-intervention-sur-namek;Goku;DBZ;Kaioken — intervention sur Namek;6.5;uncommon;70;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-17-dbs-ranger-de-l-ile;C-17;DBS;Ranger de l'île;10.4;rare;180;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+roi-cold-dbz-apres-namek-invasion-terre;Roi Cold;DBZ;Après Namek — invasion Terre;9.3;rare;138;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-kaioken-10-contre-freezer;Goku;DBZ;Kaioken ×10 — contre Freezer;6.5;uncommon;70;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-dbz-fusion-avec-nail-bataille-freezer;Piccolo;DBZ;Fusion avec Nail — bataille Freezer;7.3;uncommon;85;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+pikkon-dbz-champion-de-l-autre-monde;Pikkon;DBZ;Champion de l'Autre Monde;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dyspo-dbs-patrouilleur-de-la-justice;Dyspo;DBS;Patrouilleur de la justice;13.6;epic;392;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-super-saiyan-duel-d-entrainement-goku;Gohan;DBZ;Super Saiyan — duel d'entraînement Goku;8.8;rare;122;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-copie-dbs-clone-de-l-eau-miraculeuse;Vegeta copie;DBS;Clone de l'eau miraculeuse;10.8;rare;198;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-futur-retour-chez-c-17-et-c-18;Trunks;DBZ;Futur — retour chez C-17 et C-18;9.7;rare;152;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dyspo-dbs-pride-troopers-premiere-course;Dyspo;DBS;Pride Troopers — première course;13.6;epic;392;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+vegeta-dbz-super-saiyan-contre-c-18;Vegeta;DBZ;Super Saiyan — contre C-18;9.1;rare;131;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-dbz-forme-semi-parfaite-absorption-c-17;Cell;DBZ;Forme semi-parfaite — absorption C-17;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbs-futur-epee-de-la-resistance;Trunks;DBS;Futur — épée de la résistance;10.9;rare;204;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbs-futur-sauveur-avec-mai;Trunks;DBS;Futur — sauveur avec Mai;10.9;rare;204;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-super-saiyan-entrainement-salle-du-temps;Goku;DBZ;Super Saiyan — entraînement salle du temps;9.3;rare;138;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-super-saiyan-grade-2-entrainement;Trunks;DBZ;Super Saiyan grade 2 — entraînement;9.8;rare;156;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-super-saiyan-affrontement-c-19;Vegeta;DBZ;Super Saiyan — affrontement C-19;9.1;rare;131;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbz-retour-cyborg-arrivee-sur-terre;Freezer;DBZ;Retour cyborg — arrivée sur Terre;8.25;uncommon;107;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-super-saiyan-2-tournoi-de-babidi;Gohan;DBZ;Super Saiyan 2 — tournoi de Babidi;10.3;rare;176;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbs-forme-finale-premiere-renaissance;Freezer;DBS;Forme finale — première renaissance;11.2;rare;218;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+freezer-dbz-forme-finale-reduit-son-energie;Freezer;DBZ;Forme finale — réduit son énergie;8.4;uncommon;110;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-super-saiyan-sortie-salle-du-temps;Gohan;DBZ;Super Saiyan — sortie salle du temps;8.8;rare;122;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-dbz-fusion-avec-kami-cell-games;Piccolo;DBZ;Fusion avec Kami — Cell Games;9.1;rare;131;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-futur-maitrise-salle-du-temps;Trunks;DBZ;Futur — maîtrise salle du temps;10.2;rare;172;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+grand-kaioshin-dbz-guide-des-kaioshin;Grand Kaioshin;DBZ;Guide des Kaioshin;10.3;rare;176;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kefla-dbs-forme-de-base;Kefla;DBS;Forme de base;14.4;epic;476;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+toppo-dbs-fierte-des-pride-troopers;Toppo;DBS;Fierté des Pride Troopers;13.8;epic;412;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+toppo-dbs-pride-troopers-chef;Toppo;DBS;Pride Troopers — chef;13.8;epic;412;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cabba-dbs-super-saiyan-2-face-a-freezer;Cabba;DBS;Super Saiyan 2 — face à Freezer;11.4;rare;229;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-super-saiyan-transmission-instantanee;Goku;DBZ;Super Saiyan — transmission instantanée;9.3;rare;138;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+frost-dbs-forme-finale-alliance-freezer;Frost;DBS;Forme finale — alliance Freezer;11.4;rare;229;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbs-futur-confrontation-goku-black;Trunks;DBS;Futur — confrontation Goku Black;11.6;rare;241;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+hit-dbs-assassinat-univers-6;Hit;DBS;Assassinat — univers 6;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-super-saiyan-grade-3-contre-cell;Trunks;DBZ;Super Saiyan grade 3 — contre Cell;10.5;rare;185;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbs-super-saiyan-tournoi-du-pouvoir;Vegeta;DBS;Super Saiyan — tournoi du pouvoir;11.7;rare;247;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+frost-dbs-forme-finale-tournoi-du-pouvoir;Frost;DBS;Forme finale — tournoi du pouvoir;11.6;rare;241;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jiren-dbs-premiere-rencontre-retenue-de-puissance;Jiren;DBS;Première rencontre — retenue de puissance;15.4;epic;607;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+porunga-dbz-dragon-de-namek;Porunga;DBZ;Dragon de Namek;10.7;rare;193;NON_VERIFIE;SVG provisoire;NON_COMBATTANT_OU_ECHELLE_INVERIFIABLE;A FAIRE
+goku-dbs-super-saiyan-2-tournoi-du-pouvoir;Goku;DBS;Super Saiyan 2 — tournoi du pouvoir;11.8;rare;253;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+hit-dbs-assassin-jauge-temporelle;Hit;DBS;Assassin — jauge temporelle;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-super-saiyan-2-contre-kid-buu;Vegeta;DBZ;Super Saiyan 2 — contre Kid Buu;10.15;rare;169;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbz-forme-finale-combat-goku-ssj;Freezer;DBZ;Forme finale — combat Goku SSJ;8.4;uncommon;110;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-super-saiyan-2-majin-vegeta;Goku;DBZ;Super Saiyan 2 — Majin Vegeta;10;rare;163;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbs-forme-finale-tournoi-du-pouvoir;Freezer;DBS;Forme finale — Tournoi du Pouvoir;11.2;rare;218;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+caulifla-dbs-super-saiyan-2-duel-goku;Caulifla;DBS;Super Saiyan 2 — duel Goku;12.1;rare;272;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+super-buu-dbz-absorption-de-piccolo;Super Buu;DBZ;Absorption de Piccolo;10.5;rare;185;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zamasu-dbs-futur-corps-immortel;Zamasu;DBS;Futur — corps immortel;14.1;epic;443;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+dyspo-dbs-super-vitesse-light-bullet;Dyspo;DBS;Super vitesse — Light Bullet;13.6;epic;392;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-super-saiyan-2-sacrifice-contre-buu;Vegeta;DBZ;Super Saiyan 2 — sacrifice contre Buu;10.15;rare;169;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-17-dbs-tournoi-du-pouvoir-derniere-resistance;C-17;DBS;Tournoi du Pouvoir — dernière résistance;12.5;rare;300;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+zamasu-dbs-immortel-premiere-rencontre;Zamasu;DBS;Immortel — première rencontre;14.1;epic;443;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+goku-black-dbs-faux-goku-lame-de-ki;Goku Black;DBS;Faux Goku — lame de ki;13.1;epic;347;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbs-forme-finale-alliance-provisoire;Freezer;DBS;Forme finale — alliance provisoire;11.2;rare;218;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+hit-dbs-saut-temporel-tournoi-du-pouvoir;Hit;DBS;Saut temporel — tournoi du pouvoir;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbs-super-saiyan-2-retour-du-futur;Trunks;DBS;Super Saiyan 2 — retour du futur;12.7;epic;316;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+agnilasa-dbs-fusion-ultime-de-l-univers-3;Agnilasa;DBS;Fusion ultime de l'univers 3;12.7;rare;316;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-super-saiyan-2-attaque-contre-cell-jr;Gohan;DBZ;Super Saiyan 2 — attaque contre Cell Jr.;10.3;rare;176;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gotenks-dbz-super-saiyan-3-combat-contre-super-buu;Gotenks;DBZ;Super Saiyan 3 — combat contre Super Buu;11.7;rare;247;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegito-dbz-forme-de-base-fusion-potara;Vegito;DBZ;Forme de base — fusion Potara;12.4;rare;293;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kale-dbs-super-saiyan-berserker-controle;Kale;DBS;Super Saiyan Berserker contrôlé;12.8;epic;323;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-17-dbs-barriere-ultime-tournoi-du-pouvoir;C-17;DBS;Barrière ultime — Tournoi du Pouvoir;13;epic;338;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-super-saiyan-namek;Goku;DBZ;Super Saiyan — Namek;8.6;uncommon;116;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-super-saiyan-cell;Vegeta;DBZ;Super Saiyan — Cell;9.1;rare;131;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbz-super-saiyan-futur;Trunks;DBZ;Super Saiyan — futur;11;rare;209;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbz-forme-finale;Freezer;DBZ;Forme finale;8.4;uncommon;110;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-dbz-forme-parfaite;Cell;DBZ;Forme parfaite;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+buu-dbz-majin-buu;Buu;DBZ;Majin Buu;10.5;rare;185;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-majin;Vegeta;DBZ;Majin;10.6;rare;190;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbz-super-saiyan-3;Goku;DBZ;Super Saiyan 3;11.4;rare;229;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-blue;Goku;DBS;Super Saiyan Blue;14.3;epic;464;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbs-super-saiyan-blue;Vegeta;DBS;Super Saiyan Blue;14.35;epic;470;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+black-goku-dbs-super-saiyan-rose;Black Goku;DBS;Super Saiyan Rosé;14.7;epic;512;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kefla-dbs-super-saiyan-2;Kefla;DBS;Super Saiyan 2;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+toppo-dbs-mode-destruction;Toppo;DBS;Mode destruction;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegito-dbz-super-saiyan;Vegito;DBZ;Super Saiyan;12.4;rare;293;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gotenks-dbz-super-saiyan-3;Gotenks;DBZ;Super Saiyan 3;12;rare;265;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+super-buu-dbz-forme-malefique;Super Buu;DBZ;Forme maléfique;11.2;rare;218;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+buu-dbz-absorption-gotenks;Buu;DBZ;Absorption Gotenks;11.8;rare;253;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+buu-dbz-absorption-gohan;Buu;DBZ;Absorption Gohan;12.1;rare;272;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kid-buu-dbz-forme-originelle;Kid Buu;DBZ;Forme originelle;10.8;rare;198;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbz-super-saiyan-2-buu;Vegeta;DBZ;Super Saiyan 2 — Buu;10.15;rare;169;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-potentiel-ultime-buu;Gohan;DBZ;Potentiel ultime — Buu;11.7;rare;247;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbs-golden-freezer;Freezer;DBS;Golden Freezer;14.45;epic;482;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-god;Goku;DBS;Super Saiyan God;13.6;epic;392;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbs-super-saiyan-rage;Trunks;DBS;Super Saiyan Rage;14.2;epic;454;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zamasu-dbs-fusionne;Zamasu;DBS;Fusionné;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+c-17-dbs-tournoi-du-pouvoir;C-17;DBS;Tournoi du Pouvoir;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+hit-dbs-saut-temporel-ameliore;Hit;DBS;Saut temporel amélioré;14.7;epic;512;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kale-dbs-berserk;Kale;DBS;Berserk;14.2;epic;454;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegito-dbz-base-buu;Vegito;DBZ;Base — Buu;12.4;rare;293;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gotenks-dbz-super-saiyan-buu;Gotenks;DBZ;Super Saiyan — Buu;11.8;rare;253;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+piccolo-dbz-fusion-avec-nail-et-kami;Piccolo;DBZ;Fusion avec Nail et Kami;9.1;rare;131;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbz-forme-finale-100;Freezer;DBZ;Forme finale — 100 %;8.75;rare;121;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zamasu-dbs-immortel-futur;Zamasu;DBS;Immortel — futur;14.1;epic;443;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbs-super-saiyan-blue-contre-toppo;Vegeta;DBS;Super Saiyan Blue — contre Toppo;14.35;epic;470;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+toppo-dbs-dieu-de-la-destruction-candidat;Toppo;DBS;Dieu de la destruction candidat;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbs-potentiel-ultime-contre-goku;Gohan;DBS;Potentiel ultime — contre Goku;13.7;epic;402;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-dbz-forme-parfaite-jeux-de-cell;Cell;DBZ;Forme parfaite — jeux de Cell;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kid-buu-dbz-fin-du-combat-terre-sacree;Kid Buu;DBZ;Fin du combat — Terre sacrée;10.5;rare;185;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mosco-dbs-dieu-de-destruction-univers-3;Mosco;DBS;Dieu de destruction univers 3;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+sidra-dbs-dieu-de-destruction-univers-9;Sidra;DBS;Dieu de destruction univers 9;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-god-tournoi-univers-6;Goku;DBS;Super Saiyan God — tournoi Univers 6;13.6;epic;392;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+trunks-dbs-futur-super-saiyan-2-contre-zamasu;Trunks;DBS;Futur — Super Saiyan 2 contre Zamasu;13;epic;338;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gotenks-dbz-super-saiyan-3-kamikaze-fantome;Gotenks;DBZ;Super Saiyan 3 — kamikaze fantôme;11.8;rare;253;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbs-super-saiyan-blue-combat-contre-black;Vegeta;DBS;Super Saiyan Blue — combat contre Black;14.35;epic;470;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-blue-epreuve-de-whis;Goku;DBS;Super Saiyan Blue — Épreuve de Whis;14.3;epic;464;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+heles-dbs-deesse-de-destruction-univers-2;Heles;DBS;Déesse de destruction univers 2;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+liquiir-dbs-dieu-de-destruction-univers-8;Liquiir;DBS;Dieu de destruction univers 8;13.3;epic;365;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-blue-visite-au-futur;Goku;DBS;Super Saiyan Blue — visite au futur;14.3;epic;464;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbs-potentiel-ultime-tournoi-du-pouvoir;Gohan;DBS;Potentiel ultime — Tournoi du Pouvoir;13.7;epic;402;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+arak-dbs-dieu-de-destruction-univers-5;Arak;DBS;Dieu de destruction univers 5;13.5;epic;383;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+beerus-dbs-arbitrage-de-l-univers-7;Beerus;DBS;Arbitrage de l'univers 7;17;epic;895;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+gin-dbs-dieu-de-destruction-univers-12;Gin;DBS;Dieu de destruction univers 12;13.5;epic;383;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+iwan-dbs-dieu-de-destruction-univers-1;Iwan;DBS;Dieu de destruction univers 1;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+rumsshi-dbs-dieu-de-destruction-univers-10;Rumsshi;DBS;Dieu de destruction univers 10;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-god-tournoi-du-pouvoir;Goku;DBS;Super Saiyan God — tournoi du pouvoir;13.6;epic;392;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbs-super-saiyan-blue-tournoi-du-pouvoir;Vegeta;DBS;Super Saiyan Blue — Tournoi du Pouvoir;14.35;epic;470;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegito-dbz-super-saiyan-protection-de-gohan;Vegito;DBZ;Super Saiyan — protection de Gohan;12.4;rare;293;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+gohan-dbz-ultime-contre-super-buu;Gohan;DBZ;Ultime — contre Super Buu;11.7;rare;247;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-dbz-cell-parfait-kamehameha-pere-fils;Cell;DBZ;Cell parfait — Kamehameha père-fils;9.5;rare;145;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbs-golden-freezer-resurrection;Freezer;DBS;Golden Freezer — résurrection;14.45;epic;482;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+quitela-dbs-dieu-de-destruction-univers-4;Quitela;DBS;Dieu de destruction univers 4;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-blue-contre-hit;Goku;DBS;Super Saiyan Blue — contre Hit;14.3;epic;464;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-black-dbs-rose-lame-de-ki;Goku Black;DBS;Rosé — lame de ki;14.7;epic;512;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbs-super-saiyan-blue-contre-jiren;Vegeta;DBS;Super Saiyan Blue — contre Jiren;14.35;epic;470;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-blue-kaioken-10;Goku;DBS;Super Saiyan Blue Kaioken ×10;15.15;epic;571;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kefla-dbs-super-saiyan-fusion;Kefla;DBS;Super Saiyan — fusion;14.4;epic;476;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+awamo-dbs-ange-univers-1;Awamo;DBS;Ange univers 1;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+camparri-dbs-ange-univers-3;Camparri;DBS;Ange univers 3;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cell-dbz-super-perfect-cell-resurrection;Cell;DBZ;Super Perfect Cell — résurrection;9.95;rare;162;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cognac-dbs-ange-univers-4;Cognac;DBS;Ange univers 4;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+corn-dbs-ange-univers-8;Corn;DBS;Ange univers 8;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+cukatail-dbs-ange-univers-5;Cukatail;DBS;Ange univers 5;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kusu-dbs-ange-univers-10;Kusu;DBS;Ange univers 10;19;legendary;1456;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+marcarita-dbs-ange-univers-11;Marcarita;DBS;Ange univers 11;19;legendary;1456;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+martinu-dbs-ange-univers-12;Martinu;DBS;Ange univers 12;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+mohito-dbs-ange-univers-9;Mohito;DBS;Ange univers 9;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+sour-dbs-ange-univers-2;Sour;DBS;Ange univers 2;14;epic;432;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-black-dbs-super-saiyan-rose-faux-saiyan;Goku Black;DBS;Super Saiyan Rosé — faux Saiyan;14.7;epic;512;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jiren-dbs-barriere-energetique-face-a-goku;Jiren;DBS;Barrière énergétique — face à Goku;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+beerus-dbs-debut-de-super-menace-sur-terre;Beerus;DBS;Début de Super — menace sur Terre;17;epic;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+champa-dbs-choc-avec-beerus;Champa;DBS;Choc avec Beerus;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+toppo-dbs-dieu-de-destruction-hakai;Toppo;DBS;Dieu de destruction — Hakai;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zamasu-dbs-fusionne-corps-stable;Zamasu;DBS;Fusionné — corps stable;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+belmod-dbs-dieu-de-destruction-univers-11;Belmod;DBS;Dieu de destruction univers 11;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-black-dbs-rose-faux-clone-demultiplie;Goku Black;DBS;Rosé — faux clone démultiplié;14.7;epic;512;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+whis-dbs-ange-baton-de-divination;Whis;DBS;Ange — bâton de divination;19;legendary;1456;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+champa-dbs-dieu-de-la-destruction-univers-6;Champa;DBS;Dieu de la destruction univers 6;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vados-dbs-ange-univers-6;Vados;DBS;Ange univers 6;19;legendary;1456;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-super-saiyan-blue-kaioken-20;Goku;DBS;Super Saiyan Blue Kaioken ×20;15.15;epic;571;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+grand-pretre-dbs-arbitre-tournoi-du-pouvoir;Grand Prêtre;DBS;Arbitre — Tournoi du Pouvoir;20;legendary;1856;NON_VERIFIE;SVG provisoire;NON_COMBATTANT_OU_ECHELLE_INVERIFIABLE;A FAIRE
+goku-dbs-ultra-instinct-maitrise;Goku;DBS;Ultra Instinct maîtrisé;16.4;epic;774;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+jiren-dbs-pleine-puissance;Jiren;DBS;Pleine puissance;16.1;epic;720;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+beerus-dbs-dieu-de-la-destruction;Beerus;DBS;Dieu de la destruction;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegeta-dbs-super-saiyan-blue-evolution;Vegeta;DBS;Super Saiyan Blue Evolution;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+vegito-dbs-super-saiyan-blue;Vegito;DBS;Super Saiyan Blue;16;epic;702;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zamasu-dbs-fusionne-corrompu;Zamasu;DBS;Fusionné corrompu;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+goku-dbs-ultra-instinct-sign;Goku;DBS;Ultra Instinct — Sign;15.8;epic;668;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zen-o-dbs-roi-des-univers;Zen'ô;DBS;Roi des univers;22;legendary;3017;NON_VERIFIE;SVG provisoire;NON_COMBATTANT_OU_ECHELLE_INVERIFIABLE;A FAIRE
+beerus-dbs-pouvoir-de-destruction-libere;Beerus;DBS;Pouvoir de destruction libéré;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zalama-dbs-createur-des-super-dragon-balls-mentionne;Zalama;DBS;Créateur des Super Dragon Balls (mentionné);14.6;epic;500;NON_VERIFIE;SVG provisoire;NON_COMBATTANT_OU_ECHELLE_INVERIFIABLE | APPARITION_CANON_A_VERIFIER;A FAIRE
+zamasu-dbs-fusionne-halo-de-justice;Zamasu;DBS;Fusionné — halo de justice;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+freezer-dbs-golden-freezer-affrontement-jiren;Freezer;DBS;Golden Freezer — affrontement Jiren;14.45;epic;482;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+zen-o-du-futur-dbs-roi-des-univers-futur;Zen'ô du futur;DBS;Roi des univers futur;22;legendary;3017;NON_VERIFIE;SVG provisoire;NON_COMBATTANT_OU_ECHELLE_INVERIFIABLE;A FAIRE
+jiren-dbs-jiren-choc-contre-ultra-instinct;Jiren;DBS;Jiren — choc contre Ultra Instinct;16.1;epic;720;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+trunks-dbs-super-saiyan-rage-epee-de-l-espoir;Trunks;DBS;Super Saiyan Rage — épée de l'espoir;14.9;epic;538;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+whis-dbs-entrainement-de-goku-et-vegeta;Whis;DBS;Entraînement de Goku et Vegeta;19;legendary;1456;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+vegeta-dbs-super-saiyan-blue-evolution-contre-jiren;Vegeta;DBS;Super Saiyan Blue Evolution — contre Jiren;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+kefla-dbs-super-saiyan-2-face-a-ultra-instinct;Kefla;DBS;Super Saiyan 2 — face à Ultra Instinct;15.4;epic;607;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+beerus-dbs-hakai-affrontement-zamasu;Beerus;DBS;Hakai — affrontement Zamasu;17;legendary;895;NON_VERIFIE;SVG provisoire;AUCUNE_ALERTE_HEURISTIQUE_MAIS_SOURCE_A_VALIDER;A FAIRE
+grand-pretre-dbs-pere-des-anges;Grand Prêtre;DBS;Père des anges;20;legendary;1856;NON_VERIFIE;SVG provisoire;NON_COMBATTANT_OU_ECHELLE_INVERIFIABLE;A FAIRE
+jiren-dbs-puissance-liberee-au-bord-du-ring;Jiren;DBS;Puissance libérée — au bord du ring;16.1;epic;720;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+zen-o-dbs-tournoi-du-pouvoir-effacement;Zen'ô;DBS;Tournoi du Pouvoir — effacement;22;legendary;3017;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE
+super-shenron-dbs-dragon-des-super-dragon-balls;Super Shenron;DBS;Dragon des Super Dragon Balls;15;epic;551;NON_VERIFIE;SVG provisoire;NON_COMBATTANT_OU_ECHELLE_INVERIFIABLE;A FAIRE
+goku-dbs-ultra-instinct-sign-premier-eveil;Goku;DBS;Ultra Instinct Sign — premier éveil;15.8;epic;668;NON_VERIFIE;SVG provisoire;VARIANTE_NARRATIVE_PAS_TRANSFORMATION;A FAIRE

@@ -1,0 +1,4 @@
+import {buildRunReceipt as original} from '../v19/run-summary.js';
+export function buildRunReceipt(r){const receipt=original(r);if(!receipt)return receipt;receipt.rulesVersion=r.rulesVersion;receipt.statsMode=r.statsMode||'normalized';const result=r.combat?.result;
+ if(r.endReason==='combat-loss'&&result){const events=result.events,first=events.find(e=>e.type==='ko'&&e.target?.startsWith('A-')),enemy=[...result.stats].filter(s=>s.uid.startsWith('B-')).sort((a,b)=>b.damage-a.damage)[0];receipt.combatFacts={firstKo:first?.units.find(u=>u.uid===first.target)?.name||null,pressure:enemy?{name:result.final.find(u=>u.uid===enemy.uid)?.name,damage:enemy.damage}:null,absorbed:events.filter(e=>e.target?.startsWith('A-')).reduce((s,e)=>s+(e.absorbed||0),0),interruptions:events.filter(e=>e.type==='skip'&&e.actor?.startsWith('A-')).length};}
+ return receipt;}

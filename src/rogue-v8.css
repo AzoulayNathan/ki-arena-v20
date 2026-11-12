@@ -1,0 +1,88 @@
+/* KI ARENA V8 — Grand Voyage Arcade. Presentation ONLY; no card template rules. */
+.is-rogue-page{background:#eaf5f9}
+.rogue-v8{--v8-deep:#0c2943;--v8-soft:#ecf6f7;--v8-amber:#ffae4f;--v8-turq:#63d8c9;max-width:1500px;margin:12px auto 36px}
+.rogue-v8 .v7-hud{border-radius:15px;padding:11px 18px 12px;box-shadow:0 4px 0 #09203c,0 7px 16px #103d6533;grid-template-columns:minmax(200px,1fr) auto;gap:7px 18px}
+.rogue-v8 .v7-hud-crest{height:39px;width:39px;font-size:21px;border-radius:50%}
+.rogue-v8 .v7-hud-brand strong{font-size:19px}.rogue-v8 .v7-hud-stat{padding:5px 10px;min-width:72px}.rogue-v8 .v7-hud-stat strong{font-size:16px}
+.rogue-v8 .rogue-main{display:flex!important;flex-direction:column;gap:0!important;margin:12px 0 0!important}
+.rogue-v8 .v7-game-screen,.rogue-v8 .v8-bottom-zone{width:100%}
+/* Illustrated environment — big and breathable, no old path grid at the surface. */
+.v8-journey{background:#e7f2f6;border:1px solid #a6c9d8;border-radius:23px 23px 9px 9px;overflow:hidden;box-shadow:0 12px 35px #12415c29}
+.v8-world-scene{position:relative;height:clamp(285px,32vw,460px);isolation:isolate;overflow:hidden;background:#83d0ed url('../assets/theme/sky-realm.webp') center 48%/cover no-repeat}
+.v8-world-scene:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#082e46c4 0%,#092e4699 26%,#17375a16 65%,#16243a36),linear-gradient(0deg,#0b41667c,transparent 45%);z-index:0}
+.v8-world-scene:after{content:'';position:absolute;bottom:-16%;left:-10%;width:120%;height:39%;background:linear-gradient(0deg,#092e4ca3,transparent);filter:blur(12px);z-index:0;pointer-events:none}
+.v8-journey.biome-namek .v8-world-scene{filter:none;background-image:url('../assets/theme/sky-realm.webp')}
+.v8-journey.biome-wilderness .v8-world-scene{background-image:url('../assets/theme/sky-realm.webp')}
+.v8-journey.biome-desert .v8-world-scene{background-image:linear-gradient(#e6a56b2b,#ffae5a2b),url('../assets/rogue/desert.svg')}
+.v8-journey.biome-ruins .v8-world-scene{background-image:linear-gradient(#7cace53b,#22427129),url('../assets/rogue/ruins.svg')}
+.v8-journey.biome-sky .v8-world-scene{background-image:linear-gradient(#a6e8fb22,#65d3de22),url('../assets/rogue/sky.svg')}
+.v8-journey.biome-void .v8-world-scene{background-image:linear-gradient(#59397644,#251e5238),url('../assets/rogue/void.svg')}
+.v8-sky-motion{position:absolute;z-index:1;pointer-events:none;inset:-5%;background:radial-gradient(circle at 75% 13%,#fff7c86f,transparent 19%),linear-gradient(95deg,transparent 55%,#ffffff1f 69%,transparent 80%);animation:v8-sky-float 15s ease-in-out infinite alternate;mix-blend-mode:screen}
+.v8-travel-caption{position:absolute;z-index:3;left:clamp(20px,4vw,58px);top:clamp(25px,3.5vw,58px);max-width:min(420px,45%);color:#fff;filter:drop-shadow(0 3px 4px #0c324e)}
+.v8-travel-caption small{display:inline-block;font-size:10px;font-weight:900;letter-spacing:1.5px;color:#ffda95;background:#0c315b96;padding:7px 10px;border:1px solid #ffffff24;border-radius:999px}
+.v8-travel-caption h2{font:900 clamp(30px,4vw,57px)/.98 var(--display);margin:14px 0 12px;color:#fff;text-shadow:0 3px 12px #09294b}
+.v8-travel-caption p{font-size:clamp(11px,1.2vw,14px);line-height:1.5;max-width:34ch;color:#e9f7ff}
+.v8-trail-scene{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;animation:v8-camera-arrive .6s cubic-bezier(.17,.67,.2,1) both}
+.v8-branch-lines{position:absolute;width:100%;height:61%;left:0;bottom:-5%;filter:drop-shadow(0 0 6px #e5fdfeaa)}
+.v8-path{fill:none;stroke:url(#v8-path-light);stroke-width:8;stroke-linecap:round;stroke-dasharray:1100;stroke-dashoffset:1100;animation:v8-draw-route .8s ease-out forwards;animation-delay:var(--path-delay)}
+.v8-path.is-open{stroke:#fff2ba;filter:drop-shadow(0 0 7px #ffc660aa)}
+.v8-path.is-closed{stroke:#bed9de66;stroke-width:5}
+.v8-walker{position:absolute;bottom:13px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:1px;color:#fff8d7;font-size:9px;font-weight:950;text-shadow:0 1px 8px #012}
+.v8-walker-image{width:62px;height:62px;display:block;border:3px solid #fff3ce;border-radius:50%;background:#4ebcda url('../assets/theme/goku.webp') center 21%/cover;box-shadow:0 0 0 8px #4becf554,0 0 25px #87e8eaff}
+.v8-waymark{position:absolute;bottom:56%;left:calc(16.5% + var(--lane)*33.5%);z-index:2;transform:translate(-50%,50%) scale(.6);width:51px;height:51px;border:2px solid #fff1c5;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#1862a2,#143252);color:#fff;font-size:25px;box-shadow:0 4px 0 #14314d,0 0 25px #fffad6a8;opacity:0;animation:v8-pop-node .36s cubic-bezier(.2,1.4,.35,1) both;animation-delay:calc(.65s + var(--v8-index)*.11s)}
+.v8-waymark.closed{filter:grayscale(1);opacity:.35!important;box-shadow:none}
+.v8-select-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px 15px;background:#f2f9fc;color:#163858}
+.v8-select-header>span:first-child{display:grid;gap:4px}.v8-select-header b{font:950 clamp(18px,2vw,24px)/1 var(--display)}.v8-select-header small{font-size:12px;color:#5a778b}
+.v8-step-chip{padding:8px 13px;border-radius:30px;background:#e0edf5;font-size:11px;color:#21486b;font-weight:900;white-space:nowrap}
+.v8-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;padding:0 24px 24px;background:#f2f9fc}
+.v8-choice-grid.v8-single-choice{grid-template-columns:minmax(0,430px);justify-content:center}
+.v8-choice{--c:#3986bb;display:flex;flex-direction:column;padding:0;text-align:left;border-radius:18px;border:2px solid #91beda;background:#fff;min-height:350px;box-shadow:0 6px 0 #b9d0de,0 14px 25px #2149631c;cursor:pointer;overflow:hidden;position:relative;transform:translateY(20px);opacity:0;animation:v8-reveal-card .5s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(1.04s + var(--v8-index)*.1s);transition:border-color .18s,box-shadow .18s,filter .18s}
+.v8-kind-combat{--c:#388cc8}.v8-kind-elite,.v8-kind-boss{--c:#dc6764}.v8-kind-event,.v8-kind-quest{--c:#9972ed}.v8-kind-treasure,.v8-kind-merchant{--c:#d5993a}.v8-kind-rest{--c:#38a88e}.v8-kind-empty{--c:#5d98a7}
+.v8-choice.is-open:hover,.v8-choice.is-open:focus-visible{border-color:var(--c);box-shadow:0 7px 0 var(--c),0 18px 34px #235a7c2b;filter:brightness(1.01);outline:none}
+.v8-choice:active.is-open{box-shadow:0 2px 0 var(--c),0 5px 15px #235a7c2b}
+.v8-choice.is-locked{opacity:.6;filter:grayscale(.8);cursor:not-allowed}
+.v8-choice-art{position:relative;display:block;width:100%;height:clamp(135px,15vw,205px);background-size:cover;background-position:center 42%;overflow:hidden}
+.v8-choice-art:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#0a2b51cc,transparent 60%),linear-gradient(120deg,#12325288,transparent 60%)}
+.v8-kind-treasure .v8-choice-art{background-position:12% 55%;filter:saturate(1.12)}.v8-kind-merchant .v8-choice-art{background-position:70% 38%}.v8-kind-event .v8-choice-art{background-position:55% 50%}
+.v8-choice-emblem{position:absolute;z-index:2;bottom:10px;left:14px;width:53px;height:53px;border-radius:16px;border:2px solid #fff8cf;background:color-mix(in srgb,var(--c) 70%,#123752);display:grid;place-items:center;box-shadow:0 3px 10px #0a2548b5;color:#fff;font-size:30px}
+.v8-choice-body{padding:14px 17px 16px;display:flex;flex-direction:column;gap:5px;color:#17354f;flex:1}
+.v8-choice-kicker{font-size:9px;letter-spacing:1px;font-weight:950;color:var(--c)}.v8-choice-body strong{font:900 26px/1.05 var(--display);letter-spacing:.3px}.v8-choice-hook{font-size:13px;font-weight:800;color:#285c74}.v8-choice-desc{font-size:11px;line-height:1.4;color:#657b89;min-height:31px}.v8-choice-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px;border-top:1px solid #dce9f1;font-size:10px;color:#526a7c;font-weight:850}.v8-choice-footer>span{display:inline-block;color:var(--c)}.v8-choice-footer b{font-size:10px;color:#2a465c;text-align:right}
+.v8-choice-action{display:block;padding:13px;text-align:center;background:#174665;color:#f7fcff;font-size:11px;font-weight:950;letter-spacing:.5px;transition:background .18s}.v8-choice.is-open:hover .v8-choice-action,.v8-choice.is-open:focus-visible .v8-choice-action{background:var(--c)}
+.v8-choice.is-locked .v8-choice-action{background:#91a4b1;color:#fff}
+.v8-fullmap{margin:0;background:#e4eff6;border-top:1px solid #c1d6e5}.v8-fullmap>summary{list-style:none;cursor:pointer;text-align:center;padding:14px;font-size:12px;font-weight:900;color:#286081}.v8-fullmap>summary::-webkit-details-marker{display:none}.v8-fullmap>summary span{margin-left:8px}.v8-fullmap[open]>summary{background:#d5eaf4}
+.v8-fullmap .ki-world{margin:10px;border-radius:15px;box-shadow:none}.v8-fullmap .ki-world-landscape{display:none}.v8-fullmap .ki-world-head{padding:15px 18px;min-height:0}.v8-fullmap .ki-world-head h2{font-size:22px}.v8-fullmap .ki-mapboard{max-height:670px;overflow:auto;min-height:0!important}
+/* At the bottom: a single compact drawer, with full team and inventory on demand. */
+.rogue-v8 .v8-bottom-zone{position:relative;margin-top:0;z-index:6}
+.v8-base-drawer{border:1px solid #466f8e;border-top:3px solid #62c9cf;border-radius:0 0 20px 20px;background:#0e304f;color:#fff;box-shadow:0 7px 20px #092e4725;overflow:hidden}
+.v8-base-drawer>summary{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;list-style:none;cursor:pointer;min-height:78px;padding:17px 23px 12px;background:linear-gradient(105deg,#0c2b48,#1c4a67);outline-offset:-4px}
+.v8-base-drawer>summary::-webkit-details-marker{display:none}.v8-drawer-grip{position:absolute;top:7px;left:calc(50% - 25px);height:5px;width:50px;border-radius:99px;background:#ffffff7d}
+.v8-drawer-copy{display:grid;gap:4px}.v8-drawer-copy b{font-size:12px;letter-spacing:.6px}.v8-drawer-copy small{color:#a8d2e2;font-size:10px}.v8-drawer-faces{display:flex;gap:7px;margin-left:auto}
+.v8-drawer-face{position:relative;display:block;width:48px;height:48px;overflow:hidden;border:2px solid #8ad9dc;border-radius:11px;background:#245c7c}.v8-drawer-face .art-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.v8-drawer-chevron{font-size:26px;font-weight:900;color:#ffe0a2;transform:rotate(180deg);transition:transform .18s}.v8-base-drawer[open] .v8-drawer-chevron{transform:rotate(0deg)}
+.v8-drawer-content{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:12px;padding:17px;background:#e9f3f8;color:#102b46}
+.v8-drawer-team{grid-row:span 2}.rogue-v8 .v8-drawer-team .v7-team-preview{height:100%;box-shadow:none;border-radius:15px}.rogue-v8 .v8-drawer-team .v7-mini-team{grid-template-columns:repeat(5,minmax(0,1fr));display:grid}.rogue-v8 .v8-drawer-team .v7-mini-fighter{display:flex;flex-direction:column;align-items:stretch}.rogue-v8 .v8-drawer-team .v7-mini-art{width:100%;height:97px}.rogue-v8 .v8-drawer-team .v7-mini-data{width:100%}
+.rogue-v8 .v5-team-drawer,.rogue-v8 .inventory-panel{align-self:start}.rogue-v8 .inventory-panel[open] .inv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rogue-v8 .v7-retreat{grid-column:1/-1;justify-self:end;min-width:220px}
+/* Extra motion is meaningful and can be switched off by OS preference. */
+@keyframes v8-camera-arrive{from{transform:scale(1.045) translateY(8px);opacity:.75}to{transform:scale(1) translateY(0);opacity:1}}
+@keyframes v8-sky-float{to{transform:translateX(4%) scale(1.02)}}
+@keyframes v8-draw-route{to{stroke-dashoffset:0}}
+@keyframes v8-pop-node{to{opacity:1;transform:translate(-50%,50%) scale(1)}}
+@keyframes v8-reveal-card{to{transform:translateY(0);opacity:1}}
+@media(max-width:900px){.v8-travel-caption{max-width:58%}.v8-world-scene{height:310px}.v8-choice-grid{gap:10px;padding:0 13px 15px}.v8-select-header{padding:15px 14px}.v8-choice-art{height:125px}.v8-choice-body{padding:12px}.v8-choice-body strong{font-size:22px}.v8-choice-footer{flex-wrap:wrap}.v8-drawer-content{grid-template-columns:1fr}.v8-drawer-team{grid-row:auto}.rogue-v8 .v7-retreat{grid-column:1}}
+@media(max-width:560px){.rogue-v8{margin:7px auto 24px}.v8-world-scene{height:310px;background-position:47% center}.v8-travel-caption{left:17px;top:16px;max-width:80%}.v8-travel-caption h2{font-size:29px;margin:10px 0 7px}.v8-travel-caption p{font-size:11px;max-width:31ch}.v8-travel-caption small{font-size:8px}.v8-walker{bottom:16px}.v8-walker-image{width:49px;height:49px}.v8-waymark{width:38px;height:38px;font-size:20px;bottom:49%}.v8-branch-lines{height:49%;bottom:0}.v8-select-header{align-items:flex-start}.v8-select-header b{font-size:19px}.v8-select-header small{font-size:10px}.v8-step-chip{font-size:9px;padding:6px 8px}.v8-choice-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:0 8px 12px}.v8-choice-grid.v8-single-choice{grid-template-columns:minmax(0,250px)}.v8-choice{min-height:247px;border-width:1px;border-radius:10px;box-shadow:0 3px 0 #b9d0de}.v8-choice-art{height:91px}.v8-choice-emblem{width:33px;height:33px;border-radius:10px;font-size:19px;left:6px;bottom:6px}.v8-choice-body{padding:10px 7px;gap:5px}.v8-choice-body strong{font-size:15px;overflow-wrap:anywhere}.v8-choice-kicker{font-size:7px}.v8-choice-hook{font-size:10px;line-height:1.15}.v8-choice-desc{display:none}.v8-choice-footer{font-size:8px;padding-top:7px;margin-top:auto}.v8-choice-footer b{font-size:8px}.v8-choice-action{padding:10px 4px;font-size:8px}.v8-base-drawer>summary{padding:18px 12px 10px;min-height:78px;gap:5px}.v8-drawer-copy b{font-size:9px}.v8-drawer-copy small{font-size:8px}.v8-drawer-faces{gap:3px}.v8-drawer-face{width:29px;height:34px;border-width:1px;border-radius:5px}.v8-drawer-chevron{font-size:19px}.v8-drawer-content{padding:10px;gap:9px}.rogue-v8 .v8-drawer-team .v7-mini-art{height:53px}.rogue-v8 .v8-drawer-team .v7-mini-data b{font-size:8px}.rogue-v8 .v8-drawer-team .v7-hpbar{height:4px}}
+@media(prefers-reduced-motion:reduce){.rogue-v8 .v8-journey *{animation:none!important;transition:none!important}.rogue-v8 .v8-choice{opacity:1;transform:none}.rogue-v8 .v8-waymark{opacity:1;transform:translate(-50%,50%) scale(1)}.rogue-v8 .v8-path{stroke-dashoffset:0}}
+/* V8 Mobile QA polish: the complete resource HUD, large swipeable encounter choices. */
+@media(max-width:560px){
+ .rogue-v8 .v7-hud{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto 6px!important;gap:9px!important;overflow:visible}
+ .rogue-v8 .v7-hud-right{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;width:100%}
+ .rogue-v8 .v7-hud-stat{min-width:0;grid-template-columns:16px minmax(0,1fr);gap:2px;padding:5px 4px}
+ .rogue-v8 .v7-hud-stat strong{font-size:14px}.rogue-v8 .v7-hud-stat i{font-size:15px}.rogue-v8 .v7-hud-stat>small{font-size:7px}
+ .rogue-v8 .v7-hud-path{grid-column:1;min-width:0}
+ .v8-choice-grid,.v8-choice-grid.v8-single-choice{display:grid;grid-auto-columns:minmax(240px,78%);grid-template-columns:none;grid-auto-flow:column;gap:13px;padding:0 16px 22px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scroll-padding-inline:16px}
+ .v8-choice-grid.v8-single-choice{grid-auto-columns:minmax(240px,85%)}
+ .v8-choice{min-height:340px;border-radius:15px;scroll-snap-align:center;scroll-snap-stop:always}
+ .v8-choice-art{height:155px}.v8-choice-emblem{width:49px;height:49px;font-size:27px;left:12px;bottom:10px;border-radius:13px}
+ .v8-choice-body{padding:13px 16px;gap:5px}.v8-choice-kicker{font-size:9px}.v8-choice-body strong{font-size:25px}.v8-choice-hook{font-size:13px}.v8-choice-desc{display:block;font-size:11px}
+ .v8-choice-footer{font-size:10px;margin-top:auto}.v8-choice-footer b{font-size:10px}.v8-choice-action{font-size:10px;padding:14px}
+ .v8-select-header small:after{content:' · Glisser pour voir les cartes →';color:#276e91;font-weight:900}
+}

@@ -1,0 +1,6 @@
+import {readFileSync,writeFileSync} from 'node:fs';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
+const root=new URL('../',import.meta.url),hash=b=>createHash('sha256').update(b).digest('hex'),before=JSON.parse(readFileSync(new URL('qa/pre-v9-sha256.json',root)));
+const results=[];for(const [path,expected] of Object.entries(before)){if(path==='src/app.js')continue;const actual=hash(readFileSync(new URL(path,root)));assert.equal(actual,expected,path+' a changé');results.push({path,sha256:actual});}
+// app.js is the integration point, so protect exact collectible functions separately.
+const old=readFileSync(new URL('qa/pre-v9-card-template.txt',root),'utf8'),now=readFileSync(new URL('src/app.js',root),'utf8');const extract=s=>s.replace(/\r\n/g,'\n').slice(s.replace(/\r\n/g,'\n').indexOf('function card(c,'),s.replace(/\r\n/g,'\n').indexOf('\nconst modes='));assert.equal(hash(extract(now)),hash(old.replace(/\r\n/g,'\n')),'Template carte modifié');
+writeFileSync(new URL('qa/protected-verification.json',root),JSON.stringify({files:results.length,cardTemplateSHA256:hash(old),results},null,2));console.log(results.length+' fichiers historiques et template carte inchangés.');

@@ -1,0 +1,601 @@
+﻿id;nom;serie;version;rarete;rang_puissance_narratif;attaque;pv;vitesse;cout_ki;statut_verification
+bulma-db-aventuriere;Bulma;DB;Aventurière;common;1.125;19;172;34;30;Estimation éditoriale non officielle
+oolong-db-metamorphe;Oolong;DB;Métamorphe;common;1.25;19;172;36;35;Estimation éditoriale non officielle
+plume-db-metamorphe;Plume;DB;Métamorphe;common;1.25;19;172;36;35;Estimation éditoriale non officielle
+pilaf-db-empereur-autoproclame;Pilaf;DB;Empereur autoproclamé;common;1;18;169;32;30;Estimation éditoriale non officielle
+shu-db-ninja-du-pilaf-gang;Shu;DB;Ninja du Pilaf Gang;common;1.5;20;175;53;35;Estimation éditoriale non officielle
+mai-db-pilaf-gang;Mai;DB;Pilaf Gang;common;1.4;20;175;38;35;Estimation éditoriale non officielle
+tortue-de-mer-db-compagnon-de-roshi;Tortue de mer;DB;Compagnon de Roshi;common;1.1;19;178;26;30;Estimation éditoriale non officielle
+chichi-db-enfant-combattante;Chichi;DB;Enfant combattante;common;2.1;24;184;47;45;Estimation éditoriale non officielle
+bora-db-protecteur-de-karin;Bora;DB;Protecteur de Karin;common;2.5;26;198;46;50;Estimation éditoriale non officielle
+upa-db-jeune-allie;Upa;DB;Jeune allié;common;1;18;169;32;30;Estimation éditoriale non officielle
+suno-db-village-jingle;Suno;DB;Village Jingle;common;1;18;169;32;30;Estimation éditoriale non officielle
+nam-db-tournoi-mondial;Nam;DB;Tournoi mondial;common;3.3;32;205;64;55;Estimation éditoriale non officielle
+ranfan-db-tournoi-mondial;Ranfan;DB;Tournoi mondial;common;1.6;22;178;40;40;Estimation éditoriale non officielle
+bacterien-db-tournoi-mondial;Bactérien;DB;Tournoi mondial;common;1.6;22;178;40;40;Estimation éditoriale non officielle
+giran-db-tournoi-mondial;Giran;DB;Tournoi mondial;common;2.4;25;194;45;45;Estimation éditoriale non officielle
+roi-chappa-db-artiste-martial;Roi Chappa;DB;Artiste martial;common;2.8;29;196;57;50;Estimation éditoriale non officielle
+colonel-silver-db-ruban-rouge;Colonel Silver;DB;Ruban Rouge;common;1.8;23;181;43;40;Estimation éditoriale non officielle
+general-white-db-ruban-rouge;Général White;DB;Ruban Rouge;common;2;24;191;39;40;Estimation éditoriale non officielle
+ninja-murasaki-db-ruban-rouge;Ninja Murasaki;DB;Ruban Rouge;common;2.3;25;187;50;45;Estimation éditoriale non officielle
+commandant-red-db-ruban-rouge;Commandant Red;DB;Ruban Rouge;common;1.1;19;172;33;30;Estimation éditoriale non officielle
+conseiller-black-db-ruban-rouge;Conseiller Black;DB;Ruban Rouge;common;2.3;25;187;50;45;Estimation éditoriale non officielle
+docteur-flappe-db-scientifique;Docteur Flappe;DB;Scientifique;common;1.3;19;172;36;35;Estimation éditoriale non officielle
+lance-db-forme-gentille;Lance;DB;Forme gentille;common;1.3;19;172;36;35;Estimation éditoriale non officielle
+lance-db-forme-agressive;Lance;DB;Forme agressive;common;2;24;184;46;40;Estimation éditoriale non officielle
+roi-gyumao-db-guerrier-du-mont-fry-pan;Roi Gyumao;DB;Guerrier du mont Fry-Pan;common;2.1;24;191;40;45;Estimation éditoriale non officielle
+grand-pere-gohan-db-maitre-martial;Grand-père Gohan;DB;Maître martial;common;2.9;29;196;59;50;Estimation éditoriale non officielle
+yajirobe-dbz-guerrier-solitaire;Yajirobé;DBZ;Guerrier solitaire;common;3.3;32;205;64;55;Estimation éditoriale non officielle
+mister-satan-dbz-champion-du-monde;Mister Satan;DBZ;Champion du monde;common;1.8;23;181;43;40;Estimation éditoriale non officielle
+spopovitch-dbz-serviteur-de-babidi;Spopovitch;DBZ;Serviteur de Babidi;common;3.3;32;205;64;55;Estimation éditoriale non officielle
+yamu-dbz-serviteur-de-babidi;Yamu;DBZ;Serviteur de Babidi;common;3;30;199;60;55;Estimation éditoriale non officielle
+bubbles-dbz-planete-de-kaio;Bubbles;DBZ;Planète de Kaio;common;1.6666666666666667;22;178;55;40;Estimation éditoriale non officielle
+gregory-dbz-planete-de-kaio;Gregory;DBZ;Planète de Kaio;common;2;24;184;60;40;Estimation éditoriale non officielle
+monaka-dbs-livreur-intergalactique;Monaka;DBS;Livreur intergalactique;common;2.1379310344827585;24;184;48;45;Estimation éditoriale non officielle
+chichi-dbz-vie-de-famille;Chichi;DBZ;Vie de famille;common;2.7;28;193;56;50;Estimation éditoriale non officielle
+marron-dbz-fille-de-krilin;Marron;DBZ;Fille de Krilin;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+erasa-dbz-orange-star;Erasa;DBZ;Orange Star;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+sharpner-dbz-orange-star;Sharpner;DBZ;Orange Star;common;1.8;23;181;43;40;Estimation éditoriale non officielle
+dr-brief-dbz-capsule-corporation;Dr Brief;DBZ;Capsule Corporation;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+panchy-dbz-capsule-corporation;Panchy;DBZ;Capsule Corporation;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+roi-furry-db-roi-de-la-terre;Roi Furry;DB;Roi de la Terre;common;1.1;19;172;33;30;Estimation éditoriale non officielle
+colonel-violet-db-ruban-rouge;Colonel Violet;DB;Ruban Rouge;common;1.8;23;181;43;40;Estimation éditoriale non officielle
+colonel-yellow-db-ruban-rouge;Colonel Yellow;DB;Ruban Rouge;common;1.8;23;181;43;40;Estimation éditoriale non officielle
+sergent-metallic-db-muscle-tower;Sergent Metallic;DB;Muscle Tower;common;2.8;29;196;57;50;Estimation éditoriale non officielle
+pamput-db-22e-tournoi;Pamput;DB;22e Tournoi;common;2.1;24;184;47;45;Estimation éditoriale non officielle
+loup-garou-db-22e-tournoi;Loup-garou;DB;22e Tournoi;common;1.9;23;181;45;40;Estimation éditoriale non officielle
+piano-db-clan-du-roi-demon;Piano;DB;Clan du Roi Démon;common;1.8;23;181;43;40;Estimation éditoriale non officielle
+idasa-dbz-tournoi-junior;Idasa;DBZ;Tournoi junior;common;1.7;22;178;42;40;Estimation éditoriale non officielle
+ikose-dbz-tournoi-junior;Ikose;DBZ;Tournoi junior;common;1.7;22;178;42;40;Estimation éditoriale non officielle
+bee-dbz-compagnon-de-boo;Bee;DBZ;Compagnon de Boo;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+bibidi-dbz-sorcier-originel;Bibidi;DBZ;Sorcier originel;common;2.3;25;187;50;45;Estimation éditoriale non officielle
+jewel-dbz-25e-tournoi;Jewel;DBZ;25e Tournoi;common;2.8;29;196;57;50;Estimation éditoriale non officielle
+killa-dbz-25e-tournoi;Killa;DBZ;25e Tournoi;common;3;30;199;60;55;Estimation éditoriale non officielle
+nink-dbs-univers-4;Nink;DBS;Univers 4;common;4;38;231;67;65;Estimation éditoriale non officielle
+napapa-dbs-univers-10;Napapa;DBS;Univers 10;common;4.2;40;234;70;65;Estimation éditoriale non officielle
+jirasen-dbs-univers-10;Jirasen;DBS;Univers 10;common;3;30;199;60;55;Estimation éditoriale non officielle
+rylibeu-dbs-univers-10;Rylibeu;DBS;Univers 10;common;3.3;32;205;78;55;Estimation éditoriale non officielle
+shantza-dbs-univers-4;Shantza;DBS;Univers 4;common;3.7;35;211;70;60;Estimation éditoriale non officielle
+dercori-dbs-univers-4;Dercori;DBS;Univers 4;common;3.3;32;205;64;55;Estimation éditoriale non officielle
+rozie-dbs-univers-2;Rozie;DBS;Univers 2;common;4.4;42;228;80;70;Estimation éditoriale non officielle
+kakunsa-dbs-univers-2;Kakunsa;DBS;Univers 2;common;4.7;46;237;98;70;Estimation éditoriale non officielle
+comfrey-dbs-univers-9;Comfrey;DBS;Univers 9;common;3.9;37;216;73;65;Estimation éditoriale non officielle
+catopesra-dbs-univers-3;Catopesra;DBS;Univers 3;common;4.6;44;234;82;70;Estimation éditoriale non officielle
+ganos-dbs-univers-4;Ganos;DBS;Univers 4;common;4.4;42;228;94;70;Estimation éditoriale non officielle
+zuno-dbs-sage-intergalactique;Zuno;DBS;Sage intergalactique;common;2.3;25;187;50;45;Estimation éditoriale non officielle
+zarbuto-dbs-univers-2;Zarbuto;DBS;Univers 2;common;3.7;35;211;70;60;Estimation éditoriale non officielle
+zirloin-dbs-univers-2;Zirloin;DBS;Univers 2;common;3.7;35;211;70;60;Estimation éditoriale non officielle
+akkuman-db-combattant-du-palais-d-enma;Akkuman;DB;Combattant du palais d'Enma;common;2;24;184;46;40;Estimation éditoriale non officielle
+draculaman-db-guerrier-de-baba;Draculaman;DB;Guerrier de Baba;common;1.8;23;181;57;40;Estimation éditoriale non officielle
+suke-san-db-homme-invisible-de-baba;Suke-san;DB;Homme invisible de Baba;common;1.8;23;181;43;40;Estimation éditoriale non officielle
+mummy-db-combattant-momie;Mummy;DB;Combattant momie;common;2.3;25;194;43;45;Estimation éditoriale non officielle
+grand-pere-gohan-db-masque-chez-baba;Grand-père Gohan;DB;Masqué chez Baba;common;2.8;29;196;57;50;Estimation éditoriale non officielle
+baba-la-voyante-db-tour-des-predictions;Baba la voyante;DB;Tour des prédictions;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+roi-enma-dbz-bureau-des-ames;Roi Enma;DBZ;Bureau des âmes;common;2.7;28;201;49;50;Estimation éditoriale non officielle
+shenron-db-dragon-des-sept-boules;Shenron;DB;Dragon des sept boules;common;2.4;25;187;52;45;Estimation éditoriale non officielle
+tsuru-sennin-db-maitre-de-la-grue;Tsuru Sennin;DB;Maître de la grue;common;1.9;23;181;45;40;Estimation éditoriale non officielle
+pilaf-db-pilote-de-robot;Pilaf;DB;Pilote de robot;common;2;24;184;46;40;Estimation éditoriale non officielle
+shu-db-combinaison-robot;Shu;DB;Combinaison robot;common;1.9;23;181;45;40;Estimation éditoriale non officielle
+mai-db-arsenal-de-pilaf;Mai;DB;Arsenal de Pilaf;common;2;24;184;46;40;Estimation éditoriale non officielle
+roi-piccolo-db-vieillard-affaibli;Roi Piccolo;DB;Vieillard affaibli;common;3.4;32;205;66;55;Estimation éditoriale non officielle
+tambourine-db-chasseur-des-combattants;Tambourine;DB;Chasseur des combattants;common;3.4;32;205;66;55;Estimation éditoriale non officielle
+cymbal-db-collecteur-des-dragon-balls;Cymbal;DB;Collecteur des Dragon Balls;common;3;30;199;60;55;Estimation éditoriale non officielle
+tambourine-db-premiere-apparition;Tambourine;DB;Première apparition;common;3.1;30;199;75;55;Estimation éditoriale non officielle
+mutaito-db-maitre-du-mafuba;Mutaito;DB;Maître du Mafuba;common;3.8;36;214;71;60;Estimation éditoriale non officielle
+pan-dbz-bebe;Pan;DBZ;Bébé;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+bra-dbz-enfant-de-vegeta;Bra;DBZ;Enfant de Vegeta;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+kibito-dbz-observateur-du-tournoi;Kibito;DBZ;Observateur du tournoi;common;4.3;41;225;78;65;Estimation éditoriale non officielle
+dende-dbz-gardien-de-la-terre;Dendé;DBZ;Gardien de la Terre;common;4.5;43;231;81;70;Estimation éditoriale non officielle
+mister-satan-dbz-sauveur-de-la-terre;Mister Satan;DBZ;Sauveur de la Terre;common;2.5;26;190;53;50;Estimation éditoriale non officielle
+babidi-dbz-lecture-du-combat;Babidi;DBZ;Lecture du combat;common;4.2;40;222;77;65;Estimation éditoriale non officielle
+goten-dbz-avant-l-entrainement;Goten;DBZ;Avant l'entraînement;common;4;38;219;74;65;Estimation éditoriale non officielle
+trunks-dbz-enfant-avant-tournoi;Trunks;DBZ;Enfant avant tournoi;common;3.8;36;214;71;60;Estimation éditoriale non officielle
+kaioshin-de-l-est-dbz-observateur-du-tournoi;Kaioshin de l'Est;DBZ;Observateur du tournoi;common;3.8;36;214;71;60;Estimation éditoriale non officielle
+vegeta-dbz-vie-de-famille;Vegeta;DBZ;Vie de famille;uncommon;5.7;58;267;98;85;Estimation éditoriale non officielle
+goku-dbz-vie-quotidienne;Goku;DBZ;Vie quotidienne;rare;9.1;131;447;145;120;Estimation éditoriale non officielle
+krilin-dbz-police-et-famille;Krilin;DBZ;Police et famille;uncommon;6;62;278;102;85;Estimation éditoriale non officielle
+c-18-dbz-vie-de-famille;C-18;DBZ;Vie de famille;common;4.5;43;231;81;70;Estimation éditoriale non officielle
+bulma-dbs-laboratoire-capsule-corp;Bulma;DBS;Laboratoire Capsule Corp;common;2.4;25;187;52;45;Estimation éditoriale non officielle
+beerus-dbs-en-visite-sur-terre;Beerus;DBS;En visite sur Terre;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+whis-dbs-guide-celeste;Whis;DBS;Guide céleste;legendary;19;1456;3703;284;230;Estimation éditoriale non officielle
+angela-dbz-lyceenne-de-satan-city;Angela;DBZ;Lycéenne de Satan City;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+maron-dbz-ancienne-compagne-de-krilin;Maron;DBZ;Ancienne compagne de Krilin;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+haru-dbs-enfant-de-la-resistance-du-futur;Haru;DBS;Enfant de la résistance du futur;common;2.7;28;193;56;50;Estimation éditoriale non officielle
+maki-dbs-enfant-de-la-resistance-du-futur;Maki;DBS;Enfant de la résistance du futur;common;2.7;28;193;56;50;Estimation éditoriale non officielle
+cargo-dbz-enfant-de-namek;Cargo;DBZ;Enfant de Namek;common;1.8;23;181;43;40;Estimation éditoriale non officielle
+lapin-carotte-db-chef-du-gang-des-lapins;Lapin Carotte;DB;Chef du gang des lapins;common;1.5;20;175;39;35;Estimation éditoriale non officielle
+nok-dbz-28e-tenkaichi-budokai;Nok;DBZ;28e Tenkaichi Budokai;common;1.8;23;181;43;40;Estimation éditoriale non officielle
+konkichi-db-voyageur-renard;Konkichi;DB;Voyageur renard;common;1.6;22;178;40;40;Estimation éditoriale non officielle
+capitaine-chicken-dbz-28e-tournoi-mondial;Capitaine Chicken;DBZ;28e tournoi mondial;common;2;24;184;46;40;Estimation éditoriale non officielle
+barry-kahn-dbs-acteur-de-television;Barry Kahn;DBS;Acteur de télévision;common;3;30;199;60;55;Estimation éditoriale non officielle
+tights-dbs-grande-s-ur-de-bulma;Tights;DBS;Grande sœur de Bulma;common;3;30;199;60;55;Estimation éditoriale non officielle
+oni-guide-dbz-guide-du-bureau-d-enma;Oni Guide;DBZ;Guide du Bureau d'Enma;common;2.3;25;187;50;45;Estimation éditoriale non officielle
+inoshikacho-db-chimere-du-tournoi;InoShikaCho;DB;Chimère du tournoi;common;2;24;191;39;40;Estimation éditoriale non officielle
+mez-dbz-ogre-de-l-autre-monde;Mez;DBZ;Ogre de l'Autre Monde;common;2.5;26;190;67;50;Estimation éditoriale non officielle
+princesse-serpent-dbz-gardienne-de-la-route-du-serpent;Princesse Serpent;DBZ;Gardienne de la route du Serpent;common;2.7;28;193;56;50;Estimation éditoriale non officielle
+puntar-dbz-25e-tournoi-mondial;Puntar;DBZ;25e tournoi mondial;common;2.8;29;204;50;50;Estimation éditoriale non officielle
+goz-dbz-ogre-de-l-autre-monde;Goz;DBZ;Ogre de l'Autre Monde;common;3;30;208;53;55;Estimation éditoriale non officielle
+oregano-dbs-guerrier-univers-9;Oregano;DBS;Guerrier univers 9;common;3.9;37;216;73;65;Estimation éditoriale non officielle
+roselle-dbs-guerrier-volant-univers-9;Roselle;DBS;Guerrier volant univers 9;common;3.9;37;216;87;65;Estimation éditoriale non officielle
+roi-galactique-dbs-roi-de-la-patrouille-galactique;Roi galactique;DBS;Roi de la Patrouille galactique;common;4;38;219;74;65;Estimation éditoriale non officielle
+hasky-db-chasseuse-de-primes;Hasky;DB;Chasseuse de primes;common;2.5;26;190;53;50;Estimation éditoriale non officielle
+sorrel-dbs-rapide-combattante;Sorrel;DBS;Rapide combattante;common;4;38;219;88;65;Estimation éditoriale non officielle
+pintar-dbz-25e-tenkaichi-budokai;Pintar;DBZ;25e Tenkaichi Budokai;common;3.3;32;214;57;55;Estimation éditoriale non officielle
+buyon-db-gardien-de-muscle-tower;Buyon;DB;Gardien de Muscle Tower;common;2.6;28;201;47;50;Estimation éditoriale non officielle
+chappil-dbs-armure-du-dragon;Chappil;DBS;Armure du dragon;common;4.4;42;241;73;70;Estimation éditoriale non officielle
+bulma-du-futur-dbs-scientifique-de-la-resistance;Bulma du futur;DBS;Scientifique de la résistance;common;2.4;25;187;52;45;Estimation éditoriale non officielle
+potage-dbs-gardien-de-l-eau-miraculeuse;Potage;DBS;Gardien de l'eau miraculeuse;common;4.6;44;234;82;70;Estimation éditoriale non officielle
+yajirobe-du-futur-dbs-resistance-du-futur;Yajirobé du futur;DBS;Résistance du futur;common;4.6;44;234;82;70;Estimation éditoriale non officielle
+dyrasem-dbs-danseur-combattant;Dyrasem;DBS;Danseur combattant;common;4.6;44;234;96;70;Estimation éditoriale non officielle
+hop-dbs-lame-feline;Hop;DBS;Lame féline;common;4.6;44;234;82;70;Estimation éditoriale non officielle
+hyssop-dbs-glace-univers-9;Hyssop;DBS;Glace univers 9;common;4.6;44;234;82;70;Estimation éditoriale non officielle
+rabanra-dbs-univers-2;Rabanra;DBS;Univers 2;common;4.6;44;234;82;70;Estimation éditoriale non officielle
+zircor-dbs-yogi-univers-10;Zircor;DBS;Yogi univers 10;common;4.6;44;247;75;70;Estimation éditoriale non officielle
+aragne-dbs-guerrier-de-l-univers-11;Aragné;DBS;Guerrier de l'univers 11;common;4.7;46;237;84;70;Estimation éditoriale non officielle
+tsuno-dbz-ancien-du-village-namek;Tsuno;DBZ;Ancien du village namek;common;2.4;25;194;45;45;Estimation éditoriale non officielle
+bikal-dbs-guerriere-ailee;Bikal;DBS;Guerrière ailée;common;4.7;46;237;98;70;Estimation éditoriale non officielle
+methiop-dbs-boxeur-univers-10;Methiop;DBS;Boxeur univers 10;common;4.7;46;237;84;70;Estimation éditoriale non officielle
+yurin-dbs-eleve-renegate-de-la-grue;Yurin;DBS;Élève renégate de la grue;common;4.9;47;240;87;75;Estimation éditoriale non officielle
+moori-dbz-ancien-namek;Moori;DBZ;Ancien namek;common;4;38;219;74;65;Estimation éditoriale non officielle
+ginger-dbz-serviteur-garlic-jr;Ginger;DBZ;Serviteur Garlic Jr.;common;4;38;219;74;65;Estimation éditoriale non officielle
+nikky-dbz-serviteur-garlic-jr;Nikky;DBZ;Serviteur Garlic Jr.;common;4;38;219;88;65;Estimation éditoriale non officielle
+yamcha-db-desert-allie-d-oolong;Yamcha;DB;Désert — allié d'Oolong;common;3.1;30;199;61;55;Estimation éditoriale non officielle
+brianne-de-chateau-dbs-avant-metamorphose;Brianne de Château;DBS;Avant métamorphose;common;4.9;47;240;87;75;Estimation éditoriale non officielle
+dium-dbs-guerrier-aile-univers-10;Dium;DBS;Guerrier ailé univers 10;common;4.9;47;240;101;75;Estimation éditoriale non officielle
+murisam-dbs-combattant-univers-10;Murisam;DBS;Combattant univers 10;common;4.9;47;240;87;75;Estimation éditoriale non officielle
+xiangca-dbs-illusionniste-de-l-univers-4;Xiangca;DBS;Illusionniste de l'univers 4;common;4.9;47;240;87;75;Estimation éditoriale non officielle
+rubalt-dbs-agent-univers-10;Rubalt;DBS;Agent univers 10;common;5.1;49;246;89;75;Estimation éditoriale non officielle
+sanka-coo-dbs-avant-kakunsa;Sanka Coo;DBS;Avant Kakunsa;uncommon;5.1;49;246;103;75;Estimation éditoriale non officielle
+shosa-dbs-guerrier-furtif;Shosa;DBS;Guerrier furtif;uncommon;5.1;49;246;89;75;Estimation éditoriale non officielle
+zarbuto-dbs-combat-de-l-amour;Zarbuto;DBS;Combat de l'amour;uncommon;5.1;49;246;89;75;Estimation éditoriale non officielle
+salt-dbz-gang-du-makyo;Salt;DBZ;Gang du Makyo;common;4.3;41;225;78;65;Estimation éditoriale non officielle
+gohan-dbz-enfant-fuite-dans-les-montagnes;Gohan;DBZ;Enfant — fuite dans les montagnes;common;4.5;43;231;81;70;Estimation éditoriale non officielle
+karin-dbz-haricots-senzu;Karin;DBZ;Haricots Senzu;common;4.3;41;225;78;65;Estimation éditoriale non officielle
+caway-dbs-combattante-de-l-univers-4;Caway;DBS;Combattante de l'univers 4;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+paparoni-dbs-docteur-des-machines;Paparoni;DBS;Docteur des machines;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+prum-dbs-tireur-invisible;Prum;DBS;Tireur invisible;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+su-roas-dbs-avant-rozie;Sû Roas;DBS;Avant Rozie;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+mustard-dbz-gang-du-makyo;Mustard;DBZ;Gang du Makyo;common;4.5;43;231;95;70;Estimation éditoriale non officielle
+tapikar-dbz-tournoi-de-l-autre-monde;Tapikar;DBZ;Tournoi de l'Autre Monde;common;4.5;43;231;95;70;Estimation éditoriale non officielle
+annin-db-gardienne-du-fourneau-magique;Annin;DB;Gardienne du fourneau magique;common;3.5;34;208;67;60;Estimation éditoriale non officielle
+harmira-dbs-tireur-de-l-univers-2;Harmira;DBS;Tireur de l'univers 2;uncommon;5.4;54;258;94;80;Estimation éditoriale non officielle
+za-priccio-dbs-univers-3;Za Priccio;DBS;Univers 3;uncommon;5.4;54;258;94;80;Estimation éditoriale non officielle
+caterpy-dbz-tournoi-de-l-autre-monde;Caterpy;DBZ;Tournoi de l'Autre Monde;common;4.7;46;237;84;70;Estimation éditoriale non officielle
+arqua-dbz-tournoi-de-l-autre-monde;Arqua;DBZ;Tournoi de l'Autre Monde;common;4.7;46;237;84;70;Estimation éditoriale non officielle
+vinegar-dbz-gang-du-makyo;Vinegar;DBZ;Gang du Makyo;common;4.7;46;237;84;70;Estimation éditoriale non officielle
+grand-doyen-guru-dbz-ancien-de-namek;Grand Doyen Guru;DBZ;Ancien de Namek;common;4.8;47;240;85;75;Estimation éditoriale non officielle
+kiwi-dbz-soldat-de-freezer-namek;Kiwi;DBZ;Soldat de Freezer — Namek;common;4.8;47;240;85;75;Estimation éditoriale non officielle
+dr-rota-dbs-guerrier-magique;Dr Rota;DBS;Guerrier magique;uncommon;5.8;59;270;99;85;Estimation éditoriale non officielle
+kettle-dbs-pride-troopers;Kettle;DBS;Pride Troopers;uncommon;5.8;59;270;99;85;Estimation éditoriale non officielle
+majora-dbs-guerrier-aveugle;Majora;DBS;Guerrier aveugle;uncommon;5.8;59;270;99;85;Estimation éditoriale non officielle
+murichim-dbs-chef-des-guerriers-univers-10;Murichim;DBS;Chef des guerriers univers 10;uncommon;5.8;59;270;99;85;Estimation éditoriale non officielle
+narirama-dbs-robot-multi-bras;Narirama;DBS;Robot multi-bras;uncommon;5.8;59;270;99;85;Estimation éditoriale non officielle
+tupper-dbs-pride-troopers;Tupper;DBS;Pride Troopers;uncommon;5.8;59;287;92;85;Estimation éditoriale non officielle
+zirloin-dbs-amas-d-energie-amoureuse;Zirloin;DBS;Amas d'énergie amoureuse;uncommon;5.8;59;270;99;85;Estimation éditoriale non officielle
+chapuchai-dbz-tournoi-de-l-autre-monde;Chapuchai;DBZ;Tournoi de l'Autre Monde;common;5;48;243;102;75;Estimation éditoriale non officielle
+spice-dbz-gang-du-makyo;Spice;DBZ;Gang du Makyo;common;5;48;243;88;75;Estimation éditoriale non officielle
+damom-dbs-petite-creature-redoutable;Damom;DBS;Petite créature redoutable;uncommon;5.9;60;273;115;85;Estimation éditoriale non officielle
+koitsukai-dbs-robot-de-l-univers-3;Koitsukai;DBS;Robot de l'univers 3;uncommon;5.9;60;273;101;85;Estimation éditoriale non officielle
+maitre-kaio-de-l-est-dbz-divinite-de-l-est;Maître Kaio de l'Est;DBZ;Divinité de l'est;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+maitre-kaio-du-sud-dbz-divinite-du-sud;Maître Kaio du Sud;DBZ;Divinité du sud;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+biarra-dbs-robot-cuirasse;Biarra;DBS;Robot cuirassé;uncommon;6.1;64;300;96;85;Estimation éditoriale non officielle
+borareta-dbs-robot-de-l-univers-3;Borareta;DBS;Robot de l'univers 3;uncommon;6.1;64;281;103;85;Estimation éditoriale non officielle
+cocotte-dbs-pride-troopers;Cocotte;DBS;Pride Troopers;uncommon;6.1;64;300;96;85;Estimation éditoriale non officielle
+gamisalas-dbs-camouflage-parfait;Gamisalas;DBS;Camouflage parfait;uncommon;6.1;64;281;103;85;Estimation éditoriale non officielle
+k-nsi-dbs-pride-troopers;K'nsi;DBS;Pride Troopers;uncommon;6.1;64;281;103;85;Estimation éditoriale non officielle
+pancea-dbs-robot-de-l-univers-3;Pancéa;DBS;Robot de l'univers 3;uncommon;6.1;64;281;103;85;Estimation éditoriale non officielle
+zoire-dbs-pride-troopers;Zoire;DBS;Pride Troopers;uncommon;6.1;64;281;117;85;Estimation éditoriale non officielle
+maitre-kaio-de-l-ouest-dbz-divinite-de-l-ouest;Maître Kaio de l'Ouest;DBZ;Divinité de l'ouest;uncommon;5.3;52;252;92;80;Estimation éditoriale non officielle
+tortue-geniale-dbz-face-aux-saiyans-soutien;Tortue Géniale;DBZ;Face aux Saiyans — soutien;common;4.3;41;225;78;65;Estimation éditoriale non officielle
+vewon-dbs-pride-troopers;Vewon;DBS;Pride Troopers;uncommon;6.3;66;307;99;90;Estimation éditoriale non officielle
+maraikoh-dbz-tournoi-de-l-autre-monde;Maraikoh;DBZ;Tournoi de l'Autre Monde;uncommon;5.5;55;277;88;80;Estimation éditoriale non officielle
+mighty-mask-dbz-deguisement-de-goten-et-trunks;Mighty Mask;DBZ;Déguisement de Goten et Trunks;uncommon;5.5;55;261;95;80;Estimation éditoriale non officielle
+goku-db-enfant-attaque-kamehameha;Goku;DB;Enfant — attaque Kamehameha;common;4.25;41;225;78;65;Estimation éditoriale non officielle
+yamcha-dbz-cell-games-combattant-terrien;Yamcha;DBZ;Cell Games — combattant terrien;uncommon;5.5;55;261;95;80;Estimation éditoriale non officielle
+gotenks-dbz-base-premiere-fusion-ratee;Gotenks;DBZ;Base — première fusion ratée;uncommon;5.5;55;261;95;80;Estimation éditoriale non officielle
+dende-dbs-gardien-du-sanctuaire;Dendé;DBS;Gardien du sanctuaire;uncommon;6.6;72;302;110;95;Estimation éditoriale non officielle
+nigrissi-dbs-chef-des-guerriers-de-l-univers-3;Nigrissi;DBS;Chef des guerriers de l'univers 3;uncommon;6.6;72;302;110;95;Estimation éditoriale non officielle
+piccolo-db-enfant-du-roi-demon;Piccolo;DB;Enfant du Roi Démon;uncommon;5.8;59;270;99;85;Estimation éditoriale non officielle
+jimizu-dbs-guerrier-de-l-univers-2;Jimizu;DBS;Guerrier de l'univers 2;uncommon;6.8;76;311;127;95;Estimation éditoriale non officielle
+goku-db-enfant-debut-d-aventure;Goku;DB;Enfant — début d'aventure;common;3.75;36;214;71;60;Estimation éditoriale non officielle
+krilin-db-22e-tenkaichi-budokai;Krilin;DB;22e Tenkaichi Budokai;common;4;38;219;74;65;Estimation éditoriale non officielle
+yamcha-db-desert;Yamcha;DB;Désert;common;3.5;34;208;67;60;Estimation éditoriale non officielle
+tenshinhan-db-22e-tenkaichi-budokai;Tenshinhan;DB;22e Tenkaichi Budokai;common;4.3;41;225;78;65;Estimation éditoriale non officielle
+chaozu-db-ecole-de-la-grue;Chaozu;DB;École de la grue;common;3.3;32;205;64;55;Estimation éditoriale non officielle
+tortue-geniale-db-22e-tenkaichi-budokai;Tortue Géniale;DB;22e Tenkaichi Budokai;common;4.3;41;225;78;65;Estimation éditoriale non officielle
+c-8-db-cyborg-pacifique;C-8;DB;Cyborg pacifique;common;3.6;35;221;61;60;Estimation éditoriale non officielle
+general-blue-db-ruban-rouge;Général Blue;DB;Ruban Rouge;common;3.5;34;208;67;60;Estimation éditoriale non officielle
+tao-pai-pai-db-assassin;Tao Pai Pai;DB;Assassin;common;4.5;43;231;81;70;Estimation éditoriale non officielle
+tambourine-db-demon-de-piccolo;Tambourine;DB;Démon de Piccolo;common;3.9;37;216;73;65;Estimation éditoriale non officielle
+cymbal-db-demon-de-piccolo;Cymbal;DB;Démon de Piccolo;common;3.3;32;205;64;55;Estimation éditoriale non officielle
+goku-dbz-saga-saiyans;Goku;DBZ;Saga Saiyans;uncommon;5.5;55;261;95;80;Estimation éditoriale non officielle
+krilin-dbz-saga-saiyans;Krilin;DBZ;Saga Saiyans;uncommon;6;62;278;102;85;Estimation éditoriale non officielle
+yamcha-dbz-saga-saiyans;Yamcha;DBZ;Saga Saiyans;uncommon;5.3;52;252;92;80;Estimation éditoriale non officielle
+tenshinhan-dbz-saga-saiyans;Tenshinhan;DBZ;Saga Saiyans;uncommon;6;62;278;102;85;Estimation éditoriale non officielle
+chaozu-dbz-saga-saiyans;Chaozu;DBZ;Saga Saiyans;common;4.7;46;237;84;70;Estimation éditoriale non officielle
+dende-dbz-guerisseur-de-namek;Dendé;DBZ;Guérisseur de Namek;common;4.2;40;222;77;65;Estimation éditoriale non officielle
+videl-dbz-championne-en-herbe;Videl;DBZ;Championne en herbe;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+kibito-dbz-assistant-du-kaioshin;Kibito;DBZ;Assistant du Kaioshin;common;5;48;243;88;75;Estimation éditoriale non officielle
+jaco-dbs-patrouille-galactique;Jaco;DBS;Patrouille galactique;uncommon;6.3;66;287;106;90;Estimation éditoriale non officielle
+sorbet-dbs-armee-de-freezer;Sorbet;DBS;Armée de Freezer;uncommon;5.6;56;264;96;80;Estimation éditoriale non officielle
+tagoma-dbs-armee-de-freezer;Tagoma;DBS;Armée de Freezer;uncommon;6.4;68;313;101;90;Estimation éditoriale non officielle
+shisami-dbs-armee-de-freezer;Shisami;DBS;Armée de Freezer;uncommon;5.9;60;273;101;85;Estimation éditoriale non officielle
+botamo-dbs-univers-6;Botamo;DBS;Univers 6;uncommon;7.3;85;359;113;100;Estimation éditoriale non officielle
+magetta-dbs-univers-6;Magetta;DBS;Univers 6;uncommon;7.3;85;359;113;100;Estimation éditoriale non officielle
+cabba-dbs-saiyan-base;Cabba;DBS;Saiyan — base;uncommon;7.7;94;355;126;105;Estimation éditoriale non officielle
+caulifla-dbs-saiyan-base;Caulifla;DBS;Saiyan — base;uncommon;7.5;89;343;123;105;Estimation éditoriale non officielle
+goku-db-enfant-21e-tenkaichi;Goku;DB;Enfant — 21e Tenkaichi;common;3.5;34;208;67;60;Estimation éditoriale non officielle
+krilin-db-21e-tenkaichi;Krilin;DB;21e Tenkaichi;common;4;38;219;74;65;Estimation éditoriale non officielle
+yamcha-db-23e-tenkaichi;Yamcha;DB;23e Tenkaichi;common;4;38;219;74;65;Estimation éditoriale non officielle
+tortue-geniale-db-jackie-chun;Tortue Géniale;DB;Jackie Chun;common;4.3;41;225;78;65;Estimation éditoriale non officielle
+chichi-db-23e-tenkaichi;Chichi;DB;23e Tenkaichi;common;3.6;35;211;68;60;Estimation éditoriale non officielle
+mister-popo-db-gardien-du-palais;Mister Popo;DB;Gardien du palais;common;4.4;42;241;73;70;Estimation éditoriale non officielle
+karin-db-maitre-de-la-tour;Karin;DB;Maître de la tour;common;3.6;35;211;68;60;Estimation éditoriale non officielle
+tao-pai-pai-db-cyborg;Tao Pai Pai;DB;Cyborg;common;4.4;42;228;80;70;Estimation éditoriale non officielle
+puipui-dbz-serviteur-de-babidi;Puipui;DBZ;Serviteur de Babidi;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+yakon-dbz-mangeur-de-lumiere;Yakon;DBZ;Mangeur de lumière;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+babidi-dbz-sorcier;Babidi;DBZ;Sorcier;common;4.8;47;240;85;75;Estimation éditoriale non officielle
+kaio-du-nord-dbz-mentor-saiyan;Kaio du Nord;DBZ;Mentor Saiyan;common;5;48;243;88;75;Estimation éditoriale non officielle
+roi-vegeta-dbz-roi-des-saiyans;Roi Vegeta;DBZ;Roi des Saiyans;uncommon;6;62;278;102;85;Estimation éditoriale non officielle
+goten-dbz-enfant;Goten;DBZ;Enfant;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+trunks-dbz-enfant;Trunks;DBZ;Enfant;uncommon;5.3;52;252;92;80;Estimation éditoriale non officielle
+vieux-kaioshin-dbz-ancien-dieu;Vieux Kaioshin;DBZ;Ancien dieu;uncommon;5.2;50;249;91;75;Estimation éditoriale non officielle
+grand-kaio-dbz-maitre-des-kaios;Grand Kaio;DBZ;Maître des Kaios;uncommon;5.3;52;252;92;80;Estimation éditoriale non officielle
+apule-dbz-soldat-de-freezer;Apule;DBZ;Soldat de Freezer;common;4.3;41;225;78;65;Estimation éditoriale non officielle
+lavender-dbs-trio-du-danger;Lavender;DBS;Trio du danger;uncommon;7.5;89;343;123;105;Estimation éditoriale non officielle
+basil-dbs-trio-du-danger;Basil;DBS;Trio du danger;uncommon;7.5;89;343;123;105;Estimation éditoriale non officielle
+obni-dbs-univers-10;Obni;DBS;Univers 10;uncommon;6.8;76;311;113;95;Estimation éditoriale non officielle
+cabba-dbs-super-saiyan;Cabba;DBS;Super Saiyan;rare;8.9;125;432;143;120;Estimation éditoriale non officielle
+caulifla-dbs-super-saiyan;Caulifla;DBS;Super Saiyan;rare;8.9;125;432;143;120;Estimation éditoriale non officielle
+kale-dbs-saiyan-base;Kale;DBS;Saiyan — base;uncommon;7.5;89;343;123;105;Estimation éditoriale non officielle
+mai-dbs-resistance-du-futur;Mai;DBS;Résistance du futur;uncommon;5.4;54;258;94;80;Estimation éditoriale non officielle
+goku-dbs-base-tournoi-du-pouvoir;Goku;DBS;Base — Tournoi du Pouvoir;rare;11;209;638;172;140;Estimation éditoriale non officielle
+vegeta-dbs-base-tournoi-du-pouvoir;Vegeta;DBS;Base — Tournoi du Pouvoir;rare;11.1;214;650;173;140;Estimation éditoriale non officielle
+goku-db-entrainement-chez-karin;Goku;DB;Entraînement chez Karin;common;4.75;46;237;85;70;Estimation éditoriale non officielle
+goku-db-combat-contre-tao-pai-pai;Goku;DB;Combat contre Tao Pai Pai;uncommon;5.125;50;249;90;75;Estimation éditoriale non officielle
+goku-db-entrainement-final-de-kami;Goku;DB;Entraînement final de Kami;uncommon;5.6;56;264;96;80;Estimation éditoriale non officielle
+krilin-db-23e-tenkaichi-budokai;Krilin;DB;23e Tenkaichi Budokai;common;4;38;219;74;65;Estimation éditoriale non officielle
+tenshinhan-db-entrainement-avant-23e-tenkaichi;Tenshinhan;DB;Entraînement avant 23e Tenkaichi;common;5;48;243;88;75;Estimation éditoriale non officielle
+yamcha-db-21e-tenkaichi-budokai;Yamcha;DB;21e Tenkaichi Budokai;common;3.8;36;214;71;60;Estimation éditoriale non officielle
+tortue-geniale-db-kamehameha-pleine-puissance;Tortue Géniale;DB;Kamehameha pleine puissance;common;4.3;41;225;78;65;Estimation éditoriale non officielle
+yajirobe-db-garde-de-karin;Yajirobé;DB;Garde de Karin;common;3.8;36;214;71;60;Estimation éditoriale non officielle
+shen-db-23e-tenkaichi-budokai;Shen;DB;23e Tenkaichi Budokai;uncommon;5.1;49;246;89;75;Estimation éditoriale non officielle
+piccolo-junior-db-23e-tenkaichi-budokai;Piccolo Junior;DB;23e Tenkaichi Budokai;uncommon;5.4;54;258;94;80;Estimation éditoriale non officielle
+chaozu-db-23e-tenkaichi-budokai;Chaozu;DB;23e Tenkaichi Budokai;common;3.8;36;214;71;60;Estimation éditoriale non officielle
+gohan-dbz-enfant-saga-saiyan;Gohan;DBZ;Enfant — saga Saiyan;common;4.5;43;231;81;70;Estimation éditoriale non officielle
+raditz-dbz-invasion-de-la-terre;Raditz;DBZ;Invasion de la Terre;common;4.8;47;240;85;75;Estimation éditoriale non officielle
+nappa-dbz-arrivee-sur-terre;Nappa;DBZ;Arrivée sur Terre;common;5.1;49;246;89;75;Estimation éditoriale non officielle
+saibaiman-dbz-combat-de-l-invasion;Saibaiman;DBZ;Combat de l'invasion;common;4.5;43;231;81;70;Estimation éditoriale non officielle
+krilin-dbz-sur-namek;Krilin;DBZ;Sur Namek;uncommon;6;62;278;102;85;Estimation éditoriale non officielle
+gohan-dbz-sur-namek;Gohan;DBZ;Sur Namek;uncommon;6.6;72;302;110;95;Estimation éditoriale non officielle
+vegeta-dbz-combat-contre-zarbon;Vegeta;DBZ;Combat contre Zarbon;uncommon;5.7;58;267;98;85;Estimation éditoriale non officielle
+recoome-dbz-duel-contre-vegeta;Recoome;DBZ;Duel contre Vegeta;uncommon;7.7;94;355;126;105;Estimation éditoriale non officielle
+guldo-dbz-arret-du-temps;Guldo;DBZ;Arrêt du temps;uncommon;6.2;65;284;105;90;Estimation éditoriale non officielle
+jeice-dbz-duel-contre-goku;Jeice;DBZ;Duel contre Goku;uncommon;7.3;85;334;120;100;Estimation éditoriale non officielle
+burter-dbz-duel-contre-goku;Burter;DBZ;Duel contre Goku;uncommon;7.8;96;361;141;105;Estimation éditoriale non officielle
+nail-dbz-gardien-du-grand-chef;Nail;DBZ;Gardien du Grand Chef;uncommon;8.2;106;385;133;110;Estimation éditoriale non officielle
+goku-dbs-entrainement-de-whis;Goku;DBS;Entraînement de Whis;rare;11;209;638;172;140;Estimation éditoriale non officielle
+vegeta-dbs-entrainement-de-whis;Vegeta;DBS;Entraînement de Whis;rare;11.1;214;650;173;140;Estimation éditoriale non officielle
+gohan-dbs-retour-a-l-entrainement;Gohan;DBS;Retour à l'entraînement;rare;11.4;229;688;178;145;Estimation éditoriale non officielle
+monna-dbs-combattante-bouclier;Monna;DBS;Combattante bouclier;uncommon;6.8;76;333;106;95;Estimation éditoriale non officielle
+watagash-dbs-parasite-de-l-espace;Watagash;DBS;Parasite de l'espace;uncommon;7;79;320;116;95;Estimation éditoriale non officielle
+roasie-dbs-forme-d-amour;Roasie;DBS;Forme d'amour;uncommon;7;79;320;116;95;Estimation éditoriale non officielle
+kakunsa-dbs-transformation-feline;Kakunsa;DBS;Transformation féline;uncommon;7;79;320;130;95;Estimation éditoriale non officielle
+docteur-gero-dbz-createur-des-cyborgs;Docteur Gero;DBZ;Créateur des cyborgs;uncommon;6.3;66;287;106;90;Estimation éditoriale non officielle
+krilin-dbz-apres-namek-preparation-cyborgs;Krilin;DBZ;Après Namek — préparation cyborgs;uncommon;6;62;278;102;85;Estimation éditoriale non officielle
+maji-kayo-dbs-guerrier-malleable;Maji-Kayo;DBS;Guerrier malléable;uncommon;7.3;85;334;120;100;Estimation éditoriale non officielle
+c-19-dbz-cyborg-absorbeur;C-19;DBZ;Cyborg absorbeur;uncommon;6.5;70;296;109;90;Estimation éditoriale non officielle
+drum-db-demon-du-roi-piccolo;Drum;DB;Démon du Roi Piccolo;common;5;48;243;88;75;Estimation éditoriale non officielle
+ganos-dbs-metamorphose-en-oiseau-geant;Ganos;DBS;Métamorphose en oiseau géant;uncommon;7.5;89;343;123;105;Estimation éditoriale non officielle
+krilin-dbz-cell-games-soutien;Krilin;DBZ;Cell Games — soutien;uncommon;6;62;278;102;85;Estimation éditoriale non officielle
+tao-pai-pai-db-mercenaire-affrontement-goku;Tao Pai Pai;DB;Mercenaire — affrontement Goku;uncommon;5.1;49;246;89;75;Estimation éditoriale non officielle
+goku-db-enfant-transformation-geante-contre-pilaf;Goku;DB;Enfant — transformation géante contre Pilaf;uncommon;5.125;50;249;90;75;Estimation éditoriale non officielle
+renso-dbs-ancien-capitaine-saiyan;Renso;DBS;Ancien capitaine saiyan;uncommon;7.8;96;361;127;105;Estimation éditoriale non officielle
+olibu-dbz-tournoi-de-l-autre-monde;Olibu;DBZ;Tournoi de l'Autre Monde;uncommon;7;79;320;116;95;Estimation éditoriale non officielle
+agu-dbs-kaioshin-univers-12;Agu;DBS;Kaioshin univers 12;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+anato-dbs-kaioshin-univers-1;Anato;DBS;Kaioshin univers 1;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+eyre-dbs-kaioshin-univers-3;Eyre;DBS;Kaioshin univers 3;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+goku-db-adolescent-confrontation-roi-piccolo;Goku;DB;Adolescent — confrontation Roi Piccolo;uncommon;5.375;53;255;93;80;Estimation éditoriale non officielle
+iru-dbs-kaioshin-univers-8;Iru;DBS;Kaioshin univers 8;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+khai-dbs-kaioshin-univers-11;Khai;DBS;Kaioshin univers 11;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+kuru-dbs-kaioshin-univers-4;Kuru;DBS;Kaioshin univers 4;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+ogma-dbs-kaioshin-univers-5;Ogma;DBS;Kaioshin univers 5;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+pell-dbs-kaioshin-univers-2;Pell;DBS;Kaioshin univers 2;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+roh-dbs-kaioshin-univers-9;Roh;DBS;Kaioshin univers 9;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+tenshinhan-dbs-entraineur-d-arts-martiaux;Tenshinhan;DBS;Entraîneur d'arts martiaux;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+goten-dbz-super-saiyan-entrainement-chichi;Goten;DBZ;Super Saiyan — entraînement Chichi;uncommon;7;79;320;116;95;Estimation éditoriale non officielle
+kaioshin-du-nord-dbz-gardien-de-l-univers;Kaioshin du Nord;DBZ;Gardien de l'univers;uncommon;7.2;83;329;119;100;Estimation éditoriale non officielle
+kami-db-gardien-de-la-terre;Kami;DB;Gardien de la Terre;uncommon;5.5;55;261;95;80;Estimation éditoriale non officielle
+goku-db-grand-singe-premiere-transformation;Goku;DB;Grand singe — première transformation;uncommon;5.5;55;261;95;80;Estimation éditoriale non officielle
+oob-dbz-reincarnation-de-majin-buu;Oob;DBZ;Réincarnation de Majin Buu;uncommon;7.2;83;329;119;100;Estimation éditoriale non officielle
+ribrianne-dbs-transformation-geante;Ribrianne;DBS;Transformation géante;uncommon;8.2;106;385;133;110;Estimation éditoriale non officielle
+kaioshin-de-l-ouest-dbz-gardienne-de-l-univers;Kaioshin de l'Ouest;DBZ;Gardienne de l'univers;uncommon;7.3;85;334;120;100;Estimation éditoriale non officielle
+buu-dbz-boo-gentil-vit-avec-mister-satan;Buu;DBZ;Boo gentil — vit avec Mister Satan;rare;10.5;185;579;165;135;Estimation éditoriale non officielle
+goten-dbz-super-saiyan-tournoi-junior;Goten;DBZ;Super Saiyan — tournoi junior;uncommon;7.3;85;334;120;100;Estimation éditoriale non officielle
+gohan-dbz-grand-singe-saga-saiyans;Gohan;DBZ;Grand singe — saga Saiyans;common;4.5;43;231;81;70;Estimation éditoriale non officielle
+cabba-dbs-base-tournoi-du-pouvoir;Cabba;DBS;Base — tournoi du Pouvoir;uncommon;8.5;114;405;137;115;Estimation éditoriale non officielle
+c-18-dbz-cell-games-protegee-par-krilin;C-18;DBZ;Cell Games — protégée par Krilin;uncommon;7.5;89;369;116;105;Estimation éditoriale non officielle
+goku-db-23e-tenkaichi-technique-meteore;Goku;DB;23e Tenkaichi — technique météore;uncommon;5.6;56;264;96;80;Estimation éditoriale non officielle
+kahseral-dbs-officier-pride-troopers;Kahseral;DBS;Officier Pride Troopers;uncommon;8.5;114;405;137;115;Estimation éditoriale non officielle
+lavender-dbs-poison-zeno-expo;Lavender;DBS;Poison — Zeno Expo;uncommon;8.5;114;405;137;115;Estimation éditoriale non officielle
+kami-dbz-fusion-definitive-avec-piccolo;Kami;DBZ;Fusion définitive avec Piccolo;uncommon;7.5;89;343;123;105;Estimation éditoriale non officielle
+buu-dbz-boo-bon-apres-separation;Buu;DBZ;Boo bon — après séparation;rare;10.5;185;579;165;135;Estimation éditoriale non officielle
+krilin-dbs-policier-retour-au-combat;Krilin;DBS;Policier — retour au combat;uncommon;7.3;85;334;120;100;Estimation éditoriale non officielle
+zamasu-dbs-apprenti-kaioshin-univers-10;Zamasu;DBS;Apprenti Kaioshin univers 10;epic;14.1;443;1214;215;175;Estimation éditoriale non officielle
+saonel-dbs-namek-univers-6;Saonel;DBS;Namek univers 6;rare;8.7;119;452;133;115;Estimation éditoriale non officielle
+kaioshin-du-sud-dbz-gardien-de-l-univers;Kaioshin du Sud;DBZ;Gardien de l'univers;uncommon;7.8;96;361;127;105;Estimation éditoriale non officielle
+garlic-jr-dbz-regne-du-makyo;Garlic Jr.;DBZ;Règne du Makyo;uncommon;7.8;96;361;127;105;Estimation éditoriale non officielle
+gohan-dbz-enfant-potentiel-libere-par-guru;Gohan;DBZ;Enfant — potentiel libéré par Guru;rare;11.7;247;733;182;150;Estimation éditoriale non officielle
+fuwa-dbs-kaioshin-univers-6;Fuwa;DBS;Kaioshin univers 6;rare;8.9;125;432;143;120;Estimation éditoriale non officielle
+gowasu-dbs-maitre-de-zamasu;Gowasu;DBS;Maître de Zamasu;rare;8.9;125;432;143;120;Estimation éditoriale non officielle
+pilina-dbs-namek-univers-6;Pilina;DBS;Namek univers 6;rare;8.9;125;468;136;120;Estimation éditoriale non officielle
+cell-dbz-forme-imparfaite-absorption-humains;Cell;DBZ;Forme imparfaite — absorption humains;rare;9.5;145;482;151;125;Estimation éditoriale non officielle
+goku-dbz-kaioken-2-saga-saiyans;Goku;DBZ;Kaioken ×2 — saga Saiyans;uncommon;6.5;70;296;109;90;Estimation éditoriale non officielle
+c-18-dbz-futur-regne-des-cyborgs;C-18;DBZ;Futur — règne des cyborgs;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+cell-jr-dbz-creation-de-cell-parfait;Cell Jr.;DBZ;Création de Cell parfait;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+gohan-dbz-great-saiyaman-costume-heroique;Gohan;DBZ;Great Saiyaman — costume héroïque;common;4.5;43;231;81;70;Estimation éditoriale non officielle
+vegeta-dbz-saga-freezer-recuperation-sur-namek;Vegeta;DBZ;Saga Freezer — récupération sur Namek;uncommon;7;79;320;116;95;Estimation éditoriale non officielle
+basil-dbs-super-stimulant-zeno-expo;Basil;DBS;Super stimulant — Zeno Expo;rare;9;128;441;144;120;Estimation éditoriale non officielle
+ganos-dbs-oiseau-geant-tournoi-du-pouvoir;Ganos;DBS;Oiseau géant — Tournoi du Pouvoir;rare;9;128;441;144;120;Estimation éditoriale non officielle
+trunks-dbz-super-saiyan-fusion-avec-goten;Trunks;DBZ;Super Saiyan — fusion avec Goten;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+c-17-dbz-futur-traque-des-humains;C-17;DBZ;Futur — traque des humains;uncommon;8.2;106;385;133;110;Estimation éditoriale non officielle
+c-18-dbs-protection-de-krilin;C-18;DBS;Protection de Krilin;rare;9.2;134;495;140;120;Estimation éditoriale non officielle
+frost-dbs-premiere-forme-univers-6;Frost;DBS;Première forme — Univers 6;rare;9.2;134;455;147;120;Estimation éditoriale non officielle
+ribrianne-dbs-geante-tournoi-du-pouvoir;Ribrianne;DBS;Géante — Tournoi du Pouvoir;rare;9.2;134;455;147;120;Estimation éditoriale non officielle
+gotenks-dbz-base-fusion-reussie;Gotenks;DBZ;Base — fusion réussie;uncommon;8.2;106;385;133;110;Estimation éditoriale non officielle
+caulifla-dbs-base-tournoi-du-pouvoir;Caulifla;DBS;Base — tournoi du Pouvoir;rare;9.4;142;473;150;125;Estimation éditoriale non officielle
+c-16-dbz-heritage-pacifique-cell-games;C-16;DBZ;Héritage pacifique — Cell Games;uncommon;8.3;108;391;134;110;Estimation éditoriale non officielle
+goku-dbz-kaioken-3-contre-vegeta;Goku;DBZ;Kaioken ×3 — contre Vegeta;uncommon;6.5;70;296;109;90;Estimation éditoriale non officielle
+gotenks-dbz-fusion-normale-entrainement;Gotenks;DBZ;Fusion normale — entraînement;uncommon;8.3;108;391;134;110;Estimation éditoriale non officielle
+bergamo-dbs-croissance-geante-zeno-expo;Bergamo;DBS;Croissance géante — Zeno Expo;rare;9.4;142;514;143;125;Estimation éditoriale non officielle
+cell-jr-dbz-cell-games-essaim-des-sept;Cell Jr.;DBZ;Cell Games — essaim des sept;rare;8.7;119;417;140;115;Estimation éditoriale non officielle
+gowasu-dbs-kaioshin-univers-10;Gowasu;DBS;Kaioshin univers 10;rare;9.7;152;500;154;125;Estimation éditoriale non officielle
+piccolo-dbz-defenseur-de-goten-et-trunks;Piccolo;DBZ;Défenseur de Goten et Trunks;uncommon;5.8;59;287;92;85;Estimation éditoriale non officielle
+roi-piccolo-db-jeunesse-restauree;Roi Piccolo;DB;Jeunesse restaurée;uncommon;6;62;278;102;85;Estimation éditoriale non officielle
+koiceareta-dbs-fusion-des-trois-robots;Koicéareta;DBS;Fusion des trois robots;rare;9.7;152;500;154;125;Estimation éditoriale non officielle
+arale-norimaki-db-genie-mecanique-de-penguin-village;Aralé Norimaki;DB;Génie mécanique de Penguin Village;uncommon;6;62;278;102;85;Estimation éditoriale non officielle
+bardock-dbz-guerrier-saiyan;Bardock;DBZ;Guerrier saiyan;rare;8.8;122;426;141;115;Estimation éditoriale non officielle
+goku-dbz-kaioken-4-kamehameha;Goku;DBZ;Kaioken ×4 — Kamehameha;uncommon;6.5;70;296;109;90;Estimation éditoriale non officielle
+kibito-shin-dbz-fusion-divine;Kibito Shin;DBZ;Fusion divine;rare;8.8;122;426;141;115;Estimation éditoriale non officielle
+piccolo-dbz-fusion-avec-nail-seconde-forme;Piccolo;DBZ;Fusion avec Nail — seconde forme;uncommon;7.3;85;359;113;100;Estimation éditoriale non officielle
+frost-dbs-forme-d-assaut-tournoi-univers-6;Frost;DBS;Forme d'assaut — tournoi univers 6;rare;10.1;168;538;159;130;Estimation éditoriale non officielle
+goku-db-23e-tenkaichi-budokai;Goku;DB;23e Tenkaichi Budokai;uncommon;5.6;56;264;96;80;Estimation éditoriale non officielle
+muri-dbz-ancien-du-village-namek;Muri;DBZ;Ancien du village namek;common;5;48;243;88;75;Estimation éditoriale non officielle
+tenshinhan-db-23e-tenkaichi-budokai;Tenshinhan;DB;23e Tenkaichi Budokai;uncommon;5.6;56;264;96;80;Estimation éditoriale non officielle
+piccolo-dbz-saga-saiyans;Piccolo;DBZ;Saga Saiyans;uncommon;5.8;59;287;92;85;Estimation éditoriale non officielle
+gohan-dbz-enfant-namek;Gohan;DBZ;Enfant — Namek;uncommon;6.6;72;302;110;95;Estimation éditoriale non officielle
+vegeta-dbz-saga-saiyans;Vegeta;DBZ;Saga Saiyans;uncommon;5.7;58;267;98;85;Estimation éditoriale non officielle
+nappa-dbz-saiyan-d-elite;Nappa;DBZ;Saiyan d'élite;common;5.1;49;246;89;75;Estimation éditoriale non officielle
+raditz-dbz-guerrier-saiyan;Raditz;DBZ;Guerrier Saiyan;common;4.8;47;240;85;75;Estimation éditoriale non officielle
+ginyu-dbz-capitaine;Ginyu;DBZ;Capitaine;rare;9;128;441;144;120;Estimation éditoriale non officielle
+recoome-dbz-commando-ginyu;Recoome;DBZ;Commando Ginyu;uncommon;7.8;96;361;127;105;Estimation éditoriale non officielle
+jeice-dbz-commando-ginyu;Jeice;DBZ;Commando Ginyu;uncommon;7.5;89;343;123;105;Estimation éditoriale non officielle
+burter-dbz-commando-ginyu;Burter;DBZ;Commando Ginyu;uncommon;7.8;96;361;141;105;Estimation éditoriale non officielle
+guldo-dbz-commando-ginyu;Guldo;DBZ;Commando Ginyu;uncommon;7.3;85;334;120;100;Estimation éditoriale non officielle
+c-17-dbz-saga-androids;C-17;DBZ;Saga Androids;rare;9.8;156;509;155;130;Estimation éditoriale non officielle
+c-18-dbz-saga-androids;C-18;DBZ;Saga Androids;rare;9.7;152;500;154;125;Estimation éditoriale non officielle
+c-16-dbz-saga-androids;C-16;DBZ;Saga Androids;rare;9.5;145;524;144;125;Estimation éditoriale non officielle
+dabra-dbz-roi-des-demons;Dabra;DBZ;Roi des démons;rare;9.5;145;482;151;125;Estimation éditoriale non officielle
+kaioshin-dbz-dieu-de-l-est;Kaioshin;DBZ;Dieu de l'Est;rare;8.7;119;417;140;115;Estimation éditoriale non officielle
+frost-dbs-univers-6;Frost;DBS;Univers 6;rare;10.9;204;627;171;140;Estimation éditoriale non officielle
+hit-dbs-saut-temporel;Hit;DBS;Saut temporel;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+ribrianne-dbs-univers-2;Ribrianne;DBS;Univers 2;rare;10.8;198;670;162;140;Estimation éditoriale non officielle
+goku-dbz-kaioken-20;Goku;DBZ;Kaioken ×20;uncommon;6.5;70;296;109;90;Estimation éditoriale non officielle
+gohan-dbz-adolescent-super-saiyan;Gohan;DBZ;Adolescent — Super Saiyan;rare;8.8;122;426;141;115;Estimation éditoriale non officielle
+goten-dbz-super-saiyan;Goten;DBZ;Super Saiyan;rare;8.8;122;426;141;115;Estimation éditoriale non officielle
+trunks-dbz-super-saiyan-enfant;Trunks;DBZ;Super Saiyan — enfant;rare;9;128;441;144;120;Estimation éditoriale non officielle
+vegeta-dbz-saga-namek;Vegeta;DBZ;Saga Namek;uncommon;7;79;320;116;95;Estimation éditoriale non officielle
+zarbon-dbz-forme-monstrueuse;Zarbon;DBZ;Forme monstrueuse;uncommon;8.5;114;405;137;115;Estimation éditoriale non officielle
+dodoria-dbz-garde-de-freezer;Dodoria;DBZ;Garde de Freezer;uncommon;8;101;373;130;110;Estimation éditoriale non officielle
+freezer-dbz-premiere-forme;Freezer;DBZ;Première forme;uncommon;6.9;77;314;115;95;Estimation éditoriale non officielle
+freezer-dbz-deuxieme-forme;Freezer;DBZ;Deuxième forme;uncommon;7.35;86;337;121;100;Estimation éditoriale non officielle
+freezer-dbz-troisieme-forme;Freezer;DBZ;Troisième forme;uncommon;7.75;95;358;127;105;Estimation éditoriale non officielle
+cell-dbz-forme-imparfaite;Cell;DBZ;Forme imparfaite;rare;9.5;145;482;151;125;Estimation éditoriale non officielle
+cell-dbz-forme-semi-parfaite;Cell;DBZ;Forme semi-parfaite;rare;9.5;145;482;151;125;Estimation éditoriale non officielle
+piccolo-dbz-saga-namek;Piccolo;DBZ;Saga Namek;uncommon;5.8;59;270;99;85;Estimation éditoriale non officielle
+buu-dbz-boo-malefique;Buu;DBZ;Boo maléfique;rare;11.2;218;662;175;145;Estimation éditoriale non officielle
+trunks-dbz-guerrier-du-futur-base;Trunks;DBZ;Guerrier du futur — base;rare;9.7;152;500;154;125;Estimation éditoriale non officielle
+kale-dbs-super-saiyan;Kale;DBS;Super Saiyan;rare;11.8;253;747;183;150;Estimation éditoriale non officielle
+cabba-dbs-super-saiyan-2;Cabba;DBS;Super Saiyan 2;rare;12.1;272;795;187;155;Estimation éditoriale non officielle
+bergamo-dbs-trio-du-danger;Bergamo;DBS;Trio du danger;rare;11.3;224;742;169;145;Estimation éditoriale non officielle
+goku-black-dbs-forme-de-base;Goku Black;DBS;Forme de base;epic;13.1;347;978;201;165;Estimation éditoriale non officielle
+gohan-dbs-potentiel-libere;Gohan;DBS;Potentiel libéré;epic;13.7;402;1113;210;170;Estimation éditoriale non officielle
+jiren-dbs-puissance-contenue;Jiren;DBS;Puissance contenue;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+goku-dbz-super-saiyan-duel-final-contre-freezer;Goku;DBZ;Super Saiyan — duel final contre Freezer;uncommon;8.6;116;411;138;115;Estimation éditoriale non officielle
+vegeta-dbz-super-saiyan-androids;Vegeta;DBZ;Super Saiyan — Androids;rare;9.1;131;447;145;120;Estimation éditoriale non officielle
+gohan-dbz-super-saiyan-salle-du-temps;Gohan;DBZ;Super Saiyan — Salle du temps;rare;8.8;122;426;141;115;Estimation éditoriale non officielle
+trunks-dbz-super-saiyan-arrivee-du-futur;Trunks;DBZ;Super Saiyan — arrivée du futur;rare;10.7;193;600;168;140;Estimation éditoriale non officielle
+piccolo-dbz-fusion-avec-kami-duel-contre-c-17;Piccolo;DBZ;Fusion avec Kami — duel contre C-17;rare;9.1;131;447;145;120;Estimation éditoriale non officielle
+c-16-dbz-face-a-cell;C-16;DBZ;Face à Cell;rare;10.2;172;597;154;130;Estimation éditoriale non officielle
+ginyu-dbz-technique-du-changement-de-corps;Ginyu;DBZ;Technique du changement de corps;rare;9.2;134;455;147;120;Estimation éditoriale non officielle
+goku-dbz-retour-sur-terre-apres-namek;Goku;DBZ;Retour sur Terre après Namek;uncommon;7.1;80;323;117;100;Estimation éditoriale non officielle
+freezer-dbz-retour-cyborg;Freezer;DBZ;Retour cyborg;uncommon;8.25;107;388;134;110;Estimation éditoriale non officielle
+gohan-dbz-super-saiyan-2-cell-games;Gohan;DBZ;Super Saiyan 2 — Cell Games;rare;10.3;176;559;162;135;Estimation éditoriale non officielle
+goku-dbz-super-saiyan-2-tournoi;Goku;DBZ;Super Saiyan 2 — tournoi;rare;10;163;526;158;130;Estimation éditoriale non officielle
+buu-dbz-innocent-face-a-babidi;Buu;DBZ;Innocent face à Babidi;rare;10.5;185;579;165;135;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-blue-univers-6;Goku;DBS;Super Saiyan Blue — Univers 6;epic;14.3;464;1267;218;175;Estimation éditoriale non officielle
+vegeta-dbs-super-saiyan-blue-univers-6;Vegeta;DBS;Super Saiyan Blue — Univers 6;epic;14.35;470;1281;219;180;Estimation éditoriale non officielle
+hit-dbs-univers-6-tournoi;Hit;DBS;Univers 6 — tournoi;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+trunks-dbs-futur-resistance;Trunks;DBS;Futur — résistance;rare;12.1;272;795;187;155;Estimation éditoriale non officielle
+goku-black-dbs-faux-goku-revele;Goku Black;DBS;Faux Goku révélé;epic;13.1;347;978;201;165;Estimation éditoriale non officielle
+vegeta-dbz-grand-singe-invasion-terre;Vegeta;DBZ;Grand singe — invasion Terre;uncommon;5.7;58;267;98;85;Estimation éditoriale non officielle
+magetta-dbs-metalman-tournoi-du-pouvoir;Magetta;DBS;Métalman — tournoi du pouvoir;rare;10.2;172;597;154;130;Estimation éditoriale non officielle
+roi-cold-dbz-empereur-de-l-armee-de-freezer;Roi Cold;DBZ;Empereur de l'armée de Freezer;rare;9.2;134;495;140;120;Estimation éditoriale non officielle
+goku-dbz-super-saiyan-face-a-c-19;Goku;DBZ;Super Saiyan — face à C-19;rare;9.3;138;464;148;120;Estimation éditoriale non officielle
+buu-dbz-boo-malefique-transformation;Buu;DBZ;Boo maléfique — transformation;rare;11.2;218;662;175;145;Estimation éditoriale non officielle
+goku-dbz-kaioken-intervention-sur-namek;Goku;DBZ;Kaioken — intervention sur Namek;uncommon;6.5;70;296;109;90;Estimation éditoriale non officielle
+c-17-dbs-ranger-de-l-ile;C-17;DBS;Ranger de l'île;rare;10.4;180;620;157;135;Estimation éditoriale non officielle
+roi-cold-dbz-apres-namek-invasion-terre;Roi Cold;DBZ;Après Namek — invasion Terre;rare;9.3;138;505;141;120;Estimation éditoriale non officielle
+goku-dbz-kaioken-10-contre-freezer;Goku;DBZ;Kaioken ×10 — contre Freezer;uncommon;6.5;70;296;109;90;Estimation éditoriale non officielle
+piccolo-dbz-fusion-avec-nail-bataille-freezer;Piccolo;DBZ;Fusion avec Nail — bataille Freezer;uncommon;7.3;85;334;120;100;Estimation éditoriale non officielle
+pikkon-dbz-champion-de-l-autre-monde;Pikkon;DBZ;Champion de l'Autre Monde;rare;9.5;145;482;151;125;Estimation éditoriale non officielle
+dyspo-dbs-patrouilleur-de-la-justice;Dyspo;DBS;Patrouilleur de la justice;epic;13.6;392;1090;222;170;Estimation éditoriale non officielle
+gohan-dbz-super-saiyan-duel-d-entrainement-goku;Gohan;DBZ;Super Saiyan — duel d'entraînement Goku;rare;8.8;122;426;141;115;Estimation éditoriale non officielle
+vegeta-copie-dbs-clone-de-l-eau-miraculeuse;Vegeta copie;DBS;Clone de l'eau miraculeuse;rare;10.8;198;612;169;140;Estimation éditoriale non officielle
+trunks-dbz-futur-retour-chez-c-17-et-c-18;Trunks;DBZ;Futur — retour chez C-17 et C-18;rare;9.7;152;500;154;125;Estimation éditoriale non officielle
+dyspo-dbs-pride-troopers-premiere-course;Dyspo;DBS;Pride Troopers — première course;epic;13.6;392;1090;222;170;Estimation éditoriale non officielle
+vegeta-dbz-super-saiyan-contre-c-18;Vegeta;DBZ;Super Saiyan — contre C-18;rare;9.1;131;447;145;120;Estimation éditoriale non officielle
+cell-dbz-forme-semi-parfaite-absorption-c-17;Cell;DBZ;Forme semi-parfaite — absorption C-17;rare;9.5;145;482;151;125;Estimation éditoriale non officielle
+trunks-dbs-futur-epee-de-la-resistance;Trunks;DBS;Futur — épée de la résistance;rare;10.9;204;627;171;140;Estimation éditoriale non officielle
+trunks-dbs-futur-sauveur-avec-mai;Trunks;DBS;Futur — sauveur avec Mai;rare;10.9;204;627;171;140;Estimation éditoriale non officielle
+goku-dbz-super-saiyan-entrainement-salle-du-temps;Goku;DBZ;Super Saiyan — entraînement salle du temps;rare;9.3;138;464;148;120;Estimation éditoriale non officielle
+trunks-dbz-super-saiyan-grade-2-entrainement;Trunks;DBZ;Super Saiyan grade 2 — entraînement;rare;9.8;156;509;155;130;Estimation éditoriale non officielle
+vegeta-dbz-super-saiyan-affrontement-c-19;Vegeta;DBZ;Super Saiyan — affrontement C-19;rare;9.1;131;447;145;120;Estimation éditoriale non officielle
+freezer-dbz-retour-cyborg-arrivee-sur-terre;Freezer;DBZ;Retour cyborg — arrivée sur Terre;uncommon;8.25;107;388;134;110;Estimation éditoriale non officielle
+gohan-dbz-super-saiyan-2-tournoi-de-babidi;Gohan;DBZ;Super Saiyan 2 — tournoi de Babidi;rare;10.3;176;559;162;135;Estimation éditoriale non officielle
+freezer-dbs-forme-finale-premiere-renaissance;Freezer;DBS;Forme finale — première renaissance;rare;11.2;218;662;175;145;Estimation éditoriale non officielle
+freezer-dbz-forme-finale-reduit-son-energie;Freezer;DBZ;Forme finale — réduit son énergie;uncommon;8.4;110;396;136;110;Estimation éditoriale non officielle
+gohan-dbz-super-saiyan-sortie-salle-du-temps;Gohan;DBZ;Super Saiyan — sortie salle du temps;rare;8.8;122;426;141;115;Estimation éditoriale non officielle
+piccolo-dbz-fusion-avec-kami-cell-games;Piccolo;DBZ;Fusion avec Kami — Cell Games;rare;9.1;131;485;138;120;Estimation éditoriale non officielle
+trunks-dbz-futur-maitrise-salle-du-temps;Trunks;DBZ;Futur — maîtrise salle du temps;rare;10.2;172;547;161;130;Estimation éditoriale non officielle
+grand-kaioshin-dbz-guide-des-kaioshin;Grand Kaioshin;DBZ;Guide des Kaioshin;rare;10.3;176;559;162;135;Estimation éditoriale non officielle
+kefla-dbs-forme-de-base;Kefla;DBS;Forme de base;epic;14.4;476;1296;220;180;Estimation éditoriale non officielle
+toppo-dbs-fierte-des-pride-troopers;Toppo;DBS;Fierté des Pride Troopers;epic;13.8;412;1137;211;170;Estimation éditoriale non officielle
+toppo-dbs-pride-troopers-chef;Toppo;DBS;Pride Troopers — chef;epic;13.8;412;1257;204;170;Estimation éditoriale non officielle
+cabba-dbs-super-saiyan-2-face-a-freezer;Cabba;DBS;Super Saiyan 2 — face à Freezer;rare;11.4;229;688;178;145;Estimation éditoriale non officielle
+goku-dbz-super-saiyan-transmission-instantanee;Goku;DBZ;Super Saiyan — transmission instantanée;rare;9.3;138;464;148;120;Estimation éditoriale non officielle
+frost-dbs-forme-finale-alliance-freezer;Frost;DBS;Forme finale — alliance Freezer;rare;11.4;229;688;178;145;Estimation éditoriale non officielle
+trunks-dbs-futur-confrontation-goku-black;Trunks;DBS;Futur — confrontation Goku Black;rare;11.6;241;718;180;150;Estimation éditoriale non officielle
+hit-dbs-assassinat-univers-6;Hit;DBS;Assassinat — univers 6;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+trunks-dbz-super-saiyan-grade-3-contre-cell;Trunks;DBZ;Super Saiyan grade 3 — contre Cell;rare;10.5;185;579;165;135;Estimation éditoriale non officielle
+vegeta-dbs-super-saiyan-tournoi-du-pouvoir;Vegeta;DBS;Super Saiyan — tournoi du pouvoir;rare;11.7;247;733;182;150;Estimation éditoriale non officielle
+frost-dbs-forme-finale-tournoi-du-pouvoir;Frost;DBS;Forme finale — tournoi du pouvoir;rare;11.6;241;718;180;150;Estimation éditoriale non officielle
+jiren-dbs-premiere-rencontre-retenue-de-puissance;Jiren;DBS;Première rencontre — retenue de puissance;epic;15.4;607;1795;227;190;Estimation éditoriale non officielle
+porunga-dbz-dragon-de-namek;Porunga;DBZ;Dragon de Namek;rare;10.7;193;600;168;140;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-2-tournoi-du-pouvoir;Goku;DBS;Super Saiyan 2 — tournoi du pouvoir;rare;11.8;253;747;183;150;Estimation éditoriale non officielle
+hit-dbs-assassin-jauge-temporelle;Hit;DBS;Assassin — jauge temporelle;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+vegeta-dbz-super-saiyan-2-contre-kid-buu;Vegeta;DBZ;Super Saiyan 2 — contre Kid Buu;rare;10.15;169;541;160;130;Estimation éditoriale non officielle
+freezer-dbz-forme-finale-combat-goku-ssj;Freezer;DBZ;Forme finale — combat Goku SSJ;uncommon;8.4;110;396;136;110;Estimation éditoriale non officielle
+goku-dbz-super-saiyan-2-majin-vegeta;Goku;DBZ;Super Saiyan 2 — Majin Vegeta;rare;10;163;526;158;130;Estimation éditoriale non officielle
+freezer-dbs-forme-finale-tournoi-du-pouvoir;Freezer;DBS;Forme finale — Tournoi du Pouvoir;rare;11.2;218;662;175;145;Estimation éditoriale non officielle
+caulifla-dbs-super-saiyan-2-duel-goku;Caulifla;DBS;Super Saiyan 2 — duel Goku;rare;12.1;272;795;187;155;Estimation éditoriale non officielle
+super-buu-dbz-absorption-de-piccolo;Super Buu;DBZ;Absorption de Piccolo;rare;10.5;185;579;165;135;Estimation éditoriale non officielle
+zamasu-dbs-futur-corps-immortel;Zamasu;DBS;Futur — corps immortel;epic;14.1;443;1214;215;175;Estimation éditoriale non officielle
+dyspo-dbs-super-vitesse-light-bullet;Dyspo;DBS;Super vitesse — Light Bullet;epic;13.6;392;1090;222;170;Estimation éditoriale non officielle
+vegeta-dbz-super-saiyan-2-sacrifice-contre-buu;Vegeta;DBZ;Super Saiyan 2 — sacrifice contre Buu;rare;10.15;169;541;160;130;Estimation éditoriale non officielle
+c-17-dbs-tournoi-du-pouvoir-derniere-resistance;C-17;DBS;Tournoi du Pouvoir — dernière résistance;rare;12.5;300;950;186;160;Estimation éditoriale non officielle
+zamasu-dbs-immortel-premiere-rencontre;Zamasu;DBS;Immortel — première rencontre;epic;14.1;443;1214;215;175;Estimation éditoriale non officielle
+goku-black-dbs-faux-goku-lame-de-ki;Goku Black;DBS;Faux Goku — lame de ki;epic;13.1;347;978;201;165;Estimation éditoriale non officielle
+freezer-dbs-forme-finale-alliance-provisoire;Freezer;DBS;Forme finale — alliance provisoire;rare;11.2;218;662;175;145;Estimation éditoriale non officielle
+hit-dbs-saut-temporel-tournoi-du-pouvoir;Hit;DBS;Saut temporel — tournoi du pouvoir;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+trunks-dbs-super-saiyan-2-retour-du-futur;Trunks;DBS;Super Saiyan 2 — retour du futur;epic;12.7;316;901;196;160;Estimation éditoriale non officielle
+agnilasa-dbs-fusion-ultime-de-l-univers-3;Agnilasa;DBS;Fusion ultime de l'univers 3;rare;12.7;316;901;196;160;Estimation éditoriale non officielle
+gohan-dbz-super-saiyan-2-attaque-contre-cell-jr;Gohan;DBZ;Super Saiyan 2 — attaque contre Cell Jr.;rare;10.3;176;559;162;135;Estimation éditoriale non officielle
+gotenks-dbz-super-saiyan-3-combat-contre-super-buu;Gotenks;DBZ;Super Saiyan 3 — combat contre Super Buu;rare;11.7;247;733;182;150;Estimation éditoriale non officielle
+vegito-dbz-forme-de-base-fusion-potara;Vegito;DBZ;Forme de base — fusion Potara;rare;12.4;293;845;192;155;Estimation éditoriale non officielle
+kale-dbs-super-saiyan-berserker-controle;Kale;DBS;Super Saiyan Berserker contrôlé;epic;12.8;323;919;197;160;Estimation éditoriale non officielle
+c-17-dbs-barriere-ultime-tournoi-du-pouvoir;C-17;DBS;Barrière ultime — Tournoi du Pouvoir;epic;13;338;957;200;165;Estimation éditoriale non officielle
+goku-dbz-super-saiyan-namek;Goku;DBZ;Super Saiyan — Namek;uncommon;8.6;116;411;138;115;Estimation éditoriale non officielle
+vegeta-dbz-super-saiyan-cell;Vegeta;DBZ;Super Saiyan — Cell;rare;9.1;131;447;145;120;Estimation éditoriale non officielle
+trunks-dbz-super-saiyan-futur;Trunks;DBZ;Super Saiyan — futur;rare;11;209;638;172;140;Estimation éditoriale non officielle
+freezer-dbz-forme-finale;Freezer;DBZ;Forme finale;uncommon;8.4;110;396;136;110;Estimation éditoriale non officielle
+cell-dbz-forme-parfaite;Cell;DBZ;Forme parfaite;rare;9.5;145;482;151;125;Estimation éditoriale non officielle
+buu-dbz-majin-buu;Buu;DBZ;Majin Buu;rare;10.5;185;579;165;135;Estimation éditoriale non officielle
+vegeta-dbz-majin;Vegeta;DBZ;Majin;rare;10.6;190;591;166;135;Estimation éditoriale non officielle
+goku-dbz-super-saiyan-3;Goku;DBZ;Super Saiyan 3;rare;11.4;229;688;178;145;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-blue;Goku;DBS;Super Saiyan Blue;epic;14.3;464;1267;218;175;Estimation éditoriale non officielle
+vegeta-dbs-super-saiyan-blue;Vegeta;DBS;Super Saiyan Blue;epic;14.35;470;1281;219;180;Estimation éditoriale non officielle
+black-goku-dbs-super-saiyan-rose;Black Goku;DBS;Super Saiyan Rosé;epic;14.7;512;1385;224;180;Estimation éditoriale non officielle
+kefla-dbs-super-saiyan-2;Kefla;DBS;Super Saiyan 2;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+toppo-dbs-mode-destruction;Toppo;DBS;Mode destruction;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+vegito-dbz-super-saiyan;Vegito;DBZ;Super Saiyan;rare;12.4;293;845;192;155;Estimation éditoriale non officielle
+gotenks-dbz-super-saiyan-3;Gotenks;DBZ;Super Saiyan 3;rare;12;265;777;186;150;Estimation éditoriale non officielle
+super-buu-dbz-forme-malefique;Super Buu;DBZ;Forme maléfique;rare;11.2;218;662;175;145;Estimation éditoriale non officielle
+buu-dbz-absorption-gotenks;Buu;DBZ;Absorption Gotenks;rare;11.8;253;747;183;150;Estimation éditoriale non officielle
+buu-dbz-absorption-gohan;Buu;DBZ;Absorption Gohan;rare;12.1;272;795;187;155;Estimation éditoriale non officielle
+kid-buu-dbz-forme-originelle;Kid Buu;DBZ;Forme originelle;rare;10.8;198;612;169;140;Estimation éditoriale non officielle
+vegeta-dbz-super-saiyan-2-buu;Vegeta;DBZ;Super Saiyan 2 — Buu;rare;10.15;169;541;160;130;Estimation éditoriale non officielle
+gohan-dbz-potentiel-ultime-buu;Gohan;DBZ;Potentiel ultime — Buu;rare;11.7;247;733;182;150;Estimation éditoriale non officielle
+freezer-dbs-golden-freezer;Freezer;DBS;Golden Freezer;epic;14.45;482;1311;220;180;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-god;Goku;DBS;Super Saiyan God;epic;13.6;392;1090;208;170;Estimation éditoriale non officielle
+trunks-dbs-super-saiyan-rage;Trunks;DBS;Super Saiyan Rage;epic;14.2;454;1240;217;175;Estimation éditoriale non officielle
+zamasu-dbs-fusionne;Zamasu;DBS;Fusionné;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+c-17-dbs-tournoi-du-pouvoir;C-17;DBS;Tournoi du Pouvoir;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+hit-dbs-saut-temporel-ameliore;Hit;DBS;Saut temporel amélioré;epic;14.7;512;1385;224;180;Estimation éditoriale non officielle
+kale-dbs-berserk;Kale;DBS;Berserk;epic;14.2;454;1240;217;175;Estimation éditoriale non officielle
+vegito-dbz-base-buu;Vegito;DBZ;Base — Buu;rare;12.4;293;845;192;155;Estimation éditoriale non officielle
+gotenks-dbz-super-saiyan-buu;Gotenks;DBZ;Super Saiyan — Buu;rare;11.8;253;747;183;150;Estimation éditoriale non officielle
+piccolo-dbz-fusion-avec-nail-et-kami;Piccolo;DBZ;Fusion avec Nail et Kami;rare;9.1;131;447;145;120;Estimation éditoriale non officielle
+freezer-dbz-forme-finale-100;Freezer;DBZ;Forme finale — 100 %;rare;8.75;121;423;141;115;Estimation éditoriale non officielle
+zamasu-dbs-immortel-futur;Zamasu;DBS;Immortel — futur;epic;14.1;443;1214;215;175;Estimation éditoriale non officielle
+vegeta-dbs-super-saiyan-blue-contre-toppo;Vegeta;DBS;Super Saiyan Blue — contre Toppo;epic;14.35;470;1281;219;180;Estimation éditoriale non officielle
+toppo-dbs-dieu-de-la-destruction-candidat;Toppo;DBS;Dieu de la destruction candidat;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+gohan-dbs-potentiel-ultime-contre-goku;Gohan;DBS;Potentiel ultime — contre Goku;epic;13.7;402;1113;210;170;Estimation éditoriale non officielle
+cell-dbz-forme-parfaite-jeux-de-cell;Cell;DBZ;Forme parfaite — jeux de Cell;rare;9.5;145;482;151;125;Estimation éditoriale non officielle
+kid-buu-dbz-fin-du-combat-terre-sacree;Kid Buu;DBZ;Fin du combat — Terre sacrée;rare;10.5;185;579;165;135;Estimation éditoriale non officielle
+mosco-dbs-dieu-de-destruction-univers-3;Mosco;DBS;Dieu de destruction univers 3;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+sidra-dbs-dieu-de-destruction-univers-9;Sidra;DBS;Dieu de destruction univers 9;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-god-tournoi-univers-6;Goku;DBS;Super Saiyan God — tournoi Univers 6;epic;13.6;392;1090;208;170;Estimation éditoriale non officielle
+trunks-dbs-futur-super-saiyan-2-contre-zamasu;Trunks;DBS;Futur — Super Saiyan 2 contre Zamasu;epic;13;338;957;200;165;Estimation éditoriale non officielle
+gotenks-dbz-super-saiyan-3-kamikaze-fantome;Gotenks;DBZ;Super Saiyan 3 — kamikaze fantôme;rare;11.8;253;747;183;150;Estimation éditoriale non officielle
+vegeta-dbs-super-saiyan-blue-combat-contre-black;Vegeta;DBS;Super Saiyan Blue — combat contre Black;epic;14.35;470;1281;219;180;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-blue-epreuve-de-whis;Goku;DBS;Super Saiyan Blue — Épreuve de Whis;epic;14.3;464;1267;218;175;Estimation éditoriale non officielle
+heles-dbs-deesse-de-destruction-univers-2;Heles;DBS;Déesse de destruction univers 2;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+liquiir-dbs-dieu-de-destruction-univers-8;Liquiir;DBS;Dieu de destruction univers 8;epic;13.3;365;1022;204;165;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-blue-visite-au-futur;Goku;DBS;Super Saiyan Blue — visite au futur;epic;14.3;464;1267;218;175;Estimation éditoriale non officielle
+gohan-dbs-potentiel-ultime-tournoi-du-pouvoir;Gohan;DBS;Potentiel ultime — Tournoi du Pouvoir;epic;13.7;402;1113;210;170;Estimation éditoriale non officielle
+arak-dbs-dieu-de-destruction-univers-5;Arak;DBS;Dieu de destruction univers 5;epic;13.5;383;1066;207;170;Estimation éditoriale non officielle
+beerus-dbs-arbitrage-de-l-univers-7;Beerus;DBS;Arbitrage de l'univers 7;epic;17;895;2326;256;205;Estimation éditoriale non officielle
+gin-dbs-dieu-de-destruction-univers-12;Gin;DBS;Dieu de destruction univers 12;epic;13.5;383;1066;207;170;Estimation éditoriale non officielle
+iwan-dbs-dieu-de-destruction-univers-1;Iwan;DBS;Dieu de destruction univers 1;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+rumsshi-dbs-dieu-de-destruction-univers-10;Rumsshi;DBS;Dieu de destruction univers 10;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-god-tournoi-du-pouvoir;Goku;DBS;Super Saiyan God — tournoi du pouvoir;epic;13.6;392;1090;208;170;Estimation éditoriale non officielle
+vegeta-dbs-super-saiyan-blue-tournoi-du-pouvoir;Vegeta;DBS;Super Saiyan Blue — Tournoi du Pouvoir;epic;14.35;470;1281;219;180;Estimation éditoriale non officielle
+vegito-dbz-super-saiyan-protection-de-gohan;Vegito;DBZ;Super Saiyan — protection de Gohan;rare;12.4;293;845;192;155;Estimation éditoriale non officielle
+gohan-dbz-ultime-contre-super-buu;Gohan;DBZ;Ultime — contre Super Buu;rare;11.7;247;733;182;150;Estimation éditoriale non officielle
+cell-dbz-cell-parfait-kamehameha-pere-fils;Cell;DBZ;Cell parfait — Kamehameha père-fils;rare;9.5;145;482;151;125;Estimation éditoriale non officielle
+freezer-dbs-golden-freezer-resurrection;Freezer;DBS;Golden Freezer — résurrection;epic;14.45;482;1311;220;180;Estimation éditoriale non officielle
+quitela-dbs-dieu-de-destruction-univers-4;Quitela;DBS;Dieu de destruction univers 4;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-blue-contre-hit;Goku;DBS;Super Saiyan Blue — contre Hit;epic;14.3;464;1267;218;175;Estimation éditoriale non officielle
+goku-black-dbs-rose-lame-de-ki;Goku Black;DBS;Rosé — lame de ki;epic;14.7;512;1385;224;180;Estimation éditoriale non officielle
+vegeta-dbs-super-saiyan-blue-contre-jiren;Vegeta;DBS;Super Saiyan Blue — contre Jiren;epic;14.35;470;1281;219;180;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-blue-kaioken-10;Goku;DBS;Super Saiyan Blue Kaioken ×10;epic;15.15;571;1529;230;185;Estimation éditoriale non officielle
+kefla-dbs-super-saiyan-fusion;Kefla;DBS;Super Saiyan — fusion;epic;14.4;476;1296;220;180;Estimation éditoriale non officielle
+awamo-dbs-ange-univers-1;Awamo;DBS;Ange univers 1;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+camparri-dbs-ange-univers-3;Camparri;DBS;Ange univers 3;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+cell-dbz-super-perfect-cell-resurrection;Cell;DBZ;Super Perfect Cell — résurrection;rare;9.95;162;523;157;130;Estimation éditoriale non officielle
+cognac-dbs-ange-univers-4;Cognac;DBS;Ange univers 4;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+corn-dbs-ange-univers-8;Corn;DBS;Ange univers 8;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+cukatail-dbs-ange-univers-5;Cukatail;DBS;Ange univers 5;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+kusu-dbs-ange-univers-10;Kusu;DBS;Ange univers 10;legendary;19;1456;3703;284;230;Estimation éditoriale non officielle
+marcarita-dbs-ange-univers-11;Marcarita;DBS;Ange univers 11;legendary;19;1456;3703;284;230;Estimation éditoriale non officielle
+martinu-dbs-ange-univers-12;Martinu;DBS;Ange univers 12;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+mohito-dbs-ange-univers-9;Mohito;DBS;Ange univers 9;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+sour-dbs-ange-univers-2;Sour;DBS;Ange univers 2;epic;14;432;1187;214;175;Estimation éditoriale non officielle
+goku-black-dbs-super-saiyan-rose-faux-saiyan;Goku Black;DBS;Super Saiyan Rosé — faux Saiyan;epic;14.7;512;1385;224;180;Estimation éditoriale non officielle
+jiren-dbs-barriere-energetique-face-a-goku;Jiren;DBS;Barrière énergétique — face à Goku;epic;15.4;607;1795;227;190;Estimation éditoriale non officielle
+beerus-dbs-debut-de-super-menace-sur-terre;Beerus;DBS;Début de Super — menace sur Terre;epic;17;895;2326;256;205;Estimation éditoriale non officielle
+champa-dbs-choc-avec-beerus;Champa;DBS;Choc avec Beerus;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+toppo-dbs-dieu-de-destruction-hakai;Toppo;DBS;Dieu de destruction — Hakai;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+zamasu-dbs-fusionne-corps-stable;Zamasu;DBS;Fusionné — corps stable;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+belmod-dbs-dieu-de-destruction-univers-11;Belmod;DBS;Dieu de destruction univers 11;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+goku-black-dbs-rose-faux-clone-demultiplie;Goku Black;DBS;Rosé — faux clone démultiplié;epic;14.7;512;1385;224;180;Estimation éditoriale non officielle
+whis-dbs-ange-baton-de-divination;Whis;DBS;Ange — bâton de divination;legendary;19;1456;3703;284;230;Estimation éditoriale non officielle
+champa-dbs-dieu-de-la-destruction-univers-6;Champa;DBS;Dieu de la destruction univers 6;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+vados-dbs-ange-univers-6;Vados;DBS;Ange univers 6;legendary;19;1456;3703;284;230;Estimation éditoriale non officielle
+goku-dbs-super-saiyan-blue-kaioken-20;Goku;DBS;Super Saiyan Blue Kaioken ×20;epic;15.15;571;1529;230;185;Estimation éditoriale non officielle
+grand-pretre-dbs-arbitre-tournoi-du-pouvoir;Grand Prêtre;DBS;Arbitre — Tournoi du Pouvoir;legendary;20;1856;4689;298;240;Estimation éditoriale non officielle
+goku-dbs-ultra-instinct-maitrise;Goku;DBS;Ultra Instinct maîtrisé;epic;16.4;774;2028;262;200;Estimation éditoriale non officielle
+jiren-dbs-pleine-puissance;Jiren;DBS;Pleine puissance;epic;16.1;720;1895;243;195;Estimation éditoriale non officielle
+beerus-dbs-dieu-de-la-destruction;Beerus;DBS;Dieu de la destruction;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+vegeta-dbs-super-saiyan-blue-evolution;Vegeta;DBS;Super Saiyan Blue Evolution;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+vegito-dbs-super-saiyan-blue;Vegito;DBS;Super Saiyan Blue;epic;16;702;1851;242;195;Estimation éditoriale non officielle
+zamasu-dbs-fusionne-corrompu;Zamasu;DBS;Fusionné corrompu;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+goku-dbs-ultra-instinct-sign;Goku;DBS;Ultra Instinct — Sign;epic;15.8;668;1768;253;195;Estimation éditoriale non officielle
+zen-o-dbs-roi-des-univers;Zen'ô;DBS;Roi des univers;legendary;22;3017;7541;326;260;Estimation éditoriale non officielle
+beerus-dbs-pouvoir-de-destruction-libere;Beerus;DBS;Pouvoir de destruction libéré;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+zalama-dbs-createur-des-super-dragon-balls-mentionne;Zalama;DBS;Créateur des Super Dragon Balls (mentionné);epic;14.6;500;1355;222;180;Estimation éditoriale non officielle
+zamasu-dbs-fusionne-halo-de-justice;Zamasu;DBS;Fusionné — halo de justice;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+freezer-dbs-golden-freezer-affrontement-jiren;Freezer;DBS;Golden Freezer — affrontement Jiren;epic;14.45;482;1311;220;180;Estimation éditoriale non officielle
+zen-o-du-futur-dbs-roi-des-univers-futur;Zen'ô du futur;DBS;Roi des univers futur;legendary;22;3017;7541;326;260;Estimation éditoriale non officielle
+jiren-dbs-jiren-choc-contre-ultra-instinct;Jiren;DBS;Jiren — choc contre Ultra Instinct;epic;16.1;720;1895;243;195;Estimation éditoriale non officielle
+trunks-dbs-super-saiyan-rage-epee-de-l-espoir;Trunks;DBS;Super Saiyan Rage — épée de l'espoir;epic;14.9;538;1447;227;185;Estimation éditoriale non officielle
+whis-dbs-entrainement-de-goku-et-vegeta;Whis;DBS;Entraînement de Goku et Vegeta;legendary;19;1456;3703;284;230;Estimation éditoriale non officielle
+vegeta-dbs-super-saiyan-blue-evolution-contre-jiren;Vegeta;DBS;Super Saiyan Blue Evolution — contre Jiren;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+kefla-dbs-super-saiyan-2-face-a-ultra-instinct;Kefla;DBS;Super Saiyan 2 — face à Ultra Instinct;epic;15.4;607;1618;234;190;Estimation éditoriale non officielle
+beerus-dbs-hakai-affrontement-zamasu;Beerus;DBS;Hakai — affrontement Zamasu;legendary;17;895;2326;256;205;Estimation éditoriale non officielle
+grand-pretre-dbs-pere-des-anges;Grand Prêtre;DBS;Père des anges;legendary;20;1856;4689;298;240;Estimation éditoriale non officielle
+jiren-dbs-puissance-liberee-au-bord-du-ring;Jiren;DBS;Puissance libérée — au bord du ring;epic;16.1;720;1895;243;195;Estimation éditoriale non officielle
+zen-o-dbs-tournoi-du-pouvoir-effacement;Zen'ô;DBS;Tournoi du Pouvoir — effacement;legendary;22;3017;7541;326;260;Estimation éditoriale non officielle
+super-shenron-dbs-dragon-des-super-dragon-balls;Super Shenron;DBS;Dragon des Super Dragon Balls;epic;15;551;1479;228;185;Estimation éditoriale non officielle
+goku-dbs-ultra-instinct-sign-premier-eveil;Goku;DBS;Ultra Instinct Sign — premier éveil;epic;15.8;668;1768;253;195;Estimation éditoriale non officielle

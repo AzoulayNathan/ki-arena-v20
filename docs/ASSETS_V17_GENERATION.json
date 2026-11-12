@@ -1,0 +1,18 @@
+{
+  "image": {
+    "path": "assets/v17/reward-objects.webp",
+    "prompt": "Use case: stylized-concept. Asset type: production reward object sprite atlas for a polished bright hand-painted anime adventure game. A TRANSPARENT sprite sheet with exactly FOUR independent detailed objects, in a perfectly aligned TWO COLUMNS by TWO ROWS grid of equally sized square cells. Every object centered within its own cell, generous transparent margins, no overlap, no backdrop, no text, no labels, no watermark. Top left: compact black retro submachine gun with warm wooden stock and curved magazine, side view, safe inert collectible object, no bullets or people. Top right: open tan leather coin pouch spilling a few gleaming plain gold coins, no logos. Bottom left: blue and ivory padded metal breastplate with ochre trim, empty, no wearer. Bottom right: open small linen healing pouch with several glossy green beans, no symbols. Rich material detail, crisp confident ink contours, luminous cel shading, premium 2D game object illustrations, warm golden highlights, readable silhouettes. This is original editorial category artwork, not replicas of named franchise props; no characters, no hands, no user interface. Render entire four-object sheet with real alpha transparency.",
+    "provenance": "OpenAI ImageGen, 5 novembre 2026",
+    "usage": "Illustrations éditoriales de catégories d’objets. Ne constitue pas une reproduction canonique exacte d’un accessoire nommé.",
+    "alpha": true
+  },
+  "audio": {
+    "paths": [
+      "assets/v17/victory.wav",
+      "assets/v17/defeat.wav",
+      "assets/v17/reward.wav"
+    ],
+    "provenance": "Création procédurale originale locale, PCM mono 22050 Hz, 16 bits",
+    "usage": "Effets de résultat et prise de récompense ; réglage bruitages existant, aucune OST ajoutée."
+  }
+}

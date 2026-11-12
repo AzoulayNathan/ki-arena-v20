@@ -1,0 +1,54 @@
+
+> ki-arena-v52@5.2.0 test
+> node tests/run-tests.mjs && node tests/test-v3.mjs && node tests/test-v51.mjs && node tests/test-v52.mjs
+
+✓ Exactement 600 cartes du pilote et 5 raretés
+✓ Répartition catalogue stricte 198/162/126/90/24 (33/27/21/15/4 %)
+✓ Effets par carte = 1..5 selon rareté
+✓ Données valides, IDs uniques et stats entières
+✓ Packs cumulés à 100% et progression légendaire croissante
+✓ Tirage pondéré normal stable: écarts inférieurs à 1 point
+✓ Starter 12 cartes possédées; doublons donnent des fragments
+✓ Bataille de 5v5 reproductible, victoire A/B/égalité
+✓ Batailles 1v1 et équilibres canon/équilibré
+✓ Moteur stable sur 200 simulations aléatoires, sans PV hors bornes
+✓ Solo : ennemis 5 distincts, difficulté augmente, récompenses persistantes
+✓ Draft budget jouable, équipe CPU complète sans dépassement
+✓ Tournoi 8 et 16 : les manches progressent et produisent un champion
+✓ Effet unique : survie à 1 PV puis KO possible au coup suivant
+✓ Effet légendaire unique : pas de boucle de contre-attaque
+✓ Chaque effet est déclenché au plus une fois par combattant
+✓ Ordre des actions normales respecte la vitesse et un tour maximum par round
+
+17 tests réussis.
+✓ 600 cartes ; IDs uniques ; 1380 effets ; 33/27/21/15/4
+✓ Zones croissantes avec boss unique à la fin
+✓ Création run avec 5 cartes ; départ 80 zénis + Senzu
+✓ Élite, boss, régular augmentent bien la difficulté
+✓ Bonus des reliques et équipements affectent réellement le combat
+✓ PV persistants entre combats et Senzu les restaure
+✓ Réserve de départ + bonus reliques
+✓ Marchand fournit 4 articles, achats vérifient le budget
+✓ Événements générés et résolus, avancent la carte
+✓ Cycle de recrutement : réserve, progression, déblocage à la fin
+✓ Pack et progression enregistrés mais non ajoutés avant fin de run
+✓ Calcul de combat reproductible sans effet infini
+12 tests V3 réussis.
+✓ Puissance canon DBZ SSJ2 > DBZ base, DBS UI > DBS base
+✓ Les rangs narratifs ne sont pas calculés à partir de la rareté
+✓ Des équipes 3v9 sont jouables et les cibles varient selon la seed
+✓ Enchères: 0 carte au départ, premier oui, second surenchérit de 5 et remporte au pass
+✓ Passes: trois skips par joueur puis obligation de miser si solvable
+✓ Option sans limite de skips et pas de limite de cartes, manches configurables
+✓ Option équipe limitée à 3, impossible d’acheter une quatrième carte
+✓ Boss : seconde phase déclenchable et reproductible
+✓ 7 Dragon Balls => vœu et +1 réserve
+
+9 tests V5.1 réussis.
+✓ Rareté croissante selon la puissance estimée, quotas constants
+✓ Transformations ultimes et anges ne sont plus communs
+✓ Augmentation globale attaque +20%, stable sur tout combattant
+✓ Gains de 25 % de PV après victoire et KO relevé après combat
+✓ Chaque effet reste unique pendant le combat
+✓ Équipes asymétriques 3 contre 9 et cible aléatoire
+6 tests V5.2 réussis.

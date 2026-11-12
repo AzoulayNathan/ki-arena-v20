@@ -1,0 +1,2 @@
+export function contextToken(r){return [r.runInstanceId||r.runId,r.revision,r.phase,r.step,r.current||'',r.activeEvent?.id||''].join('|');}
+export function applyOnce(r,{context,id},fn){if(context!==contextToken(r)||!id||(r.processedActions||[]).includes(id))return false;const before=structuredClone(r);try{if(fn(r)===false){Object.keys(r).forEach(k=>delete r[k]);Object.assign(r,before);return false;}r.processedActions=[...(r.processedActions||[]),id].slice(-128);r.revision++;return true;}catch(e){Object.keys(r).forEach(k=>delete r[k]);Object.assign(r,before);throw e;}}
