@@ -3,6 +3,7 @@ import {asset} from './media.js';
 import {theme,crest} from '../v15/theme.js';
 import {recruitment,modeArt,mountModes} from '../v17/mode-carousel.js';
 import {MIXED_RULES,MIXED_ROUNDS} from '../v16/draft.js';
+import {START_DRAFT_PICKS} from '../v20/draft.js';
 
 export function setupMarkup({worlds,c,stored,error,checks,esc,btn}){
   return `<section class="v20-setup-page">
@@ -21,7 +22,8 @@ export function setupMarkup({worlds,c,stored,error,checks,esc,btn}){
 }
 
 export function mixedDraftMarkup({run,c,hud,fighter,gearCard,esc,btn,selectedOffer=null}){
-  return `${hud}<section class="a-draft-heading v16-recruit-heading"><span class="a-eyebrow">LE RECRUTEMENT · DESTINS CROISÉS</span><h1>Choisis ton destin.</h1><div class="a-progress" aria-label="Choix ${run.step+1} sur ${MIXED_ROUNDS}">${Array.from({length:MIXED_ROUNDS},(_,i)=>`<i class="${i<=run.step?'active':''}"></i>`).join('')}</div></section>
+  const rounds=run.rulesVersion==='20.0.0'?START_DRAFT_PICKS:MIXED_ROUNDS;
+  return `${hud}<section class="a-draft-heading v16-recruit-heading"><span class="a-eyebrow">LE RECRUTEMENT · DESTINS CROISÉS</span><h1>Choisis ton destin.</h1><div class="a-progress" aria-label="Choix ${run.step+1} sur ${rounds}">${Array.from({length:rounds},(_,i)=>`<i class="${i<=run.step?'active':''}"></i>`).join('')}</div></section>
   <section class="v16-draft-stage v20-draft-float"><div class="a-offers v14-draft-offers">${run.offers.map((o,i)=>{
     const attrs=`data-a="draft" data-id="${esc(o.token)}" data-offer-index="${i}"`;
     const kind=o.kind==='hero'?'ALLIÉ':'ARME';

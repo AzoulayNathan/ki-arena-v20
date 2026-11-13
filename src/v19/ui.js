@@ -147,7 +147,7 @@ function inspectPanel(){
   if(!h)return `<div class="a-inspect-viewer v20-inspect"><button class="v20-inspect-x" data-a="close" aria-label="Fermer">×</button><p>Carte introuvable.</p></div>`;
   const seed=inspectedSeed||run?.seed||mini?.seed||globalThis.KI_PARTY_DEBUG?.getState?.()?.seed||'ARENA';
   const edition=editionFor(seed,h.id);
-  const gearFx=isGear?[{name:effectDescription(h),description:effectDescription(h)}]:null;
+  const gearFx=isGear?[{name:h.name||'Objet',description:effectDescription(h)}]:null;
   const techs=(gearFx||h.effects||[]).map((e,i)=>{
     const desc=e.description||'';
     return `<li class="v20-tech" style="--i:${i}"><b>${esc(e.name)}</b>${desc?`<span>${esc(desc)}</span>`:''}</li>`;
