@@ -198,110 +198,136 @@ export function isPreRenderedCard(image,{equipment=false}={}){
   return true;
 }
 
-/** Special foil — pleine carte, sans aucune bordure rectangulaire interne. */
+/** Special foil — bande irisée pleine carte (alpha unique, pas de double atténuation). */
 function paintSpecialFoil(c,accent){
   c.save();
+  c.globalAlpha=1;
   c.globalCompositeOperation='screen';
   const g=c.createLinearGradient(0,0,900,1350);
   g.addColorStop(0,'rgba(255,255,255,0)');
-  g.addColorStop(.22,hexAlpha('#a6f4ff',.38));
-  g.addColorStop(.46,'rgba(255,255,255,.62)');
-  g.addColorStop(.54,hexAlpha(accent,.55));
-  g.addColorStop(.74,'rgba(255,213,154,.42)');
+  g.addColorStop(.2,hexAlpha('#a6f4ff',.55));
+  g.addColorStop(.45,'rgba(255,255,255,.78)');
+  g.addColorStop(.52,hexAlpha(accent,.7));
+  g.addColorStop(.72,'rgba(255,213,154,.55)');
   g.addColorStop(1,'rgba(255,255,255,0)');
   c.fillStyle=g;c.fillRect(0,0,900,1350);
-  const glow=c.createRadialGradient(450,480,20,450,520,680);
-  glow.addColorStop(0,'rgba(255,250,220,.38)');
-  glow.addColorStop(.55,hexAlpha(accent,.22));
+  const glow=c.createRadialGradient(450,480,16,450,520,720);
+  glow.addColorStop(0,'rgba(255,250,220,.5)');
+  glow.addColorStop(.5,hexAlpha(accent,.28));
   glow.addColorStop(1,'rgba(255,255,255,0)');
   c.fillStyle=glow;c.fillRect(0,0,900,1350);
   c.globalCompositeOperation='source-over';
   c.restore();
 }
 
-/** Lianes légères continues sur tout le bord dur (pas de feuilles ovales). */
+/**
+ * Lianes légères continues juste à l'intérieur du cadre couleur (bord dur).
+ * Ondulation marquée pour ne pas se confondre avec le stroke chrome. Pas d'ovales.
+ */
 function paintBorderVines(c,accent,{level=1,scale=1}={}){
   const lv=Math.max(1,Math.min(5,level|0));
   const strands=lv>=4?2:1;
-  const alpha=.22+.05*lv;
-  const lw=(1.15+lv*.22)*scale;
-  c.save();c.lineCap='round';c.lineJoin='round';
-  const frame=[[26,26,874,26],[874,26,874,1324],[874,1324,26,1324],[26,1324,26,26]];
+  // Rectangle du cadre dur (aligné chrome accent ~20).
+  const x0=20,y0=20,x1=880,y1=1330;
+  const edges=[[x0,y0,x1,y0],[x1,y0,x1,y1],[x1,y1,x0,y1],[x0,y1,x0,y0]];
+  c.save();
+  c.globalAlpha=1;
+  c.lineCap='round';
+  c.lineJoin='round';
   for(let s=0;s<strands;s++){
-    const off=(3.5+s*3.5)*scale*(s%2?1:-1);
-    c.globalAlpha=alpha*(1-s*.2);
-    c.strokeStyle=hexAlpha(accent,.58+lv*.08);
-    c.lineWidth=lw*(1-s*.1);
-    frame.forEach(([x1,y1,x2,y2],ei)=>{
-      const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy)||1;
-      const nx=-dy/len*off,ny=dx/len*off;
-      c.beginPath();
-      c.moveTo(x1+nx,y1+ny);
-      const steps=10;
-      for(let i=1;i<=steps;i++){
-        const t=i/steps;
-        const wobble=Math.sin(t*Math.PI*2+s*1.5+ei)*.28*off;
-        c.lineTo(x1+dx*t+nx+(-dy/len)*wobble,y1+dy*t+ny+(dx/len)*wobble);
-      }
-      c.stroke();
-    });
+    // Inset intérieur : clairement DANS le cadre, pas dessus.
+    const inset=(11+s*6)*scale;
+    // Amplitude haute : l'ondulation doit rester lisible en miniature (~180px).
+    const amp=(12+lv*1.2)*scale;
+    const layers=[
+      {lw:(6.2+lv*.5-s*.55)*scale,color:hexAlpha(accent,.98),blur:8},
+      {lw:(2.6+lv*.2)*scale,color:hexAlpha('#ffffff',.9),blur:0},
+    ];
+    for(const layer of layers){
+      c.shadowBlur=layer.blur;c.shadowColor=hexAlpha(accent,.7);
+      c.strokeStyle=layer.color;c.lineWidth=layer.lw;
+      edges.forEach(([ax,ay,bx,by],ei)=>{
+        const dx=bx-ax,dy=by-ay,len=Math.hypot(dx,dy)||1;
+        const nx=-dy/len*inset,ny=dx/len*inset;
+        c.beginPath();
+        c.moveTo(ax+nx,ay+ny);
+        const steps=Math.max(24,Math.round(len/18));
+        for(let i=1;i<=steps;i++){
+          const t=i/steps;
+          // 4 bosses + harmonique = silhouette de liane sur les 4 côtés.
+          const wobble=(Math.sin(t*Math.PI*4.2+ei*1.2+s)+.35*Math.sin(t*Math.PI*8.4+s))*amp;
+          c.lineTo(ax+dx*t+nx+(-dy/len)*wobble,ay+dy*t+ny+(dx/len)*wobble);
+        }
+        c.stroke();
+      });
+    }
   }
+  c.shadowBlur=0;
   c.restore();
 }
 
-/** FX cumulés bien visibles (1→5 + prism spécial). */
+/** FX cumulés très marqués (1→5 + prism). Une seule couche d'alpha. */
 function paintCumulativeFx(c,fxList,accent,{scale=1,intensity=1}={}){
   if(!fxList?.length)return;
-  const sc=Math.max(1,scale),boost=Math.max(1,Math.min(1.85,intensity));
+  const sc=Math.max(1,scale);
+  const boost=Math.max(1,Math.min(1.4,intensity));
   c.save();
+  c.globalAlpha=1;
   for(const fx of fxList){
     const id=fx?.id||fx;
     if(id==='seal'){
-      // Sceaux d'encre aux coins / bords.
-      c.globalAlpha=.55*boost;c.fillStyle=hexAlpha(accent,.72);c.strokeStyle=hexAlpha(accent,.9);c.lineWidth=1.8*sc;
-      [[70,70],[830,70],[70,1280],[830,1280],[70,680],[830,680]].forEach(([x,y],i)=>{
-        c.beginPath();c.arc(x,y,(7+(i%3)*2.2)*sc,0,Math.PI*2);c.fill();
-        c.beginPath();c.arc(x,y,(11+(i%2)*2)*sc,0,Math.PI*2);c.stroke();
+      // Tampons d'encre coins + pointillés internes.
+      c.fillStyle=hexAlpha(accent,.88);
+      c.strokeStyle=hexAlpha('#ffffff',.7);
+      c.lineWidth=2.8*sc;
+      [[54,54],[846,54],[54,1296],[846,1296],[54,675],[846,675]].forEach(([x,y],i)=>{
+        c.beginPath();c.arc(x,y,(12+(i%3)*3.5)*sc,0,Math.PI*2);c.fill();
+        c.beginPath();c.arc(x,y,(18+(i%2)*4)*sc,0,Math.PI*2);c.stroke();
       });
+      c.strokeStyle=hexAlpha(accent,.85);c.lineWidth=3.4*sc;c.setLineDash([12*sc,12*sc]);
+      rounded(c,46,46,808,1258,20);c.stroke();c.setLineDash([]);
     }else if(id==='veins'){
-      c.globalAlpha=.62*boost;c.strokeStyle=hexAlpha(accent,.95);c.lineWidth=2.6*sc;c.lineCap='round';
-      [[36,220,150,420],[864,220,750,420],[42,860,160,1080],[858,860,740,1080],[70,520,180,640],[830,520,720,640]].forEach(([x1,y1,x2,y2])=>{
-        c.beginPath();c.moveTo(x1,y1);c.quadraticCurveTo((x1+x2)/2+((x1<450)?48:-48)*sc,(y1+y2)/2,x2,y2);c.stroke();
+      c.lineCap='round';
+      c.strokeStyle=hexAlpha(accent,.98);c.lineWidth=6*sc;
+      c.shadowColor=hexAlpha(accent,.8);c.shadowBlur=16*sc;
+      [[24,180,190,450],[876,180,710,450],[28,780,195,1140],[872,780,705,1140],[48,470,210,660],[852,470,690,660]].forEach(([x1,y1,x2,y2])=>{
+        c.beginPath();c.moveTo(x1,y1);c.quadraticCurveTo((x1+x2)/2+((x1<450)?70:-70)*sc,(y1+y2)/2,x2,y2);c.stroke();
       });
-      c.globalAlpha=.35*boost;c.lineWidth=1.4*sc;
-      [[90,300,170,380],[810,300,730,380],[100,980,190,1060],[800,980,710,1060]].forEach(([x1,y1,x2,y2])=>{
+      c.shadowBlur=0;c.strokeStyle=hexAlpha('#ffffff',.65);c.lineWidth=2.6*sc;
+      [[60,260,175,400],[840,260,725,400],[70,900,185,1060],[830,900,715,1060]].forEach(([x1,y1,x2,y2])=>{
         c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.stroke();
       });
     }else if(id==='split'){
-      c.globalAlpha=.7*boost;c.strokeStyle='#ffffffdd';c.lineWidth=2.8*sc;c.fillStyle='#ffffff55';
-      [[58,210,230,150,210,175],[842,210,670,150,690,175],[58,1110,230,1045,210,1070],[842,1110,670,1045,690,1070],[120,640,210,600,195,620],[780,640,690,600,705,620]].forEach(([a,b,d,e,f,g])=>{
+      c.fillStyle=hexAlpha('#ffffff',.72);
+      c.strokeStyle='#fffffff0';
+      c.lineWidth=4*sc;
+      c.shadowColor='#ffffffcc';c.shadowBlur=18*sc;
+      [[40,170,270,90,235,140],[860,170,630,90,665,140],[40,1160,270,1070,235,1120],[860,1160,630,1070,665,1120],[95,600,250,520,220,565],[805,600,650,520,680,565]].forEach(([a,b,d,e,f,g])=>{
         c.beginPath();c.moveTo(a,b);c.lineTo(d,e);c.lineTo(f,g);c.closePath();c.fill();c.stroke();
       });
+      c.shadowBlur=0;
     }else if(id==='aurora'){
-      c.globalAlpha=.72*boost;c.globalCompositeOperation='screen';
-      const r1=c.createRadialGradient(240,280,10,240,280,480);
-      r1.addColorStop(0,hexAlpha('#66f0ff',.85));r1.addColorStop(.5,hexAlpha(accent,.48));r1.addColorStop(1,hexAlpha(accent,0));
-      c.fillStyle=r1;c.fillRect(0,0,900,1350);
-      const r2=c.createRadialGradient(680,540,10,680,540,500);
-      r2.addColorStop(0,hexAlpha('#ff8ad8',.72));r2.addColorStop(.5,hexAlpha(accent,.4));r2.addColorStop(1,hexAlpha('#ff8ad8',0));
-      c.fillStyle=r2;c.fillRect(0,0,900,1350);
-      const r3=c.createRadialGradient(450,1080,20,450,1080,520);
-      r3.addColorStop(0,hexAlpha(accent,.7));r3.addColorStop(.55,hexAlpha('#66f0ff',.32));r3.addColorStop(1,hexAlpha('#66f0ff',0));
-      c.fillStyle=r3;c.fillRect(0,0,900,1350);
-      const r4=c.createRadialGradient(450,180,10,450,180,320);
-      r4.addColorStop(0,hexAlpha('#ffe9a8',.55));r4.addColorStop(1,hexAlpha('#ffe9a8',0));
-      c.fillStyle=r4;c.fillRect(0,0,900,1350);
+      c.globalCompositeOperation='screen';
+      [[220,240,560,'#66f0ff'],[700,500,580,'#ff8ad8'],[450,1120,620,accent],[450,150,380,'#ffe9a8'],[160,780,420,'#66f0ff']].forEach(([x,y,r,col])=>{
+        const g=c.createRadialGradient(x,y,10,x,y,r);
+        g.addColorStop(0,hexAlpha(col,.95*boost));
+        g.addColorStop(.4,hexAlpha(col,.55*boost));
+        g.addColorStop(1,hexAlpha(col,0));
+        c.fillStyle=g;c.fillRect(0,0,900,1350);
+      });
       c.globalCompositeOperation='source-over';
     }else if(id==='embers'){
-      c.globalAlpha=.9*boost;c.fillStyle=hexAlpha('#ffb347',.98);
-      [[80,280],[130,340],[820,290],[770,360],[100,600],[800,620],[190,880],[710,900],[100,1110],[800,1130],[450,150],[510,190],[250,460],[650,480],[360,320],[540,300],[200,720],[700,740]].forEach(([x,y],i)=>{
-        c.beginPath();c.arc(x,y,(3.4+(i%4)*1.4)*sc,0,Math.PI*2);c.fill();
+      c.fillStyle='#ffb347';
+      c.shadowColor='#ff9a2acc';c.shadowBlur=18*sc;
+      [[60,240],[110,300],[840,250],[790,340],[80,560],[820,580],[170,840],[730,860],[80,1090],[820,1110],[450,130],[530,175],[230,430],[670,450],[340,280],[570,260],[180,680],[720,700],[290,190],[610,210],[400,520],[500,540]].forEach(([x,y],i)=>{
+        c.beginPath();c.arc(x,y,(5.5+(i%4)*2.2)*sc,0,Math.PI*2);c.fill();
       });
-      c.fillStyle=hexAlpha(accent,.9);
-      [[200,240],[700,250],[250,1010],[650,1020],[170,690],[730,710],[450,400],[450,900]].forEach(([x,y])=>{c.beginPath();c.arc(x,y,3.2*sc,0,Math.PI*2);c.fill();});
-      c.globalAlpha=.35*boost;c.globalCompositeOperation='screen';
-      const glow=c.createRadialGradient(450,700,20,450,700,520);
-      glow.addColorStop(0,hexAlpha('#ffb347',.45));glow.addColorStop(1,hexAlpha('#ffb347',0));
+      c.shadowBlur=0;
+      c.fillStyle=hexAlpha(accent,.98);
+      [[180,220],[720,230],[230,990],[670,1000],[150,670],[750,690],[450,360],[450,860]].forEach(([x,y])=>{c.beginPath();c.arc(x,y,5*sc,0,Math.PI*2);c.fill();});
+      c.globalCompositeOperation='screen';
+      const glow=c.createRadialGradient(450,700,16,450,700,600);
+      glow.addColorStop(0,hexAlpha('#ffb347',.65*boost));glow.addColorStop(1,hexAlpha('#ffb347',0));
       c.fillStyle=glow;c.fillRect(0,0,900,1350);
       c.globalCompositeOperation='source-over';
     }else if(id==='prism'){
@@ -489,12 +515,11 @@ export function renderCard(canvas,hero,{skin,edition,image=null,seed='ARENA',cro
   c.fillStyle=under;c.fillRect(0,0,900,1350);
   paintFullBleedArt(c,art,crop,{equipment,pictogram:hero.artLabel==='PICTOGRAMME',accent});
 
-  // FX pleine carte EN DESSOUS du texte
-  paintCumulativeFx(c,fx.filter(f=>(f.id||f)!=='prism'),accent,{scale:textScale,intensity:1.15+0.18*(level-1)+(special?0.22:0),level});
-  paintBorderVines(c,accent,{level,scale:textScale});
+  // FX pleine carte sous le texte ; lianes APRÈS le chrome (= sur le bord dur).
+  paintCumulativeFx(c,fx.filter(f=>(f.id||f)!=='prism'),accent,{scale:textScale,intensity:1.2+0.2*(level-1)+(special?0.25:0),level});
   if(special)paintSpecialFoil(c,accent);
-
   paintCardChrome(c,hero,{equipment,accent,l,special,textScale,level});
+  paintBorderVines(c,accent,{level,scale:textScale});
   const {by,effects,nameY}=paintCardCopy(c,hero,{equipment,accent,l,special,textScale,level});
 
   c.restore();
