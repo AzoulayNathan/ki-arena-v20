@@ -121,7 +121,10 @@ function reveal(i){
 function zoom(i){
   const o=current?.cards?.[i];if(!o)return;
   const h=resolveCard(o),special=o.finish==='gold'||o.finish==='special';
-  const techs=(h.effects||[]).map((e,idx)=>`<li class="v20-tech" style="--i:${idx}"><b>${E(e.name)}</b><span>${E(e.description||e.type||'')}</span></li>`).join('')||'<li class="v20-tech">Aucune technique listée.</li>';
+  const techs=(h.effects||[]).map((e,idx)=>{
+    const desc=e.description||'';
+    return `<li class="v20-tech" style="--i:${idx}"><b>${E(e.name)}</b>${desc?`<span>${E(desc)}</span>`:''}</li>`;
+  }).join('')||'<li class="v20-tech"><b>Aucune capacité listée</b></li>';
   overlay.querySelector('.v192-pack-zoom')?.remove();
   const el=document.createElement('div');
   el.className='v192-pack-zoom';
@@ -129,7 +132,7 @@ function zoom(i){
   el.innerHTML=`<div class="v20-pack-zoom-inner">
     <button class="v20-inspect-x" data-pack="unzoom" aria-label="Revenir au pack">×</button>
     <div class="v20-pack-zoom-card">${renderCardMarkup(h,{seed:o.seed,skin:special?'special':'normal',equipment:!!h.category})}</div>
-    <div class="v20-inspect-copy"><h3>Techniques</h3><ul class="a-inspect-techs">${techs}</ul></div>
+    <div class="v20-inspect-copy"><ul class="a-inspect-techs">${techs}</ul></div>
   </div>`;
   overlay.append(el);
   paint();

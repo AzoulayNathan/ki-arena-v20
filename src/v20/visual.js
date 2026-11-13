@@ -17,4 +17,13 @@ export function polishV20(root,ctx){
  if(ctx.run?.phase==='combat')paintStates(root,ctx.run.combat.result.events[Math.max(0,ctx.run.combat.cursor-1)]);
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-v20-move]');if(!b||b.disabled||e.detail>1||!current?.run)return;const [i,d]=b.dataset.v20Move.split(':').map(Number);current.mutate(r=>{if(!['map','prepare'].includes(r.phase)||r.rulesVersion!=='20.0.0'||!r.units[i+d])return false;[r.units[i],r.units[i+d]]=[r.units[i+d],r.units[i]];return true;},b.dataset.token);});
+/** Optional in-place inventory refresh hook for callers that already keep modal open. */
+export function refreshInventoryModal(root,html,{scrollTop=0,scrollLefts=[]}={}){
+  const modal=root?.querySelector?.('.a-modal.drawer')||document.querySelector('.a-modal.drawer');
+  if(!modal||html==null)return false;
+  modal.innerHTML=html;
+  modal.scrollTop=scrollTop;
+  scrollLefts.forEach(({selector,left,top})=>{const el=modal.querySelector(selector);if(el){if(left!=null)el.scrollLeft=left;if(top!=null)el.scrollTop=top;}});
+  return true;
+}
 document.addEventListener('click',e=>{const button=e.target.closest('[data-a="navmore"]');if(!button)return;e.preventDefault();e.stopImmediatePropagation();const header=button.closest('.a-header'),open=!header.classList.contains('nav-open');header.classList.toggle('nav-open',open);button.setAttribute('aria-expanded',String(open));},true);

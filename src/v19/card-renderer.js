@@ -219,37 +219,42 @@ function paintSpecialFoil(c,accent){
   c.restore();
 }
 
-/** Lianes fines et sobres sur le cadre (design précédent léger). */
+/** Lianes légères 1ʳᵉ version : brins/épaisseur/opacité croissent avec la rareté (1→5). */
 function paintBorderVines(c,accent,{level=1,scale=1}={}){
-  const strands=level>=4?2:1;
-  const alpha=.18+.04*level;
-  const lw=(1.05+level*.18)*scale;
+  const lv=Math.max(1,Math.min(5,level|0));
+  const strands=Math.min(4,lv); // 1..4
+  const alpha=.16+.065*lv;
+  const lw=(.95+lv*.28)*scale;
   c.save();c.lineCap='round';c.lineJoin='round';
   const frame=[[26,26,874,26],[874,26,874,1324],[874,1324,26,1324],[26,1324,26,26]];
   for(let s=0;s<strands;s++){
-    const off=(3.5+s*3.5)*scale*(s%2?1:-1);
-    c.globalAlpha=alpha*(1-s*.22);
-    c.strokeStyle=hexAlpha(accent,.5+level*.06);
-    c.lineWidth=lw*(1-s*.12);
+    const off=(3.2+s*3.2)*scale*(s%2?1:-1);
+    c.globalAlpha=alpha*(1-s*.18);
+    c.strokeStyle=hexAlpha(accent,.48+lv*.07);
+    c.lineWidth=lw*(1-s*.1);
     frame.forEach(([x1,y1,x2,y2],ei)=>{
       const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy)||1;
       const nx=-dy/len*off,ny=dx/len*off;
       c.beginPath();
       c.moveTo(x1+nx,y1+ny);
-      const steps=8;
+      const steps=10;
       for(let i=1;i<=steps;i++){
         const t=i/steps;
-        const wobble=Math.sin(t*Math.PI*2+s*1.5+ei)*.32*off;
+        const wobble=Math.sin(t*Math.PI*2.15+s*1.35+ei*.7)*.38*off;
         c.lineTo(x1+dx*t+nx+(-dy/len)*wobble,y1+dy*t+ny+(dx/len)*wobble);
       }
       c.stroke();
     });
   }
-  if(level>=3){
-    c.globalAlpha=.28;c.fillStyle=hexAlpha(accent,.65);
-    [[36,190],[864,230],[36,1140],[864,1100]].forEach(([x,y],i)=>{
-      c.beginPath();c.ellipse(x,y,2.8*scale,4.8*scale,i*.5,0,Math.PI*2);c.fill();
-    });
+  if(lv>=2){
+    const leafN=Math.min(8,2+(lv-1)*2);
+    const leafScale=(2.2+.55*lv)*scale;
+    c.globalAlpha=.22+.04*lv;c.fillStyle=hexAlpha(accent,.58+.05*lv);
+    const spots=[[36,190],[864,230],[36,1140],[864,1100],[48,680],[852,720],[220,40],[680,1310]];
+    for(let i=0;i<leafN;i++){
+      const [x,y]=spots[i%spots.length];
+      c.beginPath();c.ellipse(x,y,leafScale*.55,leafScale,i*.55,0,Math.PI*2);c.fill();
+    }
   }
   c.restore();
 }

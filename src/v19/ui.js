@@ -53,7 +53,26 @@ function revealPickedCard(card,label){
   draftRevealTimer=setTimeout(()=>clearSpotlight(document.body),hold);
 }
 function persist(next){next.revision++;save(next);run=next;saveError='';try{localStorage.setItem('kiarena:arena:worlds',JSON.stringify(next.worlds));}catch{}}
-function mutate(fn,expected=inputContext||contextToken(run)){if(!run)return false;const before=run.phase+':'+run.step+':'+run.current,next=structuredClone(run);try{if(!applyOnce(next,{context:expected,id:expected+':decision'},fn))return false;persist(next);if(next.phase==='end'){lastReceipt=next.receipt;page='bilan';try{upsertMemory(lastReceipt);}catch(e){saveError='Bilan conservé ; Panthéon non enregistré : '+e.message;}}selectedItem=next.items.some(x=>x.uid===selectedItem)?selectedItem:null;tone();render();if(before!==run.phase+':'+run.step+':'+run.current)window.scrollTo(0,0);return true;}catch(e){saveError=e.message;toast('Action non enregistrée : '+e.message);render();return false;}}
+function refreshInventoryModal(){
+  const modalEl=document.querySelector('.a-modal.drawer');
+  if(!modalEl||modal!=='inventory'){render();return;}
+  const scrollTop=modalEl.scrollTop;
+  const scrollers=[...modalEl.querySelectorAll('.v14-bag-list,.v14-roster,.v193-inv-bag,.v193-roster,.a-inventory-items,.v14-atelier')];
+  const saved=scrollers.map(el=>({sel:el.className,top:el.scrollTop,left:el.scrollLeft}));
+  modalEl.innerHTML=inventory();
+  modalEl.scrollTop=scrollTop;
+  saved.forEach(({sel,top,left})=>{
+    const el=[...modalEl.querySelectorAll('*')].find(n=>n.className===sel);
+    if(el){el.scrollTop=top;el.scrollLeft=left;}
+  });
+  annotateCommands(modalEl,run?contextToken(run):'');
+  hydrateCardFaces(modalEl);
+  polishV19(modalEl,{page,run,worlds,mini,inspected,getState:()=>({run,mini,page}),render});
+  polishV20(modalEl,{page,run,worlds,mini,mutate,render:refreshInventoryModal});
+  const rail=document.querySelector('.v14-team-rail');
+  if(rail){rail.outerHTML=bottomBar();hydrateCardFaces(document.querySelector('.v14-team-rail'));}
+}
+function mutate(fn,expected=inputContext||contextToken(run)){if(!run)return false;const before=run.phase+':'+run.step+':'+run.current,next=structuredClone(run);try{if(!applyOnce(next,{context:expected,id:expected+':decision'},fn))return false;persist(next);if(next.phase==='end'){lastReceipt=next.receipt;page='bilan';try{upsertMemory(lastReceipt);}catch(e){saveError='Bilan conservé ; Panthéon non enregistré : '+e.message;}}selectedItem=next.items.some(x=>x.uid===selectedItem)?selectedItem:null;tone();if(modal==='inventory'&&page==='run')refreshInventoryModal();else render();if(before!==run.phase+':'+run.step+':'+run.current)window.scrollTo(0,0);return true;}catch(e){saveError=e.message;toast('Action non enregistrée : '+e.message);if(modal==='inventory'&&page==='run')refreshInventoryModal();else render();return false;}}
 function nodeIcon(kind,cls=''){return `<img class="v14-icon ${cls}" src="${asset('assets/v14/icons/'+(NODE_ICONS[kind]||kind)+'.svg')}" alt="">`;}
 function liveUnit(u){if(run?.phase!=='combat')return null;const i=run.combat.played.indexOf(u.uid),ev=viewEvent||run.combat.result.events[Math.max(0,run.combat.cursor-1)]||run.combat.result.events[0];return ev?.units.find(f=>f.uid==='A-'+i)||null;}
 function faceThumb(h){const chain=cardArtFallbackChain(h,{seed:run?.seed||'ARENA',preferSpecial:false}),url=chain[0];return `<span class="v14-thumb" data-v19-card="${esc(h.id)}">${url?`<img src="${esc(url)}" alt="" onerror="this.hidden=true">`:''}<b>${esc(h.name.slice(0,2))}</b></span>`;}
@@ -128,8 +147,11 @@ function inspectPanel(){
   if(!h)return `<div class="a-inspect-viewer v20-inspect"><button class="v20-inspect-x" data-a="close" aria-label="Fermer">×</button><p>Carte introuvable.</p></div>`;
   const seed=inspectedSeed||run?.seed||mini?.seed||globalThis.KI_PARTY_DEBUG?.getState?.()?.seed||'ARENA';
   const edition=editionFor(seed,h.id);
-  const gearFx=isGear?[{name:effectDescription(h),type:h.effect||'effet',description:effectDescription(h)}]:null;
-  const techs=(gearFx||h.effects||[]).map((e,i)=>`<li class="v20-tech" style="--i:${i}"><b>${esc(e.name)}</b><span>${esc(e.description||e.type||'')}</span></li>`).join('')||'<li class="v20-tech">Aucune technique listée.</li>';
+  const gearFx=isGear?[{name:effectDescription(h),description:effectDescription(h)}]:null;
+  const techs=(gearFx||h.effects||[]).map((e,i)=>{
+    const desc=e.description||'';
+    return `<li class="v20-tech" style="--i:${i}"><b>${esc(e.name)}</b>${desc?`<span>${esc(desc)}</span>`:''}</li>`;
+  }).join('')||'<li class="v20-tech"><b>Aucune capacité listée</b></li>';
   const draftPick=page==='run'&&run?.phase==='draft'&&selectedOffer&&run.offers.find(o=>o.token===selectedOffer&&o.id===h.id);
   const rewardIdx=(page==='run'&&run?.phase==='reward'&&run.rewards)?run.rewards.findIndex(rw=>(rw.type==='recruit'||rw.type==='item')&&rw.id===h.id):-1;
   const rewardPick=rewardIdx>=0?run.rewards[rewardIdx]:null;
@@ -147,7 +169,6 @@ function inspectPanel(){
     <div class="a-inspect-layout v20-inspect-layout">
       <figure class="a-inspect-card" data-card-id="${esc(h.id)}">${cardMarkup(isGear?{...h,effects:gearFx}:{...h},{seed,skin:inspectedFinish||edition,equipment:isGear})}</figure>
       <div class="a-inspect-copy v20-inspect-copy">
-        <h3>${isGear?'Effet':'Techniques'}</h3>
         <ul class="a-inspect-techs">${techs}</ul>
         ${ctaHtml}
       </div>
@@ -242,10 +263,10 @@ if(a==='skip'){clearTimeout(timer);stopEffects(true);clearSpotlight(document.que
  }
  if(a==='buy'){const o=run?.shop?.[index];const g=o?cat().byItem.get(o.id):null;modal=null;if(mutate(r=>buy(r,index))){if(g)revealPickedCard(g,'ACHETÉ · REJOINT LE SAC');}return;}
  if(a==='care'){mutate(buyCare);return;}if(a==='leave'){mutate(leaveNode);return;}
- if(a==='pick-item'){selectedItem=selectedItem===id?null:id;render();return;}if(a==='cancel-item'){selectedItem=null;render();return;}if(a==='item-filter'){inventoryFilter=id;selectedItem=null;render();return;}
- if(a==='assign-item'){if(selectedItem&&mutate(r=>equip(r,selectedItem,id),contextToken(run))){selectedItem=null;toast('Équipement confié au personnage !');}else toast('Impossible d’équiper cet objet sur cette cible.');return;}
+ if(a==='pick-item'){selectedItem=selectedItem===id?null:id;refreshInventoryModal();return;}if(a==='cancel-item'){selectedItem=null;refreshInventoryModal();return;}if(a==='item-filter'){inventoryFilter=id;selectedItem=null;refreshInventoryModal();return;}
+ if(a==='assign-item'){if(selectedItem&&mutate(r=>equip(r,selectedItem,id),contextToken(run))){selectedItem=null;toast('Équipement confié au personnage !');refreshInventoryModal();}else toast('Impossible d’équiper cet objet sur cette cible.');return;}
  if(a==='assign-blocked'){const entry=run?.items?.find(x=>x.uid===selectedItem),g=entry&&cat().byItem.get(entry.cardId);toast(g?.category==='consommable'?'Ce personnage a déjà tous ses PV.':'Univers différent : choisis un allié '+worldName(g?.universe)+'.');return;}
- if(a==='pick-reserve'){selectedReserve=selectedReserve===id?null:id;render();return;}if(a==='swap-target'){if(selectedReserve&&mutate(r=>swapActive(r,selectedReserve,index),contextToken(run))){selectedReserve=null;render();toast('La nouvelle formation est prête.');}return;}if(a==='equip-tab'){tab='items';selectedItem=null;render();return;}
+ if(a==='pick-reserve'){selectedReserve=selectedReserve===id?null:id;refreshInventoryModal();return;}if(a==='swap-target'){if(selectedReserve&&mutate(r=>swapActive(r,selectedReserve,index),contextToken(run))){selectedReserve=null;toast('La nouvelle formation est prête.');refreshInventoryModal();}return;}if(a==='equip-tab'){tab='items';selectedItem=null;refreshInventoryModal();return;}
  if(a==='inventory-preview'){inventoryReturn=true;inspected=id;inspectedSeed=run.seed;inspectedFinish=null;openModal('inspect');return;}if(a==='inspect'){if(modal==='inventory')inventoryReturn=true;if(page==='run'&&run?.phase==='draft'){const offer=run.offers?.find(o=>o.revealed&&!o.disabled&&(o.token===id||o.id===id||o.id===el.dataset.cardId));if(offer){selectedOffer=offer.token;inspected=offer.id;inspectedSeed=run.seed;inspectedFinish=null;openModal('inspect');return;}}const face=el.closest('.a-card')?.querySelector('.v19-face');inspectedSeed=face?.dataset.v19Seed||el.dataset.inspectSeed||null;inspectedFinish=face?.dataset.finish||el.dataset.inspectFinish||null;inspected=id;openModal('inspect');return;}if(a==='map'&&run){openModal('map');return;}if(a==='inventory'&&run){openModal('inventory');return;}if(a==='fx-lab'){openModal('fx');return;}if(a==='creator'){openModal('creator');return;}if(a==='audio'||a==='settings'){openModal(a);return;}if(a==='close'||a==='backdrop'){modal=inventoryReturn&&modal==='inspect'?'inventory':null;inventoryReturn=false;render();schedule();return;}if(a==='tab'){tab=id;render();return;}
  if(a==='copyseed'){await copy(run.seed);return;}if(a==='export'){download('KI_ARENA_RUN_'+run.seed.replace(/[^\w-]/g,'_')+'.json',exportRun(run));return;}
  if(a==='mute'){setAudio('muted',!audioSettings.muted);render();return;}if(a==='musicstop'){stopMusic();toast('Musique arrêtée.');return;}if(a==='musicplay'){const ok=await playMusic(document.querySelector('#a-music-world').value);toast(ok?'Lecture à faible volume.':'Importe d’abord un fichier audio local.');return;}
