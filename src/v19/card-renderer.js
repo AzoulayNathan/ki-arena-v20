@@ -220,52 +220,6 @@ function paintSpecialFoil(c,accent){
   c.restore();
 }
 
-/**
- * Lianes légères continues juste à l'intérieur du cadre couleur (bord dur).
- * Ondulation marquée pour ne pas se confondre avec le stroke chrome. Pas d'ovales.
- */
-function paintBorderVines(c,accent,{level=1,scale=1}={}){
-  const lv=Math.max(1,Math.min(5,level|0));
-  const strands=lv>=4?2:1;
-  // Rectangle du cadre dur (aligné chrome accent ~20).
-  const x0=20,y0=20,x1=880,y1=1330;
-  const edges=[[x0,y0,x1,y0],[x1,y0,x1,y1],[x1,y1,x0,y1],[x0,y1,x0,y0]];
-  c.save();
-  c.globalAlpha=1;
-  c.lineCap='round';
-  c.lineJoin='round';
-  for(let s=0;s<strands;s++){
-    // Inset intérieur : clairement DANS le cadre, pas dessus.
-    const inset=(11+s*6)*scale;
-    // Amplitude haute : l'ondulation doit rester lisible en miniature (~180px).
-    const amp=(12+lv*1.2)*scale;
-    const layers=[
-      {lw:(6.2+lv*.5-s*.55)*scale,color:hexAlpha(accent,.98),blur:8},
-      {lw:(2.6+lv*.2)*scale,color:hexAlpha('#ffffff',.9),blur:0},
-    ];
-    for(const layer of layers){
-      c.shadowBlur=layer.blur;c.shadowColor=hexAlpha(accent,.7);
-      c.strokeStyle=layer.color;c.lineWidth=layer.lw;
-      edges.forEach(([ax,ay,bx,by],ei)=>{
-        const dx=bx-ax,dy=by-ay,len=Math.hypot(dx,dy)||1;
-        const nx=-dy/len*inset,ny=dx/len*inset;
-        c.beginPath();
-        c.moveTo(ax+nx,ay+ny);
-        const steps=Math.max(24,Math.round(len/18));
-        for(let i=1;i<=steps;i++){
-          const t=i/steps;
-          // 4 bosses + harmonique = silhouette de liane sur les 4 côtés.
-          const wobble=(Math.sin(t*Math.PI*4.2+ei*1.2+s)+.35*Math.sin(t*Math.PI*8.4+s))*amp;
-          c.lineTo(ax+dx*t+nx+(-dy/len)*wobble,ay+dy*t+ny+(dx/len)*wobble);
-        }
-        c.stroke();
-      });
-    }
-  }
-  c.shadowBlur=0;
-  c.restore();
-}
-
 /** FX cumulés très marqués (1→5 + prism). Une seule couche d'alpha. */
 function paintCumulativeFx(c,fxList,accent,{scale=1,intensity=1}={}){
   if(!fxList?.length)return;

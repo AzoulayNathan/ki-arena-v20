@@ -1,7 +1,7 @@
 import {bossRanks,describeBoss} from './boss.js';
 import {catalog,newUnit} from './catalog.js';
 import {int,pick,shuffle} from './random.js';
-export function rankBudget(N,v,kind){if(!Number.isInteger(v)||v<1||!['normal','elite','boss'].includes(kind))throw Error('Rencontre invalide');return Math.max(1,Math.round(N/4*(v+({normal:0,elite:1,boss:2}[kind]))*0.75));}
+export function rankBudget(N,v,kind){if(!Number.isInteger(v)||v<1||!['normal','elite','boss'].includes(kind))throw Error('Rencontre invalide');return Math.max(1,Math.round(N/4*(v+({normal:0,elite:1,boss:2}[kind]))*0.5625));}
 export function distributeExact(run,N,B,k){
  if(!(k>=1&&k<=B&&B<=k*N))throw Error('Budget impossible');
  const unique=k<=N&&k*(k+1)/2<=B&&B<=k*(2*N-k+1)/2;

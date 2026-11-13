@@ -8,9 +8,11 @@ import {ACT_LENGTH,MAP_NODES,BOSS_ROW} from '../arena/rules.js';
 import {generateMap,runCatalog} from './engine.js';
 import {rankBudget} from '../survival/encounter.js';
 function budgetOk(N,wave,kind,budget){
+  const base=N/4*(wave+({normal:0,elite:1,boss:2}[kind]));
   const scaled=rankBudget(N,wave,kind);
-  const legacy=Math.round(N/4*(wave+({normal:0,elite:1,boss:2}[kind])));
-  return budget===scaled||budget===legacy;
+  const legacy=Math.round(base);
+  const prev=Math.max(1,Math.round(base*0.75));
+  return budget===scaled||budget===legacy||budget===prev;
 }
 export const SAVE_KEY='kiarena:arena:v14:';
 export const MIXED_SAVE_KEY='kiarena:arena:v16:';

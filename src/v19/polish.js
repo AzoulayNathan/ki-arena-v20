@@ -8,7 +8,7 @@ import {editionFor,normalizeEdition,RARITY_NAMES,visualFxCount} from './card-spe
 import {renderCard,artWindowLooksEmpty} from './card-renderer.js';
 import {runCatalog} from '../v20/router.js';
 const E=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const FACE_DESIGN='v20-cards-tmpl29-no-vines-gold-special-names';
+const FACE_DESIGN='v20-cards-tmpl30-novines-diff-5625';
 const fontReady=document.fonts.load('800 40px "Arena Display"').catch(()=>[]);
 const models=new Map(),faces=new Map(),images=new Map();let context=null,rootRef=null,observer=null,raf=0;
 export function creatorUnlocked(){try{return sessionStorage.getItem('kiarena:v19:creator')==='1';}catch{return false;}}
