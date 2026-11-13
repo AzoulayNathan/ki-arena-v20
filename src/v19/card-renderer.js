@@ -385,14 +385,14 @@ function paintFullBleedArt(c,image,crop,{equipment=false,pictogram=false,accent=
  * Cadre rareté + chrome. Les FX carte sont peints à part (avant le texte).
  */
 function paintCardChrome(c,hero,{equipment,accent,l,special,textScale,level}){
-  // Pas de rectangle / voile noir bas — lisibilité via ombre du texte uniquement.
-
-  // Cadre doré unifié pour toutes les cartes (plus de bordures rareté disparates).
-  const gold='#e7c986';
-  c.strokeStyle='#fff6d866';c.lineWidth=2.5;rounded(c,14,14,872,1322,28);c.stroke();
-  c.strokeStyle=gold;c.lineWidth=6;rounded(c,20,20,860,1310,24);c.stroke();
-  c.strokeStyle=hexAlpha(gold,.55);c.lineWidth=2.5;rounded(c,28,28,844,1294,20);c.stroke();
-  c.strokeStyle=hexAlpha(accent,.45);c.lineWidth=1.5;rounded(c,34,34,832,1282,18);c.stroke();
+  // Cadre couleur de rareté (épaisseur croît légèrement avec le niveau) + liseré clair.
+  const lw=4.5+level*0.45;
+  c.strokeStyle='#ffffff66';c.lineWidth=2.5;rounded(c,14,14,872,1322,28);c.stroke();
+  c.strokeStyle=hexAlpha(accent,.82);c.lineWidth=lw;rounded(c,20,20,860,1310,24);c.stroke();
+  c.strokeStyle=hexAlpha(accent,.42);c.lineWidth=2.2;rounded(c,28,28,844,1294,20);c.stroke();
+  if(special){
+    c.strokeStyle='#fff6d8aa';c.lineWidth=1.6;rounded(c,34,34,832,1282,18);c.stroke();
+  }
 
   const pill=rarityPill(c,hero.rarity||'common',36,36,{scale:1.08*textScale});
   if(special){

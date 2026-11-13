@@ -1,13 +1,14 @@
-import {runCatalog,battleCard,equip} from '../v20/router.js';
+import {runCatalog,battleCard,equip,itemSellPrice} from '../v20/router.js';
 import {effectDescription} from '../v19/catalog.js';
 import {contextToken} from '../arena/transactions.js';
 const E=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function equipmentPreview(run,itemUid,unitUid){const u=run.units.find(u=>u.uid===unitUid);if(!u)return {ok:false,reason:'Combattant absent'};const copy=structuredClone(run),before=battleCard(run,u),success=equip(copy,itemUid,unitUid);if(!success)return {ok:false,reason:['combat','end'].includes(run.phase)?'Équipement verrouillé pendant le combat':'Univers incompatible ou soin inutile'};const next=copy.units.find(x=>x.uid===unitUid),after=battleCard(copy,next);return {ok:true,before,after,hpBefore:u.hp,hpAfter:next.hp,removed:!copy.items.some(x=>x.uid===itemUid),unequipped:u.weapon===itemUid||u.armor===itemUid};}
 export function inventoryMarkup({run,selectedItem,filter='',selectedReserve,cardMarkup}){
   const c=runCatalog(run),locked=['combat','end'].includes(run.phase),entry=run.items.find(x=>x.uid===selectedItem),chosen=c.byItem.get(entry?.cardId),owner=chosen&&run.units.find(u=>u.weapon===selectedItem||u.armor===selectedItem),filtered=run.items.filter(x=>!filter||c.byItem.get(x.cardId)?.category===filter);
+  const sell=selectedItem!=null?itemSellPrice(run,selectedItem):null;
   return `<div class="a-modal-title v193-inventory-title"><div><span class="a-eyebrow">L’ATELIER DE TON ÉQUIPE</span><h2>Prépare le prochain choc.</h2></div><button class="a-button light" data-a="close">Fermer ×</button></div>
   <p class="v193-inv-instruction">${locked?'Pendant le combat, observe ton équipe. Tu pourras l’équiper dès la fin de l’affrontement.':chosen?E(chosen.name)+' sélectionné : clique maintenant sur un personnage compatible en dessous (encadré vert) pour lui confier !':'Clique sur une arme ou un soin dans ton sac ci-dessous, puis clique sur le personnage qui doit le porter.'}${owner?' Objet actuellement confié à '+E(c.byId.get(owner.cardId).name)+'.':''}</p>
-  ${chosen?'<div class="v193-item-effect"><b>'+E(chosen.name)+'</b><span>'+E(effectDescription(chosen))+' · Univers '+E(chosen.universe)+'</span><button type="button" class="a-button text" data-a="cancel-item">Désélectionner ×</button></div>':''}
+  ${chosen?`<div class="v193-item-effect"><b>${E(chosen.name)}</b><span>${E(effectDescription(chosen))} · Univers ${E(chosen.universe)}</span><button type="button" class="a-button text" data-a="cancel-item">Désélectionner ×</button>${!locked&&sell!=null?`<button type="button" class="a-button light v20-sell-item" data-a="sell-item" data-id="${E(selectedItem)}">Vendre · ${sell} zénis (50%)</button>`:''}</div>`:''}
   <div class="v193-bag-head"><h3>Dans ton sac (${run.items.length})</h3><div class="v193-bag-filters">${[['','Tout'],['arme','Armes'],['armure','Armures'],['outil','Outils'],['consommable','Soins']].map(([v,n])=>`<button type="button" class="a-button ${filter===v?'selected':'light'}" data-a="item-filter" data-id="${v}">${n}</button>`).join('')}</div></div>
   <section class="v193-bag" aria-label="Équipements disponibles">${filtered.map(x=>{
     const g=c.byItem.get(x.cardId),itemOwner=run.units.find(u=>u.weapon===x.uid||u.armor===x.uid),isSel=selectedItem===x.uid;
@@ -21,6 +22,7 @@ export function inventoryMarkup({run,selectedItem,filter='',selectedReserve,card
       </button>
       <div class="v20-gear-side-tools">
         <button type="button" class="v20-gear-eye" data-a="inventory-preview" data-id="${E(g.id)}" title="Voir la carte" aria-label="Voir ${E(g.name)}">👁</button>
+        ${!locked&&g.category!=='consommable'?`<button type="button" class="v20-gear-sell" data-a="sell-item" data-id="${x.uid}" title="Vendre pour ${itemSellPrice(run,x.uid)} zénis" aria-label="Vendre ${E(g.name)}">${itemSellPrice(run,x.uid)}Ƶ</button>`:''}
         <button type="button" class="v193-drag" data-drag-item="${x.uid}" data-label="${E(g.name)}" data-context="${E(contextToken(run))}" data-a="pick-item" data-id="${x.uid}" ${locked?'disabled':''} aria-label="Glisser ${E(g.name)} sur un personnage">⠿</button>
       </div>
     </article>`;

@@ -6,11 +6,20 @@ function cell(el,n){el.style.setProperty('--v20-cell-x',n%4/3*100+'%');el.style.
 export function paintStates(root,event){if(!event?.units)return;for(const f of event.units){const card=root.querySelector('[data-unit="'+CSS.escape(f.uid)+'"]');if(!card)continue;let states=card.querySelector('.v20-unit-states');if(!states){states=document.createElement('span');states.className='v20-unit-states';card.append(states);}states.replaceChildren();for(const s of [...(f.statuses||[]),...(f.stunned?[{type:'stun',ticks:f.stunned}]:[])]){const names={dot:'Brûlure',weaken:'Affaibli',taunt:'Provocation',stun:'Interrompu'},b=document.createElement('span');b.className='v20-state '+s.type;b.textContent=({dot:'◈',weaken:'↘',taunt:'◎',stun:'ϟ'})[s.type]||'◇';if(s.ticks)b.textContent+=' '+s.ticks;b.title=(names[s.type]||s.type)+(s.ticks?' · '+s.ticks+' tour(s)':'');b.setAttribute('aria-label',b.title);states.append(b);}}}
 export function polishV20(root,ctx){
  current=ctx;document.body.classList.add('v20-app');root.style.setProperty('--v20-atlas','url("'+asset('assets/v20/encounters.webp')+'")');root.style.setProperty('--v20-arena','url("'+asset('assets/v20/arena.webp')+'")');root.style.setProperty('--v20-archive','url("'+asset('assets/v20/archive.webp')+'")');root.style.setProperty('--v20-arcade','url("'+asset('assets/v20/arcade.webp')+'")');
+ root.style.setProperty('--v20-rest-art','url("'+asset('assets/v9/rest.webp')+'")');
+ root.style.setProperty('--v20-event-art','url("'+asset('assets/v9/event.webp')+'")');
+ root.style.setProperty('--v20-shop-art','url("'+asset('assets/v9/merchant.webp')+'")');
+ root.style.setProperty('--v20-treasure-art','url("'+asset('assets/v9/treasure.webp')+'")');
+ const scene=root.querySelector('.a-encounter-scene');
+ if(scene&&ctx.run){
+  const art={rest:'assets/v9/rest.webp',event:'assets/v9/event.webp',shop:'assets/v9/merchant.webp',reward:'assets/v9/treasure.webp'}[ctx.run.phase];
+  if(art)scene.style.setProperty('--scene','url("'+asset(art)+'")');
+ }
  const title=root.querySelector('.a-modal-title:has(h2)');if(title?.textContent.includes('Médias & sauvegardes')){const settings=title.parentElement,tools=document.createElement('div');tools.className='v20-settings-tools';for(const el of [...settings.children]){if(el===title)break;tools.append(el);}if(tools.children.length)title.after(tools);}
  const badge=root.querySelector('.a-brand small');if(badge)badge.innerHTML='HORIZONS<br>ÉDITION / 20';
  document.body.dataset.v20World=ctx.run?.worlds?.[0]||ctx.worlds?.[0]||'DB';
  root.querySelectorAll('.a-event-scene').forEach((e,i)=>cell(e,(scenes[ctx.run?.activeEvent?.id]||[4,7,5])[i]??4));
- root.querySelectorAll('.a-reward').forEach((e,i)=>cell(e,ctx.run?.phase==='shop'?0:ctx.run?.phase==='rest'?1:i===0?2:7));
+ if(ctx.run?.phase!=='rest')root.querySelectorAll('.a-reward').forEach((e,i)=>cell(e,ctx.run?.phase==='shop'?0:i===0?2:7));
  const old=root.querySelector('.v20-run-label');old?.remove();
  if(ctx.page==='run'&&ctx.run?.rulesVersion==='20.0.0'&&ctx.run.phase==='prepare'){const label=document.createElement('p');label.className='v20-run-label';label.textContent='Deux à l’avant, trois en soutien. Prépare leur ordre dans le sac ; le combat reste automatique.';root.querySelector('.a-prebattle')?.before(label);}
  if(ctx.run?.rulesVersion==='20.0.0')root.querySelectorAll('.v193-member').forEach((el,i)=>{if(i>=5||!['map','prepare'].includes(ctx.run.phase))return;const name=el.querySelector('.v193-member-name');if(name){const tag=document.createElement('span');tag.className='v20-position';tag.textContent=i<2?'AVANT-GARDE':'SOUTIEN';name.before(tag);}const actions=document.createElement('div');actions.className='v20-order';for(const dir of [-1,1]){const b=document.createElement('button');b.textContent=dir<0?'←':'→';b.dataset.v20Move=i+':'+dir;b.dataset.token=contextToken(ctx.run);b.disabled=i+dir<0||i+dir>=Math.min(5,ctx.run.units.length);b.setAttribute('aria-label','Déplacer '+(dir<0?'à gauche':'à droite'));actions.append(b);}el.append(actions);});

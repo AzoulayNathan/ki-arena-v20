@@ -66,10 +66,11 @@
 .v20-app .v17-reward-visual{height:200px!important;background:linear-gradient(#fff7df14,#17373320),var(--reward-scene) center/cover!important;border-bottom:1px solid #c7ccb6}
 .v20-app .v17-reward-visual.v19-reward-card{height:275px!important;background:#e5eadd!important;display:grid;place-items:center;padding:16px}.v20-app .v17-reward-visual .v19-face{height:240px!important;width:160px!important}
 .v20-app .v17-reward-caption{padding:20px!important}.v20-app .v17-reward-caption h2{font-size:31px!important;color:#233b38!important}.v20-app .v17-reward-caption p{font-size:12px!important;color:#536b59!important;line-height:1.5}
-.v20-app[data-phase=rest] .a-reward{min-height:250px!important;position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:25px!important;color:#fff4d8!important}
-.v20-app[data-phase=rest] .a-reward:before{content:'';position:absolute;inset:0;background-image:var(--v20-atlas);background-size:400% 200%;background-position:33.333% 0;z-index:-2}
-.v20-app[data-phase=rest] .a-reward:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#153a3eea,transparent);z-index:-1}
-.v20-app[data-phase=rest] .a-reward h2,.v20-app[data-phase=rest] .a-reward p{color:#fff3d8!important}
+.v20-app[data-phase=rest] .a-reward{min-height:250px!important;position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:25px!important;color:#fff4d8!important;background:#1a3a40!important}
+.v20-app[data-phase=rest] .a-reward:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#102c3488,#102c34cc),var(--v20-rest-art,var(--scene)) center/cover;z-index:-2}
+.v20-app[data-phase=rest] .a-reward:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#153a3ef2,transparent 70%);z-index:-1}
+.v20-app[data-phase=rest] .a-reward h2,.v20-app[data-phase=rest] .a-reward p,.v20-app[data-phase=rest] .a-reward b{color:#fff3d8!important;position:relative;z-index:1}
+.v20-app[data-phase=rest] .a-reward:nth-child(2):before{filter:hue-rotate(28deg) saturate(1.05)}
 /* Arcade, parties and collection receive the same finish. */
 .v20-app .v16-arcade-heading,.v20-app .p-hero,.v20-app .c-heading,.v20-app .a-pantheon>header{border:1px solid #b9c7b1!important;border-radius:18px!important;padding:34px!important;min-height:210px!important;background:linear-gradient(90deg,#faf4e8fa,#faf4e8e0 48%,#faf4e844),var(--v20-archive) center/cover!important;position:relative;isolation:isolate}
 .v20-app .v16-arcade-heading,.v20-app .p-hero{background:linear-gradient(90deg,#faf4e8fa,#faf4e8cf 48%,#faf4e800),var(--v20-arcade) center/cover!important}
@@ -220,14 +221,16 @@
 .v20-event-card-wrap>.a-event-scene{flex:1;width:100%}
 .v20-event-inspect{align-self:flex-start;min-height:38px!important;padding:6px 12px!important;font-size:11px!important}
 .v20-gear-side-tools{display:flex;flex-direction:column;gap:6px}
-.v20-gear-eye{min-width:44px;min-height:38px;border-radius:7px;border:1px solid #bfcbb5;background:#fffdf5;color:#25403e;cursor:pointer;font-size:15px;display:grid;place-items:center}
+.v20-gear-eye,.v20-gear-sell{min-width:44px;min-height:38px;border-radius:7px;border:1px solid #bfcbb5;background:#fffdf5;color:#25403e;cursor:pointer;font-size:13px;display:grid;place-items:center;padding:0 6px}
+.v20-gear-sell{font-weight:700;color:#7a5a1e;border-color:#d4c08a;background:#fff6e2}
+.v20-sell-item{margin-left:8px!important}
 .v20-equip-direct{margin-top:6px!important;width:100%;justify-content:center}
 .v20-app[data-screen=home] .v193-guide{max-width:980px;margin:14px auto 0!important}
 /* Final draft lock: wide illustrated backdrop, no dark frames, mystery thickness */
 .v20-app .v16-draft-stage.v20-draft-float{width:min(100%,1420px)!important;max-width:1420px!important;min-height:clamp(500px,calc(100dvh - 215px),740px)!important;background:linear-gradient(180deg,#112c3840,#0d222cb8),var(--v16-recruit) center/cover!important;border:1px solid #b6c5ae!important;border-radius:20px!important;padding:clamp(44px,6vh,68px) clamp(18px,3vw,36px)!important;overflow:visible!important}
 .v20-app .v16-draft-stage.v20-draft-float .v20-float-offer:not(.a-mystery){background:transparent!important;border:0!important;box-shadow:none!important;padding:clamp(12px,2vh,20px) 4px!important;min-height:0!important;overflow:visible!important}
-.v20-app .v16-draft-stage.v20-draft-float .v19-face,.v20-app .v16-draft-stage.v20-draft-float .v19-face[data-ready="true"],.v20-app .v16-draft-stage.v20-draft-float .a-card.studio{background:transparent!important;box-shadow:none!important;outline:3px solid #e7c986!important;outline-offset:-1px;border-radius:10px}
-.v20-app .v16-draft-stage.v20-draft-float .v20-locked-mystery{background:radial-gradient(ellipse at 50% 35%,#284e56,#142c3b 75%)!important;border:3px solid #e7c986!important;box-shadow:0 1px 0 #f6e2ad,0 3px 0 #b8944a,0 6px 0 #6a4f22,0 10px 0 #2a1c0c,0 18px 34px #081822aa,inset 0 0 0 1px #fff3ca55!important;color:#fff3ca!important}
+.v20-app .v16-draft-stage.v20-draft-float .v19-face,.v20-app .v16-draft-stage.v20-draft-float .v19-face[data-ready="true"],.v20-app .v16-draft-stage.v20-draft-float .a-card.studio{background:transparent!important;box-shadow:none!important;outline:0!important;border-radius:10px}
+.v20-app .v16-draft-stage.v20-draft-float .v20-locked-mystery{background:radial-gradient(ellipse at 50% 35%,#284e56,#142c3b 75%)!important;border:3px solid #d4c08a!important;box-shadow:0 1px 0 #f6e2ad,0 3px 0 #b8944a,0 6px 0 #6a4f22,0 10px 0 #2a1c0c,0 18px 34px #081822aa,inset 0 0 0 1px #fff3ca55!important;color:#fff3ca!important}
 @media(max-width:700px){.v20-app .v16-draft-stage.v20-draft-float{padding:clamp(28px,5vh,44px) 8px 28px!important}.v20-app .v16-draft-stage.v20-draft-float .a-offers{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;padding:2px!important;overflow:visible!important}.v20-app .v16-draft-stage.v20-draft-float .v14-draft-offer{flex:unset!important;min-height:0!important;overflow:visible!important}}
 
 .v20-collection-toggle{display:flex;align-items:center;gap:10px;margin:12px 0 4px;font:600 14px 'Arena Text';color:#2a453c;cursor:pointer}
