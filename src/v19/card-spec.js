@@ -7,7 +7,7 @@ export const RARITY_COLORS={common:'#9aa8ad',uncommon:'#33df88',rare:'#29aaff',e
 /** Effets VISUELS cumulés par rareté (1→5). Spécial = +foil. */
 export const RARITY_FX=[
   {id:'seal',label:'Sceaux d\'encre'},
-  {id:'veins',label:'Veines de ki'},
+  {id:'veins',label:'Éclairs de ki'},
   {id:'split',label:'Tranchant bipolaire'},
   {id:'aurora',label:'Aurores runiques'},
   {id:'embers',label:'Braises couronne'},

@@ -230,7 +230,7 @@ function paintCumulativeFx(c,fxList,accent,{scale=1,intensity=1}={}){
   for(const fx of fxList){
     const id=fx?.id||fx;
     if(id==='seal'){
-      // Tampons d'encre coins + pointillés internes.
+      // Tampons d'encre aux coins uniquement (pas de trait type liane).
       c.fillStyle=hexAlpha(accent,.88);
       c.strokeStyle=hexAlpha('#ffffff',.7);
       c.lineWidth=2.8*sc;
@@ -238,17 +238,16 @@ function paintCumulativeFx(c,fxList,accent,{scale=1,intensity=1}={}){
         c.beginPath();c.arc(x,y,(12+(i%3)*3.5)*sc,0,Math.PI*2);c.fill();
         c.beginPath();c.arc(x,y,(18+(i%2)*4)*sc,0,Math.PI*2);c.stroke();
       });
-      c.strokeStyle=hexAlpha(accent,.85);c.lineWidth=3.4*sc;c.setLineDash([12*sc,12*sc]);
-      rounded(c,46,46,808,1258,20);c.stroke();c.setLineDash([]);
     }else if(id==='veins'){
+      // Éclairs de ki intérieurs (plus de courbes le long du bord = plus de faux “lianes”).
       c.lineCap='round';
-      c.strokeStyle=hexAlpha(accent,.98);c.lineWidth=6*sc;
-      c.shadowColor=hexAlpha(accent,.8);c.shadowBlur=16*sc;
-      [[24,180,190,450],[876,180,710,450],[28,780,195,1140],[872,780,705,1140],[48,470,210,660],[852,470,690,660]].forEach(([x1,y1,x2,y2])=>{
-        c.beginPath();c.moveTo(x1,y1);c.quadraticCurveTo((x1+x2)/2+((x1<450)?70:-70)*sc,(y1+y2)/2,x2,y2);c.stroke();
+      c.strokeStyle=hexAlpha(accent,.95);c.lineWidth=4.5*sc;
+      c.shadowColor=hexAlpha(accent,.7);c.shadowBlur=12*sc;
+      [[180,320,320,480],[720,320,580,480],[200,780,340,940],[700,780,560,940],[360,520,540,620],[540,520,360,620]].forEach(([x1,y1,x2,y2])=>{
+        c.beginPath();c.moveTo(x1,y1);c.lineTo((x1+x2)/2+((x1<450)?40:-40)*sc,(y1+y2)/2);c.lineTo(x2,y2);c.stroke();
       });
-      c.shadowBlur=0;c.strokeStyle=hexAlpha('#ffffff',.65);c.lineWidth=2.6*sc;
-      [[60,260,175,400],[840,260,725,400],[70,900,185,1060],[830,900,715,1060]].forEach(([x1,y1,x2,y2])=>{
+      c.shadowBlur=0;c.strokeStyle=hexAlpha('#ffffff',.55);c.lineWidth=2*sc;
+      [[220,360,300,440],[680,360,600,440],[240,820,320,900],[660,820,580,900]].forEach(([x1,y1,x2,y2])=>{
         c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.stroke();
       });
     }else if(id==='split'){
