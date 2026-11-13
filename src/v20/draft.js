@@ -1,6 +1,14 @@
 import {registry} from './catalog.js';
 import {pick} from '../survival/random.js';
 import {collectionState} from './collection-rewards.js';
+import {isSpecialEdition} from '../arena/rules.js';
+function unitEdition(r,cardId){
+  if(isSpecialEdition(r.seed,cardId))return 'special';
+  if(r.useCollection){
+    try{if(collectionState().cards.some(x=>x.id===cardId&&(x.finish==='gold'||x.finish==='special')))return 'special';}catch{}
+  }
+  return 'normal';
+}
 
 /** Reference bands for a pool of N=600; always scaled with *N/600. */
 export const DRAFT_BANDS=Object.freeze({
@@ -109,7 +117,7 @@ export function chooseStartDraft(r,token){
   if(r.step<START_HERO_PICKS){
     if(o.kind!=='hero')return false;
     const h=c.byId.get(o.id);
-    r.units.push({uid:'u'+(++r.uid),cardId:h.id,level:1,wins:0,hp:h.maxHp,maxHp:h.maxHp,attack:h.attack,speed:h.speed,weapon:null,armor:null,fromDraft:true});
+    r.units.push({uid:'u'+(++r.uid),cardId:h.id,level:1,wins:0,hp:h.maxHp,maxHp:h.maxHp,attack:h.attack,speed:h.speed,weapon:null,armor:null,edition:unitEdition(r,h.id),fromDraft:true});
   }else{
     if(o.kind!=='weapon')return false;
     const g=c.byItem.get(o.id);

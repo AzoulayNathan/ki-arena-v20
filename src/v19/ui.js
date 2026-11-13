@@ -114,16 +114,17 @@ function fighter(c,{unit=null,small=false,action='',attrs='',raw=false,combatUni
   const chain=cardArtFallbackChain(c,{seed,preferSpecial:!raw});
   const face=chain[0]||'';
   const rest=chain.slice(1).join('|');
-  const edition=editionFor(seed,c.id);
+  const {owner:gearOwner}=resolveGearOwner(unit,combatUnit);
+  const edition=unit?.edition||gearOwner?.edition||c._collectionSkin||editionFor(seed,c.id);
   const click=action?`data-a="${action}" ${attrs}`:`data-a="inspect" data-id="${esc(c.id)}" ${attrs}`;
   const hpTone=percent>60?'hi':percent>30?'mid':percent>15?'low':'crit';
   const hpBar=(unit||combatUnit)?`<div class="a-card-hp is-${hpTone}" data-hp-pct="${Math.round(percent)}" aria-hidden="true"><i style="width:${percent}%"></i></div>`:'';
   const hpHeart=combatUnit?`<span class="a-card-hp-heart is-${hpTone}" data-hp="${Math.round(hp??max)}" aria-hidden="true"><b>${Math.round(hp??max)}</b></span>`:'';
   const showLevel=!!unit&&!combatUnit&&run?.phase!=='combat';
   const overlays=`${showLevel?`<span class="a-level">NIV. ${unit.level}</span>`:''}${combatUnit?.shield?`<span class="a-shield-badge">⬡ ${combatUnit.shield}</span>`:''}${dead?'<span class="a-ko">K.O.</span>':''}${hpBar}${hpHeart}${gearOverlay(unit,combatUnit)}`;
-  const info=action?'':`<button type="button" class="a-card-info" data-a="inspect" data-id="${esc(c.id)}" aria-label="Visualiser ${esc(c.name)}" title="Visualiser la carte">👁</button>`;
-  return `<article class="a-card studio is-clickable ${small?'is-small':''} ${dead?'is-ko':''} ${edition==='special'?'is-special':''}" style="--world:${FRANCHISES[c.universe].color}" data-unit="${esc(uid)}" data-hp="${Math.round(hp??max)}" data-combat-stats="${combatUnit?`${combatUnit.atk}|${combatUnit.maxHp}|${combatUnit.speed}`:''}" data-edition="${edition}" role="button" tabindex="0" aria-label="${esc(c.name)} — visualiser" ${click}>
-    ${cardMarkup({...c,attack:combatUnit?.atk??prepared?.attack??unit?.attack??c.attack,maxHp:max,speed:combatUnit?.speed??prepared?.speed??unit?.speed??c.speed},{seed,skin:c._collectionSkin||edition})}<img hidden class="a-card-studio-face" src="${esc(face)}" data-cands="${esc(rest)}" alt="${esc(c.name)}" loading="lazy"
+  const info=action?'':`<button type="button" class="a-card-info" data-a="inspect" data-id="${esc(c.id)}" data-inspect-finish="${esc(edition)}" aria-label="Visualiser ${esc(c.name)}" title="Visualiser la carte">👁</button>`;
+  return `<article class="a-card studio is-clickable ${small?'is-small':''} ${dead?'is-ko':''} ${edition==='special'?'is-special':''}" style="--world:${FRANCHISES[c.universe].color}" data-unit="${esc(uid)}" data-hp="${Math.round(hp??max)}" data-combat-stats="${combatUnit?`${combatUnit.atk}|${combatUnit.maxHp}|${combatUnit.speed}`:''}" data-edition="${edition}" data-inspect-finish="${esc(edition)}" role="button" tabindex="0" aria-label="${esc(c.name)} — visualiser" ${click}>
+    ${cardMarkup({...c,attack:combatUnit?.atk??prepared?.attack??unit?.attack??c.attack,maxHp:max,speed:combatUnit?.speed??prepared?.speed??unit?.speed??c.speed},{seed,edition})}<img hidden class="a-card-studio-face" src="${esc(face)}" data-cands="${esc(rest)}" alt="${esc(c.name)}" loading="lazy"
       onerror="(()=>{const a=(this.dataset.cands||'').split('|').filter(Boolean);if(a.length){this.src=a.shift();this.dataset.cands=a.join('|');}else{this.hidden=true;this.parentElement?.classList.add('no-art');}})()">
     ${info}${overlays}${combatUnit?`<span class="v193-unit-label"><b>${esc(c.name)}</b><small>${Math.round(hp??max)} / ${Math.round(max)} PV</small></span>`:''}
   </article>`;
@@ -171,7 +172,7 @@ function inspectPanel(){
   const own=!isGear&&page==='run'?run?.units.find(u=>u.cardId===inspected):null;if(h&&own)h={...h,...battleCard(run,own)};
   if(!h)return `<div class="a-inspect-viewer v20-inspect"><button class="v20-inspect-x" data-a="close" aria-label="Fermer">×</button><p>Carte introuvable.</p></div>`;
   const seed=inspectedSeed||run?.seed||mini?.seed||globalThis.KI_PARTY_DEBUG?.getState?.()?.seed||'ARENA';
-  const edition=editionFor(seed,h.id);
+  const edition=inspectedFinish||own?.edition||editionFor(seed,h.id);
   const gearDesc=isGear?effectDescription(h):'';
   const techs=isGear
     ?`<li class="v20-tech" style="--i:0"><b>${esc(h.name||'Objet')}</b><span>${esc(gearDesc||'Effet de jeu')}</span></li>`
@@ -194,7 +195,7 @@ function inspectPanel(){
   return `<div class="a-inspect-viewer v20-inspect">
     <button class="v20-inspect-x" data-a="close" aria-label="Fermer">×</button>
     <div class="a-inspect-layout v20-inspect-layout">
-      <figure class="a-inspect-card" data-card-id="${esc(h.id)}">${cardMarkup(isGear?{...h,effects:[{name:gearDesc,description:gearDesc}]}:{...h},{seed,skin:inspectedFinish||edition,equipment:isGear})}</figure>
+      <figure class="a-inspect-card" data-card-id="${esc(h.id)}">${cardMarkup(isGear?{...h,effects:[{name:gearDesc,description:gearDesc}]}:{...h},{seed,edition,equipment:isGear})}</figure>
       <div class="a-inspect-copy v20-inspect-copy">
         <ul class="a-inspect-techs">${techs}</ul>
         ${ctaHtml}
@@ -294,7 +295,7 @@ if(a==='skip'){clearTimeout(timer);stopEffects(true);clearSpotlight(document.que
  if(a==='sell-item'){const uid=id||selectedItem;if(!uid){toast('Choisis une arme à vendre.');return;}const price=itemSellPrice(run,uid);if(price==null){toast('Cet objet ne peut pas être vendu.');return;}if(mutate(r=>sellItem(r,uid),contextToken(run))){selectedItem=null;toast('Vendue pour '+price+' zénis.');refreshInventoryModal();}else toast('Vente impossible.');return;}if(a==='assign-item'){if(selectedItem&&mutate(r=>equip(r,selectedItem,id),contextToken(run))){selectedItem=null;toast('Équipement confié au personnage !');refreshInventoryModal();}else toast('Impossible d’équiper cet objet sur cette cible.');return;}
  if(a==='assign-blocked'){const entry=run?.items?.find(x=>x.uid===selectedItem),g=entry&&cat().byItem.get(entry.cardId);toast(g?.category==='consommable'?'Ce personnage a déjà tous ses PV.':'Univers différent : choisis un allié '+worldName(g?.universe)+'.');return;}
  if(a==='pick-reserve'){selectedReserve=selectedReserve===id?null:id;refreshInventoryModal();return;}if(a==='swap-target'){if(selectedReserve&&mutate(r=>swapActive(r,selectedReserve,index),contextToken(run))){selectedReserve=null;toast('La nouvelle formation est prête.');refreshInventoryModal();}return;}if(a==='equip-tab'){tab='items';selectedItem=null;refreshInventoryModal();return;}
- if(a==='inventory-preview'){inventoryReturn=true;inspected=id;inspectedSeed=run.seed;inspectedFinish=null;openModal('inspect');return;}if(a==='inspect'){if(modal==='inventory')inventoryReturn=true;if(page==='run'&&run?.phase==='draft'){const offer=run.offers?.find(o=>o.revealed&&!o.disabled&&(o.token===id||o.id===id||o.id===el.dataset.cardId));if(offer){selectedOffer=offer.token;inspected=offer.id;inspectedSeed=run.seed;inspectedFinish=null;openModal('inspect');return;}}const face=el.closest('.a-card')?.querySelector('.v19-face');inspectedSeed=face?.dataset.v19Seed||el.dataset.inspectSeed||null;inspectedFinish=face?.dataset.finish||el.dataset.inspectFinish||null;inspected=id;openModal('inspect');return;}if(a==='map'&&run){openModal('map');return;}if(a==='inventory'&&run){openModal('inventory');return;}if(a==='fx-lab'){openModal('fx');return;}if(a==='creator'){openModal('creator');return;}if(a==='audio'||a==='settings'){openModal(a);return;}if(a==='close'||a==='backdrop'){modal=inventoryReturn&&modal==='inspect'?'inventory':null;inventoryReturn=false;render();schedule();return;}if(a==='tab'){tab=id;render();return;}
+ if(a==='inventory-preview'){inventoryReturn=true;inspected=id;inspectedSeed=run.seed;const ownU=run.units.find(u=>u.cardId===id);inspectedFinish=ownU?.edition||el.dataset.inspectFinish||editionFor(run.seed,id);openModal('inspect');return;}if(a==='inspect'){if(modal==='inventory')inventoryReturn=true;if(page==='run'&&run?.phase==='draft'){const offer=run.offers?.find(o=>o.revealed&&!o.disabled&&(o.token===id||o.id===id||o.id===el.dataset.cardId));if(offer){selectedOffer=offer.token;inspected=offer.id;inspectedSeed=run.seed;inspectedFinish=editionFor(run.seed,offer.id);openModal('inspect');return;}}const face=el.closest('.a-card')?.querySelector('.v19-face')||el.closest('[data-edition]')?.querySelector?.('.v19-face');const host=el.closest('.a-card,[data-inspect-finish]');inspectedSeed=face?.dataset.v19Seed||el.dataset.inspectSeed||run?.seed||null;inspectedFinish=face?.dataset.finish||host?.dataset?.inspectFinish||el.dataset.inspectFinish||null;inspected=id;openModal('inspect');return;}if(a==='map'&&run){openModal('map');return;}if(a==='inventory'&&run){openModal('inventory');return;}if(a==='fx-lab'){openModal('fx');return;}if(a==='creator'){openModal('creator');return;}if(a==='audio'||a==='settings'){openModal(a);return;}if(a==='close'||a==='backdrop'){modal=inventoryReturn&&modal==='inspect'?'inventory':null;inventoryReturn=false;render();schedule();return;}if(a==='tab'){tab=id;render();return;}
  if(a==='copyseed'){await copy(run.seed);return;}if(a==='export'){download('KI_ARENA_RUN_'+run.seed.replace(/[^\w-]/g,'_')+'.json',exportRun(run));return;}
  if(a==='mute'){setAudio('muted',!audioSettings.muted);render();return;}if(a==='musicstop'){stopMusic();toast('Musique arrêtée.');return;}if(a==='musicplay'){const ok=await playMusic(document.querySelector('#a-music-world').value);toast(ok?'Lecture à faible volume.':'Importe d’abord un fichier audio local.');return;}
  if(a==='legacy'){activateParty(false);stopEffects(true);stopMusic();clearTimeout(timer);page='legacy';modal=null;if(globalThis.KI_OPEN_LEGACY)globalThis.KI_OPEN_LEGACY();else location.href='LEGACY_V9.html';return;}

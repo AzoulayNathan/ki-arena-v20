@@ -1,6 +1,7 @@
 import {runCatalog,battleCard,equip,itemSellPrice} from '../v20/router.js';
 import {effectDescription} from '../v19/catalog.js';
 import {contextToken} from '../arena/transactions.js';
+import {editionFor} from '../v19/card-spec.js';
 const E=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function equipmentPreview(run,itemUid,unitUid){const u=run.units.find(u=>u.uid===unitUid);if(!u)return {ok:false,reason:'Combattant absent'};const copy=structuredClone(run),before=battleCard(run,u),success=equip(copy,itemUid,unitUid);if(!success)return {ok:false,reason:['combat','end'].includes(run.phase)?'Équipement verrouillé pendant le combat':'Univers incompatible ou soin inutile'};const next=copy.units.find(x=>x.uid===unitUid),after=battleCard(copy,next);return {ok:true,before,after,hpBefore:u.hp,hpAfter:next.hp,removed:!copy.items.some(x=>x.uid===itemUid),unequipped:u.weapon===itemUid||u.armor===itemUid};}
 export function inventoryMarkup({run,selectedItem,filter='',selectedReserve,cardMarkup}){
@@ -31,8 +32,8 @@ export function inventoryMarkup({run,selectedItem,filter='',selectedReserve,card
     const h=c.byId.get(u.cardId),stats=battleCard(run,u),preview=chosen?equipmentPreview(run,selectedItem,u.uid):null,w=c.byItem.get(run.items.find(x=>x.uid===u.weapon)?.cardId),a=c.byItem.get(run.items.find(x=>x.uid===u.armor)?.cardId);
     const canAssign=!locked&&chosen&&preview?.ok;
     return `<article class="v193-member ${i>4?'reserve':''}" data-member="${u.uid}">
-      <button type="button" class="v193-equip-target ${preview?.ok?'compatible':''}" data-a="${chosen?(preview?.ok?'assign-item':'assign-blocked'):'inventory-preview'}" data-id="${chosen?u.uid:h.id}" data-drop-unit="${u.uid}" aria-label="${chosen?(preview?.unequipped?'Retirer '+E(chosen.name)+' de ':'Confier '+E(chosen.name)+' à '):'Aperçu de '}${E(h.name)}" aria-disabled="${locked||(!!chosen&&!preview?.ok)}" ${locked?'disabled':''}>
-        ${cardMarkup({...h,attack:stats.attack,maxHp:stats.maxHp,speed:stats.speed},{seed:run.seed})}
+      <button type="button" class="v193-equip-target ${preview?.ok?'compatible':''}" data-a="${chosen?(preview?.ok?'assign-item':'assign-blocked'):'inventory-preview'}" data-id="${chosen?u.uid:h.id}" data-inspect-finish="${E(u.edition||editionFor(run.seed,h.id))}" data-drop-unit="${u.uid}" aria-label="${chosen?(preview?.unequipped?'Retirer '+E(chosen.name)+' de ':'Confier '+E(chosen.name)+' à '):'Aperçu de '}${E(h.name)}" aria-disabled="${locked||(!!chosen&&!preview?.ok)}" ${locked?'disabled':''}>
+        ${cardMarkup({...h,attack:stats.attack,maxHp:stats.maxHp,speed:stats.speed},{seed:run.seed,edition:u.edition||editionFor(run.seed,h.id)})}
         <span class="v193-member-name">${E(h.name)}</span>
         <small>${i<5?'ACTIF':'RÉSERVE'} · ${E(h.universe)} · ${Math.round(u.hp/u.maxHp*100)} % PV</small>
         <span class="v193-inv-hp"><i style="width:${u.hp/u.maxHp*100}%"></i></span>
