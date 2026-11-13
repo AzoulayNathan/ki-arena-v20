@@ -204,33 +204,33 @@ function paintSpecialFoil(c,accent){
   c.globalCompositeOperation='screen';
   const g=c.createLinearGradient(0,0,900,1350);
   g.addColorStop(0,'rgba(255,255,255,0)');
-  g.addColorStop(.26,hexAlpha('#a6f4ff',.20));
-  g.addColorStop(.48,'rgba(255,255,255,.42)');
-  g.addColorStop(.54,hexAlpha(accent,.36));
-  g.addColorStop(.76,'rgba(255,213,154,.28)');
+  g.addColorStop(.22,hexAlpha('#a6f4ff',.38));
+  g.addColorStop(.46,'rgba(255,255,255,.62)');
+  g.addColorStop(.54,hexAlpha(accent,.55));
+  g.addColorStop(.74,'rgba(255,213,154,.42)');
   g.addColorStop(1,'rgba(255,255,255,0)');
   c.fillStyle=g;c.fillRect(0,0,900,1350);
-  const glow=c.createRadialGradient(450,480,30,450,520,620);
-  glow.addColorStop(0,'rgba(255,250,220,.22)');
-  glow.addColorStop(.6,hexAlpha(accent,.12));
+  const glow=c.createRadialGradient(450,480,20,450,520,680);
+  glow.addColorStop(0,'rgba(255,250,220,.38)');
+  glow.addColorStop(.55,hexAlpha(accent,.22));
   glow.addColorStop(1,'rgba(255,255,255,0)');
   c.fillStyle=glow;c.fillRect(0,0,900,1350);
   c.globalCompositeOperation='source-over';
   c.restore();
 }
 
-/** Lianes légères 1ʳᵉ version : brins/épaisseur/opacité croissent avec la rareté (1→5). */
+/** Lianes légères continues sur tout le bord dur (pas de feuilles ovales). */
 function paintBorderVines(c,accent,{level=1,scale=1}={}){
   const lv=Math.max(1,Math.min(5,level|0));
-  const strands=Math.min(4,lv); // 1..4
-  const alpha=.16+.065*lv;
-  const lw=(.95+lv*.28)*scale;
+  const strands=lv>=4?2:1;
+  const alpha=.22+.05*lv;
+  const lw=(1.15+lv*.22)*scale;
   c.save();c.lineCap='round';c.lineJoin='round';
   const frame=[[26,26,874,26],[874,26,874,1324],[874,1324,26,1324],[26,1324,26,26]];
   for(let s=0;s<strands;s++){
-    const off=(3.2+s*3.2)*scale*(s%2?1:-1);
-    c.globalAlpha=alpha*(1-s*.18);
-    c.strokeStyle=hexAlpha(accent,.48+lv*.07);
+    const off=(3.5+s*3.5)*scale*(s%2?1:-1);
+    c.globalAlpha=alpha*(1-s*.2);
+    c.strokeStyle=hexAlpha(accent,.58+lv*.08);
     c.lineWidth=lw*(1-s*.1);
     frame.forEach(([x1,y1,x2,y2],ei)=>{
       const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy)||1;
@@ -240,66 +240,70 @@ function paintBorderVines(c,accent,{level=1,scale=1}={}){
       const steps=10;
       for(let i=1;i<=steps;i++){
         const t=i/steps;
-        const wobble=Math.sin(t*Math.PI*2.15+s*1.35+ei*.7)*.38*off;
+        const wobble=Math.sin(t*Math.PI*2+s*1.5+ei)*.28*off;
         c.lineTo(x1+dx*t+nx+(-dy/len)*wobble,y1+dy*t+ny+(dx/len)*wobble);
       }
       c.stroke();
     });
   }
-  if(lv>=2){
-    const leafN=Math.min(8,2+(lv-1)*2);
-    const leafScale=(2.2+.55*lv)*scale;
-    c.globalAlpha=.22+.04*lv;c.fillStyle=hexAlpha(accent,.58+.05*lv);
-    const spots=[[36,190],[864,230],[36,1140],[864,1100],[48,680],[852,720],[220,40],[680,1310]];
-    for(let i=0;i<leafN;i++){
-      const [x,y]=spots[i%spots.length];
-      c.beginPath();c.ellipse(x,y,leafScale*.55,leafScale,i*.55,0,Math.PI*2);c.fill();
-    }
-  }
   c.restore();
 }
 
-/** FX cumulés organiques sans aucun rectangle franc. Peints AVANT le texte. */
+/** FX cumulés bien visibles (1→5 + prism spécial). */
 function paintCumulativeFx(c,fxList,accent,{scale=1,intensity=1}={}){
   if(!fxList?.length)return;
-  const sc=Math.max(1,scale),boost=Math.max(1,Math.min(1.45,intensity));
+  const sc=Math.max(1,scale),boost=Math.max(1,Math.min(1.85,intensity));
   c.save();
   for(const fx of fxList){
     const id=fx?.id||fx;
     if(id==='seal'){
-      // Géré discrètement par paintBorderVines.
+      // Sceaux d'encre aux coins / bords.
+      c.globalAlpha=.55*boost;c.fillStyle=hexAlpha(accent,.72);c.strokeStyle=hexAlpha(accent,.9);c.lineWidth=1.8*sc;
+      [[70,70],[830,70],[70,1280],[830,1280],[70,680],[830,680]].forEach(([x,y],i)=>{
+        c.beginPath();c.arc(x,y,(7+(i%3)*2.2)*sc,0,Math.PI*2);c.fill();
+        c.beginPath();c.arc(x,y,(11+(i%2)*2)*sc,0,Math.PI*2);c.stroke();
+      });
     }else if(id==='veins'){
-      // Design précédent : 4 fines veines latérales discrètes uniquement.
-      c.globalAlpha=.36*boost;c.strokeStyle=hexAlpha(accent,.88);c.lineWidth=1.6*sc;c.lineCap='round';
-      [[40,260,120,420],[860,260,780,420],[50,900,140,1050],[850,900,760,1050]].forEach(([x1,y1,x2,y2])=>{
-        c.beginPath();c.moveTo(x1,y1);c.quadraticCurveTo((x1+x2)/2+((x1<450)?38:-38)*sc,(y1+y2)/2,x2,y2);c.stroke();
+      c.globalAlpha=.62*boost;c.strokeStyle=hexAlpha(accent,.95);c.lineWidth=2.6*sc;c.lineCap='round';
+      [[36,220,150,420],[864,220,750,420],[42,860,160,1080],[858,860,740,1080],[70,520,180,640],[830,520,720,640]].forEach(([x1,y1,x2,y2])=>{
+        c.beginPath();c.moveTo(x1,y1);c.quadraticCurveTo((x1+x2)/2+((x1<450)?48:-48)*sc,(y1+y2)/2,x2,y2);c.stroke();
+      });
+      c.globalAlpha=.35*boost;c.lineWidth=1.4*sc;
+      [[90,300,170,380],[810,300,730,380],[100,980,190,1060],[800,980,710,1060]].forEach(([x1,y1,x2,y2])=>{
+        c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.stroke();
       });
     }else if(id==='split'){
-      // Éclats fins obliques sans barres horizontales ni rectangles.
-      c.globalAlpha=.34*boost;c.strokeStyle='#ffffffbb';c.lineWidth=2.0*sc;
-      [[64,230,210,182,192,202],[836,230,690,182,708,202],[68,1080,205,1036,188,1054],[832,1080,695,1036,712,1054]].forEach(([a,b,d,e,f,g])=>{
-        c.beginPath();c.moveTo(a,b);c.lineTo(d,e);c.lineTo(f,g);c.closePath();c.stroke();
+      c.globalAlpha=.7*boost;c.strokeStyle='#ffffffdd';c.lineWidth=2.8*sc;c.fillStyle='#ffffff55';
+      [[58,210,230,150,210,175],[842,210,670,150,690,175],[58,1110,230,1045,210,1070],[842,1110,670,1045,690,1070],[120,640,210,600,195,620],[780,640,690,600,705,620]].forEach(([a,b,d,e,f,g])=>{
+        c.beginPath();c.moveTo(a,b);c.lineTo(d,e);c.lineTo(f,g);c.closePath();c.fill();c.stroke();
       });
     }else if(id==='aurora'){
-      // Halos radiaux plein-cadre (alpha -> 0 avant le bord = zéro rectangle coupé).
-      c.globalAlpha=.44*boost;c.globalCompositeOperation='screen';
-      const r1=c.createRadialGradient(250,310,20,250,310,430);
-      r1.addColorStop(0,hexAlpha('#66f0ff',.62));r1.addColorStop(.55,hexAlpha(accent,.34));r1.addColorStop(1,hexAlpha(accent,0));
+      c.globalAlpha=.72*boost;c.globalCompositeOperation='screen';
+      const r1=c.createRadialGradient(240,280,10,240,280,480);
+      r1.addColorStop(0,hexAlpha('#66f0ff',.85));r1.addColorStop(.5,hexAlpha(accent,.48));r1.addColorStop(1,hexAlpha(accent,0));
       c.fillStyle=r1;c.fillRect(0,0,900,1350);
-      const r2=c.createRadialGradient(670,560,20,670,560,440);
-      r2.addColorStop(0,hexAlpha('#ff8ad8',.48));r2.addColorStop(.55,hexAlpha(accent,.28));r2.addColorStop(1,hexAlpha('#ff8ad8',0));
+      const r2=c.createRadialGradient(680,540,10,680,540,500);
+      r2.addColorStop(0,hexAlpha('#ff8ad8',.72));r2.addColorStop(.5,hexAlpha(accent,.4));r2.addColorStop(1,hexAlpha('#ff8ad8',0));
       c.fillStyle=r2;c.fillRect(0,0,900,1350);
-      const r3=c.createRadialGradient(450,1040,30,450,1040,460);
-      r3.addColorStop(0,hexAlpha(accent,.46));r3.addColorStop(.6,hexAlpha('#66f0ff',.20));r3.addColorStop(1,hexAlpha('#66f0ff',0));
+      const r3=c.createRadialGradient(450,1080,20,450,1080,520);
+      r3.addColorStop(0,hexAlpha(accent,.7));r3.addColorStop(.55,hexAlpha('#66f0ff',.32));r3.addColorStop(1,hexAlpha('#66f0ff',0));
       c.fillStyle=r3;c.fillRect(0,0,900,1350);
+      const r4=c.createRadialGradient(450,180,10,450,180,320);
+      r4.addColorStop(0,hexAlpha('#ffe9a8',.55));r4.addColorStop(1,hexAlpha('#ffe9a8',0));
+      c.fillStyle=r4;c.fillRect(0,0,900,1350);
       c.globalCompositeOperation='source-over';
     }else if(id==='embers'){
-      c.globalAlpha=.68*boost;c.fillStyle=hexAlpha('#ffb347',.95);
-      [[90,300],[140,360],[820,310],[780,380],[110,620],[790,640],[200,900],[700,920],[110,1120],[790,1140],[450,160],[500,200],[260,480],[640,500]].forEach(([x,y],i)=>{
-        c.beginPath();c.arc(x,y,(2.6+(i%3)*1.1)*sc,0,Math.PI*2);c.fill();
+      c.globalAlpha=.9*boost;c.fillStyle=hexAlpha('#ffb347',.98);
+      [[80,280],[130,340],[820,290],[770,360],[100,600],[800,620],[190,880],[710,900],[100,1110],[800,1130],[450,150],[510,190],[250,460],[650,480],[360,320],[540,300],[200,720],[700,740]].forEach(([x,y],i)=>{
+        c.beginPath();c.arc(x,y,(3.4+(i%4)*1.4)*sc,0,Math.PI*2);c.fill();
       });
-      c.fillStyle=hexAlpha(accent,.82);
-      [[200,250],[700,260],[250,1020],[650,1030],[180,700],[720,720]].forEach(([x,y])=>{c.beginPath();c.arc(x,y,2.3*sc,0,Math.PI*2);c.fill();});
+      c.fillStyle=hexAlpha(accent,.9);
+      [[200,240],[700,250],[250,1010],[650,1020],[170,690],[730,710],[450,400],[450,900]].forEach(([x,y])=>{c.beginPath();c.arc(x,y,3.2*sc,0,Math.PI*2);c.fill();});
+      c.globalAlpha=.35*boost;c.globalCompositeOperation='screen';
+      const glow=c.createRadialGradient(450,700,20,450,700,520);
+      glow.addColorStop(0,hexAlpha('#ffb347',.45));glow.addColorStop(1,hexAlpha('#ffb347',0));
+      c.fillStyle=glow;c.fillRect(0,0,900,1350);
+      c.globalCompositeOperation='source-over';
     }else if(id==='prism'){
       paintSpecialFoil(c,accent);
     }
@@ -486,7 +490,7 @@ export function renderCard(canvas,hero,{skin,edition,image=null,seed='ARENA',cro
   paintFullBleedArt(c,art,crop,{equipment,pictogram:hero.artLabel==='PICTOGRAMME',accent});
 
   // FX pleine carte EN DESSOUS du texte
-  paintCumulativeFx(c,fx.filter(f=>(f.id||f)!=='prism'),accent,{scale:textScale,intensity:1+0.12*(level-1)+(special?0.15:0),level});
+  paintCumulativeFx(c,fx.filter(f=>(f.id||f)!=='prism'),accent,{scale:textScale,intensity:1.15+0.18*(level-1)+(special?0.22:0),level});
   paintBorderVines(c,accent,{level,scale:textScale});
   if(special)paintSpecialFoil(c,accent);
 
