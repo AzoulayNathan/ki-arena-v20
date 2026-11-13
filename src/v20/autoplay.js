@@ -46,13 +46,9 @@ function autoEquipAll(r,{equip,registry}){
  */
 export function autoStep(r,h){
   if(!r||!isAutoplay())return false;
-  if(r.phase==='prestige'||r.phase==='combat'||r.phase==='end')return false;
-  const {availableNodes,enterNode,chooseDraft,chooseReward,rest,resolveEvent,buy,buyCare,leaveNode,startCombat,equip,registry}=h;
-  if(r.phase==='draft'){
-    const offer=(r.offers||[]).find(o=>!o.disabled)||null;
-    if(!offer)return false;
-    return !!chooseDraft(r,offer.token||offer.id);
-  }
+  // Auto = après le recrutement uniquement (jamais draft/roster/prestige).
+  if(['prestige','combat','end','draft','roster'].includes(r.phase))return false;
+  const {availableNodes,enterNode,chooseReward,rest,resolveEvent,buy,buyCare,leaveNode,startCombat,equip,registry}=h;
   if(r.phase==='map'){
     const ids=availableNodes(r);
     const id=pickRand(ids);

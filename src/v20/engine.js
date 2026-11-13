@@ -106,13 +106,13 @@ export function markRareNodes(r){if(r.rulesVersion!==START_RULES)return;for(cons
 export function createRunV19(worlds,seed,statsMode='raw',opts={}){
   const r=createRun(worlds,seed,{rulesVersion:START_RULES,statsMode});
   markRareNodes(r);
-  if(opts?.useCollection){
-    beginRoster(r);
-  }
+  // Collection = filtre draft (pas de phase roster sans UI — évite écran blanc).
+  if(opts?.useCollection)r.useCollection=true;
   return r;
 }
 export function ensureDraft(r){
- if(r.phase==='roster')return;
+ // Anciennes saves « roster » sans UI → revenir au draft filtré collection.
+ if(r.phase==='roster'){r.phase='draft';r.step=0;r.offers=[];r.units=[];r.items=[];r.useCollection=true;delete r.roster;}
  if(r.rulesVersion==='17.0.0')return ensureLegacyStart(r);if(r.rulesVersion===START_RULES)return ensureStartDraft(r);
  if(r.rulesVersion===MIXED_RULES)return ensureMixedDraft(r);
  if(!isCurrentRules(r))return ensureDraftV13(r);

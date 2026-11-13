@@ -267,4 +267,17 @@
 .v20-app .a-prestige-diffs{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 16px}
 .v20-app .a-prestige-diff{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border:1px solid #c5cdb6;border-radius:8px;background:#eef2e6;font:600 12px 'Arena Text';cursor:pointer}
 .v20-app .a-prestige-diff:has(input:checked){border-color:#3a7660;background:#dce8df}
+/* Setup : cartes manga compactes, bouton Partir lisible */
+.v20-app .v20-setup-page{display:flex;flex-direction:column;gap:18px;max-width:920px;margin:0 auto;padding:8px 12px 40px}
+.v20-app .v20-setup-top h1{font-size:clamp(28px,5vw,42px)!important;margin:0 0 4px}
+.v20-app .v20-manga-stack.a-worlds{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px!important;overflow:visible!important;max-height:none!important}
+.v20-app .v20-manga-stack .a-world{min-height:110px!important;max-height:140px!important;padding:12px!important;border-radius:12px!important;background-size:cover!important}
+.v20-app .v20-manga-stack .a-world b{font-size:15px!important}
+.v20-app .v20-manga-stack .a-world small{font-size:11px!important}
+.v20-app .v20-manga-stack .a-world-icon{font-size:22px!important}
+.v20-app .v20-depart-bar{display:flex;flex-direction:column;gap:14px;padding:20px;border:1px solid #c5cdb6;border-radius:16px;background:#fffaf0}
+.v20-app .v20-depart-copy b{font-size:22px}
+.v20-app .v20-depart-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.v20-app .v20-depart-go.a-button,.v20-app .a-button.primary.v20-depart-go{min-height:56px!important;padding:16px 28px!important;font-size:20px!important;font-weight:800!important;border-radius:12px!important}
+.v20-app .v20-depart-actions .a-button.light{min-height:48px!important;padding:12px 20px!important;font-size:16px!important}
 
