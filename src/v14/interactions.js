@@ -1,9 +1,69 @@
-let tilt=null,origin=null,drag=null,ghost=null,suppress=false;
+let tilt=null,origin=null,drag=null,ghost=null,suppress=false,slide=null;
 const reduce=()=>globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 function clear(){if(tilt){tilt.style.transform='';tilt.classList.remove('v14-tilting');}tilt=null;origin=null;}
 function finishDrag(e){if(!drag)return;const data=drag;drag=null;ghost?.remove();ghost=null;document.querySelectorAll('.v14-drop-hover').forEach(x=>x.classList.remove('v14-drop-hover'));if(data.moved){suppress=true;setTimeout(()=>suppress=false,80);const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-drop-unit]');if(target&&!target.disabled)document.dispatchEvent(new CustomEvent('v14-equip',{detail:{item:data.item,unit:target.dataset.dropUnit,context:data.context}}));}}
-document.addEventListener('pointerdown',e=>{const handle=e.target.closest('[data-drag-item]');if(handle&&e.button===0){e.preventDefault();drag={item:handle.dataset.dragItem,context:handle.dataset.context,x:e.clientX,y:e.clientY,moved:false,label:handle.dataset.label||'Équipement'};handle.setPointerCapture?.(e.pointerId);return;}if(reduce())return;const card=e.target.closest('.a-card.studio');if(!card||card.closest('.a-battlefield,.a-mini-battle,.p-battlefield'))return;tilt=card;origin={x:e.clientX,y:e.clientY,touch:e.pointerType==='touch'};card.classList.add('v14-tilting');},true);
-document.addEventListener('pointermove',e=>{if(drag){if(Math.hypot(e.clientX-drag.x,e.clientY-drag.y)>8){drag.moved=true;if(!ghost){ghost=document.createElement('div');ghost.className='v14-drag-ghost';ghost.textContent=drag.label;document.body.append(ghost);}ghost.style.transform=`translate(${e.clientX+12}px,${e.clientY+12}px)`;document.querySelectorAll('.v14-drop-hover').forEach(x=>x.classList.remove('v14-drop-hover'));document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-drop-unit]:not([disabled])')?.classList.add('v14-drop-hover');}return;}if(!tilt)return;if(origin?.touch&&Math.abs(e.clientY-origin.y)>20){clear();return;}const b=tilt.getBoundingClientRect(),x=Math.max(-1,Math.min(1,(e.clientX-b.left)/b.width*2-1)),y=Math.max(-1,Math.min(1,(e.clientY-b.top)/b.height*2-1));tilt.style.transform=`perspective(900px) rotateX(${-y*8}deg) rotateY(${x*9}deg)`;},true);
-document.addEventListener('pointerup',e=>{finishDrag(e);clear();},true);document.addEventListener('pointercancel',()=>{drag=null;ghost?.remove();ghost=null;clear();},true);document.addEventListener('click',e=>{if(suppress){e.preventDefault();e.stopImmediatePropagation();}},true);
-document.addEventListener('pointerover',e=>{if(e.pointerType==='mouse'&&!reduce()&&!tilt){const c=e.target.closest('.a-card.studio');if(c&&!c.closest('.a-battlefield,.a-mini-battle,.p-battlefield')){tilt=c;origin={touch:false};}}},true);document.addEventListener('pointerout',e=>{if(tilt&&!tilt.contains(e.relatedTarget))clear();},true);
+function finishSlide(){
+  if(!slide)return;
+  const card=slide.card;
+  card.classList.remove('is-sliding');
+  if(slide.moved){
+    suppress=true;
+    setTimeout(()=>suppress=false,120);
+  }
+  slide=null;
+}
+document.addEventListener('pointerdown',e=>{
+  const handle=e.target.closest('[data-drag-item]');
+  if(handle&&e.button===0){
+    e.preventDefault();
+    drag={item:handle.dataset.dragItem,context:handle.dataset.context,x:e.clientX,y:e.clientY,moved:false,label:handle.dataset.label||'Équipement'};
+    handle.setPointerCapture?.(e.pointerId);
+    return;
+  }
+  // Pré-combat : glisser les cartes sur le terrain (cosmétique uniquement).
+  const slideCard=e.target.closest('.a-prebattle .a-card.studio, .v192-prebattle .a-card.studio');
+  if(slideCard&&e.button===0&&!e.target.closest('.a-card-info,[data-a="inspect"]')){
+    e.preventDefault();
+    const curX=Number(slideCard.dataset.slideX||0),curY=Number(slideCard.dataset.slideY||0);
+    slide={card:slideCard,x:e.clientX,y:e.clientY,ox:curX,oy:curY,moved:false};
+    slideCard.classList.add('is-sliding');
+    slideCard.setPointerCapture?.(e.pointerId);
+    clear();
+    return;
+  }
+  if(reduce())return;
+  const card=e.target.closest('.a-card.studio');
+  if(!card||card.closest('.a-battlefield,.a-mini-battle,.p-battlefield,.a-prebattle,.v192-prebattle'))return;
+  tilt=card;origin={x:e.clientX,y:e.clientY,touch:e.pointerType==='touch'};card.classList.add('v14-tilting');
+},true);
+document.addEventListener('pointermove',e=>{
+  if(slide){
+    const dx=e.clientX-slide.x,dy=e.clientY-slide.y;
+    if(Math.hypot(dx,dy)>6)slide.moved=true;
+    const nx=slide.ox+dx,ny=slide.oy+dy;
+    slide.card.dataset.slideX=String(nx);
+    slide.card.dataset.slideY=String(ny);
+    slide.card.style.transform=`translate(${nx}px,${ny}px)`;
+    return;
+  }
+  if(drag){
+    if(Math.hypot(e.clientX-drag.x,e.clientY-drag.y)>8){
+      drag.moved=true;
+      if(!ghost){ghost=document.createElement('div');ghost.className='v14-drag-ghost';ghost.textContent=drag.label;document.body.append(ghost);}
+      ghost.style.transform=`translate(${e.clientX+12}px,${e.clientY+12}px)`;
+      document.querySelectorAll('.v14-drop-hover').forEach(x=>x.classList.remove('v14-drop-hover'));
+      document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-drop-unit]:not([disabled])')?.classList.add('v14-drop-hover');
+    }
+    return;
+  }
+  if(!tilt)return;
+  if(origin?.touch&&Math.abs(e.clientY-origin.y)>20){clear();return;}
+  const b=tilt.getBoundingClientRect(),x=Math.max(-1,Math.min(1,(e.clientX-b.left)/b.width*2-1)),y=Math.max(-1,Math.min(1,(e.clientY-b.top)/b.height*2-1));
+  tilt.style.transform=`perspective(900px) rotateX(${-y*8}deg) rotateY(${x*9}deg)`;
+},true);
+document.addEventListener('pointerup',e=>{finishSlide();finishDrag(e);clear();},true);
+document.addEventListener('pointercancel',()=>{finishSlide();drag=null;ghost?.remove();ghost=null;clear();},true);
+document.addEventListener('click',e=>{if(suppress){e.preventDefault();e.stopImmediatePropagation();}},true);
+document.addEventListener('pointerover',e=>{if(e.pointerType==='mouse'&&!reduce()&&!tilt&&!slide){const c=e.target.closest('.a-card.studio');if(c&&!c.closest('.a-battlefield,.a-mini-battle,.p-battlefield,.a-prebattle,.v192-prebattle')){tilt=c;origin={touch:false};}}},true);
+document.addEventListener('pointerout',e=>{if(tilt&&!tilt.contains(e.relatedTarget))clear();},true);
 export function annotateCommands(root,context,miniContext){root.querySelectorAll('[data-a]').forEach(el=>{el.dataset.context=context||'';el.dataset.mctx=String(miniContext??'');});}

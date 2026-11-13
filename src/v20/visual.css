@@ -50,6 +50,15 @@
 .v20-app .a-route-card>img{width:36px!important;height:36px!important}.v20-app .a-prepare-heading{gap:18px}.v20-app .a-prebattle{border-radius:18px!important;min-height:440px;border:1px solid #bccab3!important}
 .v20-app .a-side-label{color:#fff4d9!important;letter-spacing:.14em;font-size:12px!important;text-shadow:0 2px 5px #16353b}
 .v20-app .v20-run-label{font:12px/1.6 'Arena Text';color:#5f7162;margin:8px 0 16px}
+.v20-app .a-gear-badges{position:absolute;left:6px;right:6px;bottom:10px;z-index:6;display:flex;flex-direction:column;gap:4px;pointer-events:none}
+.v20-app .a-gear-badge{display:flex;align-items:center;gap:5px;min-height:22px;padding:3px 7px;border-radius:7px;background:#10241ce8;border:1px solid #dac18b99;color:#ffe9a8;font:700 10px/1.15 'Arena Text';box-shadow:0 4px 10px #0006;backdrop-filter:blur(4px)}
+.v20-app .a-gear-badge.is-armor{color:#b8f0ff;border-color:#8ad4e899}
+.v20-app .a-gear-badge em{font-style:normal;opacity:.9}
+.v20-app .a-gear-badge b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.v20-app .a-card.is-small .a-gear-badge{font-size:9px;padding:2px 5px;min-height:18px}
+.v20-app .a-prebattle .a-fighters-slide,.v20-app .v192-prebattle .a-fighters{position:relative;min-height:220px}
+.v20-app .a-prebattle .a-card.studio,.v20-app .v192-prebattle .a-card.studio{touch-action:none;cursor:grab;position:relative;will-change:transform}
+.v20-app .a-prebattle .a-card.studio.is-sliding,.v20-app .v192-prebattle .a-card.studio.is-sliding{cursor:grabbing;z-index:30;transition:none;box-shadow:0 18px 40px #10283066}
 /* Encounters: eight new painted scene tiles + retained high-definition landscapes. */
 .v20-app .a-encounter-scene{border-radius:20px!important;border:1px solid #a2b5a1!important;overflow:hidden;padding:28px!important}
 .v20-app .a-encounter-copy{border-radius:16px!important;background:#fcf8edeF!important;border:1px solid #c9c7b6!important;padding:30px!important;box-shadow:0 12px 36px #182f3830}
@@ -98,7 +107,7 @@
 .v20-app .v193-item-effect{background:#e7edde!important;border-radius:8px!important}.v20-app .v193-bag-filters .selected{background:#264c40!important;color:#fff5d7!important}
 .v20-app .v193-gear.selected{border-color:#3a7660!important;box-shadow:inset 0 0 0 2px #3a7660}
 .v20-app .v193-drag{font-size:0!important;display:grid;place-items:center}.v20-app .v193-drag:before{font-size:28px!important}.v20-app .v193-slots button{background:#e9eedf!important;border-color:#bdc9b0!important}
-.v20-position{font:700 8px 'Arena Text';letter-spacing:.12em;padding:5px 7px;border:1px solid #c2c9ae;background:#e5ecd6;color:#4d6747;border-radius:4px}.v20-order{display:flex;gap:6px;margin-top:10px}.v20-order button{flex:1;min-height:44px;border:1px solid #bac9af;background:#faf9eb;border-radius:7px;color:#355544;font-size:20px;cursor:pointer}.v20-order button:disabled{opacity:.3}
+.v20-position,.v20-order{display:none!important}
 .v20-app .v193-guide{border-color:#b5c6ab!important;border-left:4px solid #bd8e43!important;background:#fff9e9!important;border-radius:11px!important;box-shadow:0 5px 15px #183b320a}.v20-app .v193-guide b{font-size:23px!important}.v20-app .v193-guide p{font-size:12px!important;line-height:1.5!important}
 .v20-app .v192-pack-room.v20-pack-room{background:radial-gradient(ellipse at 50% 25%,#1b3e48d8 0%,#081620f2 72%),var(--pack-horizon) center/cover!important;border:1px solid #d4b87a88!important;border-radius:24px!important;color:#fff4dc!important;box-shadow:0 28px 90px #000c!important}
 .v20-app .v192-pack-room.v20-pack-room .a-eyebrow{color:#f0cf88!important}

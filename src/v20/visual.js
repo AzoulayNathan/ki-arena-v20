@@ -1,5 +1,4 @@
 import {asset} from '../v19/media.js';
-import {contextToken} from '../arena/transactions.js';
 let current=null;
 const scenes={aurora_sanctuary:[1,7],waterfall_cache:[1,2],comet_trial:[6],crossroads_trade:[4,5],gear_offering:[0,2],weapon_barter:[0,5],gold_ransom:[2,3],sell_roster:[5,4],blood_pact:[4,7],fuse_relics:[0,2],rival_join:[6,4],debt_mark:[5,4],omen_path:[3,4],ambush_forced:[3],three_booths:[0,5,2],shadow_duel:[6,3],charity_tax:[5,4]};
 function cell(el,n){el.style.setProperty('--v20-cell-x',n%4/3*100+'%');el.style.setProperty('--v20-cell-y',Math.floor(n/4)*100+'%');}
@@ -20,12 +19,10 @@ export function polishV20(root,ctx){
  document.body.dataset.v20World=ctx.run?.worlds?.[0]||ctx.worlds?.[0]||'DB';
  root.querySelectorAll('.a-event-scene').forEach((e,i)=>cell(e,(scenes[ctx.run?.activeEvent?.id]||[4,7,5])[i]??4));
  if(ctx.run?.phase!=='rest')root.querySelectorAll('.a-reward').forEach((e,i)=>cell(e,ctx.run?.phase==='shop'?0:i===0?2:7));
- const old=root.querySelector('.v20-run-label');old?.remove();
- if(ctx.page==='run'&&ctx.run?.rulesVersion==='20.0.0'&&ctx.run.phase==='prepare'){const label=document.createElement('p');label.className='v20-run-label';label.textContent='Deux à l’avant, trois en soutien. Prépare leur ordre dans le sac ; le combat reste automatique.';root.querySelector('.a-prebattle')?.before(label);}
- if(ctx.run?.rulesVersion==='20.0.0')root.querySelectorAll('.v193-member').forEach((el,i)=>{if(i>=5||!['map','prepare'].includes(ctx.run.phase))return;const name=el.querySelector('.v193-member-name');if(name){const tag=document.createElement('span');tag.className='v20-position';tag.textContent=i<2?'AVANT-GARDE':'SOUTIEN';name.before(tag);}const actions=document.createElement('div');actions.className='v20-order';for(const dir of [-1,1]){const b=document.createElement('button');b.textContent=dir<0?'←':'→';b.dataset.v20Move=i+':'+dir;b.dataset.token=contextToken(ctx.run);b.disabled=i+dir<0||i+dir>=Math.min(5,ctx.run.units.length);b.setAttribute('aria-label','Déplacer '+(dir<0?'à gauche':'à droite'));actions.append(b);}el.append(actions);});
+ root.querySelectorAll('.v20-run-label,.v20-position,.v20-order').forEach(el=>el.remove());
+ if(ctx.page==='run'&&ctx.run?.rulesVersion==='20.0.0'&&ctx.run.phase==='prepare'){const label=document.createElement('p');label.className='v20-run-label';label.textContent='Tu peux glisser les cartes sur le terrain pour le fun — ça ne change ni le combat ni l’ordre.';root.querySelector('.a-prebattle')?.before(label);}
  if(ctx.run?.phase==='combat')paintStates(root,ctx.run.combat.result.events[Math.max(0,ctx.run.combat.cursor-1)]);
 }
-document.addEventListener('click',e=>{const b=e.target.closest('[data-v20-move]');if(!b||b.disabled||e.detail>1||!current?.run)return;const [i,d]=b.dataset.v20Move.split(':').map(Number);current.mutate(r=>{if(!['map','prepare'].includes(r.phase)||r.rulesVersion!=='20.0.0'||!r.units[i+d])return false;[r.units[i],r.units[i+d]]=[r.units[i+d],r.units[i]];return true;},b.dataset.token);});
 /** Optional in-place inventory refresh hook for callers that already keep modal open. */
 export function refreshInventoryModal(root,html,{scrollTop=0,scrollLefts=[]}={}){
   const modal=root?.querySelector?.('.a-modal.drawer')||document.querySelector('.a-modal.drawer');

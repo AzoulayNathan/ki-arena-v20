@@ -129,7 +129,8 @@ export function runArenaBattle(teamA,teamB,{seed='ki-v2',rules='canon',maxRounds
    const targets=foes(f),weak=[...targets].sort((x,y)=>x.hp/x.maxHp-y.hp/y.maxHp)[0];
    const pinned=targets.find(x=>x.statuses.some(st=>st.type==='taunt'));
    const focus=f.effects.find(e=>e.type==='focus'&&!f.used.has(e.key));
-   const front=targets.filter(t=>t.index<2),ordinary=front.length?front:targets;const target=pinned||(focus?(f.used.add(focus.key),weak):selectRandom(ordinary,rng));
+   // Cible aléatoire parmi tous les adversaires vivants, sauf effet contraire (provocation / focus).
+   const target=pinned||(focus?(f.used.add(focus.key),weak):selectRandom(targets,rng));
    emit('attack',`${f.name} attaque ${target.name}`,f,target);
    // Effets standards après l'attaque : entièrement automatiques, usage unique.
    impact(f,target,1);

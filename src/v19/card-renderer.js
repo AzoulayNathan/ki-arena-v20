@@ -353,9 +353,9 @@ function paintRarityTitle(c,str,x,y,maxW,baseSize,{accent,level=1,special=false,
   if(level>=4&&!soft){
     c.shadowColor=hexAlpha(accent,.55);c.shadowBlur=blur+6;c.fillStyle=fill;c.fillText(label,x,y);
   }
-  if(special&&!soft){c.shadowColor='#a6f4ffaa';c.shadowBlur=blur+8;c.fillStyle=fill;c.fillText(label,x,y);}
+  if(special&&!soft){c.shadowColor='#ffe29acc';c.shadowBlur=blur+10;c.fillStyle='#ffd15a';c.fillText(label,x,y);}
   c.shadowBlur=soft?4:Math.min(14,blur*0.65);c.shadowColor='#000a';
-  c.fillStyle=fill;c.fillText(label,x,y);
+  c.fillStyle=special&&!soft?'#ffd15a':fill;c.fillText(label,x,y);
   c.shadowBlur=0;
   return size;
 }
@@ -515,11 +515,10 @@ export function renderCard(canvas,hero,{skin,edition,image=null,seed='ARENA',cro
   c.fillStyle=under;c.fillRect(0,0,900,1350);
   paintFullBleedArt(c,art,crop,{equipment,pictogram:hero.artLabel==='PICTOGRAMME',accent});
 
-  // FX pleine carte sous le texte ; lianes APRÈS le chrome (= sur le bord dur).
+  // FX pleine carte sous le texte (plus de lianes).
   paintCumulativeFx(c,fx.filter(f=>(f.id||f)!=='prism'),accent,{scale:textScale,intensity:1.2+0.2*(level-1)+(special?0.25:0),level});
   if(special)paintSpecialFoil(c,accent);
   paintCardChrome(c,hero,{equipment,accent,l,special,textScale,level});
-  paintBorderVines(c,accent,{level,scale:textScale});
   const {by,effects,nameY}=paintCardCopy(c,hero,{equipment,accent,l,special,textScale,level});
 
   c.restore();
