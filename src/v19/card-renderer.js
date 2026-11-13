@@ -230,32 +230,31 @@ function paintCumulativeFx(c,fxList,accent,{scale=1,intensity=1}={}){
   for(const fx of fxList){
     const id=fx?.id||fx;
     if(id==='seal'){
-      // Tampons d'encre aux coins uniquement (pas de trait type liane).
+      // Tampons d'encre — coins uniquement (aucun point milieu de bord).
       c.fillStyle=hexAlpha(accent,.88);
       c.strokeStyle=hexAlpha('#ffffff',.7);
       c.lineWidth=2.8*sc;
-      [[54,54],[846,54],[54,1296],[846,1296],[54,675],[846,675]].forEach(([x,y],i)=>{
+      [[54,54],[846,54],[54,1296],[846,1296]].forEach(([x,y],i)=>{
         c.beginPath();c.arc(x,y,(12+(i%3)*3.5)*sc,0,Math.PI*2);c.fill();
         c.beginPath();c.arc(x,y,(18+(i%2)*4)*sc,0,Math.PI*2);c.stroke();
       });
-    }else if(id==='veins'){
-      // Éclairs de ki intérieurs (plus de courbes le long du bord = plus de faux “lianes”).
-      c.lineCap='round';
-      c.strokeStyle=hexAlpha(accent,.95);c.lineWidth=4.5*sc;
-      c.shadowColor=hexAlpha(accent,.7);c.shadowBlur=12*sc;
-      [[180,320,320,480],[720,320,580,480],[200,780,340,940],[700,780,560,940],[360,520,540,620],[540,520,360,620]].forEach(([x1,y1,x2,y2])=>{
-        c.beginPath();c.moveTo(x1,y1);c.lineTo((x1+x2)/2+((x1<450)?40:-40)*sc,(y1+y2)/2);c.lineTo(x2,y2);c.stroke();
+    }else if(id==='sparks'||id==='veins'){
+      // Étincelles intérieures — points uniquement (jamais de traits type liane).
+      c.fillStyle=hexAlpha(accent,.92);
+      c.shadowColor=hexAlpha(accent,.55);c.shadowBlur=10*sc;
+      [[300,380],[600,360],[340,700],[560,720],[450,520],[280,900],[620,880],[420,1100],[480,250]].forEach(([x,y],i)=>{
+        c.beginPath();c.arc(x,y,(4+(i%3)*2)*sc,0,Math.PI*2);c.fill();
       });
-      c.shadowBlur=0;c.strokeStyle=hexAlpha('#ffffff',.55);c.lineWidth=2*sc;
-      [[220,360,300,440],[680,360,600,440],[240,820,320,900],[660,820,580,900]].forEach(([x1,y1,x2,y2])=>{
-        c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.stroke();
-      });
+      c.shadowBlur=0;
+      c.fillStyle=hexAlpha('#ffffff',.7);
+      [[360,440],[540,430],[400,640],[500,660]].forEach(([x,y])=>{c.beginPath();c.arc(x,y,2.5*sc,0,Math.PI*2);c.fill();});
     }else if(id==='split'){
+      // Pointes aux coins uniquement (pas de flancs milieu).
       c.fillStyle=hexAlpha('#ffffff',.72);
       c.strokeStyle='#fffffff0';
       c.lineWidth=4*sc;
       c.shadowColor='#ffffffcc';c.shadowBlur=18*sc;
-      [[40,170,270,90,235,140],[860,170,630,90,665,140],[40,1160,270,1070,235,1120],[860,1160,630,1070,665,1120],[95,600,250,520,220,565],[805,600,650,520,680,565]].forEach(([a,b,d,e,f,g])=>{
+      [[40,170,270,90,235,140],[860,170,630,90,665,140],[40,1160,270,1070,235,1120],[860,1160,630,1070,665,1120]].forEach(([a,b,d,e,f,g])=>{
         c.beginPath();c.moveTo(a,b);c.lineTo(d,e);c.lineTo(f,g);c.closePath();c.fill();c.stroke();
       });
       c.shadowBlur=0;
@@ -468,7 +467,7 @@ export function renderCard(canvas,hero,{skin,edition,image=null,seed='ARENA',cro
   c.fillStyle=under;c.fillRect(0,0,900,1350);
   paintFullBleedArt(c,art,crop,{equipment,pictogram:hero.artLabel==='PICTOGRAMME',accent});
 
-  // FX pleine carte sous le texte (plus de lianes).
+  // FX pleine carte sous le texte — aucun trait de bord / liane.
   paintCumulativeFx(c,fx.filter(f=>(f.id||f)!=='prism'),accent,{scale:textScale,intensity:1.2+0.2*(level-1)+(special?0.25:0),level});
   if(special)paintSpecialFoil(c,accent);
   paintCardChrome(c,hero,{equipment,accent,l,special,textScale,level});

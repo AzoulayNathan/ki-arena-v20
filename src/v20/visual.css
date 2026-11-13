@@ -261,4 +261,10 @@
 .v20-app .v192-pack-earned .v20-pack-btn{min-height:56px!important;padding:14px 28px!important;font-size:17px!important;font-weight:800}
 .v20-app .a-memory-card{border:2px solid #e7c986;border-radius:14px;overflow:hidden;background:#fffaf0;box-shadow:0 10px 24px #10263018}
 .v20-app .a-bilan-team{display:flex;flex-wrap:wrap;justify-content:center;gap:18px!important}
+.v20-app .a-autoplay-toggle{display:inline-flex;align-items:center;gap:6px;font:600 11px 'Arena Text';color:#2a4a44;cursor:pointer;user-select:none}
+.v20-app .a-header-auto{color:#fff4d8!important;margin-right:6px}
+.v20-app .a-prestige-claim{margin-top:22px;padding:18px;border:1px solid #c7b88a;border-radius:12px;background:#fffaf0}
+.v20-app .a-prestige-diffs{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 16px}
+.v20-app .a-prestige-diff{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border:1px solid #c5cdb6;border-radius:8px;background:#eef2e6;font:600 12px 'Arena Text';cursor:pointer}
+.v20-app .a-prestige-diff:has(input:checked){border-color:#3a7660;background:#dce8df}
 

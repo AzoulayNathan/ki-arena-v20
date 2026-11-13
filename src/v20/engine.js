@@ -12,6 +12,10 @@ import {beginEvent,applyEventChoice} from './events.js';
 import {emptyLedger,applyCombatResult} from '../arena/run-metrics.js';
 import {buildRunReceipt} from './run-summary.js';
 import {unlockCard,collectionState} from './collection-rewards.js';
+import {beginRoster,toggleRosterHero,toggleRosterWeapon,confirmRoster} from './roster.js';
+import {getPrestigeDiff,setPrestigeDiff,scaleBudget,PRESTIGE_MAX} from './prestige.js';
+export {beginRoster,toggleRosterHero,toggleRosterWeapon,confirmRoster};
+export {getPrestigeDiff,setPrestigeDiff,PRESTIGE_MAX};
 export const NODE_INFO={normal:['Combat','⚔'],elite:['Élite','✦'],boss:['Boss','♛'],rest:['Repos','☀'],shop:['Marchand','▣'],treasure:['Trésor','◆'],event:['Événement','?']};
 export function generateMap(seed,act=0){
   const rng={rng:seedState(seed+':map:'+act)},nodes=[];
@@ -37,7 +41,8 @@ export function generateMap(seed,act=0){
 export function availableNodes(r){if(r.phase!=='map')return [];return r.current?r.nodes.find(n=>n.id===r.current).next:r.nodes.filter(n=>n.row===0).map(n=>n.id);}
 export function createRun(worlds,seed,{rulesVersion='14.0.0'}={}){
   const cat=registry(worlds,arguments[2]?.statsMode),displayed=String(seed??'ARENA').trim().slice(0,120)||'ARENA';
-  return {rulesVersion,runInstanceId:globalThis.crypto?.randomUUID?.()||'local-'+Date.now()+'-'+Math.random().toString(36).slice(2),processedActions:[],schema:1,mode:'arena-expedition',version:ARENA_VERSION,runId:displayed,normalization:arguments[2]?.statsMode==='raw'?'raw-v19':NORMALIZATION,...(rulesVersion===START_RULES?{statsMode:arguments[2]?.statsMode==='raw'?'raw':'normalized'}:{}),poolHash:cat.hash,worlds:cat.worlds,N:cat.N,seed:displayed,rng:seedState(displayed),revision:0,phase:'draft',step:0,offers:[],units:[],dead:[],items:[],coins:80,passives:[],act:0,nodes:generateMap(displayed),current:null,trail:[],wave:1,pending:null,rewards:[],shop:[],history:[],combat:null,uid:0,eventLog:[],activeEvent:null,debtReward:false,omenDanger:false,legacyMap:false,metrics:emptyLedger(),rosterSnapshots:[],receipt:null,voluntaryRetreat:false};
+  const prestigeDiff=rulesVersion===START_RULES?getPrestigeDiff():0;
+  return {rulesVersion,runInstanceId:globalThis.crypto?.randomUUID?.()||'local-'+Date.now()+'-'+Math.random().toString(36).slice(2),processedActions:[],schema:1,mode:'arena-expedition',version:ARENA_VERSION,runId:displayed,normalization:arguments[2]?.statsMode==='raw'?'raw-v19':NORMALIZATION,...(rulesVersion===START_RULES?{statsMode:arguments[2]?.statsMode==='raw'?'raw':'normalized'}:{}),poolHash:cat.hash,worlds:cat.worlds,N:cat.N,seed:displayed,rng:seedState(displayed),revision:0,phase:'draft',step:0,offers:[],units:[],dead:[],items:[],coins:80,passives:[],act:0,nodes:generateMap(displayed),current:null,trail:[],wave:1,pending:null,rewards:[],shop:[],history:[],combat:null,uid:0,eventLog:[],activeEvent:null,debtReward:false,omenDanger:false,legacyMap:false,metrics:emptyLedger(),rosterSnapshots:[],receipt:null,voluntaryRetreat:false,endless:false,prestigeDiff};
 }
 export function unitEdition(r,cardId){
   if(isSpecialEdition(r.seed,cardId))return 'special';
@@ -98,8 +103,16 @@ export function depthWave(r,row){return isCurrentRules(r)?waveFromDepth(r.act,ro
 export function createRunV16(worlds,seed){return createRun(worlds,seed,{rulesVersion:MIXED_RULES});}
 export function createRunV17(worlds,seed){return createRun(worlds,seed,{rulesVersion:'17.0.0'});}
 export function markRareNodes(r){if(r.rulesVersion!==START_RULES)return;for(const n of r.nodes)if(n.kind==='event')n.eventRare=cosmeticHash(r.seed+':rare:'+n.id)%9===0;}
-export function createRunV19(worlds,seed,statsMode='raw',opts={}){const r=createRun(worlds,seed,{rulesVersion:START_RULES,statsMode});markRareNodes(r);if(opts?.useCollection)r.useCollection=true;return r;}
+export function createRunV19(worlds,seed,statsMode='raw',opts={}){
+  const r=createRun(worlds,seed,{rulesVersion:START_RULES,statsMode});
+  markRareNodes(r);
+  if(opts?.useCollection){
+    beginRoster(r);
+  }
+  return r;
+}
 export function ensureDraft(r){
+ if(r.phase==='roster')return;
  if(r.rulesVersion==='17.0.0')return ensureLegacyStart(r);if(r.rulesVersion===START_RULES)return ensureStartDraft(r);
  if(r.rulesVersion===MIXED_RULES)return ensureMixedDraft(r);
  if(!isCurrentRules(r))return ensureDraftV13(r);
@@ -153,7 +166,7 @@ export function makeEncounter(r,node){
   const cat=runCatalog(r);
   let wave=depthWave(r,node.row);
   if(r.omenDanger&&['normal','elite','boss'].includes(node.kind)){wave+=1;r.omenDanger=false;}
-  const kind=node.kind,B=rankBudget(cat.N,wave,kind),k=Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3)),ranks=arenaRanks(r,cat,B,k,kind),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)),count=Math.min(k,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
+  const kind=node.kind,baseB=rankBudget(cat.N,wave,kind),B=scaleBudget(baseB,r.prestigeDiff||0),k=Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3)),ranks=arenaRanks(r,cat,B,k,kind),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,r.prestigeDiff||0)),count=Math.min(k,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
   const enemies=ranks.map((rank,i)=>({...unit(r,cat.heroes[rank-1]),uid:'enemy'+i,rank})),items=[];
   for(let i=0;i<count;i++){const c=cat.byId.get(enemies[i].cardId),key=cat.key+'|'+c.universe+'|'+tier;let pool=isCurrentRules(r)?enemyGearCache.get(key):null;if(!pool){pool=cat.gear.filter(g=>g.universe===c.universe&&g.tier<=tier&&g.category!=='consommable');if(isCurrentRules(r))enemyGearCache.set(key,pool);}if(pool.length){const g=pick(r,pool);enemies[i][g.category==='armure'?'armor':'weapon']=g.id;items.push(g.id);}}
   return {nodeId:node.id,wave,kind,budget:B,ranks,tier,enemies,items};
@@ -179,9 +192,38 @@ export function leaveNode(r){
   const last=r.history.at(-1);
   const bossCleared=node.kind==='boss'&&last?.node===r.current&&last?.win;
   if(bossCleared){
-    r.act++;r.legacyMap=false;r.nodes=generateMap(r.seed,r.act);markRareNodes(r);r.current=null;
+    r.act++;
+    r.current=null;
+    // Entrée ACTE 10 (act===9) : portail prestige / survie infinie.
+    if(r.act===9&&!r.endless){
+      r.phase='prestige';
+      r.nodes=generateMap(r.seed,r.act);markRareNodes(r);
+      return true;
+    }
+    r.legacyMap=false;r.nodes=generateMap(r.seed,r.act);markRareNodes(r);
   }
   r.phase='map';
+  return true;
+}
+/** Continuer en survie infinie depuis le portail prestige (ACTE 10+). */
+export function continueEndless(r){
+  if(r.phase!=='prestige')return false;
+  r.endless=true;
+  r.legacyMap=false;
+  if(!r.nodes?.length||r.nodes[0]?.id?.split('-')[0]!==String(r.act)){
+    r.nodes=generateMap(r.seed,r.act);markRareNodes(r);
+  }
+  r.current=null;r.trail=[];r.phase='map';
+  return true;
+}
+/** Clore la run en prestige et enregistrer la difficulté choisie pour les runs suivantes. */
+export function claimPrestige(r,diffLevel){
+  if(r.phase!=='prestige')return false;
+  const level=setPrestigeDiff(diffLevel);
+  r.prestigeClaimed=true;
+  r.prestigeChosen=level;
+  r.endReason='prestige-win';
+  finalizeRun(r,{retreat:false});
   return true;
 }
 export function equip(r,itemUid,unitUid){if(['combat','end'].includes(r.phase))return false;const c=registry(r.worlds,r.statsMode),entry=r.items.find(g=>g.uid===itemUid),g=c.byItem.get(entry?.cardId),u=r.units.find(u=>u.uid===unitUid);if(!g?.ok||!u||c.byId.get(u.cardId).universe!==g.universe)return false;if(g.category==='consommable'){if(g.effect!=='heal'||u.hp>=u.maxHp)return false;u.hp=Math.min(u.maxHp,u.hp+Math.round(u.maxHp*g.heal/100));r.items=r.items.filter(x=>x!==entry);return true;}const slot=g.category==='armure'?'armor':'weapon',same=u[slot]===itemUid;for(const other of r.units)if(other[slot]===itemUid)other[slot]=null;u[slot]=same?null:itemUid;return true;}
@@ -190,12 +232,12 @@ export function sellItem(r,itemUid){if(['combat','end'].includes(r.phase))return
 export function gearFor(r,u,enemy=false){const c=registry(r.worlds,r.statsMode);return ['weapon','armor'].map(k=>enemy?c.byItem.get(u[k]):c.byItem.get(r.items.find(g=>g.uid===u[k])?.cardId)).filter(Boolean);}
 export function battleCard(r,u,enemy=false){const c=registry(r.worlds,r.statsMode).byId.get(u.cardId),gs=gearFor(r,u,enemy),effects=c.effects.map(e=>{const x={...e,key:c.id+':'+e.key};for(const p of['amount','multiplier','damage'])if(typeof x[p]==='number')x[p]=p==='damage'?Math.max(1,Math.round(x[p]*1.5)):Number((x[p]*1.5).toFixed(3));if(typeof x.chance==='number')x.chance=Math.min(.95,Number((x.chance*1.5).toFixed(3)));return x;});for(const g of gs){const key='item:'+g.id;if(g.effect==='pierce')effects.push({key,type:'gear_pierce',name:g.name});if(g.heal)effects.push({key:key+':heal',type:'heal_ally',amount:(g.heal/100)*1.5,name:g.name});if(g.shield&&g.effect!=='hp')effects.push({key:key+':barrier',type:'shield',name:g.name,amount:(g.shield/100)*1.5});const type={stun:'stun',evade:'dodge',counter:'counter'}[g.effect];if(type)effects.push({key,type,name:g.name,chance:1,multiplier:.65*1.5});}const specialMul=(!enemy&&(u.edition==='special'||(!u.edition&&isSpecialEdition(r.seed,u.cardId))))?1.1:1;const gearAtk=gs.reduce((s,g)=>s+(g.atk||0)/100*1.5,0);const gearHp=gs.filter(g=>g.effect==='hp').reduce((s,g)=>s+(g.shield||0)/100*1.5,0);return {...c,attack:Math.round(u.attack*specialMul*(1+gearAtk+(enemy?0:r.passives.includes('force')?.5:0)+(enemy?0:r.passives.includes('blood')?.5:0))),maxHp:Math.round(u.maxHp*specialMul*(1+gearHp)),speed:Math.round(u.speed*specialMul),effects};}
 export function startCombat(r){if(r.phase!=='prepare'||!r.units.length||!r.pending)return false;const active=r.units.slice(0,5),result=runArenaBattle(active.map(u=>battleCard(r,u)),r.pending.enemies.map(u=>battleCard(r,u,true)),{seed:r.seed+':'+r.current,rules:'canon',maxRounds:30,hpRatiosA:active.map(u=>u.hp/u.maxHp)});r.combat={result,played:active.map(u=>u.uid),cursor:0};r.phase='combat';return true;}
-export function completeCombat(r){if(r.phase!=='combat'||!r.combat)return false;const {result,played}=r.combat;r.finalTeam=r.units.map(u=>({...u,role:played.includes(u.uid)?'active':'reserve'}));r.lastCombatLedger=emptyLedger();applyCombatResult(r.lastCombatLedger,result,{combatId:r.seed+':last:'+r.history.length,playedMap:Object.fromEntries(played.map((uid,i)=>['A-'+i,uid]))});for(let i=0;i<played.length;i++){const u=r.units.find(x=>x.uid===played[i]),f=result.final.find(f=>f.uid==='A-'+i);if(!u)continue;if(!f.alive){u.hp=0;u.weapon=null;u.armor=null;r.dead.push({...u,weapon:null,armor:null});r.units=r.units.filter(x=>x!==u);}else u.hp=Math.max(1,Math.round(u.maxHp*f.hp/f.maxHp));}r.highestResolvedEncounterDepth=Math.max(r.highestResolvedEncounterDepth||0,r.act*10+(r.nodes.find(n=>n.id===r.current)?.row||0)+1);const win=result.winner==='A';r.history.push({node:r.current,wave:r.wave,kind:r.pending.kind,win,rounds:result.rounds,alive:r.units.length});
+export function completeCombat(r){if(r.phase!=='combat'||!r.combat)return false;const {result,played}=r.combat;r.finalTeam=r.units.map(u=>({...u,role:played.includes(u.uid)?'active':'reserve'}));r.lastCombatLedger=emptyLedger();applyCombatResult(r.lastCombatLedger,result,{combatId:r.seed+':last:'+r.history.length,playedMap:Object.fromEntries(played.map((uid,i)=>['A-'+i,uid]))});for(let i=0;i<played.length;i++){const u=r.units.find(x=>x.uid===played[i]),f=result.final.find(f=>f.uid==='A-'+i);if(!u)continue;if(!f.alive){u.hp=0;const cat=registry(r.worlds,r.statsMode);for(const slot of['weapon','armor']){const itemUid=u[slot];if(!itemUid)continue;const entry=r.items.find(g=>g.uid===itemUid);const g=entry&&cat.byItem.get(entry.cardId);if(g?.category==='outil'){r.items=r.items.filter(x=>x.uid!==itemUid);}u[slot]=null;}r.dead.push({...u,weapon:null,armor:null});r.units=r.units.filter(x=>x!==u);}else u.hp=Math.max(1,Math.round(u.maxHp*f.hp/f.maxHp));}r.highestResolvedEncounterDepth=Math.max(r.highestResolvedEncounterDepth||0,r.act*10+(r.nodes.find(n=>n.id===r.current)?.row||0)+1);const win=result.winner==='A';r.history.push({node:r.current,wave:r.wave,kind:r.pending.kind,win,rounds:result.rounds,alive:r.units.length});
  applyCombatResult(r.metrics||(r.metrics=emptyLedger()),result,{combatId:r.seed+':'+r.current+':'+r.history.length,playedMap:Object.fromEntries(played.map((uid,i)=>['A-'+i,uid]))});
  r.rosterSnapshots=r.rosterSnapshots||[];r.rosterSnapshots.push({node:r.current,wave:r.wave,kind:r.pending.kind,win,units:played.map((uid,i)=>{const u=[...r.units,...r.dead].find(u=>u.uid===uid);return {uid,cardId:u?.cardId,status:r.dead.some(d=>d.uid===uid)?'dead':'alive',battleUid:'A-'+i};})});
  try{const cat=registry(r.worlds,r.statsMode);for(const uid of played){const u=[...r.units,...r.dead].find(x=>x.uid===uid);if(!u||u.fromDraft)continue;const h=cat.byId.get(u.cardId);if(!h)continue;unlockCard({id:h.id,finish:(u.edition==='special'||isSpecialEdition(r.seed,h.id))?'gold':'black',rarity:h.rarity,seed:r.seed+':play:'+h.id,universe:h.universe});}}catch{}
  if(!win||!r.units.length){r.phase='end';r.endReason='combat-loss';r.rewards=[];r.receipt=buildRunReceipt(r);return true;}for(const u of r.units){u.hp=Math.min(u.maxHp,u.hp+Math.round(u.maxHp*.25));if(!played.includes(u.uid))continue;u.wins++;const level=1+[2,5,9,14].filter(n=>u.wins>=n).length;if(level>u.level){const factor=Math.pow(1.1,level-u.level),ratio=u.hp/u.maxHp;u.level=level;u.attack=Math.round(u.attack*factor);u.maxHp=Math.round(u.maxHp*factor);u.speed=Math.round(u.speed*factor);u.hp=Math.round(u.maxHp*ratio);}}r.rewards=rewardOptions(r,r.pending.kind==='boss');r.phase='reward';return true;}
-export function rewardOptions(r,prestige=false){const c=registry(r.worlds,r.statsMode),owned=new Set(r.items.map(g=>g.cardId)),choices=[{type:'coins',amount:prestige?90:40,title:prestige?'Bourse du boss':'Zénis',text:prestige?'+90 zénis':'+40 zénis'}];if(r.debtReward){choices[0].amount=Math.max(0,Math.floor(choices[0].amount/2));choices[0].text=choices[0].text+' (dette)';}
+export function rewardOptions(r,prestige=false){const c=registry(r.worlds,r.statsMode),owned=new Set(r.items.map(g=>g.cardId)),pMul=1+0.15*Math.max(0,r.prestigeDiff||0),coinBase=prestige?90:40,choices=[{type:'coins',amount:Math.round(coinBase*pMul),title:prestige?'Bourse du boss':'Zénis',text:'+'+(Math.round(coinBase*pMul))+' zénis'+(pMul>1?' · prestige':'' )}];if(r.debtReward){choices[0].amount=Math.max(0,Math.floor(choices[0].amount/2));choices[0].text=choices[0].text+' (dette)';}
  if(r.units.some(u=>u.hp<u.maxHp))choices.push({type:'heal',amount:.35,title:'Second souffle',text:'Rend 35% des PV max aux vivants'});const gear=c.gear.filter(g=>!owned.has(g.id)&&g.tier<=Math.min(5,2+Math.floor(r.wave/5)+(prestige?1:0))&&r.units.some(u=>c.byId.get(u.cardId).universe===g.universe));if(gear.length){const g=pick(r,gear);choices.push({type:'item',id:g.id,title:g.name,text:g.category+' · équipement conservé'});}if(r.units.length<8&&r.pending?.enemies){const seen=r.pending.enemies.map(u=>c.byId.get(u.cardId)).filter(ca=>![...r.units,...r.dead,...(r.departed||[])].some(u=>c.byId.get(u.cardId).person===ca.person));if(seen.length){const ca=pick(r,seen);choices.push({type:'recruit',id:ca.id,title:ca.name,text:'Recruter cet adversaire · réserve si équipe pleine'});}}if(prestige&&!r.passives.includes('force'))choices.push({type:'passive',id:'force',title:'Esprit d’équipe',text:'+50% ATQ de run · proposition éditoriale'});if(choices.length<3)choices.push({type:'training',title:'Précision collective',text:'+2% ATQ aux vivants · bonus éditorial de run'});if(choices.length<3)choices.push({type:'vigor',title:'Endurance collective',text:'+2% PV max, ratio préservé · bonus éditorial de run'});const options=[choices[0],...shuffle(r,choices.slice(1)).slice(0,2)];if(isCurrentRules(r)&&r.units.length<5){const rescue=choices.find(x=>x.type==='recruit');if(rescue&&!options.some(x=>x.type==='recruit'))options[options.length-1]=rescue;}return options;}
 export function chooseReward(r,index){if(r.phase!=='reward'||!Number.isInteger(index)||!r.rewards[index]||r.nodes.find(n=>n.id===r.current)?.done||!r.nodes.some(n=>n.id===r.current))return false;const rw=r.rewards[index],c=registry(r.worlds,r.statsMode);if(rw.type==='coins'){r.coins+=rw.amount;if(r.debtReward)r.debtReward=false;}if(rw.type==='heal')heal(r,rw.amount);if(rw.type==='item')r.items.push({uid:'g'+(++r.uid),cardId:rw.id});if(rw.type==='recruit')r.units.push(unit(r,c.byId.get(rw.id)));if(rw.type==='passive')r.passives.push(rw.id);if(rw.type==='training')for(const u of r.units)u.attack=Math.round(u.attack*1.02);if(rw.type==='vigor')for(const u of r.units){const ratio=u.hp/u.maxHp;u.maxHp=Math.round(u.maxHp*1.02);u.hp=Math.max(1,Math.round(u.maxHp*ratio));}return leaveNode(r);}
 export function heal(r,pct){for(const u of r.units)if(u.hp>0)u.hp=Math.min(u.maxHp,u.hp+Math.round(u.maxHp*pct));}

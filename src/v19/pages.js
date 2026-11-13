@@ -14,6 +14,7 @@ export function setupMarkup({worlds,c,stored,error,checks,esc,btn}){
     <div class="v20-depart-bar" role="region" aria-label="Départ">
       <div class="v20-depart-copy"><span class="a-eyebrow">LE DÉPART</span><b>Prêt à partir ?</b></div>
       <label class="v20-collection-toggle"><input type="checkbox" id="a-use-collection" ${hasCollection?'':'disabled'}> Partir avec mes cartes débloquées${hasCollection?'':' · aucune pour l’instant'}</label>
+      <label class="v20-collection-toggle"><input type="checkbox" id="a-autoplay" data-a="autoplay" ${typeof localStorage!=='undefined'&&localStorage.getItem('kiarena:v20:autoplay')==='1'?'checked':''}> Jeu auto (équipe, chemins, combats — décochable à tout moment)</label>
       <div class="v20-depart-actions">${btn('Partir →','new','','primary v20-depart-go')}${stored?btn('Reprendre la route','resume','','light'):''}</div>
       <details class="a-details v20-depart-more"><summary>Seed & import</summary>
         <label class="a-label">Seed<input id="a-seed" maxlength="120" value="${esc(stored?.seed||'HORIZON-'+new Date().toISOString().slice(0,10))}"></label>

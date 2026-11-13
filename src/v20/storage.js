@@ -7,12 +7,16 @@ import {registry,ARENA_VERSION,NORMALIZATION} from './catalog.js';
 import {ACT_LENGTH,MAP_NODES,BOSS_ROW} from '../arena/rules.js';
 import {generateMap,runCatalog} from './engine.js';
 import {rankBudget} from '../survival/encounter.js';
-function budgetOk(N,wave,kind,budget){
+import {scaleBudget,PRESTIGE_MAX} from './prestige.js';
+function budgetOk(N,wave,kind,budget,prestigeDiff=0){
   const base=N/4*(wave+({normal:0,elite:1,boss:2}[kind]));
   const scaled=rankBudget(N,wave,kind);
   const legacy=Math.round(base);
   const prev=Math.max(1,Math.round(base*0.75));
-  return budget===scaled||budget===legacy||budget===prev;
+  if(budget===scaled||budget===legacy||budget===prev)return true;
+  const pd=Math.max(0,Math.min(PRESTIGE_MAX,prestigeDiff|0));
+  for(let d=0;d<=pd;d++)if(budget===scaleBudget(scaled,d))return true;
+  return false;
 }
 export const SAVE_KEY='kiarena:arena:v14:';
 export const MIXED_SAVE_KEY='kiarena:arena:v16:';
@@ -61,7 +65,7 @@ export function validate(r){
   if(!r||r.schema!==1||r.mode!=='arena-expedition'||r.version!==ARENA_VERSION||r.normalization!==(r.rulesVersion===START_RULES&&r.statsMode==='raw'?'raw-v19':NORMALIZATION))throw Error('Version de run incompatible.');
   if(!['12.0.0','14.0.0','17.0.0',MIXED_RULES,START_RULES].includes(r.rulesVersion)||typeof r.runInstanceId!=='string'||!Array.isArray(r.processedActions)||r.processedActions.length>128||r.processedActions.some(id=>typeof id!=='string'))throw Error('Règles ou journal de décisions incompatibles.');
   if(r.rulesVersion===START_RULES&&!['normalized','raw'].includes(r.statsMode))throw Error('Mode de statistiques invalide.');const c=registry(r.worlds,r.statsMode);
-  if(r.poolHash!==c.hash||r.N!==c.N||!['draft','map','prepare','combat','reward','shop','rest','event','result','end'].includes(r.phase))throw Error('Pool ou phase invalide.');
+  if(r.poolHash!==c.hash||r.N!==c.N||!['draft','roster','map','prepare','combat','reward','shop','rest','event','result','end','prestige'].includes(r.phase))throw Error('Pool ou phase invalide.');
   if(!Number.isInteger(r.rng)||typeof r.seed!=='string'||!r.seed.length||r.seed.length>120||!Number.isInteger(r.revision)||r.revision<0||!Number.isFinite(r.coins)||r.coins<0)throw Error('Métadonnées invalides.');
   for(const key of ['units','dead','items','nodes','trail','offers','history','rewards','shop','passives'])if(!Array.isArray(r[key]))throw Error('Run incomplète.');
   if(r.units.length>8||new Set([...r.units,...r.dead].map(u=>u.uid)).size!==r.units.length+r.dead.length)throw Error('Effectif invalide.');
@@ -72,7 +76,7 @@ export function validate(r){
   if(r.rulesVersion==='17.0.0')validateLegacyStart(r);if(r.rulesVersion===MIXED_RULES)validateMixedDraft(r);if(r.rulesVersion===START_RULES)validateStartDraft(r);
   if(![MIXED_RULES,'17.0.0',START_RULES].includes(r.rulesVersion)&&r.phase==='draft'&&(r.step<0||r.step>7||r.offers.length!==3||new Set(r.offers.map(o=>typeof o==='string'?o:o.token||o.id)).size!==3||r.offers.some(o=>!offerOk(r,c,o))))throw Error('Draft invalide.');
   if(r.pending&&(r.pending.ranks.reduce((a,b)=>a+b,0)!==r.pending.budget||r.pending.ranks.some(x=>x<1||x>c.N)||r.pending.enemies.length!==r.pending.ranks.length||r.pending.enemies.some(u=>!c.byId.has(u.cardId))))throw Error('Budget invalide.');
-  if(['14.0.0','17.0.0',MIXED_RULES,START_RULES].includes(r.rulesVersion)){if(new Set(r.units.map(u=>c.byId.get(u.cardId).person)).size!==r.units.length)throw Error('Identité en double.');if(r.pending){const p=r.pending,ranked=runCatalog(r);if(!Number.isInteger(p.wave)||p.wave<1||!['normal','elite','boss'].includes(p.kind)||!budgetOk(c.N,p.wave,p.kind,p.budget))throw Error('Difficulté de rencontre invalide.');if(p.enemies.some((u,i)=>{const h=ranked.byId.get(u.cardId);return h.poolRank!==p.ranks[i]||h.attack!==u.attack||h.maxHp!==u.maxHp||h.speed!==u.speed;}))throw Error('Les adversaires ne correspondent pas aux rangs annoncés.');}}
+  if(['14.0.0','17.0.0',MIXED_RULES,START_RULES].includes(r.rulesVersion)){if(new Set(r.units.map(u=>c.byId.get(u.cardId).person)).size!==r.units.length)throw Error('Identité en double.');if(r.pending){const p=r.pending,ranked=runCatalog(r);if(!Number.isInteger(p.wave)||p.wave<1||!['normal','elite','boss'].includes(p.kind)||!budgetOk(c.N,p.wave,p.kind,p.budget,r.prestigeDiff||0))throw Error('Difficulté de rencontre invalide.');if(p.enemies.some((u,i)=>{const h=ranked.byId.get(u.cardId);return h.poolRank!==p.ranks[i]||h.attack!==u.attack||h.maxHp!==u.maxHp||h.speed!==u.speed;}))throw Error('Les adversaires ne correspondent pas aux rangs annoncés.');}}
   if(r.phase==='combat'&&(!r.combat?.result?.events?.length||!Number.isInteger(r.combat.cursor)||r.combat.cursor<0||r.combat.cursor>r.combat.result.events.length))throw Error('Combat invalide.');
   const expected=r.legacyMap?43:MAP_NODES;
   const maxRow=r.legacyMap?14:BOSS_ROW;
