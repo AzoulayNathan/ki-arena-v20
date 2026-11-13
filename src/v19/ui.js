@@ -147,11 +147,13 @@ function inspectPanel(){
   if(!h)return `<div class="a-inspect-viewer v20-inspect"><button class="v20-inspect-x" data-a="close" aria-label="Fermer">×</button><p>Carte introuvable.</p></div>`;
   const seed=inspectedSeed||run?.seed||mini?.seed||globalThis.KI_PARTY_DEBUG?.getState?.()?.seed||'ARENA';
   const edition=editionFor(seed,h.id);
-  const gearFx=isGear?[{name:h.name||'Objet',description:effectDescription(h)}]:null;
-  const techs=(gearFx||h.effects||[]).map((e,i)=>{
-    const desc=e.description||'';
-    return `<li class="v20-tech" style="--i:${i}"><b>${esc(e.name)}</b>${desc?`<span>${esc(desc)}</span>`:''}</li>`;
-  }).join('')||'<li class="v20-tech"><b>Aucune capacité listée</b></li>';
+  const gearDesc=isGear?effectDescription(h):'';
+  const techs=isGear
+    ?`<li class="v20-tech" style="--i:0"><b>${esc(h.name||'Objet')}</b><span>${esc(gearDesc||'Effet de jeu')}</span></li>`
+    :(h.effects||[]).map((e,i)=>{
+      const desc=e.description||'';
+      return `<li class="v20-tech" style="--i:${i}"><b>${esc(e.name)}</b>${desc?`<span>${esc(desc)}</span>`:''}</li>`;
+    }).join('')||'<li class="v20-tech"><b>Aucune capacité listée</b></li>';
   const draftPick=page==='run'&&run?.phase==='draft'&&selectedOffer&&run.offers.find(o=>o.token===selectedOffer&&o.id===h.id);
   const rewardIdx=(page==='run'&&run?.phase==='reward'&&run.rewards)?run.rewards.findIndex(rw=>(rw.type==='recruit'||rw.type==='item')&&rw.id===h.id):-1;
   const rewardPick=rewardIdx>=0?run.rewards[rewardIdx]:null;
@@ -167,7 +169,7 @@ function inspectPanel(){
   return `<div class="a-inspect-viewer v20-inspect">
     <button class="v20-inspect-x" data-a="close" aria-label="Fermer">×</button>
     <div class="a-inspect-layout v20-inspect-layout">
-      <figure class="a-inspect-card" data-card-id="${esc(h.id)}">${cardMarkup(isGear?{...h,effects:gearFx}:{...h},{seed,skin:inspectedFinish||edition,equipment:isGear})}</figure>
+      <figure class="a-inspect-card" data-card-id="${esc(h.id)}">${cardMarkup(isGear?{...h,effects:[{name:gearDesc,description:gearDesc}]}:{...h},{seed,skin:inspectedFinish||edition,equipment:isGear})}</figure>
       <div class="a-inspect-copy v20-inspect-copy">
         <ul class="a-inspect-techs">${techs}</ul>
         ${ctaHtml}
@@ -228,7 +230,7 @@ document.addEventListener('click',async event=>{
  const a=el.dataset.a||(inspectHit?'inspect':''),id=el.dataset.id||inspectHit?.dataset?.id,index=Number(el.dataset.index);inputContext=el.dataset.context||'';if(['miniDraft','rank','duel','miniNext','autoPick','miniFight'].includes(a)&&mini&&String(mini.revision)!==el.dataset.mctx)return;if(a==='backdrop'&&event.target!==el)return;try{if(a==='creator-unlock'){const code=document.querySelector('#v19-creator-code')?.value;if(unlockCreator(code)){render();toast('Accès prio activé.');}else toast('Mot de passe incorrect.');return;}
  if(['home','setup','arcade','collection','party'].includes(a)){clearTimeout(timer);modal=null;if(['setup','arcade','party'].includes(a)&&WORLDS.includes(el.dataset.world))worlds=[el.dataset.world];if(a==='party'&&el.dataset.partyMode)selectPartyMode(el.dataset.partyMode);page=a;render();window.scrollTo(0,0);return;}
  if(a==='adventure'){page=run?.phase==='end'?'bilan':run?'run':'setup';render();schedule();return;}
- if(a==='new'||a==='replay'){const seed=a==='replay'?run.seed:document.querySelector('#a-seed').value,r=a==='replay'?(run.rulesVersion==='19.0.0'?createLegacyRunV19(run.worlds,seed,run.statsMode):run.rulesVersion==='20.0.0'?createRunV19(run.worlds,seed,run.statsMode):createRun(run.worlds,seed,{rulesVersion:run.rulesVersion,statsMode:run.statsMode})):createRunV19(worlds,seed,preferredStats());ensureDraft(r);persist(r);lastReceipt=null;page='run';modal=null;render();window.scrollTo(0,0);playMusic(r.worlds[0]).catch(()=>{});return;}
+ if(a==='new'||a==='replay'){const seed=a==='replay'?run.seed:document.querySelector('#a-seed').value,useCollection=a!=='replay'&&!!document.querySelector('#a-use-collection')?.checked,r=a==='replay'?(run.rulesVersion==='19.0.0'?createLegacyRunV19(run.worlds,seed,run.statsMode):run.rulesVersion==='20.0.0'?createRunV19(run.worlds,seed,run.statsMode,{useCollection:!!run.useCollection}):createRun(run.worlds,seed,{rulesVersion:run.rulesVersion,statsMode:run.statsMode})):createRunV19(worlds,seed,preferredStats(),{useCollection});ensureDraft(r);persist(r);lastReceipt=null;page='run';modal=null;render();window.scrollTo(0,0);playMusic(r.worlds[0]).catch(()=>{});return;}
  if(a==='resume'){if(el.dataset.worlds){const chosen=el.dataset.worlds.split(',').filter(w=>WORLDS.includes(w));if(chosen.length)worlds=chosen;}const r=load(worlds,localStorage,preferredStats());if(!r){page='setup';render();return;}run=r;if(r.phase==='end')lastReceipt=r.receipt;page=r.phase==='end'?'bilan':'run';paused=false;viewEvent=null;render();window.scrollTo(0,0);schedule();playMusic(r.worlds[0]).catch(()=>{});return;}
  if(a==='draft-focus'){const offer=run?.offers?.find(o=>o.token===id||o.id===id||o.id===el.dataset.cardId);if(!offer||offer.disabled||!offer.revealed)return;selectedOffer=offer.token;inspected=el.dataset.cardId||offer.id;inspectedSeed=run.seed;inspectedFinish=null;openModal('inspect');return;}
  if(a==='draft'){const offer=run.offers.find(o=>o.token===id||o.id===id),h=offer&&(['16.0.0','17.0.0','19.0.0','20.0.0'].includes(run.rulesVersion)?offer.kind==='hero':run.step<5)?cat().byId.get(offer.id):null,g=offer&&(['16.0.0','17.0.0','19.0.0','20.0.0'].includes(run.rulesVersion)?offer.kind==='weapon':run.step>=5)?cat().byItem.get(offer.id):null;const mystery=!!(offer&&(!offer.revealed||offer.band==='mystery'));selectedOffer=null;modal=null;if(mutate(r=>chooseDraft(r,id))){if(h)revealPickedCard(h,mystery?'MYSTÈRE RÉVÉLÉ':'REJOINT TON ÉQUIPE');else if(g)revealPickedCard(g,mystery?'MYSTÈRE RÉVÉLÉ':'REJOINT LE SAC');else toast('Choix enregistré.');}return;}if(a==='node'){if(run.phase!=='map'){toast('Termine la rencontre en cours pour avancer.');return;}modal=null;mutate(r=>enterNode(r,id));return;}

@@ -14,10 +14,12 @@ export function bilanMarkup(receipt,{seed=''}={}){
   const top=[['frappe',honors.frappe?.[0]],['rempart',honors.rempart?.[0]],['souffle',honors.souffle?.[0]]].filter(([,u])=>u);
   const team=(receipt.notableTeam?.units||[]).map(u=>cardMini(u,seed)).join('');
   const incomplete=receipt.incomplete?'<p class="a-help">Souvenir incomplet — seules les distinctions prouvables apparaissent.</p>':'';
-  return `<section class="a-bilan">
+  const topGrid=top.length?`<section class="v20-bilan-top"><span class="a-eyebrow">TES MEILLEURES CARTES</span><div class="v20-bilan-top-grid">${top.map(([kind,u])=>topCard(kind,u,seed)).join('')}</div></section>`:'';
+  return `<section class="a-bilan v20-bilan">
     <header class="a-bilan-head"><span class="a-eyebrow">BILAN D'EXPÉDITION</span>
     <h1>${esc(outcomeTitle(receipt.outcome))}</h1>
     <p>${receipt.outcome==='defeat'?'Combat perdu. Cette équipe entre au Panthéon.':'Les combattants qui ont marqué la route.'}</p><div class="v191-run-facts"><span><b>${receipt.wins}</b> victoires</span><span><b>${receipt.depth}</b> vague atteinte</span><span><b>${receipt.permanentLoss}</b> K.O.</span></div>${incomplete}</header>
+    ${topGrid}
     <div class="a-bilan-team">${team||'<p class="a-help">Aucune équipe remarquable enregistrée.</p>'}</div>
     ${receipt.combatFacts?`<section class="v20-combat-facts"><h2>Le dernier affrontement.</h2><p>${receipt.combatFacts.firstKo?'Premier K.O. : '+esc(receipt.combatFacts.firstKo)+'. ':''}${receipt.combatFacts.pressure?esc(receipt.combatFacts.pressure.name)+' a infligé '+receipt.combatFacts.pressure.damage+' dégâts. ':''}${receipt.combatFacts.absorbed} dégâts absorbés · ${receipt.combatFacts.interruptions} interruption(s) subie(s).</p></section>`:''}
     <h2 class="v14-honors-heading">Les contributions de l’équipe.</h2>
@@ -27,15 +29,26 @@ export function bilanMarkup(receipt,{seed=''}={}){
     <div class="a-bilan-panel" data-panel="frappe" ${firstTab==='frappe'?'':'hidden'}>${honorList(honors.frappe,'frappe',seed)}</div>
     <div class="a-bilan-panel" data-panel="rempart" ${firstTab==='rempart'?'':'hidden'}>${honorList(honors.rempart,'rempart',seed)}</div>
     <div class="a-bilan-panel" data-panel="souffle" ${firstTab==='souffle'?'':'hidden'}>${honorList(honors.souffle,'souffle',seed)}</div>
-    <div class="a-bilan-cta">
-      <button data-a="pantheon-save" class="a-btn">Voir ce souvenir</button>
+    <div class="a-bilan-cta v20-bilan-cta">
+      <button data-v192="packs" class="a-btn primary v20-bilan-pack">Ouvrir le pack →</button>
+      <button data-a="new-run" class="a-btn primary v20-bilan-restart">Recommencer une expédition</button>
+      <button data-a="pantheon-save" class="a-btn light">Voir ce souvenir</button>
       <button data-a="pantheon" class="a-btn light">Panthéon</button>
-      <button data-a="new-run" class="a-btn primary">Nouvelle expédition</button>
     </div>
   </section>`;
 }
 
 function outcomeTitle(o){return {defeat:'L\'expédition s\'achève',clear:'La route est ouverte',retreat:'Repli volontaire'}[o]||'Fin de parcours';}
+function topCard(kind,u,seed){
+  if(!u)return '';
+  const labels={frappe:'Frappe',rempart:'Rempart',souffle:'Souffle'};
+  const art=cardArtUrl({id:u.cardId,universe:u.universe,sourceId:(u.cardId||'').split(':').pop()},{seed})||'';
+  return `<button type="button" class="v20-top-card is-clickable" data-a="inspect" data-id="${esc(u.cardId)}" data-card-id="${esc(u.cardId)}" data-inspect-seed="${esc(seed)}" data-v19-seed="${esc(seed)}" aria-label="Voir ${esc(u.name)}">
+    <span class="v20-top-card-label">${esc(labels[kind]||kind)}</span>
+    <span class="v20-top-card-face"><img src="${esc(art)}" alt="" onerror="this.hidden=true"></span>
+    <b>${esc(u.name)}</b>
+  </button>`;
+}
 function honorCard(kind,u,seed){
   if(!u)return '';
   return `<article class="a-honor-card ${kind}"><span class="a-eyebrow">${esc(honorTitle(kind))}</span>

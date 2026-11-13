@@ -335,13 +335,19 @@ function paintSubtitle(c,str,x,y,maxW,size,{accent,level=1,align='center'}={}){
 }
 
 function equipmentEffectText(hero){
-  const fromFx=hero.effects?.[0]?.name;
-  if(fromFx)return String(fromFx);
+  const fx=hero.effects?.[0];
+  // Prefer explicit effect description — never reuse the item name as "effet".
+  if(fx?.description)return String(fx.description);
+  if(fx?.name&&fx.name!==hero.name)return String(fx.name);
   const bits=[];
-  if(Number(hero.atk))bits.push('+'+hero.atk+'% ATK');
-  if(Number(hero.shield))bits.push('+'+hero.shield+'% bouclier');
-  if(Number(hero.heal))bits.push('+'+hero.heal+'% soin');
-  if(hero.effect&&!bits.length)bits.push(String(hero.effect));
+  if(Number(hero.atk))bits.push('ATQ +'+hero.atk+'%');
+  if(hero.effect==='hp'&&Number(hero.shield))bits.push('PV max +'+hero.shield+'%');
+  else if(Number(hero.shield))bits.push('Bouclier '+hero.shield+'%');
+  if(Number(hero.heal))bits.push('Soin '+hero.heal+'%');
+  if(hero.effect==='pierce')bits.push('Ignore la moitié du bouclier');
+  if(hero.effect==='stun')bits.push('Interrompt une action ennemie');
+  if(hero.effect==='evade')bits.push('Esquive garantie une fois');
+  if(hero.effect==='counter')bits.push('Une riposte au premier coup');
   return bits.join(' · ')||hero.artLabel||hero.category||'Effet de jeu';
 }
 

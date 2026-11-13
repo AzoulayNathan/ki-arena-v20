@@ -1,5 +1,5 @@
-import {rewardPack as legacyReward,collectionState,PACK_RARITIES,PACK_SIZE,rarityForRoll,openPack,pendingPacks,ensureStarterPack} from '../v19/collection-rewards.js';
-export {collectionState,PACK_RARITIES,PACK_SIZE,rarityForRoll,openPack,pendingPacks,ensureStarterPack};
+import {rewardPack as legacyReward,collectionState,PACK_RARITIES,PACK_SIZE,rarityForRoll,openPack,pendingPacks,ensureStarterPack,unlockCard,hasUnlockedCards} from '../v19/collection-rewards.js';
+export {collectionState,PACK_RARITIES,PACK_SIZE,rarityForRoll,openPack,pendingPacks,ensureStarterPack,unlockCard,hasUnlockedCards};
 import {registry} from '../v19/catalog.js';
 import {cosmeticHash,editionFor} from '../v19/card-spec.js';
 const KEY='kiarena:personal-collection:v191';

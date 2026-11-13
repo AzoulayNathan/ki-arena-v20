@@ -3,14 +3,17 @@ import {asset} from './media.js';
 import {theme,crest} from '../v15/theme.js';
 import {recruitment,modeArt,mountModes} from '../v17/mode-carousel.js';
 import {MIXED_RULES,MIXED_ROUNDS} from '../v16/draft.js';
-import {START_DRAFT_PICKS} from '../v20/draft.js';
+import {START_DRAFT_PICKS,START_HERO_PICKS} from '../v20/draft.js';
+import {hasUnlockedCards} from '../v20/collection-rewards.js';
 
 export function setupMarkup({worlds,c,stored,error,checks,esc,btn}){
+  const hasCollection=hasUnlockedCards();
   return `<section class="v20-setup-page">
     <header class="v20-setup-top"><h1>Choisis tes mondes.</h1></header>
     <div class="a-worlds v20-manga-stack" aria-label="Mondes">${checks}</div>
     <div class="v20-depart-bar" role="region" aria-label="Départ">
       <div class="v20-depart-copy"><span class="a-eyebrow">LE DÉPART</span><b>Prêt à partir ?</b></div>
+      <label class="v20-collection-toggle"><input type="checkbox" id="a-use-collection" ${hasCollection?'':'disabled'}> Partir avec mes cartes débloquées${hasCollection?'':' · aucune pour l’instant'}</label>
       <div class="v20-depart-actions">${btn('Partir →','new','','primary v20-depart-go')}${stored?btn('Reprendre la route','resume','','light'):''}</div>
       <details class="a-details v20-depart-more"><summary>Seed & import</summary>
         <label class="a-label">Seed<input id="a-seed" maxlength="120" value="${esc(stored?.seed||'HORIZON-'+new Date().toISOString().slice(0,10))}"></label>
@@ -23,7 +26,8 @@ export function setupMarkup({worlds,c,stored,error,checks,esc,btn}){
 
 export function mixedDraftMarkup({run,c,hud,fighter,gearCard,esc,btn,selectedOffer=null}){
   const rounds=run.rulesVersion==='20.0.0'?START_DRAFT_PICKS:MIXED_ROUNDS;
-  return `${hud}<section class="a-draft-heading v16-recruit-heading"><span class="a-eyebrow">LE RECRUTEMENT · DESTINS CROISÉS</span><h1>Choisis ton destin.</h1><div class="a-progress" aria-label="Choix ${run.step+1} sur ${rounds}">${Array.from({length:rounds},(_,i)=>`<i class="${i<=run.step?'active':''}"></i>`).join('')}</div></section>
+  const heroPhase=run.rulesVersion!=='20.0.0'||run.step<START_HERO_PICKS;
+  return `${hud}<section class="a-draft-heading v16-recruit-heading"><span class="a-eyebrow">LE RECRUTEMENT · ${heroPhase?'TON ÉQUIPE':'TES ARMES'}</span><h1>${heroPhase?'Choisis ton destin.':'Arme ta route.'}</h1><div class="a-progress" aria-label="Choix ${run.step+1} sur ${rounds}">${Array.from({length:rounds},(_,i)=>`<i class="${i<=run.step?'active':''}"></i>`).join('')}</div></section>
   <section class="v16-draft-stage v20-draft-float"><div class="a-offers v14-draft-offers">${run.offers.map((o,i)=>{
     const attrs=`data-a="draft" data-id="${esc(o.token)}" data-offer-index="${i}"`;
     const kind=o.kind==='hero'?'ALLIÉ':'ARME';
