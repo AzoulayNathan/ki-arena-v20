@@ -1,0 +1,24 @@
+﻿Famille,Variante,Déclencheur de présentation,Rendu
+Corps à corps,strike,hit ordinaire,"Anticipation, projection, anneau et éclats"
+Corps à corps,combo,hit dont technique évoque combo/rafale,Impacts décalés ; une seule valeur de dégâts moteur
+Corps à corps,heavy,skill_hit sans projection ou lame,"Accent d’impact, étoile et recul"
+Corps à corps,counter,counter_hit,Riposte courte
+Armes,slash,lame/épée/sabre/katana,Croissants tranchants
+Armes,crosscut,arme + rafale/multi/shuriken,Croissants croisés
+Armes,volley,arme à feu,Traînées de tirs
+Énergie,beam,Kamehameha/rayon/Galick/etc.,"Charge, faisceau progressif, cœur lumineux, gerbe"
+Énergie,orb,sphère/Rasengan/blast/etc.,Sphère et orbites
+Énergie,lightning,foudre/Chidori/etc.,Arcs ramifiés
+Énergie,nova,explosion/séisme/onde,Anneaux d’onde
+Soutien,barrier,shield,Bouclier hexagonal
+Soutien,intercept,guard,Protection ciblée
+Soutien,heal,heal,Motes et valeur réelle de soin
+Soutien,revive,revive,"Second souffle, sans résurrection inventée"
+Soutien,drain,heal lié à absorption/drain,Motes de récupération
+Soutien,evade,dodge,Décalage bref et traînées
+Soutien,charge,skill/buff/ultimate sans éveil,Aura de préparation
+Soutien,awaken,phase/transformation/éveil,Aura et anneaux
+Contrôle,bind,status interruption/skip/stunned,Liens visuels
+Contrôle,weaken,status weaken,Marque d’affaiblissement
+Contrôle,burn,status dégâts persistants/dot,Braises et tick de PV réel
+K.O.,shatter,ko,"Fragments, légère secousse, carte centrale et tampon KO"

@@ -1,0 +1,73 @@
+{
+  "version": "Survie Infinity V2 / 2026-10-21",
+  "univers": [
+    "DB",
+    "HXH",
+    "NARUTO",
+    "ONEPIECE"
+  ],
+  "draft": {
+    "personnages": 5,
+    "armes": 3,
+    "offres_visibles": [
+      [
+        25,
+        35
+      ],
+      [
+        25,
+        35
+      ],
+      [
+        15,
+        45
+      ]
+    ],
+    "option_mystere": [
+      0,
+      60
+    ]
+  },
+  "combat": {
+    "mana": false,
+    "main_depart": 3,
+    "pioche_par_round": 1,
+    "slots_allies_initiaux": 3,
+    "slots_allies_max_v2": 5,
+    "attaque_normale_par_unite_round": 1,
+    "soin_victoire_pct_vivants": 25,
+    "mort_permanente": true
+  },
+  "equipements": {
+    "equip_par_unite": 1,
+    "armure_par_unite": 1,
+    "cout_en_actions_round": [
+      0,
+      1
+    ],
+    "action_equipement_par_round": 1,
+    "pioche_bonus_plafond_par_round": 2
+  },
+  "difficulte": {
+    "rank_field": "attaque+pv+vitesse",
+    "increment_rangs": "N/20",
+    "normal": "5*(N/20)*vague",
+    "elite": "5*(N/20)*(vague+1)",
+    "boss": "5*(N/20)*(vague+2)",
+    "ennemis_aleatoires_jusque_vague": 9,
+    "ennemis_base_vague_10": 5,
+    "slots_supplementaires_si_budget_depassant_kN": true,
+    "budget_exact": true,
+    "anti_doublons_si_mathematiquement_possible": true
+  },
+  "xp": {
+    "niveau_max": 5,
+    "victoires_par_seuil": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "stat_bonus_pct_si_pas_devolution": 10
+  }
+}

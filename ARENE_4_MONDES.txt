@@ -1,0 +1,11 @@
+KI ARENA V9.3.1 — édition Arène · 4 mondes
+========================================
+Jouer: double-clic LANCER_SUR_PC_WINDOWS.bat
+  ou ouvrir http://127.0.0.1:4173/JOUER_KI_ARENA_V9.html
+
+Hangar (accueil): Dragon Ball / HxH / Naruto / One Piece
+Survie Infinity: catalogues + portraits branchés
+  DB 600 · HxH 532 · Naruto 313 · One Piece 1577
+
+Studios cartes: export edition arena (angles coupés) lancé en arrière-plan.
+Dossier jeu: KI_ARENA_V9_3_1_LOCAL\KI_ARENA_V9_LOCAL_FINAL

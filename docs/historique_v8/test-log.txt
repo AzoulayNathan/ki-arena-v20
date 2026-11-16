@@ -1,0 +1,76 @@
+
+> ki-arena-roguelike-v7@7.0.0 test
+> node tests/run-tests.mjs && node tests/test-v3.mjs && node tests/test-v51.mjs && node tests/test-v52.mjs && node tests/test-rogue-enhanced.mjs && node tests/test-rogue-audit.mjs && node tests/test-rogue-v6.mjs
+
+✓ Exactement 600 cartes du pilote et 5 raretés
+✓ Répartition catalogue stricte 198/162/126/90/24 (33/27/21/15/4 %)
+✓ Effets par carte = 1..5 selon rareté
+✓ Données valides, IDs uniques et stats entières
+✓ Packs cumulés à 100% et progression légendaire croissante
+✓ Tirage pondéré normal stable: écarts inférieurs à 1 point
+✓ Starter 12 cartes possédées; doublons donnent des fragments
+✓ Bataille de 5v5 reproductible, victoire A/B/égalité
+✓ Batailles 1v1 et équilibres canon/équilibré
+✓ Moteur stable sur 200 simulations aléatoires, sans PV hors bornes
+✓ Solo : ennemis 5 distincts, difficulté augmente, récompenses persistantes
+✓ Draft budget jouable, équipe CPU complète sans dépassement
+✓ Tournoi 8 et 16 : les manches progressent et produisent un champion
+✓ Effet unique : survie à 1 PV puis KO possible au coup suivant
+✓ Effet légendaire unique : pas de boucle de contre-attaque
+✓ Chaque effet est déclenché au plus une fois par combattant
+✓ Ordre des actions normales respecte la vitesse et un tour maximum par round
+
+17 tests réussis.
+✓ 600 cartes ; IDs uniques ; 1380 effets ; 33/27/21/15/4
+✓ Zones croissantes avec boss unique à la fin
+✓ Création run avec 5 cartes ; départ 80 zénis + Senzu
+✓ Élite, boss, régular augmentent bien la difficulté
+✓ Bonus des reliques et équipements affectent réellement le combat
+✓ PV persistants entre combats et Senzu les restaure
+✓ Réserve de départ + bonus reliques
+✓ Marchand fournit 4 articles, achats vérifient le budget
+✓ Événements générés et résolus, avancent la carte
+✓ Cycle de recrutement : réserve, progression, déblocage à la fin
+✓ Pack et progression enregistrés mais non ajoutés avant fin de run
+✓ Calcul de combat reproductible sans effet infini
+12 tests V3 réussis.
+✓ Puissance canon DBZ SSJ2 > DBZ base, DBS UI > DBS base
+✓ Les rangs narratifs ne sont pas calculés à partir de la rareté
+✓ Des équipes 3v9 sont jouables et les cibles varient selon la seed
+✓ Enchères: 0 carte au départ, premier oui, second surenchérit de 5 et remporte au pass
+✓ Passes: trois skips par joueur puis obligation de miser si solvable
+✓ Option sans limite de skips et pas de limite de cartes, manches configurables
+✓ Option équipe limitée à 3, impossible d’acheter une quatrième carte
+✓ Boss : seconde phase déclenchable et reproductible
+✓ 7 Dragon Balls => vœu et +1 réserve
+
+9 tests V5.1 réussis.
+✓ Rareté croissante selon la puissance estimée, quotas constants
+✓ Transformations ultimes et anges ne sont plus communs
+✓ Augmentation globale attaque +20%, stable sur tout combattant
+✓ Gains de 25 % PV aux survivants et KO permanents
+✓ Chaque effet reste unique pendant le combat
+✓ Équipes asymétriques 3 contre 9 et cible aléatoire
+6 tests V5.2 réussis.
+✓ 3 alternatives distinctes à chaque étape, boss unique
+✓ KO exclu, jamais réanimé par soin de victoire
+✓ Choix de butin valide, choix unique et passage au recrutement
+✓ Récompense alternative en zénis
+✓ Résurrection explicite, puis consommation de l’objet
+✓ Réserve remplit une place vide et conserve les PV
+✓ Repos entraîne OU soigne et jamais les KO
+✓ Objets et reliques possèdent des IDs uniques
+8 tests Roguelike amélioré réussis.
+✓ AUDIT Repos : réanimation ciblée et coût exact
+✓ AUDIT Senzu : échec sans place, conservation objet et liste KO
+✓ AUDIT Recrutement : remplacement conserve les PV du titulaire
+3 tests audit supplémentaires réussis
+✓ V6 Chaque étape connecte effectivement la suivante, avec routes réellement restreintes
+✓ V6 La sélection refuse les téléportations et les doubles choix
+✓ V6 La progression de la cible est linéaire en profondeur, pour des équipes extrêmes
+✓ V6 Les 10 archétypes sont distincts et les ennemis restent uniques
+✓ V6 Événements décisionnels avec coût, santé et gains déterministes
+✓ V6 Relique d’exploration, butin étendu et bonus Zenkai réel
+✓ V6 Soins et objets bloqués pendant un combat en attente
+✓ V6 Combats reproductibles et indicateurs de danger bornés
+8 blocs de vérification V6 validés

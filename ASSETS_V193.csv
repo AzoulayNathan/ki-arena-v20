@@ -1,0 +1,5 @@
+﻿categorie,source,modification,statut
+"Assets historiques (832 fichiers embarqués)","assets/ et inventaires de droits historiques","Aucune modification binaire","SHA-256 identiques"
+"Effets de combat","src/v193/fx.js","Création procédurale Canvas locale ; choix graphiques éditoriaux","Actif"
+"Sons d’impact","src/v193/fx.js","Synthèse Web Audio locale originale","Actif, volume contrôlé"
+"Portraits et équipements","Renderer et fichiers V19.2","Illustrations héritées conservées, imports vérifiés toujours possibles","Provisoires ou manquants signalés"

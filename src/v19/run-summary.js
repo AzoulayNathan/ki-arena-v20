@@ -1,0 +1,3 @@
+import {buildRunReceipt as legacyReceipt} from '../arena/run-summary.js';
+import {registry} from './catalog.js';
+export function buildRunReceipt(r){const receipt=legacyReceipt(r);if(!receipt)return receipt;receipt.runId=r.runInstanceId||receipt.runId;receipt.statsMode=r.statsMode||'normalized';if(r.endReason==='combat-loss'){receipt.outcome='defeat';const c=registry(r.worlds,r.statsMode);receipt.notableTeam={source:'final-combat-roster',units:(r.finalTeam||[]).map(u=>({...u,...[...r.units,...r.dead].find(x=>x.uid===u.uid),name:c.byId.get(u.cardId)?.name,universe:c.byId.get(u.cardId)?.universe,status:r.dead.some(d=>d.uid===u.uid)?'dead':'alive'}))};}return receipt;}

@@ -1,0 +1,5 @@
+import {playEffect as basePlay,stopEffects as baseStop} from '../v193/fx.js';
+import {attackProfile,timing} from '../v193/profiles.js';
+let layers=new Set();
+export function stopEffects(){for(const x of layers){clearTimeout(x.timer);x.el.remove();}layers.clear();baseStop();}
+export function playEffect(root,e,ctx={},speed=1,reduced=false){const result=basePlay(root,e,ctx,speed,reduced);if(!root||!e||reduced||root.querySelector('.a-spotlight'))return result;const p=attackProfile(e,ctx),strong=['ultimate','ko','revive','cleanse'].includes(e.type)||e.type==='skill_hit'&&['energy','weapon'].includes(p.family);if(!strong)return result;const {total}=timing(e,ctx,speed,false),el=document.createElement('div');el.className='v22-fx-iris';el.setAttribute('aria-hidden','true');el.style.setProperty('--v22-duration',total+'ms');el.style.setProperty('--v22-color',p.color);const label=document.createElement('b');label.className='v22-fx-subtitle';label.textContent=e.type==='ko'?'K.O.':ctx.technique||p.label;el.append(label);root.append(el);const x={el,timer:setTimeout(()=>{el.remove();layers.delete(x);},total+30)};layers.add(x);return result;}

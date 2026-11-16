@@ -1,0 +1,17 @@
+test_1000_compositions (test_survie.SurvieTests.test_1000_compositions) ... ok
+test_approved_evolution (test_survie.SurvieTests.test_approved_evolution) ... ok
+test_battle (test_survie.SurvieTests.test_battle) ... ok
+test_cap_5x600_to_6x600 (test_survie.SurvieTests.test_cap_5x600_to_6x600) ... ok
+test_deck_draw (test_survie.SurvieTests.test_deck_draw) ... ok
+test_draft_5_plus_3_unique (test_survie.SurvieTests.test_draft_5_plus_3_unique) ... ok
+test_permadeath_and_resurrection (test_survie.SurvieTests.test_permadeath_and_resurrection) ... ok
+test_rank_budget_and_continuation (test_survie.SurvieTests.test_rank_budget_and_continuation) ... ok
+test_reward_application (test_survie.SurvieTests.test_reward_application) ... ok
+test_rewards (test_survie.SurvieTests.test_rewards) ... ok
+test_roster (test_survie.SurvieTests.test_roster) ... ok
+test_xp_four_steps_and_nonplayed (test_survie.SurvieTests.test_xp_four_steps_and_nonplayed) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.538s
+
+OK

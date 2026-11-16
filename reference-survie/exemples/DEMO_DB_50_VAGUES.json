@@ -1,0 +1,3364 @@
+{
+  "univers": "DB",
+  "catalogue": {
+    "personnages": 600,
+    "equipements_disponibles": 40
+  },
+  "draft": [
+    {
+      "phase": "hero",
+      "index": 1,
+      "visible": [
+        "kaioshin-du-sud-dbz-gardien-de-l-univers",
+        "jeice-dbz-duel-contre-goku",
+        "zircor-dbs-yogi-univers-10"
+      ],
+      "mystery": "???",
+      "picked": "kaioshin-du-sud-dbz-gardien-de-l-univers",
+      "choice": 0
+    },
+    {
+      "phase": "hero",
+      "index": 2,
+      "visible": [
+        "roi-piccolo-db-jeunesse-restauree",
+        "goku-dbz-kaioken-2-saga-saiyans",
+        "gohan-dbz-enfant-namek"
+      ],
+      "mystery": "???",
+      "picked": "roi-piccolo-db-jeunesse-restauree",
+      "choice": 0
+    },
+    {
+      "phase": "hero",
+      "index": 3,
+      "visible": [
+        "burter-dbz-duel-contre-goku",
+        "piccolo-dbz-saga-saiyans",
+        "krilin-dbz-apres-namek-preparation-cyborgs"
+      ],
+      "mystery": "???",
+      "picked": "krilin-dbz-apres-namek-preparation-cyborgs",
+      "choice": 2
+    },
+    {
+      "phase": "hero",
+      "index": 4,
+      "visible": [
+        "basil-dbs-trio-du-danger",
+        "dende-dbs-gardien-du-sanctuaire",
+        "goku-dbz-super-saiyan-entrainement-salle-du-temps"
+      ],
+      "mystery": "???",
+      "picked": "dende-dbs-gardien-du-sanctuaire",
+      "choice": 1
+    },
+    {
+      "phase": "hero",
+      "index": 5,
+      "visible": [
+        "koitsukai-dbs-robot-de-l-univers-3",
+        "goku-dbz-kaioken-10-contre-freezer",
+        "cell-dbz-forme-imparfaite"
+      ],
+      "mystery": "???",
+      "picked": "goku-dbz-kaioken-10-contre-freezer",
+      "choice": 1
+    },
+    {
+      "phase": "weapon",
+      "index": 1,
+      "visible": [
+        "db-eq-lance-roquettes-ruban-rouge",
+        "db-eq-epee-d-entrainement-de-gohan",
+        "db-eq-casque-lame-de-chi-chi"
+      ],
+      "mystery": "???",
+      "picked": "db-eq-epee-d-entrainement-de-gohan",
+      "choice": 1
+    },
+    {
+      "phase": "weapon",
+      "index": 2,
+      "visible": [
+        "db-eq-hache-du-roi-demon-taureau",
+        "db-eq-lance-roquettes-ruban-rouge",
+        "db-eq-baton-magique-nyoi-bo"
+      ],
+      "mystery": "???",
+      "picked": "db-eq-hache-du-roi-demon-taureau",
+      "choice": 0
+    },
+    {
+      "phase": "weapon",
+      "index": 3,
+      "visible": [
+        "db-eq-mitraillette-de-lunch",
+        "db-eq-lance-roquettes-ruban-rouge",
+        "db-eq-sabre-du-ninja-murasaki"
+      ],
+      "mystery": "???",
+      "picked": "db-eq-mitraillette-de-lunch",
+      "choice": 0
+    }
+  ],
+  "deck_initial": {
+    "personnages": 5,
+    "equipements": 3,
+    "total": 8
+  },
+  "premier_combat": {
+    "win": true,
+    "rounds": 11,
+    "alive": 5,
+    "ko": 0,
+    "played": 3,
+    "equipped": 3,
+    "enemy_equipped": 0,
+    "level_ups": [],
+    "transformations": [],
+    "draw_remaining": 0
+  },
+  "recompenses_exemple": [
+    "recrue",
+    "consommable",
+    "or"
+  ],
+  "rencontres_prevision": [
+    {
+      "vague": 1,
+      "normal": {
+        "budget": 150,
+        "places_ennemies": 4,
+        "rangs": [
+          35,
+          36,
+          41,
+          38
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 300,
+        "places_ennemies": 5,
+        "rangs": [
+          59,
+          102,
+          64,
+          13,
+          62
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-lunch"
+        ]
+      },
+      "boss": {
+        "budget": 450,
+        "places_ennemies": 3,
+        "rangs": [
+          175,
+          158,
+          117
+        ],
+        "armes_ennemies": [
+          "db-eq-casque-lame-de-chi-chi"
+        ]
+      }
+    },
+    {
+      "vague": 2,
+      "normal": {
+        "budget": 300,
+        "places_ennemies": 2,
+        "rangs": [
+          231,
+          69
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 450,
+        "places_ennemies": 5,
+        "rangs": [
+          32,
+          120,
+          113,
+          53,
+          132
+        ],
+        "armes_ennemies": [
+          "db-eq-capsule-hoi-poi"
+        ]
+      },
+      "boss": {
+        "budget": 600,
+        "places_ennemies": 2,
+        "rangs": [
+          17,
+          583
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-laser-de-garde"
+        ]
+      }
+    },
+    {
+      "vague": 3,
+      "normal": {
+        "budget": 450,
+        "places_ennemies": 1,
+        "rangs": [
+          450
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 600,
+        "places_ennemies": 5,
+        "rangs": [
+          121,
+          119,
+          113,
+          125,
+          122
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-de-shu"
+        ]
+      },
+      "boss": {
+        "budget": 750,
+        "places_ennemies": 3,
+        "rangs": [
+          271,
+          230,
+          249
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-d-assaut-ruban-rouge"
+        ]
+      }
+    },
+    {
+      "vague": 4,
+      "normal": {
+        "budget": 600,
+        "places_ennemies": 5,
+        "rangs": [
+          279,
+          64,
+          83,
+          98,
+          76
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 750,
+        "places_ennemies": 5,
+        "rangs": [
+          137,
+          172,
+          167,
+          98,
+          176
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-laser-de-garde"
+        ]
+      },
+      "boss": {
+        "budget": 900,
+        "places_ennemies": 4,
+        "rangs": [
+          223,
+          219,
+          197,
+          261
+        ],
+        "armes_ennemies": [
+          "db-eq-capsule-hoi-poi"
+        ]
+      }
+    },
+    {
+      "vague": 5,
+      "normal": {
+        "budget": 750,
+        "places_ennemies": 4,
+        "rangs": [
+          152,
+          129,
+          252,
+          217
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 900,
+        "places_ennemies": 3,
+        "rangs": [
+          192,
+          234,
+          474
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-de-mai"
+        ]
+      },
+      "boss": {
+        "budget": 1050,
+        "places_ennemies": 2,
+        "rangs": [
+          464,
+          586
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-de-mai"
+        ]
+      }
+    },
+    {
+      "vague": 6,
+      "normal": {
+        "budget": 900,
+        "places_ennemies": 2,
+        "rangs": [
+          539,
+          361
+        ],
+        "armes_ennemies": [
+          "db-eq-mitraillette-de-lunch"
+        ]
+      },
+      "elite": {
+        "budget": 1050,
+        "places_ennemies": 2,
+        "rangs": [
+          532,
+          518
+        ],
+        "armes_ennemies": [
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-scouter-standard"
+        ]
+      },
+      "boss": {
+        "budget": 1200,
+        "places_ennemies": 3,
+        "rangs": [
+          531,
+          533,
+          136
+        ],
+        "armes_ennemies": [
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-fusil-de-mai-du-futur"
+        ]
+      }
+    },
+    {
+      "vague": 7,
+      "normal": {
+        "budget": 1050,
+        "places_ennemies": 4,
+        "rangs": [
+          292,
+          274,
+          225,
+          259
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-de-freezer-force"
+        ]
+      },
+      "elite": {
+        "budget": 1200,
+        "places_ennemies": 2,
+        "rangs": [
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-de-mai",
+          "db-eq-mitraillette-de-lunch"
+        ]
+      },
+      "boss": {
+        "budget": 1350,
+        "places_ennemies": 5,
+        "rangs": [
+          326,
+          38,
+          272,
+          359,
+          355
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-capsule-hoi-poi"
+        ]
+      }
+    },
+    {
+      "vague": 8,
+      "normal": {
+        "budget": 1200,
+        "places_ennemies": 2,
+        "rangs": [
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-l-armee-de-freezer"
+        ]
+      },
+      "elite": {
+        "budget": 1350,
+        "places_ennemies": 3,
+        "rangs": [
+          546,
+          565,
+          239
+        ],
+        "armes_ennemies": [
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-lance-roquettes-ruban-rouge"
+        ]
+      },
+      "boss": {
+        "budget": 1500,
+        "places_ennemies": 5,
+        "rangs": [
+          342,
+          343,
+          341,
+          338,
+          136
+        ],
+        "armes_ennemies": [
+          "db-eq-scouter-standard",
+          "db-eq-armure-capsule-de-gohan-namek"
+        ]
+      }
+    },
+    {
+      "vague": 9,
+      "normal": {
+        "budget": 1350,
+        "places_ennemies": 3,
+        "rangs": [
+          181,
+          574,
+          595
+        ],
+        "armes_ennemies": [
+          "db-eq-lance-roquettes-ruban-rouge"
+        ]
+      },
+      "elite": {
+        "budget": 1500,
+        "places_ennemies": 3,
+        "rangs": [
+          420,
+          524,
+          556
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-sabre-du-ninja-murasaki"
+        ]
+      },
+      "boss": {
+        "budget": 1650,
+        "places_ennemies": 5,
+        "rangs": [
+          310,
+          322,
+          253,
+          449,
+          316
+        ],
+        "armes_ennemies": [
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-carapace-d-entrainement-de-kame-sennin"
+        ]
+      }
+    },
+    {
+      "vague": 10,
+      "normal": {
+        "budget": 1500,
+        "places_ennemies": 5,
+        "rangs": [
+          292,
+          138,
+          286,
+          394,
+          390
+        ],
+        "armes_ennemies": [
+          "db-eq-tenue-de-patrouille-galactique"
+        ]
+      },
+      "elite": {
+        "budget": 1650,
+        "places_ennemies": 5,
+        "rangs": [
+          366,
+          224,
+          350,
+          351,
+          359
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-armure-de-freezer-force"
+        ]
+      },
+      "boss": {
+        "budget": 1800,
+        "places_ennemies": 5,
+        "rangs": [
+          508,
+          227,
+          310,
+          162,
+          593
+        ],
+        "armes_ennemies": [
+          "db-eq-katana-de-yajirobe",
+          "db-eq-etoiles-de-ninja-de-murasaki"
+        ]
+      }
+    },
+    {
+      "vague": 11,
+      "normal": {
+        "budget": 1650,
+        "places_ennemies": 5,
+        "rangs": [
+          387,
+          363,
+          406,
+          97,
+          397
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-tenue-de-patrouille-galactique"
+        ]
+      },
+      "elite": {
+        "budget": 1800,
+        "places_ennemies": 5,
+        "rangs": [
+          505,
+          225,
+          362,
+          358,
+          350
+        ],
+        "armes_ennemies": [
+          "db-eq-katana-de-yajirobe",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-lance-roquettes-ruban-rouge"
+        ]
+      },
+      "boss": {
+        "budget": 1950,
+        "places_ennemies": 5,
+        "rangs": [
+          59,
+          573,
+          330,
+          596,
+          392
+        ],
+        "armes_ennemies": [
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-ray-gun-de-jaco"
+        ]
+      }
+    },
+    {
+      "vague": 12,
+      "normal": {
+        "budget": 1800,
+        "places_ennemies": 5,
+        "rangs": [
+          486,
+          377,
+          302,
+          352,
+          283
+        ],
+        "armes_ennemies": [
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-scouter-standard"
+        ]
+      },
+      "elite": {
+        "budget": 1950,
+        "places_ennemies": 5,
+        "rangs": [
+          2,
+          558,
+          546,
+          549,
+          295
+        ],
+        "armes_ennemies": [
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-epee-de-tao-pai-pai"
+        ]
+      },
+      "boss": {
+        "budget": 2100,
+        "places_ennemies": 5,
+        "rangs": [
+          398,
+          317,
+          234,
+          573,
+          578
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-de-shu",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-sceau-papier-du-mafuba"
+        ]
+      }
+    },
+    {
+      "vague": 13,
+      "normal": {
+        "budget": 1950,
+        "places_ennemies": 5,
+        "rangs": [
+          410,
+          397,
+          394,
+          387,
+          362
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-lunch",
+          "db-eq-nuage-magique-kinto-un"
+        ]
+      },
+      "elite": {
+        "budget": 2100,
+        "places_ennemies": 5,
+        "rangs": [
+          485,
+          547,
+          52,
+          484,
+          532
+        ],
+        "armes_ennemies": [
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-fusil-de-mai-du-futur"
+        ]
+      },
+      "boss": {
+        "budget": 2250,
+        "places_ennemies": 5,
+        "rangs": [
+          354,
+          333,
+          566,
+          549,
+          448
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-tenue-de-patrouille-galactique"
+        ]
+      }
+    },
+    {
+      "vague": 14,
+      "normal": {
+        "budget": 2100,
+        "places_ennemies": 5,
+        "rangs": [
+          117,
+          600,
+          565,
+          232,
+          586
+        ],
+        "armes_ennemies": [
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-epee-de-shu"
+        ]
+      },
+      "elite": {
+        "budget": 2250,
+        "places_ennemies": 5,
+        "rangs": [
+          489,
+          582,
+          167,
+          519,
+          493
+        ],
+        "armes_ennemies": [
+          "db-eq-katana-de-yajirobe",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-armure-de-freezer-force"
+        ]
+      },
+      "boss": {
+        "budget": 2400,
+        "places_ennemies": 5,
+        "rangs": [
+          592,
+          599,
+          95,
+          518,
+          596
+        ],
+        "armes_ennemies": [
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-sabre-du-ninja-murasaki"
+        ]
+      }
+    },
+    {
+      "vague": 15,
+      "normal": {
+        "budget": 2250,
+        "places_ennemies": 5,
+        "rangs": [
+          578,
+          483,
+          345,
+          502,
+          342
+        ],
+        "armes_ennemies": [
+          "db-eq-machine-de-soins-namek",
+          "db-eq-sabre-du-ninja-murasaki"
+        ]
+      },
+      "elite": {
+        "budget": 2400,
+        "places_ennemies": 5,
+        "rangs": [
+          598,
+          435,
+          380,
+          397,
+          590
+        ],
+        "armes_ennemies": [
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-scouter-standard"
+        ]
+      },
+      "boss": {
+        "budget": 2550,
+        "places_ennemies": 5,
+        "rangs": [
+          545,
+          581,
+          596,
+          588,
+          240
+        ],
+        "armes_ennemies": [
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-epee-de-trunks-du-futur"
+        ]
+      }
+    },
+    {
+      "vague": 16,
+      "normal": {
+        "budget": 2400,
+        "places_ennemies": 5,
+        "rangs": [
+          588,
+          587,
+          433,
+          193,
+          599
+        ],
+        "armes_ennemies": [
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-epee-de-tao-pai-pai"
+        ]
+      },
+      "elite": {
+        "budget": 2550,
+        "places_ennemies": 5,
+        "rangs": [
+          506,
+          538,
+          516,
+          508,
+          482
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-katana-de-yajirobe"
+        ]
+      },
+      "boss": {
+        "budget": 2700,
+        "places_ennemies": 5,
+        "rangs": [
+          572,
+          594,
+          600,
+          335,
+          599
+        ],
+        "armes_ennemies": [
+          "db-eq-dragon-radar",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-ray-gun-de-jaco"
+        ]
+      }
+    },
+    {
+      "vague": 17,
+      "normal": {
+        "budget": 2550,
+        "places_ennemies": 5,
+        "rangs": [
+          557,
+          546,
+          550,
+          552,
+          345
+        ],
+        "armes_ennemies": [
+          "db-eq-scouter-standard",
+          "db-eq-epee-de-shu",
+          "db-eq-cape-lestee-de-piccolo"
+        ]
+      },
+      "elite": {
+        "budget": 2700,
+        "places_ennemies": 5,
+        "rangs": [
+          597,
+          570,
+          587,
+          585,
+          361
+        ],
+        "armes_ennemies": [
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-scouter-standard",
+          "db-eq-epee-d-entrainement-de-gohan"
+        ]
+      },
+      "boss": {
+        "budget": 2850,
+        "places_ennemies": 5,
+        "rangs": [
+          589,
+          599,
+          600,
+          591,
+          471
+        ],
+        "armes_ennemies": [
+          "db-eq-haricot-senzu",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-epee-de-trunks-du-futur"
+        ]
+      }
+    },
+    {
+      "vague": 18,
+      "normal": {
+        "budget": 2700,
+        "places_ennemies": 5,
+        "rangs": [
+          583,
+          585,
+          592,
+          359,
+          581
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-dragon-radar",
+          "db-eq-sabre-du-ninja-murasaki"
+        ]
+      },
+      "elite": {
+        "budget": 2850,
+        "places_ennemies": 5,
+        "rangs": [
+          568,
+          561,
+          600,
+          563,
+          558
+        ],
+        "armes_ennemies": [
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-etoiles-de-ninja-de-murasaki"
+        ]
+      },
+      "boss": {
+        "budget": 3000,
+        "places_ennemies": 5,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-scouter-d-elite",
+          "db-eq-telecommande-des-cyborgs"
+        ]
+      }
+    },
+    {
+      "vague": 19,
+      "normal": {
+        "budget": 2850,
+        "places_ennemies": 5,
+        "rangs": [
+          597,
+          569,
+          579,
+          590,
+          515
+        ],
+        "armes_ennemies": [
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-pot-de-scellement-mafuba"
+        ]
+      },
+      "elite": {
+        "budget": 3000,
+        "places_ennemies": 5,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-scouter-standard",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-pistolet-de-mai"
+        ]
+      },
+      "boss": {
+        "budget": 3150,
+        "places_ennemies": 6,
+        "rangs": [
+          421,
+          353,
+          586,
+          595,
+          598,
+          597
+        ],
+        "armes_ennemies": [
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-dragon-radar",
+          "db-eq-epee-z",
+          "db-eq-fusil-de-l-armee-de-freezer"
+        ]
+      }
+    },
+    {
+      "vague": 20,
+      "normal": {
+        "budget": 3000,
+        "places_ennemies": 5,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-fusil-de-lunch"
+        ]
+      },
+      "elite": {
+        "budget": 3150,
+        "places_ennemies": 6,
+        "rangs": [
+          597,
+          501,
+          332,
+          540,
+          580,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-epee-de-tao-pai-pai"
+        ]
+      },
+      "boss": {
+        "budget": 3300,
+        "places_ennemies": 6,
+        "rangs": [
+          564,
+          388,
+          574,
+          579,
+          595,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-epee-z",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-eventail-basho-sen"
+        ]
+      }
+    },
+    {
+      "vague": 21,
+      "normal": {
+        "budget": 3150,
+        "places_ennemies": 6,
+        "rangs": [
+          501,
+          593,
+          488,
+          576,
+          439,
+          553
+        ],
+        "armes_ennemies": [
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-fusil-de-lunch",
+          "db-eq-fusil-d-assaut-ruban-rouge"
+        ]
+      },
+      "elite": {
+        "budget": 3300,
+        "places_ennemies": 6,
+        "rangs": [
+          598,
+          530,
+          590,
+          588,
+          397,
+          597
+        ],
+        "armes_ennemies": [
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-epee-z",
+          "db-eq-machine-de-soins-namek"
+        ]
+      },
+      "boss": {
+        "budget": 3450,
+        "places_ennemies": 6,
+        "rangs": [
+          600,
+          596,
+          584,
+          595,
+          592,
+          483
+        ],
+        "armes_ennemies": [
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-scouter-standard",
+          "db-eq-haricot-senzu",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-armure-capsule-de-gohan-namek"
+        ]
+      }
+    },
+    {
+      "vague": 22,
+      "normal": {
+        "budget": 3300,
+        "places_ennemies": 6,
+        "rangs": [
+          389,
+          590,
+          592,
+          589,
+          588,
+          552
+        ],
+        "armes_ennemies": [
+          "db-eq-katana-de-yajirobe",
+          "db-eq-epee-z",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-epee-d-entrainement-de-gohan"
+        ]
+      },
+      "elite": {
+        "budget": 3450,
+        "places_ennemies": 6,
+        "rangs": [
+          595,
+          590,
+          599,
+          516,
+          553,
+          597
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-haricot-senzu",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-casque-lame-de-chi-chi"
+        ]
+      },
+      "boss": {
+        "budget": 3600,
+        "places_ennemies": 6,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-eventail-basho-sen",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-haricot-senzu"
+        ]
+      }
+    },
+    {
+      "vague": 23,
+      "normal": {
+        "budget": 3450,
+        "places_ennemies": 6,
+        "rangs": [
+          532,
+          591,
+          600,
+          596,
+          556,
+          575
+        ],
+        "armes_ennemies": [
+          "db-eq-scouter-standard",
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-armure-de-combat-saiyan"
+        ]
+      },
+      "elite": {
+        "budget": 3600,
+        "places_ennemies": 6,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-dragon-radar",
+          "db-eq-scouter-d-elite"
+        ]
+      },
+      "boss": {
+        "budget": 3750,
+        "places_ennemies": 7,
+        "rangs": [
+          582,
+          591,
+          262,
+          570,
+          587,
+          585,
+          573
+        ],
+        "armes_ennemies": [
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-dragon-radar",
+          "db-eq-cape-lestee-de-piccolo"
+        ]
+      }
+    },
+    {
+      "vague": 24,
+      "normal": {
+        "budget": 3600,
+        "places_ennemies": 6,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-scouter-standard",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-scouter-standard"
+        ]
+      },
+      "elite": {
+        "budget": 3750,
+        "places_ennemies": 7,
+        "rangs": [
+          557,
+          600,
+          522,
+          576,
+          324,
+          599,
+          572
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-epee-z"
+        ]
+      },
+      "boss": {
+        "budget": 3900,
+        "places_ennemies": 7,
+        "rangs": [
+          572,
+          589,
+          594,
+          578,
+          387,
+          592,
+          588
+        ],
+        "armes_ennemies": [
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-dragon-radar",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-pot-de-scellement-mafuba"
+        ]
+      }
+    },
+    {
+      "vague": 25,
+      "normal": {
+        "budget": 3750,
+        "places_ennemies": 7,
+        "rangs": [
+          591,
+          599,
+          587,
+          445,
+          574,
+          376,
+          578
+        ],
+        "armes_ennemies": [
+          "db-eq-machine-de-soins-namek",
+          "db-eq-haricot-senzu",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-dragon-radar"
+        ]
+      },
+      "elite": {
+        "budget": 3900,
+        "places_ennemies": 7,
+        "rangs": [
+          597,
+          562,
+          475,
+          575,
+          593,
+          516,
+          582
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-katana-de-yajirobe",
+          "db-eq-armure-capsule-de-gohan-namek"
+        ]
+      },
+      "boss": {
+        "budget": 4050,
+        "places_ennemies": 7,
+        "rangs": [
+          600,
+          588,
+          501,
+          591,
+          590,
+          594,
+          586
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-katana-de-yajirobe",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-epee-z",
+          "db-eq-machine-de-soins-namek"
+        ]
+      }
+    },
+    {
+      "vague": 26,
+      "normal": {
+        "budget": 3900,
+        "places_ennemies": 7,
+        "rangs": [
+          594,
+          474,
+          596,
+          591,
+          498,
+          563,
+          584
+        ],
+        "armes_ennemies": [
+          "db-eq-haricot-senzu",
+          "db-eq-scouter-d-elite",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-scouter-standard"
+        ]
+      },
+      "elite": {
+        "budget": 4050,
+        "places_ennemies": 7,
+        "rangs": [
+          577,
+          590,
+          599,
+          589,
+          517,
+          587,
+          591
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-scouter-standard",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-fusil-de-l-armee-de-freezer"
+        ]
+      },
+      "boss": {
+        "budget": 4200,
+        "places_ennemies": 7,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-tenue-lestee-de-goku"
+        ]
+      }
+    },
+    {
+      "vague": 27,
+      "normal": {
+        "budget": 4050,
+        "places_ennemies": 7,
+        "rangs": [
+          598,
+          595,
+          600,
+          597,
+          578,
+          539,
+          543
+        ],
+        "armes_ennemies": [
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-fusil-d-assaut-ruban-rouge"
+        ]
+      },
+      "elite": {
+        "budget": 4200,
+        "places_ennemies": 7,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-epee-de-tao-pai-pai"
+        ]
+      },
+      "boss": {
+        "budget": 4350,
+        "places_ennemies": 8,
+        "rangs": [
+          598,
+          377,
+          585,
+          460,
+          587,
+          564,
+          588,
+          591
+        ],
+        "armes_ennemies": [
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-scouter-d-elite",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-epee-de-tao-pai-pai"
+        ]
+      }
+    },
+    {
+      "vague": 28,
+      "normal": {
+        "budget": 4200,
+        "places_ennemies": 7,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-fusil-de-lunch",
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-mitraillette-de-lunch"
+        ]
+      },
+      "elite": {
+        "budget": 4350,
+        "places_ennemies": 8,
+        "rangs": [
+          595,
+          586,
+          584,
+          580,
+          582,
+          551,
+          520,
+          352
+        ],
+        "armes_ennemies": [
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-dragon-radar",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-sceau-papier-du-mafuba"
+        ]
+      },
+      "boss": {
+        "budget": 4500,
+        "places_ennemies": 8,
+        "rangs": [
+          527,
+          590,
+          522,
+          592,
+          556,
+          549,
+          578,
+          586
+        ],
+        "armes_ennemies": [
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-epee-de-shu",
+          "db-eq-scouter-d-elite",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-lance-roquettes-ruban-rouge"
+        ]
+      }
+    },
+    {
+      "vague": 29,
+      "normal": {
+        "budget": 4350,
+        "places_ennemies": 8,
+        "rangs": [
+          550,
+          517,
+          554,
+          574,
+          522,
+          559,
+          535,
+          539
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-de-mai",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-epee-d-entrainement-de-gohan"
+        ]
+      },
+      "elite": {
+        "budget": 4500,
+        "places_ennemies": 8,
+        "rangs": [
+          599,
+          587,
+          600,
+          509,
+          436,
+          595,
+          577,
+          597
+        ],
+        "armes_ennemies": [
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-epee-de-shu"
+        ]
+      },
+      "boss": {
+        "budget": 4650,
+        "places_ennemies": 8,
+        "rangs": [
+          592,
+          525,
+          583,
+          589,
+          591,
+          590,
+          593,
+          587
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-dragon-radar",
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-sceau-papier-du-mafuba"
+        ]
+      }
+    },
+    {
+      "vague": 30,
+      "normal": {
+        "budget": 4500,
+        "places_ennemies": 8,
+        "rangs": [
+          590,
+          588,
+          587,
+          589,
+          400,
+          570,
+          584,
+          592
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-epee-z",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-armure-de-combat-saiyan"
+        ]
+      },
+      "elite": {
+        "budget": 4650,
+        "places_ennemies": 8,
+        "rangs": [
+          575,
+          543,
+          588,
+          587,
+          583,
+          591,
+          594,
+          589
+        ],
+        "armes_ennemies": [
+          "db-eq-katana-de-yajirobe",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-eventail-basho-sen",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-ray-gun-de-jaco"
+        ]
+      },
+      "boss": {
+        "budget": 4800,
+        "places_ennemies": 8,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-eventail-basho-sen",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-dragon-radar",
+          "db-eq-baton-magique-nyoi-bo"
+        ]
+      }
+    },
+    {
+      "vague": 31,
+      "normal": {
+        "budget": 4650,
+        "places_ennemies": 8,
+        "rangs": [
+          584,
+          586,
+          576,
+          583,
+          587,
+          581,
+          565,
+          588
+        ],
+        "armes_ennemies": [
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-fusil-de-lunch",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-fusil-de-mai-du-futur"
+        ]
+      },
+      "elite": {
+        "budget": 4800,
+        "places_ennemies": 8,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-fusil-de-lunch",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-telecommande-des-cyborgs"
+        ]
+      },
+      "boss": {
+        "budget": 4950,
+        "places_ennemies": 9,
+        "rangs": [
+          584,
+          583,
+          585,
+          589,
+          581,
+          453,
+          579,
+          587,
+          409
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-fusil-de-lunch",
+          "db-eq-katana-de-yajirobe",
+          "db-eq-tenue-lestee-de-goku"
+        ]
+      }
+    },
+    {
+      "vague": 32,
+      "normal": {
+        "budget": 4800,
+        "places_ennemies": 8,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-haricot-senzu",
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-katana-de-yajirobe"
+        ]
+      },
+      "elite": {
+        "budget": 4950,
+        "places_ennemies": 9,
+        "rangs": [
+          242,
+          591,
+          585,
+          594,
+          588,
+          587,
+          584,
+          589,
+          590
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-de-mai",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-epee-z",
+          "db-eq-eventail-basho-sen",
+          "db-eq-fusil-de-lunch"
+        ]
+      },
+      "boss": {
+        "budget": 5100,
+        "places_ennemies": 9,
+        "rangs": [
+          600,
+          584,
+          583,
+          481,
+          578,
+          527,
+          562,
+          596,
+          589
+        ],
+        "armes_ennemies": [
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-pistolet-de-mai",
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-scouter-d-elite"
+        ]
+      }
+    },
+    {
+      "vague": 33,
+      "normal": {
+        "budget": 4950,
+        "places_ennemies": 9,
+        "rangs": [
+          591,
+          590,
+          363,
+          576,
+          545,
+          558,
+          592,
+          583,
+          552
+        ],
+        "armes_ennemies": [
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-fusil-de-lunch",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-scouter-d-elite"
+        ]
+      },
+      "elite": {
+        "budget": 5100,
+        "places_ennemies": 9,
+        "rangs": [
+          585,
+          559,
+          586,
+          455,
+          590,
+          572,
+          588,
+          578,
+          587
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-fusil-de-lunch",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-hache-du-roi-demon-taureau"
+        ]
+      },
+      "boss": {
+        "budget": 5250,
+        "places_ennemies": 9,
+        "rangs": [
+          532,
+          581,
+          595,
+          590,
+          585,
+          588,
+          591,
+          596,
+          592
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-epee-z",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-scouter-standard",
+          "db-eq-armure-capsule-de-gohan-namek"
+        ]
+      }
+    },
+    {
+      "vague": 34,
+      "normal": {
+        "budget": 5100,
+        "places_ennemies": 9,
+        "rangs": [
+          520,
+          600,
+          591,
+          590,
+          597,
+          594,
+          586,
+          544,
+          478
+        ],
+        "armes_ennemies": [
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-dragon-radar"
+        ]
+      },
+      "elite": {
+        "budget": 5250,
+        "places_ennemies": 9,
+        "rangs": [
+          548,
+          589,
+          590,
+          593,
+          587,
+          574,
+          592,
+          586,
+          591
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-z",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-dragon-radar",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-scouter-d-elite",
+          "db-eq-pot-de-scellement-mafuba"
+        ]
+      },
+      "boss": {
+        "budget": 5400,
+        "places_ennemies": 9,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-casque-lame-de-chi-chi"
+        ]
+      }
+    },
+    {
+      "vague": 35,
+      "normal": {
+        "budget": 5250,
+        "places_ennemies": 9,
+        "rangs": [
+          591,
+          593,
+          596,
+          588,
+          592,
+          529,
+          589,
+          590,
+          582
+        ],
+        "armes_ennemies": [
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-scouter-standard",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-turban-leste-de-piccolo"
+        ]
+      },
+      "elite": {
+        "budget": 5400,
+        "places_ennemies": 9,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-hache-du-roi-demon-taureau"
+        ]
+      },
+      "boss": {
+        "budget": 5550,
+        "places_ennemies": 10,
+        "rangs": [
+          581,
+          572,
+          591,
+          487,
+          596,
+          492,
+          534,
+          519,
+          580,
+          598
+        ],
+        "armes_ennemies": [
+          "db-eq-scouter-standard",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-epee-d-entrainement-de-gohan"
+        ]
+      }
+    },
+    {
+      "vague": 36,
+      "normal": {
+        "budget": 5400,
+        "places_ennemies": 9,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-eventail-basho-sen",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-armure-de-freezer-force"
+        ]
+      },
+      "elite": {
+        "budget": 5550,
+        "places_ennemies": 10,
+        "rangs": [
+          588,
+          422,
+          600,
+          587,
+          599,
+          597,
+          398,
+          592,
+          582,
+          585
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-fusil-de-lunch",
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-armure-capsule-de-gohan-namek"
+        ]
+      },
+      "boss": {
+        "budget": 5700,
+        "places_ennemies": 10,
+        "rangs": [
+          592,
+          589,
+          582,
+          382,
+          584,
+          591,
+          594,
+          590,
+          599,
+          597
+        ],
+        "armes_ennemies": [
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-katana-de-yajirobe",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-scouter-standard",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-fusil-d-assaut-ruban-rouge"
+        ]
+      }
+    },
+    {
+      "vague": 37,
+      "normal": {
+        "budget": 5550,
+        "places_ennemies": 10,
+        "rangs": [
+          595,
+          599,
+          407,
+          541,
+          600,
+          596,
+          597,
+          537,
+          552,
+          526
+        ],
+        "armes_ennemies": [
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-eventail-basho-sen",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-epee-de-shu",
+          "db-eq-pistolet-de-mai",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-cape-lestee-de-piccolo"
+        ]
+      },
+      "elite": {
+        "budget": 5700,
+        "places_ennemies": 10,
+        "rangs": [
+          583,
+          471,
+          554,
+          570,
+          597,
+          590,
+          599,
+          557,
+          579,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-katana-de-yajirobe",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-hache-du-roi-demon-taureau"
+        ]
+      },
+      "boss": {
+        "budget": 5850,
+        "places_ennemies": 10,
+        "rangs": [
+          583,
+          585,
+          588,
+          529,
+          590,
+          600,
+          597,
+          598,
+          589,
+          591
+        ],
+        "armes_ennemies": [
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-scouter-standard",
+          "db-eq-armure-de-combat-saiyan"
+        ]
+      }
+    },
+    {
+      "vague": 38,
+      "normal": {
+        "budget": 5700,
+        "places_ennemies": 10,
+        "rangs": [
+          521,
+          581,
+          586,
+          583,
+          584,
+          560,
+          530,
+          587,
+          588,
+          580
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-de-mai",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-fusil-de-lunch",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-fusil-de-lunch"
+        ]
+      },
+      "elite": {
+        "budget": 5850,
+        "places_ennemies": 10,
+        "rangs": [
+          588,
+          590,
+          585,
+          577,
+          581,
+          589,
+          586,
+          587,
+          583,
+          584
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-eventail-basho-sen",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-scouter-d-elite",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-fusil-de-lunch"
+        ]
+      },
+      "boss": {
+        "budget": 6000,
+        "places_ennemies": 10,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-cape-lestee-de-piccolo"
+        ]
+      }
+    },
+    {
+      "vague": 39,
+      "normal": {
+        "budget": 5850,
+        "places_ennemies": 10,
+        "rangs": [
+          585,
+          590,
+          584,
+          581,
+          589,
+          586,
+          588,
+          571,
+          593,
+          583
+        ],
+        "armes_ennemies": [
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-epee-de-shu",
+          "db-eq-epee-de-shu",
+          "db-eq-sabre-du-ninja-murasaki"
+        ]
+      },
+      "elite": {
+        "budget": 6000,
+        "places_ennemies": 10,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-epee-z",
+          "db-eq-pistolet-de-mai",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-dragon-radar",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-telecommande-des-cyborgs"
+        ]
+      },
+      "boss": {
+        "budget": 6150,
+        "places_ennemies": 11,
+        "rangs": [
+          563,
+          587,
+          580,
+          591,
+          560,
+          556,
+          589,
+          562,
+          543,
+          588,
+          431
+        ],
+        "armes_ennemies": [
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-haricot-senzu",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-epee-de-shu",
+          "db-eq-epee-de-shu",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-fusil-d-assaut-ruban-rouge"
+        ]
+      }
+    },
+    {
+      "vague": 40,
+      "normal": {
+        "budget": 6000,
+        "places_ennemies": 10,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-haricot-senzu"
+        ]
+      },
+      "elite": {
+        "budget": 6150,
+        "places_ennemies": 11,
+        "rangs": [
+          431,
+          551,
+          582,
+          537,
+          589,
+          587,
+          565,
+          570,
+          574,
+          576,
+          588
+        ],
+        "armes_ennemies": [
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-eventail-basho-sen"
+        ]
+      },
+      "boss": {
+        "budget": 6300,
+        "places_ennemies": 11,
+        "rangs": [
+          593,
+          555,
+          591,
+          516,
+          551,
+          597,
+          521,
+          590,
+          587,
+          600,
+          599
+        ],
+        "armes_ennemies": [
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-scouter-d-elite",
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-lance-roquettes-ruban-rouge"
+        ]
+      }
+    },
+    {
+      "vague": 41,
+      "normal": {
+        "budget": 6150,
+        "places_ennemies": 11,
+        "rangs": [
+          584,
+          586,
+          591,
+          592,
+          593,
+          289,
+          588,
+          589,
+          594,
+          554,
+          590
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-fusil-de-lunch",
+          "db-eq-epee-de-shu",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-capsule-hoi-poi"
+        ]
+      },
+      "elite": {
+        "budget": 6300,
+        "places_ennemies": 11,
+        "rangs": [
+          588,
+          515,
+          581,
+          565,
+          594,
+          578,
+          586,
+          585,
+          589,
+          582,
+          537
+        ],
+        "armes_ennemies": [
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-pistolet-de-mai",
+          "db-eq-epee-z",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-tenue-de-patrouille-galactique"
+        ]
+      },
+      "boss": {
+        "budget": 6450,
+        "places_ennemies": 11,
+        "rangs": [
+          582,
+          588,
+          589,
+          587,
+          586,
+          585,
+          594,
+          590,
+          584,
+          574,
+          591
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-dragon-radar",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-epee-z",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-ray-gun-de-jaco"
+        ]
+      }
+    },
+    {
+      "vague": 42,
+      "normal": {
+        "budget": 6300,
+        "places_ennemies": 11,
+        "rangs": [
+          582,
+          584,
+          587,
+          522,
+          576,
+          513,
+          581,
+          592,
+          586,
+          589,
+          588
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-katana-de-yajirobe",
+          "db-eq-fusil-d-assaut-ruban-rouge"
+        ]
+      },
+      "elite": {
+        "budget": 6450,
+        "places_ennemies": 11,
+        "rangs": [
+          592,
+          582,
+          587,
+          595,
+          596,
+          591,
+          600,
+          590,
+          564,
+          569,
+          584
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-scouter-d-elite",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-scouter-standard",
+          "db-eq-fusil-de-lunch",
+          "db-eq-haricot-senzu",
+          "db-eq-hache-du-roi-demon-taureau"
+        ]
+      },
+      "boss": {
+        "budget": 6600,
+        "places_ennemies": 11,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-fusil-d-assaut-ruban-rouge"
+        ]
+      }
+    },
+    {
+      "vague": 43,
+      "normal": {
+        "budget": 6450,
+        "places_ennemies": 11,
+        "rangs": [
+          597,
+          591,
+          533,
+          593,
+          590,
+          585,
+          589,
+          587,
+          599,
+          594,
+          592
+        ],
+        "armes_ennemies": [
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-pistolet-de-mai",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-scouter-d-elite",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-fusil-d-assaut-ruban-rouge"
+        ]
+      },
+      "elite": {
+        "budget": 6600,
+        "places_ennemies": 11,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-eventail-basho-sen",
+          "db-eq-katana-de-yajirobe",
+          "db-eq-katana-de-yajirobe",
+          "db-eq-fusil-de-lunch",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-machine-de-soins-namek"
+        ]
+      },
+      "boss": {
+        "budget": 6750,
+        "places_ennemies": 12,
+        "rangs": [
+          540,
+          592,
+          588,
+          587,
+          589,
+          594,
+          583,
+          586,
+          585,
+          332,
+          584,
+          590
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-z",
+          "db-eq-dragon-radar",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-casque-lame-de-chi-chi",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-dragon-radar",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-pot-de-scellement-mafuba"
+        ]
+      }
+    },
+    {
+      "vague": 44,
+      "normal": {
+        "budget": 6600,
+        "places_ennemies": 11,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-dragon-radar",
+          "db-eq-dragon-radar",
+          "db-eq-eventail-basho-sen"
+        ]
+      },
+      "elite": {
+        "budget": 6750,
+        "places_ennemies": 12,
+        "rangs": [
+          587,
+          592,
+          599,
+          590,
+          593,
+          589,
+          588,
+          596,
+          580,
+          250,
+          595,
+          591
+        ],
+        "armes_ennemies": [
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-epee-z",
+          "db-eq-epee-de-shu",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-capsule-hoi-poi"
+        ]
+      },
+      "boss": {
+        "budget": 6900,
+        "places_ennemies": 12,
+        "rangs": [
+          583,
+          585,
+          587,
+          555,
+          582,
+          579,
+          590,
+          568,
+          512,
+          586,
+          589,
+          584
+        ],
+        "armes_ennemies": [
+          "db-eq-haricot-senzu",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-pistolet-de-mai",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-pistolet-de-mai",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-pot-de-scellement-mafuba"
+        ]
+      }
+    },
+    {
+      "vague": 45,
+      "normal": {
+        "budget": 6750,
+        "places_ennemies": 12,
+        "rangs": [
+          594,
+          591,
+          357,
+          564,
+          576,
+          587,
+          590,
+          589,
+          551,
+          593,
+          570,
+          588
+        ],
+        "armes_ennemies": [
+          "db-eq-dragon-radar",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-fusil-de-lunch",
+          "db-eq-eventail-basho-sen",
+          "db-eq-tenue-de-patrouille-galactique"
+        ]
+      },
+      "elite": {
+        "budget": 6900,
+        "places_ennemies": 12,
+        "rangs": [
+          579,
+          592,
+          585,
+          591,
+          588,
+          584,
+          527,
+          593,
+          555,
+          586,
+          539,
+          581
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-epee-de-shu",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-haricot-senzu"
+        ]
+      },
+      "boss": {
+        "budget": 7050,
+        "places_ennemies": 12,
+        "rangs": [
+          590,
+          592,
+          596,
+          591,
+          582,
+          588,
+          578,
+          594,
+          589,
+          593,
+          600,
+          557
+        ],
+        "armes_ennemies": [
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-armure-de-freezer-force",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-armure-d-elite-ginyu"
+        ]
+      }
+    },
+    {
+      "vague": 46,
+      "normal": {
+        "budget": 6900,
+        "places_ennemies": 12,
+        "rangs": [
+          592,
+          598,
+          569,
+          576,
+          599,
+          600,
+          597,
+          589,
+          594,
+          590,
+          591,
+          405
+        ],
+        "armes_ennemies": [
+          "db-eq-eventail-basho-sen",
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-epee-z",
+          "db-eq-scouter-d-elite"
+        ]
+      },
+      "elite": {
+        "budget": 7050,
+        "places_ennemies": 12,
+        "rangs": [
+          588,
+          581,
+          589,
+          591,
+          590,
+          592,
+          584,
+          583,
+          594,
+          586,
+          585,
+          587
+        ],
+        "armes_ennemies": [
+          "db-eq-scouter-standard",
+          "db-eq-telecommande-des-cyborgs",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-armure-de-freezer-force"
+        ]
+      },
+      "boss": {
+        "budget": 7200,
+        "places_ennemies": 12,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-epee-de-shu",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-eventail-basho-sen"
+        ]
+      }
+    },
+    {
+      "vague": 47,
+      "normal": {
+        "budget": 7050,
+        "places_ennemies": 12,
+        "rangs": [
+          592,
+          581,
+          599,
+          598,
+          597,
+          590,
+          591,
+          586,
+          594,
+          585,
+          557,
+          580
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-de-shu",
+          "db-eq-epee-de-shu",
+          "db-eq-haricot-senzu",
+          "db-eq-scouter-standard",
+          "db-eq-epee-de-shu",
+          "db-eq-katana-de-yajirobe",
+          "db-eq-cape-lestee-de-piccolo",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-baton-magique-nyoi-bo"
+        ]
+      },
+      "elite": {
+        "budget": 7200,
+        "places_ennemies": 12,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-fusil-de-lunch",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-scouter-d-elite",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-scouter-d-elite",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-tenue-de-patrouille-galactique",
+          "db-eq-pistolet-de-mai"
+        ]
+      },
+      "boss": {
+        "budget": 7350,
+        "places_ennemies": 13,
+        "rangs": [
+          581,
+          591,
+          590,
+          585,
+          586,
+          589,
+          288,
+          588,
+          593,
+          587,
+          584,
+          596,
+          592
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-eventail-basho-sen",
+          "db-eq-tenue-lestee-de-goku",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-scouter-standard",
+          "db-eq-epee-de-tao-pai-pai",
+          "db-eq-cape-lestee-de-piccolo"
+        ]
+      }
+    },
+    {
+      "vague": 48,
+      "normal": {
+        "budget": 7200,
+        "places_ennemies": 12,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-armure-de-freezer-force",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-baton-magique-nyoi-bo",
+          "db-eq-epee-de-shu",
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-fusil-de-mai-du-futur"
+        ]
+      },
+      "elite": {
+        "budget": 7350,
+        "places_ennemies": 13,
+        "rangs": [
+          565,
+          599,
+          600,
+          539,
+          586,
+          592,
+          521,
+          491,
+          582,
+          569,
+          597,
+          591,
+          518
+        ],
+        "armes_ennemies": [
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-epee-de-trunks-du-futur",
+          "db-eq-armure-capsule-de-gohan-namek",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-dragon-radar",
+          "db-eq-dragon-radar",
+          "db-eq-fusil-de-mai-du-futur",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-mitraillette-de-lunch"
+        ]
+      },
+      "boss": {
+        "budget": 7500,
+        "places_ennemies": 13,
+        "rangs": [
+          512,
+          590,
+          591,
+          552,
+          577,
+          592,
+          548,
+          589,
+          593,
+          597,
+          588,
+          586,
+          585
+        ],
+        "armes_ennemies": [
+          "db-eq-epee-z",
+          "db-eq-scouter-standard",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-scouter-standard",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-sabre-du-ninja-murasaki"
+        ]
+      }
+    },
+    {
+      "vague": 49,
+      "normal": {
+        "budget": 7350,
+        "places_ennemies": 13,
+        "rangs": [
+          585,
+          578,
+          586,
+          581,
+          582,
+          558,
+          579,
+          593,
+          345,
+          596,
+          591,
+          584,
+          592
+        ],
+        "armes_ennemies": [
+          "db-eq-lance-roquettes-ruban-rouge",
+          "db-eq-epee-de-shu",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-epee-z",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-turban-leste-de-piccolo"
+        ]
+      },
+      "elite": {
+        "budget": 7500,
+        "places_ennemies": 13,
+        "rangs": [
+          586,
+          588,
+          558,
+          578,
+          589,
+          587,
+          463,
+          585,
+          594,
+          592,
+          596,
+          591,
+          593
+        ],
+        "armes_ennemies": [
+          "db-eq-pistolet-de-mai",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-haricot-senzu",
+          "db-eq-epee-z",
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-haricot-senzu",
+          "db-eq-epee-z",
+          "db-eq-pistolet-laser-de-garde",
+          "db-eq-ray-gun-de-jaco",
+          "db-eq-fusil-de-lunch"
+        ]
+      },
+      "boss": {
+        "budget": 7650,
+        "places_ennemies": 13,
+        "rangs": [
+          594,
+          587,
+          590,
+          596,
+          591,
+          584,
+          593,
+          586,
+          599,
+          565,
+          588,
+          592,
+          585
+        ],
+        "armes_ennemies": [
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-scouter-d-elite",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-machine-de-soins-namek",
+          "db-eq-epee-de-shu"
+        ]
+      }
+    },
+    {
+      "vague": 50,
+      "normal": {
+        "budget": 7500,
+        "places_ennemies": 13,
+        "rangs": [
+          569,
+          584,
+          590,
+          485,
+          583,
+          588,
+          585,
+          571,
+          592,
+          586,
+          589,
+          587,
+          591
+        ],
+        "armes_ennemies": [
+          "db-eq-turban-leste-de-piccolo",
+          "db-eq-fusil-d-assaut-ruban-rouge",
+          "db-eq-fusil-de-l-armee-de-freezer",
+          "db-eq-epee-de-shu",
+          "db-eq-haricot-senzu",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-etoiles-de-ninja-de-murasaki"
+        ]
+      },
+      "elite": {
+        "budget": 7650,
+        "places_ennemies": 13,
+        "rangs": [
+          592,
+          585,
+          586,
+          589,
+          587,
+          560,
+          588,
+          595,
+          591,
+          593,
+          596,
+          590,
+          598
+        ],
+        "armes_ennemies": [
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-scouter-d-elite",
+          "db-eq-epee-de-shu",
+          "db-eq-etoiles-de-ninja-de-murasaki",
+          "db-eq-sabre-du-ninja-murasaki",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-hache-du-roi-demon-taureau",
+          "db-eq-armure-de-combat-saiyan",
+          "db-eq-armure-d-elite-ginyu",
+          "db-eq-baton-magique-nyoi-bo"
+        ]
+      },
+      "boss": {
+        "budget": 7800,
+        "places_ennemies": 13,
+        "rangs": [
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "armes_ennemies": [
+          "db-eq-capsule-hoi-poi",
+          "db-eq-epee-d-entrainement-de-gohan",
+          "db-eq-sceau-papier-du-mafuba",
+          "db-eq-capsule-hoi-poi",
+          "db-eq-pot-de-scellement-mafuba",
+          "db-eq-carapace-d-entrainement-de-kame-sennin",
+          "db-eq-nuage-magique-kinto-un",
+          "db-eq-epee-de-shu",
+          "db-eq-mitraillette-de-lunch",
+          "db-eq-scouter-d-elite"
+        ]
+      }
+    }
+  ]
+}

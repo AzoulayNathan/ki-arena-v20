@@ -1,0 +1,58 @@
+/* KI ARENA: ROGUELIKE V6 — gameplay-only visual polish; do not alter card templates. */
+.ki-overline{font:950 11px/1.5 system-ui,sans-serif;letter-spacing:2px;color:#ffcf86}
+.rogue-dashboard{position:relative;overflow:hidden;border-radius:24px!important;background:linear-gradient(125deg,#0a2446,#234a76)!important;border:1px solid #7bb7e3!important;box-shadow:0 14px 34px #17395e34!important;color:#fff}
+.rogue-dashboard:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 88% -28%,#ffdc7b66,transparent 40%),repeating-linear-gradient(130deg,transparent 0 27px,#ffffff04 28px 29px)}
+.rogue-topline,.rogue-metrics,.rogue-path{position:relative;z-index:1}
+.rogue-metrics>div{background:#ffffff17;border:1px solid #d4e8ff38;border-radius:12px!important;padding:10px}
+.rogue-main{margin-top:22px!important}
+.ki-world{background:#091d3c;color:#fff;overflow:hidden;border-radius:24px;border:1px solid #467ca7;box-shadow:0 17px 48px #12365b3f;position:relative}
+.ki-world-head{display:flex;justify-content:space-between;gap:20px;padding:25px 28px 17px;position:relative;z-index:2;background:linear-gradient(125deg,#0a2549,#163e6b)}
+.ki-world-head h2{font-size:clamp(27px,4vw,43px);letter-spacing:.4px;color:#fff;margin:7px 0 3px!important}
+.ki-world-head p{font-size:12px;color:#cde4fa;line-height:1.5;max-width:62ch}
+.ki-world-stats{text-align:right;white-space:nowrap;display:flex;flex-direction:column;gap:7px;justify-content:center}
+.ki-world-stats b{color:#ffcf75;font-size:17px}.ki-world-stats small{font-size:10px;color:#a9d3ef}
+.ki-world-landscape{height:190px;position:relative;overflow:hidden;background:linear-gradient(90deg,#102c55ab,transparent 65%),url('../assets/rogue/wilderness.svg') center 48%/cover}
+.biome-desert .ki-world-landscape{background-image:linear-gradient(90deg,#492f41b0,transparent),url('../assets/rogue/desert.svg')}
+.biome-namek .ki-world-landscape{background-image:linear-gradient(90deg,#124452b0,transparent),url('../assets/rogue/namek.svg')}
+.biome-ruins .ki-world-landscape{background-image:linear-gradient(90deg,#1a2d51b0,transparent),url('../assets/rogue/ruins.svg')}
+.biome-sky .ki-world-landscape{background-image:linear-gradient(90deg,#294a77b0,transparent),url('../assets/rogue/sky.svg')}
+.biome-void .ki-world-landscape{background-image:linear-gradient(90deg,#302046b0,transparent),url('../assets/rogue/void.svg')}
+.ki-world-landscape:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b2449,transparent 55%)}
+.ki-world-landscape>span{position:absolute;left:30px;top:28px;color:#fff9;font-size:64px;text-shadow:0 0 45px #fff;animation:kiSway 5s ease-in-out infinite alternate}
+.ki-mapboard{position:relative;background:radial-gradient(ellipse at 52% 35%,#2a527c,#142e54 60%,#0c2444 100%);isolation:isolate;padding:0 6px}
+.ki-mapboard:before{content:"";position:absolute;inset:0;opacity:.22;pointer-events:none;background:radial-gradient(circle at 21% 10%,#7bdbff 0 2px,transparent 3px),radial-gradient(circle at 78% 35%,#ffeaac 0 2px,transparent 3px);background-size:78px 120px,110px 110px}
+.ki-map-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.ki-line{fill:none;stroke:#bde8ff65;stroke-width:3;stroke-dasharray:8 6;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.ki-line.past{stroke:#ffcd7e;stroke-width:4;stroke-dasharray:none}
+.ki-line.available{stroke:#b2f5e0;stroke-width:4;stroke-dasharray:9 7;animation:kiMarch 9s linear infinite}
+.ki-mapnode{position:absolute;z-index:2;transform:translate(-50%,-50%);width:clamp(100px,18%,172px);height:90px;border-radius:19px;padding:7px 5px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;background:linear-gradient(160deg,#416485,#203e65);border:1px solid #a9d7ff80;color:#e3f4ff;box-shadow:0 7px 0 #06142b77,0 12px 22px #00112677;text-align:center;transition:filter .17s,transform .18s,border-color .2s,box-shadow .2s}
+.ki-mapnode[disabled]{cursor:default}.ki-mapnode.muted{opacity:.77;filter:saturate(.72)}.ki-mapnode.cleared{border-color:#4fdcb7;opacity:.5}
+.ki-mapnode.reachable{background:linear-gradient(160deg,#ffca63,#f07b31 58%,#b24521);border:2px solid #fff1c5;color:#fff;box-shadow:0 7px 0 #742e20,0 15px 25px #0007,0 0 22px #ffad4170;cursor:pointer;animation:kiNodePulse 2.8s ease-in-out infinite alternate}
+.ki-mapnode.reachable:hover,.ki-mapnode.reachable:focus-visible{transform:translate(-50%,-55%) scale(1.075);box-shadow:0 8px 0 #71351f,0 15px 35px #faac729a;outline:3px solid #fff}
+.ki-mapnode.ki-type-rest.reachable{background:linear-gradient(160deg,#35cda9,#047f91);box-shadow:0 5px 0 #034b67,0 0 18px #48ebcc66}
+.ki-mapnode.ki-type-elite.reachable,.ki-mapnode.is-boss.reachable{background:linear-gradient(160deg,#ff6989,#9b1d56);box-shadow:0 5px 0 #5c143a,0 0 20px #ff6d9677}
+.ki-mapnode.ki-type-event.reachable,.ki-mapnode.ki-type-quest.reachable{background:linear-gradient(160deg,#ae8bff,#5f46b2)}
+.ki-mapnode-icon{font-size:24px;line-height:1.1;filter:drop-shadow(0 2px 3px #0016)}.ki-mapnode strong{font:900 13px/1.1 system-ui,sans-serif}.ki-mapnode small{font:700 9px/1.2 system-ui,sans-serif;opacity:.86}
+.ki-map-start{position:absolute;z-index:3;transform:translate(-50%,-50%);padding:9px 14px;border-radius:999px;font-size:10px;font-weight:950;letter-spacing:1px;color:#0f3451;background:#d0ffef;border:2px solid #fff;box-shadow:0 0 23px #50ffcb77;white-space:nowrap}
+.ki-map-legend{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;background:#10294c;padding:15px;color:#cae6fb;font-size:11px;font-weight:800}
+.ki-encounter,.ki-event-choice{border-radius:25px;padding:clamp(20px,3vw,38px);background:radial-gradient(circle at 95% 0%,#375a90 0,transparent 38%),linear-gradient(130deg,#0c2345,#183d68);border:1px solid #6d9ec2;box-shadow:0 16px 39px #13345655;color:#fff;animation:kiReveal .32s ease-out}
+.ki-encounter h2,.ki-event-choice h2{color:#fff;font-size:clamp(31px,5vw,57px);margin:8px 0!important}.ki-encounter p,.ki-event-choice p{color:#cfddf2;max-width:58ch;font-size:14px;line-height:1.65}
+.ki-preview-bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:13px;margin:19px 0 15px;background:#ffffff12;padding:13px;border-radius:12px;font-size:12px;color:#c4dcf4}.ki-preview-bar b{color:#ffe6a3}
+.ki-roster-preview{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:20px 0}.ki-roster-preview>div{padding:16px 10px;border:1px solid #ffffff60;background:linear-gradient(140deg,#1a4f79,#0e2c50);border-radius:13px;display:flex;flex-direction:column;gap:6px;min-height:98px;justify-content:end}.ki-roster-preview b{font:850 13px/1.15 system-ui;color:#fff}.ki-roster-preview small{font-size:10px;color:#c4def0}
+.ki-boss-intel{padding:13px 16px;border:1px solid #eeb869;background:#ffcf6320;border-radius:12px;color:#ffdc9f;font-size:12px;margin:12px 0}
+.ki-preview-actions{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 0}.ki-preview-actions .btn{padding:15px 18px;font-weight:950}
+.ki-fineprint{font-size:11px!important;color:#96b4cf!important;margin-top:12px}
+.ki-event-cover{display:flex;gap:22px;align-items:center;margin:10px 0 20px}.ki-event-symbol{flex:none;display:grid;place-items:center;width:99px;height:99px;border-radius:26px;border:1px solid #ffe9b4;background:linear-gradient(135deg,#ffcf74,#e87838);font-size:57px;color:#fff;text-shadow:0 4px 9px #92420d;box-shadow:0 9px 29px #ffae465e;animation:kiSway 4s ease-in-out infinite alternate}
+.ki-event-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.ki-event-button{appearance:none;min-height:131px;background:linear-gradient(150deg,#1c4777,#143357);border:1px solid #7eb2db;border-radius:18px;color:white;text-align:left;padding:18px;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;transition:transform .18s,background .2s}.ki-event-button strong{font-size:16px}.ki-event-button small{font-size:12px;color:#bcdaf3;line-height:1.4}.ki-event-button:hover:not(:disabled),.ki-event-button:focus-visible{transform:translateY(-4px);background:#2e628b;outline:2px solid #ffdb88}.ki-event-button:disabled{opacity:.35;cursor:not-allowed}
+.ki-reward{background:linear-gradient(130deg,#0d2449,#2d3e68)!important;border:1px solid #d5a962!important;color:#fff!important;box-shadow:0 16px 38px #11315749}.ki-reward-card{border:1px solid #ffdf9c!important;background:linear-gradient(145deg,#203960,#132545)!important;box-shadow:0 4px 0 #07182e}.ki-reward-card:focus-visible{outline:3px solid #fff}.ki-reward-card:hover{box-shadow:0 11px 25px #fcbd4c66}.ki-reward-header h2{color:white}.ki-reward-header p{color:#dbe8f5}
+.rogue-main>.event-feature,.rogue-main>.reward-compact,.rogue-main>.section-inline+.inv-grid{border-radius:22px;border:1px solid #c7dbed;padding:25px;background:linear-gradient(135deg,#fff,#e9f7ff);box-shadow:0 12px 28px #164b7830}
+.rogue-main .event-feature>span{background:#fcdb83;color:#8f391a;border:1px solid #fff1c8;border-radius:18px;padding:8px;box-shadow:0 4px 16px #ecaf5899}
+.rogue-main button:not(.ki-mapnode):not(.ki-event-button):focus-visible{outline:3px solid #ffb250;outline-offset:3px}
+.rogue-main .btn.primary{box-shadow:0 4px 0 #bc4928,0 7px 22px #e9785173!important}
+.v5-team-drawer{box-shadow:0 5px 15px #27568317}.inventory-panel{box-shadow:0 5px 15px #27568319}
+.rogue-battle .fight-field{background-image:linear-gradient(0deg,#0a2146dd,transparent 60%),url('../assets/theme/battle-realm.webp')!important;background-size:cover!important;background-position:center!important}
+.rogue-battle .fight-result{animation:kiVictory .5s ease-out;box-shadow:0 5px 0 #d78938,0 0 25px #ffbd6d!important}
+@keyframes kiMarch{to{stroke-dashoffset:-150}}@keyframes kiSway{to{transform:translateY(-11px) rotate(6deg)}}@keyframes kiReveal{from{opacity:0;transform:translateY(11px)}to{opacity:1;transform:none}}@keyframes kiNodePulse{to{filter:brightness(1.10)}}@keyframes kiVictory{from{scale:.92;opacity:.3}to{scale:1;opacity:1}}
+@media(max-width:720px){.ki-world-head{padding:20px;display:block}.ki-world-stats{flex-direction:row;text-align:left;justify-content:space-between;margin-top:10px}.ki-world-landscape{height:115px}.ki-mapnode{width:28.5%;max-width:122px;min-height:81px;height:81px;padding:6px 3px;border-radius:15px}.ki-mapnode strong{font-size:11px}.ki-mapnode small{font-size:8px}.ki-mapnode-icon{font-size:20px}.ki-map-legend{gap:9px;font-size:9px}.ki-roster-preview{grid-template-columns:repeat(3,minmax(0,1fr))}.ki-event-options{grid-template-columns:1fr}.ki-event-button{min-height:93px}.ki-event-symbol{width:70px;height:70px;font-size:42px}.ki-event-cover{gap:13px}.ki-encounter,.ki-event-choice{padding:18px}.ki-world-head h2{font-size:29px}}
+@media(max-width:400px){.ki-mapnode{width:29.5%;min-height:72px;height:72px}.ki-mapnode small{font-size:7px}.ki-mapnode strong{font-size:10px}.ki-world-head p{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.ki-line.available,.ki-mapnode.reachable,.ki-world-landscape>span,.ki-event-symbol,.ki-encounter,.ki-event-choice,.rogue-battle .fight-result{animation:none!important}}

@@ -1,0 +1,38 @@
+[
+  [
+    "arena-valley",
+    "Use case: stylized-concept. Production game background, NOT a mockup. Wide 16:9 landscape at high resolution. Bright polished cel-shaded anime adventure battle arena inspired by Dragon Ball environments: sunlit sandstone pillars, sweeping green grass plateau, distant blue mountain mesas, turquoise water in the far distance, rounded clouds. Premium Japanese console game hand-painted 2D background, fine confident linework, clear large shapes, luminous color, cinematic depth, clean rather than noisy. Composition: central 65 percent is calm open ground with subdued contrast for two rows of fighter cards to be overlaid by code. Interesting rock silhouettes and trees primarily along left and right margins. Low horizon, blue sky upper quarter. No characters, no cards, no interfaces, no routes, no text, no symbols, no logos. Must work as an actual battle background."
+  ],
+  [
+    "world-map",
+    "Use case: stylized-concept. Production game map background, NOT a UI mockup. PORTRAIT 2:3 tall high-resolution illustrated bird's eye adventure landscape. A richly colored cel-shaded anime archipelago inspired by Dragon Ball adventure environments. Bottom: lush green meadow islands and small capsule-like domed structures; middle: sandstone canyons, turquoise rivers, mountain passes and a small martial arts courtyard; upper: cloud sea, floating rocky islands and distant dramatic summit arena. Strong cohesive clean illustrated console game art, precise crisp shapes, no noisy photorealism. A broad calm winding central region left free so actual node graph and pathways will be overlaid in code. Main landmarks near the side edges, continuous environment not segmented panels, depth but readable top-down camera. NO drawn paths, NO drawn nodes, NO characters, NO UI, NO lettering, NO card shapes, no logos. This is an interactive game's art-only map canvas."
+  ],
+  [
+    "arena-sky",
+    "Use case: stylized-concept. Production game battle background, NOT a UI mockup. Wide 16:9 high-resolution. Premium clean cel-shaded anime sacred sky arena above an immense cloud sea, inspired by Dragon Ball celestial martial arts locations: enormous ivory tiled circular platform with terracotta-red edge details, distant white domed lookout architecture on far right, a few jade palms, soft distant mountains under clouds, crisp cerulean sky and warm golden afternoon light. Keep center 65 percent quiet and uncluttered for cards overlaid later by code, scenery mostly at margins. Dynamic cinematic perspective, confident hand-drawn lines, vivid elegant palette. No characters, no cards, no words, no symbols, no UI or screenshots."
+  ],
+  [
+    "arena-desert",
+    "Use case: stylized-concept. Actual production 2D game background, wide 16:9 high resolution. Premium polished cel-shaded anime adventure, crisp confident outlines and painterly atmosphere, bright elegant color, console game art. Keep the central 65% calm and open for two rows of fighter cards to be overlaid later. Interesting landmarks at side edges. NO characters, no text, no cards, no UI, no symbols, no screenshots. Sunlit orange sandstone desert canyon, rock needles and layered mesas, ochre dust, blue shadows, a winding quiet sandy arena floor, turquoise distant sky, sparse round thorn trees at margins. Strong Dragon Ball adventure spirit."
+  ],
+  [
+    "arena-alien",
+    "Use case: stylized-concept. Actual production 2D game background, wide 16:9 high resolution. Premium polished cel-shaded anime adventure, crisp confident outlines and painterly atmosphere, bright elegant color, console game art. Keep the central 65% calm and open for two rows of fighter cards to be overlaid later. Interesting landmarks at side edges. NO characters, no text, no cards, no UI, no symbols, no screenshots. Beautiful alien green planet inspired by Namek: emerald sky, turquoise lakes, rounded blue-green grass plateaus, tall slender trees with spherical foliage, three distant pale moons, unusual rock islands, calm broad clearing in the middle. Luminous and readable, not dark sci-fi."
+  ],
+  [
+    "arena-ruins",
+    "Use case: stylized-concept. Actual production 2D game background, wide 16:9 high resolution. Premium polished cel-shaded anime adventure, crisp confident outlines and painterly atmosphere, bright elegant color, console game art. Keep the central 65% calm and open for two rows of fighter cards to be overlaid later. Interesting landmarks at side edges. NO characters, no text, no cards, no UI, no symbols, no screenshots. Ancient martial arts temple ruins at warm dusk, broken ivory stone columns at margins, a small red tiled gate on far left, ivy and soft grass, layered mountains, golden shafts of light through blue mist. Wide quiet stone courtyard in center, mystical but clean vibrant adventure, not generic medieval fantasy."
+  ],
+  [
+    "arena-chamber",
+    "Use case: stylized-concept. Actual production battle background, not interface. Wide 16:9 high-resolution polished cel shaded anime adventure. Vast white hyperbolic training chamber inspired by Dragon Ball: immense subtly tiled white floor disappears into pearly pale sky, curved ivory and warm gold temple at far left margin, two hourglass structures at the far right margin, soft amber distant horizon, a few clean architectural silhouettes. Elegant luminous scene with strong perspective and contrast reserved for margins, center calm enough for card game overlay. No characters, no text, no cards, no UI, no logos."
+  ],
+  [
+    "impact-atlas",
+    "Use case: stylized-concept. Production 2D animation sprite sheet on GENUINELY TRANSPARENT background. Exactly 8 equal square cells arranged 4 columns by 2 rows, no gutters or gridlines, 1536 wide by 768 tall if possible. In each cell centered at exactly same scale: one sequential frame of the SAME stylized anime energy impact explosion, blue-cyan electrical ring with white core and small orange sparks, sharp hand-drawn manga shapes, clean transparent outside edges. Reading order left to right then next row: frame1 tiny white spark, frame2 sharp cyan star, frame3 expanding white-cyan burst, frame4 peak explosion ring, frame5 ring opens, frame6 smaller scattered sparks, frame7 few fading blue streaks, frame8 almost dissipated. All effects fit within their cells without clipping. No character, no text, no numbers, no labels, no checkerboard, no UI, no backdrop. This will be animated by code by stepping crop rectangles."
+  ],
+  [
+    "objects-atlas",
+    "Use case: stylized-concept. Production game equipment illustration atlas, GENUINELY TRANSPARENT background, 4 columns x2 rows exactly eight equally sized square cells. Exactly one centered object per cell, each isolated and fits within own cell with margins, no shadows crossing other cells. Polished clean hand-drawn cel-shaded anime inventory art, confident dark outlines and warm highlights. Row1 from left: Dragon Ball red Power Pole staff diagonal; Trunks straight sword with brown scabbard diagonal; white Saiyan chest armor with gold abdominal panels and blue straps; green lens scouter with white ear housing. Row2 left: small cloth pouch with green Senzu beans; round green Dragon Radar handheld device with gold rim and small button; simple black ninja kunai with circular pommel; straw hat with red ribbon. No characters, no words or labels, no logo, no gridlines, no checkerboard, no background, no decorative frames. Eight objects only."
+  ]
+]

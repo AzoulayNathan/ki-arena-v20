@@ -1,0 +1,3 @@
+const clean=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+/** Original category pictograms, explicitly not an exact canonical object illustration. */
+export function equipmentIcon(g){const n=clean(g.name),key=g.category==='armure'?'armor':g.category==='consommable'?'heal':/shuriken|etoile|cartes/.test(n)?'star':/fusil.*assaut|mitraill/.test(n)?'assault':/fusil|carabine/.test(n)?'rifle':/laser|ray/.test(n)?'blaster':/pistolet/.test(n)?'gun':/epee|sabre|lame|katana|yoru|kunai|couteau/.test(n)?'blade':/baton|canne|nunchaku|tonfa/.test(n)?'staff':/yo.yo|bombe|grenade/.test(n)?'orb':g.category==='outil'?'tool':'weapon';return 'assets/v22/equipment/'+key+'.svg';}

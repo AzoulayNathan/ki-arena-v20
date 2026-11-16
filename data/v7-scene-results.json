@@ -1,0 +1,86 @@
+[
+  {
+    "viewport": 1360,
+    "scene": "accueil",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 1360,
+    "scene": "butin",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 1360,
+    "scene": "marchand",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 1360,
+    "scene": "repos",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 1360,
+    "scene": "tresor",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 1360,
+    "scene": "boss",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 1360,
+    "scene": "inventaire",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 390,
+    "scene": "accueil",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 390,
+    "scene": "butin",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 390,
+    "scene": "marchand",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 390,
+    "scene": "repos",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 390,
+    "scene": "tresor",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 390,
+    "scene": "boss",
+    "overflow_px": 0,
+    "js_errors": 0
+  },
+  {
+    "viewport": 390,
+    "scene": "inventaire",
+    "overflow_px": 0,
+    "js_errors": 0
+  }
+]

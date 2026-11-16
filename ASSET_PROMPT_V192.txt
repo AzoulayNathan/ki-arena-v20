@@ -1,0 +1,1 @@
+Built-in image generation. One landscape sprite sheet with four equal vertical panels: premium front-facing foil booster packets. Solar orange/gold, forest emerald crystal, vermilion wind scroll/moon, ocean cyan compass/waves. No characters, no logos, no text. Consistent scale, crimped foil, detailed adventure illustration, dark teal studio backdrop. Optimized WebP for local use.

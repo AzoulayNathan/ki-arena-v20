@@ -1,0 +1,11 @@
+univers;carte_source;carte_suivante;etat;raison
+DB;goku-db-enfant-debut-d-aventure;goku-db-adolescent-confrontation-roi-piccolo;VALIDE;Progression d'âge et de puissance cohérente sous réserve des rangs du CSV
+DB;goku-db-adolescent-confrontation-roi-piccolo;goku-dbz-saga-saiyans;VALIDE;Âge et saga
+DB;goku-dbz-saga-saiyans;goku-dbz-super-saiyan-namek;VALIDE;Première transformation Super Saiyan
+DB;goku-dbz-super-saiyan-namek;goku-dbz-super-saiyan-2-tournoi;VALIDE;Stade plus puissant
+DB;vegeta-dbz-saga-saiyans;vegeta-dbz-super-saiyan-androids;VALIDE;Évolution Saiyan à Super Saiyan
+DB;vegeta-dbz-super-saiyan-androids;vegeta-dbz-super-saiyan-2-buu;VALIDE;Progression SS2
+DB;vegeta-dbz-super-saiyan-2-buu;vegeta-dbs-super-saiyan-blue;VALIDE;Évolution vers Blue
+HXH;hxh-gon-freecss-examen-hunter;hxh-gon-freecss-jajanken;VALIDE;Gon maîtrise la technique Jajanken
+HXH;hxh-killua-zoldyck-assassin;hxh-killua-zoldyck-godspeed-kanmuru;VALIDE;Nouvelle technique Kanmuru
+HXH;hxh-gon-freecss-jajanken;hxh-gon-freecss-transformation-adulte;BLOQUE;Transformation adulte exceptionnelle et sacrificielle ; pas une évolution normale

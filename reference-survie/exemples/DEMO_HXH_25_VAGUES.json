@@ -1,0 +1,1355 @@
+{
+  "univers": "HXH",
+  "catalogue": {
+    "personnages": 532,
+    "equipements_disponibles": 38
+  },
+  "draft": [
+    {
+      "phase": "hero",
+      "index": 1,
+      "visible": [
+        "hxh-pike-base",
+        "hxh-ladiolus-base",
+        "hxh-gihoruto-base"
+      ],
+      "mystery": "???",
+      "picked": "hxh-pike-base",
+      "choice": 0
+    },
+    {
+      "phase": "hero",
+      "index": 2,
+      "visible": [
+        "hxh-tyson-hui-guo-rou-base",
+        "hxh-ryubihhi-base",
+        "hxh-maor-base"
+      ],
+      "mystery": "???",
+      "picked": "hxh-tyson-hui-guo-rou-base",
+      "choice": 0
+    },
+    {
+      "phase": "hero",
+      "index": 3,
+      "visible": [
+        "hxh-doster-base",
+        "hxh-bharate-base",
+        "hxh-nipaper-base"
+      ],
+      "mystery": "???",
+      "picked": "hxh-nipaper-base",
+      "choice": 2
+    },
+    {
+      "phase": "hero",
+      "index": 4,
+      "visible": [
+        "hxh-vict-base",
+        "hxh-mantis-base",
+        "hxh-leorio-paradinight-base"
+      ],
+      "mystery": "???",
+      "picked": "hxh-mantis-base",
+      "choice": 1
+    },
+    {
+      "phase": "hero",
+      "index": 5,
+      "visible": [
+        "hxh-yuhirai-base",
+        "hxh-gyro-base",
+        "hxh-pell-base"
+      ],
+      "mystery": "???",
+      "picked": "hxh-gyro-base",
+      "choice": 1
+    },
+    {
+      "phase": "weapon",
+      "index": 1,
+      "visible": [
+        "hxh-eq-fusil-des-mafieux-du-black-whale",
+        "hxh-eq-pieces-de-gotoh",
+        "hxh-eq-pistolet-de-pakunoda"
+      ],
+      "mystery": "???",
+      "picked": "hxh-eq-pieces-de-gotoh",
+      "choice": 1
+    },
+    {
+      "phase": "weapon",
+      "index": 2,
+      "visible": [
+        "hxh-eq-ciseaux-de-binolt",
+        "hxh-eq-fusil-des-mafieux-du-black-whale",
+        "hxh-eq-cartes-de-hisoka"
+      ],
+      "mystery": "???",
+      "picked": "hxh-eq-ciseaux-de-binolt",
+      "choice": 0
+    },
+    {
+      "phase": "weapon",
+      "index": 3,
+      "visible": [
+        "hxh-eq-toupies-de-gido",
+        "hxh-eq-cartes-de-hisoka",
+        "hxh-eq-lames-de-ben"
+      ],
+      "mystery": "???",
+      "picked": "hxh-eq-toupies-de-gido",
+      "choice": 0
+    }
+  ],
+  "deck_initial": {
+    "personnages": 5,
+    "equipements": 3,
+    "total": 8
+  },
+  "premier_combat": {
+    "win": true,
+    "rounds": 5,
+    "alive": 5,
+    "ko": 0,
+    "played": 3,
+    "equipped": 3,
+    "enemy_equipped": 0,
+    "level_ups": [],
+    "transformations": [],
+    "draw_remaining": 1
+  },
+  "recompenses_exemple": [
+    "soin",
+    "arme",
+    "recrue"
+  ],
+  "rencontres_prevision": [
+    {
+      "vague": 1,
+      "normal": {
+        "budget": 133,
+        "places_ennemies": 1,
+        "rangs": [
+          133
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 266,
+        "places_ennemies": 4,
+        "rangs": [
+          252,
+          9,
+          3,
+          2
+        ],
+        "armes_ennemies": [
+          "hxh-eq-doubles-sabres-de-bois"
+        ]
+      },
+      "boss": {
+        "budget": 399,
+        "places_ennemies": 1,
+        "rangs": [
+          399
+        ],
+        "armes_ennemies": [
+          "hxh-eq-toupies-de-gido"
+        ]
+      }
+    },
+    {
+      "vague": 2,
+      "normal": {
+        "budget": 266,
+        "places_ennemies": 1,
+        "rangs": [
+          266
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 399,
+        "places_ennemies": 2,
+        "rangs": [
+          385,
+          14
+        ],
+        "armes_ennemies": [
+          "hxh-eq-canne-a-peche-de-gon"
+        ]
+      },
+      "boss": {
+        "budget": 532,
+        "places_ennemies": 5,
+        "rangs": [
+          176,
+          281,
+          58,
+          8,
+          9
+        ],
+        "armes_ennemies": [
+          "hxh-eq-fusil-de-yorknew"
+        ]
+      }
+    },
+    {
+      "vague": 3,
+      "normal": {
+        "budget": 399,
+        "places_ennemies": 3,
+        "rangs": [
+          4,
+          125,
+          270
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 532,
+        "places_ennemies": 5,
+        "rangs": [
+          163,
+          136,
+          62,
+          97,
+          74
+        ],
+        "armes_ennemies": [
+          "hxh-eq-couteau-du-candidat-hunter"
+        ]
+      },
+      "boss": {
+        "budget": 665,
+        "places_ennemies": 2,
+        "rangs": [
+          152,
+          513
+        ],
+        "armes_ennemies": [
+          "hxh-eq-fusil-de-la-brigade-de-surveillance"
+        ]
+      }
+    },
+    {
+      "vague": 4,
+      "normal": {
+        "budget": 532,
+        "places_ennemies": 3,
+        "rangs": [
+          280,
+          38,
+          214
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 665,
+        "places_ennemies": 5,
+        "rangs": [
+          465,
+          171,
+          6,
+          3,
+          20
+        ],
+        "armes_ennemies": [
+          "hxh-eq-fusil-de-yorknew"
+        ]
+      },
+      "boss": {
+        "budget": 798,
+        "places_ennemies": 2,
+        "rangs": [
+          280,
+          518
+        ],
+        "armes_ennemies": [
+          "hxh-eq-sort-return"
+        ]
+      }
+    },
+    {
+      "vague": 5,
+      "normal": {
+        "budget": 665,
+        "places_ennemies": 3,
+        "rangs": [
+          518,
+          129,
+          18
+        ],
+        "armes_ennemies": []
+      },
+      "elite": {
+        "budget": 798,
+        "places_ennemies": 5,
+        "rangs": [
+          51,
+          61,
+          499,
+          101,
+          86
+        ],
+        "armes_ennemies": [
+          "hxh-eq-sabre-du-garde-royal"
+        ]
+      },
+      "boss": {
+        "budget": 931,
+        "places_ennemies": 5,
+        "rangs": [
+          376,
+          257,
+          256,
+          23,
+          19
+        ],
+        "armes_ennemies": [
+          "hxh-eq-sort-trace"
+        ]
+      }
+    },
+    {
+      "vague": 6,
+      "normal": {
+        "budget": 798,
+        "places_ennemies": 3,
+        "rangs": [
+          355,
+          70,
+          373
+        ],
+        "armes_ennemies": [
+          "hxh-eq-pistolet-des-gardes-kakin"
+        ]
+      },
+      "elite": {
+        "budget": 931,
+        "places_ennemies": 2,
+        "rangs": [
+          477,
+          454
+        ],
+        "armes_ennemies": [
+          "hxh-eq-doubles-sabres-de-bois",
+          "hxh-eq-lance-de-goz"
+        ]
+      },
+      "boss": {
+        "budget": 1064,
+        "places_ennemies": 3,
+        "rangs": [
+          527,
+          450,
+          87
+        ],
+        "armes_ennemies": [
+          "hxh-eq-yo-yos-de-killua",
+          "hxh-eq-fusil-de-la-brigade-de-surveillance"
+        ]
+      }
+    },
+    {
+      "vague": 7,
+      "normal": {
+        "budget": 931,
+        "places_ennemies": 2,
+        "rangs": [
+          482,
+          449
+        ],
+        "armes_ennemies": [
+          "hxh-eq-sabre-du-garde-royal"
+        ]
+      },
+      "elite": {
+        "budget": 1064,
+        "places_ennemies": 5,
+        "rangs": [
+          469,
+          347,
+          98,
+          22,
+          128
+        ],
+        "armes_ennemies": [
+          "hxh-eq-sabre-du-garde-royal",
+          "hxh-eq-toupies-de-gido"
+        ]
+      },
+      "boss": {
+        "budget": 1197,
+        "places_ennemies": 4,
+        "rangs": [
+          276,
+          428,
+          286,
+          207
+        ],
+        "armes_ennemies": [
+          "hxh-eq-aiguilles-de-machi",
+          "hxh-eq-doubles-sabres-de-bois"
+        ]
+      }
+    },
+    {
+      "vague": 8,
+      "normal": {
+        "budget": 1064,
+        "places_ennemies": 5,
+        "rangs": [
+          472,
+          479,
+          51,
+          38,
+          24
+        ],
+        "armes_ennemies": [
+          "hxh-eq-lance-de-goz"
+        ]
+      },
+      "elite": {
+        "budget": 1197,
+        "places_ennemies": 4,
+        "rangs": [
+          278,
+          171,
+          461,
+          287
+        ],
+        "armes_ennemies": [
+          "hxh-eq-sabre-du-garde-royal",
+          "hxh-eq-lance-de-goz"
+        ]
+      },
+      "boss": {
+        "budget": 1330,
+        "places_ennemies": 4,
+        "rangs": [
+          416,
+          166,
+          518,
+          230
+        ],
+        "armes_ennemies": [
+          "hxh-eq-canne-a-peche-de-gon",
+          "hxh-eq-pieces-de-gotoh"
+        ]
+      }
+    },
+    {
+      "vague": 9,
+      "normal": {
+        "budget": 1197,
+        "places_ennemies": 4,
+        "rangs": [
+          37,
+          99,
+          530,
+          531
+        ],
+        "armes_ennemies": [
+          "hxh-eq-pistolet-des-gardes-kakin"
+        ]
+      },
+      "elite": {
+        "budget": 1330,
+        "places_ennemies": 5,
+        "rangs": [
+          423,
+          81,
+          135,
+          471,
+          220
+        ],
+        "armes_ennemies": [
+          "hxh-eq-aiguilles-de-machi",
+          "hxh-eq-fusil-des-mafieux-du-black-whale"
+        ]
+      },
+      "boss": {
+        "budget": 1463,
+        "places_ennemies": 4,
+        "rangs": [
+          321,
+          523,
+          415,
+          204
+        ],
+        "armes_ennemies": [
+          "hxh-eq-sabre-du-garde-royal",
+          "hxh-eq-fusil-de-la-brigade-de-surveillance"
+        ]
+      }
+    },
+    {
+      "vague": 10,
+      "normal": {
+        "budget": 1330,
+        "places_ennemies": 5,
+        "rangs": [
+          317,
+          527,
+          459,
+          10,
+          17
+        ],
+        "armes_ennemies": [
+          "hxh-eq-canne-a-peche-de-gon"
+        ]
+      },
+      "elite": {
+        "budget": 1463,
+        "places_ennemies": 5,
+        "rangs": [
+          322,
+          395,
+          115,
+          495,
+          136
+        ],
+        "armes_ennemies": [
+          "hxh-eq-pistolet-des-gardes-kakin",
+          "hxh-eq-grenade-de-garde"
+        ]
+      },
+      "boss": {
+        "budget": 1596,
+        "places_ennemies": 5,
+        "rangs": [
+          423,
+          70,
+          384,
+          354,
+          365
+        ],
+        "armes_ennemies": [
+          "hxh-eq-sabre-du-garde-royal",
+          "hxh-eq-eventail-de-kalluto"
+        ]
+      }
+    },
+    {
+      "vague": 11,
+      "normal": {
+        "budget": 1463,
+        "places_ennemies": 5,
+        "rangs": [
+          197,
+          149,
+          252,
+          507,
+          358
+        ],
+        "armes_ennemies": [
+          "hxh-eq-livre-du-joueur-greed-island",
+          "hxh-eq-canne-a-peche-de-gon"
+        ]
+      },
+      "elite": {
+        "budget": 1596,
+        "places_ennemies": 5,
+        "rangs": [
+          502,
+          210,
+          89,
+          348,
+          447
+        ],
+        "armes_ennemies": [
+          "hxh-eq-flute-de-melody",
+          "hxh-eq-grande-protection-d-aura",
+          "hxh-eq-ciseaux-de-binolt"
+        ]
+      },
+      "boss": {
+        "budget": 1729,
+        "places_ennemies": 5,
+        "rangs": [
+          203,
+          395,
+          282,
+          495,
+          354
+        ],
+        "armes_ennemies": [
+          "hxh-eq-toupies-de-gido",
+          "hxh-eq-aiguilles-de-machi",
+          "hxh-eq-fusil-des-mafieux-du-black-whale"
+        ]
+      }
+    },
+    {
+      "vague": 12,
+      "normal": {
+        "budget": 1596,
+        "places_ennemies": 5,
+        "rangs": [
+          311,
+          200,
+          130,
+          519,
+          436
+        ],
+        "armes_ennemies": [
+          "hxh-eq-pieces-de-gotoh",
+          "hxh-eq-fusil-de-yorknew"
+        ]
+      },
+      "elite": {
+        "budget": 1729,
+        "places_ennemies": 5,
+        "rangs": [
+          447,
+          273,
+          256,
+          434,
+          319
+        ],
+        "armes_ennemies": [
+          "hxh-eq-flute-de-melody",
+          "hxh-eq-flute-de-melody",
+          "hxh-eq-tachi-de-kite"
+        ]
+      },
+      "boss": {
+        "budget": 1862,
+        "places_ennemies": 5,
+        "rangs": [
+          253,
+          236,
+          461,
+          454,
+          458
+        ],
+        "armes_ennemies": [
+          "hxh-eq-toupies-de-gido",
+          "hxh-eq-yo-yos-de-killua",
+          "hxh-eq-grenade-de-garde"
+        ]
+      }
+    },
+    {
+      "vague": 13,
+      "normal": {
+        "budget": 1729,
+        "places_ennemies": 5,
+        "rangs": [
+          125,
+          352,
+          503,
+          231,
+          518
+        ],
+        "armes_ennemies": [
+          "hxh-eq-livre-du-joueur-greed-island",
+          "hxh-eq-pistolet-des-gardes-kakin"
+        ]
+      },
+      "elite": {
+        "budget": 1862,
+        "places_ennemies": 5,
+        "rangs": [
+          343,
+          249,
+          274,
+          471,
+          525
+        ],
+        "armes_ennemies": [
+          "hxh-eq-grand-calumet-de-morel",
+          "hxh-eq-grand-calumet-de-morel",
+          "hxh-eq-telephone-black-voice"
+        ]
+      },
+      "boss": {
+        "budget": 1995,
+        "places_ennemies": 5,
+        "rangs": [
+          179,
+          380,
+          470,
+          476,
+          490
+        ],
+        "armes_ennemies": [
+          "hxh-eq-aiguilles-d-illumi",
+          "hxh-eq-sabre-de-nobunaga",
+          "hxh-eq-ciseaux-de-binolt"
+        ]
+      }
+    },
+    {
+      "vague": 14,
+      "normal": {
+        "budget": 1862,
+        "places_ennemies": 5,
+        "rangs": [
+          46,
+          322,
+          480,
+          510,
+          504
+        ],
+        "armes_ennemies": [
+          "hxh-eq-fusil-de-yorknew",
+          "hxh-eq-fusil-de-la-brigade-de-surveillance"
+        ]
+      },
+      "elite": {
+        "budget": 1995,
+        "places_ennemies": 5,
+        "rangs": [
+          269,
+          525,
+          279,
+          437,
+          485
+        ],
+        "armes_ennemies": [
+          "hxh-eq-tachi-de-kite",
+          "hxh-eq-fusil-de-la-brigade-de-surveillance",
+          "hxh-eq-cartes-de-hisoka"
+        ]
+      },
+      "boss": {
+        "budget": 2128,
+        "places_ennemies": 5,
+        "rangs": [
+          406,
+          302,
+          375,
+          517,
+          528
+        ],
+        "armes_ennemies": [
+          "hxh-eq-flute-de-melody",
+          "hxh-eq-parapluie-epee-de-feitan",
+          "hxh-eq-fouets-electriques-de-riehlvelt"
+        ]
+      }
+    },
+    {
+      "vague": 15,
+      "normal": {
+        "budget": 1995,
+        "places_ennemies": 5,
+        "rangs": [
+          95,
+          443,
+          504,
+          463,
+          490
+        ],
+        "armes_ennemies": [
+          "hxh-eq-grande-protection-d-aura",
+          "hxh-eq-couteau-du-candidat-hunter"
+        ]
+      },
+      "elite": {
+        "budget": 2128,
+        "places_ennemies": 5,
+        "rangs": [
+          23,
+          513,
+          529,
+          532,
+          531
+        ],
+        "armes_ennemies": [
+          "hxh-eq-pieces-de-gotoh",
+          "hxh-eq-toupies-de-gido",
+          "hxh-eq-flute-de-melody"
+        ]
+      },
+      "boss": {
+        "budget": 2261,
+        "places_ennemies": 5,
+        "rangs": [
+          502,
+          352,
+          376,
+          512,
+          519
+        ],
+        "armes_ennemies": [
+          "hxh-eq-fusil-des-mafieux-du-black-whale",
+          "hxh-eq-couteau-du-candidat-hunter",
+          "hxh-eq-eventail-de-kalluto"
+        ]
+      }
+    },
+    {
+      "vague": 16,
+      "normal": {
+        "budget": 2128,
+        "places_ennemies": 5,
+        "rangs": [
+          55,
+          511,
+          525,
+          528,
+          509
+        ],
+        "armes_ennemies": [
+          "hxh-eq-flute-de-melody",
+          "hxh-eq-collier-du-paladin",
+          "hxh-eq-grande-protection-d-aura"
+        ]
+      },
+      "elite": {
+        "budget": 2261,
+        "places_ennemies": 5,
+        "rangs": [
+          493,
+          249,
+          502,
+          506,
+          511
+        ],
+        "armes_ennemies": [
+          "hxh-eq-parapluie-epee-de-feitan",
+          "hxh-eq-eventail-de-kalluto",
+          "hxh-eq-doubles-sabres-de-bois",
+          "hxh-eq-fusil-de-yorknew"
+        ]
+      },
+      "boss": {
+        "budget": 2394,
+        "places_ennemies": 5,
+        "rangs": [
+          466,
+          378,
+          518,
+          502,
+          530
+        ],
+        "armes_ennemies": [
+          "hxh-eq-lames-de-ben",
+          "hxh-eq-aiguilles-d-illumi",
+          "hxh-eq-sort-trace",
+          "hxh-eq-tachi-de-kite"
+        ]
+      }
+    },
+    {
+      "vague": 17,
+      "normal": {
+        "budget": 2261,
+        "places_ennemies": 5,
+        "rangs": [
+          502,
+          318,
+          529,
+          448,
+          464
+        ],
+        "armes_ennemies": [
+          "hxh-eq-ciseaux-de-binolt",
+          "hxh-eq-grande-protection-d-aura",
+          "hxh-eq-doubles-sabres-de-bois"
+        ]
+      },
+      "elite": {
+        "budget": 2394,
+        "places_ennemies": 5,
+        "rangs": [
+          448,
+          472,
+          471,
+          483,
+          520
+        ],
+        "armes_ennemies": [
+          "hxh-eq-collier-du-paladin",
+          "hxh-eq-ciseaux-de-binolt",
+          "hxh-eq-collier-du-paladin",
+          "hxh-eq-fouets-electriques-de-riehlvelt"
+        ]
+      },
+      "boss": {
+        "budget": 2527,
+        "places_ennemies": 5,
+        "rangs": [
+          461,
+          513,
+          507,
+          526,
+          520
+        ],
+        "armes_ennemies": [
+          "hxh-eq-yo-yos-de-killua",
+          "hxh-eq-parapluie-epee-de-feitan",
+          "hxh-eq-fusil-des-mafieux-du-black-whale",
+          "hxh-eq-collier-du-paladin"
+        ]
+      }
+    },
+    {
+      "vague": 18,
+      "normal": {
+        "budget": 2394,
+        "places_ennemies": 5,
+        "rangs": [
+          492,
+          470,
+          494,
+          441,
+          497
+        ],
+        "armes_ennemies": [
+          "hxh-eq-pieces-de-gotoh",
+          "hxh-eq-pierre-blue-planet",
+          "hxh-eq-antennes-black-voice"
+        ]
+      },
+      "elite": {
+        "budget": 2527,
+        "places_ennemies": 5,
+        "rangs": [
+          507,
+          457,
+          519,
+          521,
+          523
+        ],
+        "armes_ennemies": [
+          "hxh-eq-ciseaux-de-binolt",
+          "hxh-eq-pieces-de-gotoh",
+          "hxh-eq-pistolet-des-gardes-kakin",
+          "hxh-eq-lames-de-ben"
+        ]
+      },
+      "boss": {
+        "budget": 2660,
+        "places_ennemies": 5,
+        "rangs": [
+          532,
+          532,
+          532,
+          532,
+          532
+        ],
+        "armes_ennemies": [
+          "hxh-eq-epee-de-verite",
+          "hxh-eq-sort-accompany",
+          "hxh-eq-sort-trace",
+          "hxh-eq-aiguilles-d-illumi"
+        ]
+      }
+    },
+    {
+      "vague": 19,
+      "normal": {
+        "budget": 2527,
+        "places_ennemies": 5,
+        "rangs": [
+          508,
+          471,
+          488,
+          532,
+          528
+        ],
+        "armes_ennemies": [
+          "hxh-eq-couteau-du-candidat-hunter",
+          "hxh-eq-fusil-de-yorknew",
+          "hxh-eq-lance-de-goz"
+        ]
+      },
+      "elite": {
+        "budget": 2660,
+        "places_ennemies": 5,
+        "rangs": [
+          532,
+          532,
+          532,
+          532,
+          532
+        ],
+        "armes_ennemies": [
+          "hxh-eq-lames-de-ben",
+          "hxh-eq-grenade-de-garde",
+          "hxh-eq-aiguilles-de-machi",
+          "hxh-eq-telephone-black-voice"
+        ]
+      },
+      "boss": {
+        "budget": 2793,
+        "places_ennemies": 6,
+        "rangs": [
+          375,
+          328,
+          532,
+          509,
+          529,
+          520
+        ],
+        "armes_ennemies": [
+          "hxh-eq-parapluie-epee-de-feitan",
+          "hxh-eq-pieces-de-gotoh",
+          "hxh-eq-doubles-sabres-de-bois",
+          "hxh-eq-grand-calumet-de-morel"
+        ]
+      }
+    },
+    {
+      "vague": 20,
+      "normal": {
+        "budget": 2660,
+        "places_ennemies": 5,
+        "rangs": [
+          532,
+          532,
+          532,
+          532,
+          532
+        ],
+        "armes_ennemies": [
+          "hxh-eq-grenade-de-garde",
+          "hxh-eq-canne-a-peche-de-gon",
+          "hxh-eq-tachi-de-kite"
+        ]
+      },
+      "elite": {
+        "budget": 2793,
+        "places_ennemies": 6,
+        "rangs": [
+          223,
+          465,
+          523,
+          532,
+          519,
+          531
+        ],
+        "armes_ennemies": [
+          "hxh-eq-aiguilles-d-illumi",
+          "hxh-eq-parapluie-epee-de-feitan",
+          "hxh-eq-fusil-des-mafieux-du-black-whale",
+          "hxh-eq-grand-calumet-de-morel"
+        ]
+      },
+      "boss": {
+        "budget": 2926,
+        "places_ennemies": 6,
+        "rangs": [
+          301,
+          523,
+          525,
+          524,
+          527,
+          526
+        ],
+        "armes_ennemies": [
+          "hxh-eq-lames-de-ben",
+          "hxh-eq-flute-de-melody",
+          "hxh-eq-cartes-de-hisoka",
+          "hxh-eq-grand-calumet-de-morel"
+        ]
+      }
+    },
+    {
+      "vague": 21,
+      "normal": {
+        "budget": 2793,
+        "places_ennemies": 6,
+        "rangs": [
+          293,
+          516,
+          484,
+          443,
+          528,
+          529
+        ],
+        "armes_ennemies": [
+          "hxh-eq-couteau-du-candidat-hunter",
+          "hxh-eq-lance-de-goz",
+          "hxh-eq-epee-de-verite",
+          "hxh-eq-antennes-black-voice"
+        ]
+      },
+      "elite": {
+        "budget": 2926,
+        "places_ennemies": 6,
+        "rangs": [
+          304,
+          503,
+          526,
+          530,
+          532,
+          531
+        ],
+        "armes_ennemies": [
+          "hxh-eq-doubles-sabres-de-bois",
+          "hxh-eq-antennes-black-voice",
+          "hxh-eq-parapluie-epee-de-feitan",
+          "hxh-eq-sort-trace",
+          "hxh-eq-telephone-black-voice"
+        ]
+      },
+      "boss": {
+        "budget": 3059,
+        "places_ennemies": 6,
+        "rangs": [
+          523,
+          527,
+          481,
+          509,
+          529,
+          490
+        ],
+        "armes_ennemies": [
+          "hxh-eq-collier-du-paladin",
+          "hxh-eq-souffle-de-l-ange",
+          "hxh-eq-lames-de-ben",
+          "hxh-eq-lance-de-goz",
+          "hxh-eq-couteau-du-candidat-hunter"
+        ]
+      }
+    },
+    {
+      "vague": 22,
+      "normal": {
+        "budget": 2926,
+        "places_ennemies": 6,
+        "rangs": [
+          348,
+          520,
+          489,
+          531,
+          512,
+          526
+        ],
+        "armes_ennemies": [
+          "hxh-eq-lance-de-goz",
+          "hxh-eq-livre-du-joueur-greed-island",
+          "hxh-eq-ciseaux-de-binolt",
+          "hxh-eq-couteau-du-candidat-hunter"
+        ]
+      },
+      "elite": {
+        "budget": 3059,
+        "places_ennemies": 6,
+        "rangs": [
+          432,
+          525,
+          528,
+          512,
+          532,
+          530
+        ],
+        "armes_ennemies": [
+          "hxh-eq-canne-a-peche-de-gon",
+          "hxh-eq-couteau-du-candidat-hunter",
+          "hxh-eq-epee-de-verite",
+          "hxh-eq-yo-yos-de-killua",
+          "hxh-eq-grande-protection-d-aura"
+        ]
+      },
+      "boss": {
+        "budget": 3192,
+        "places_ennemies": 6,
+        "rangs": [
+          532,
+          532,
+          532,
+          532,
+          532,
+          532
+        ],
+        "armes_ennemies": [
+          "hxh-eq-antennes-black-voice",
+          "hxh-eq-parapluie-epee-de-feitan",
+          "hxh-eq-pierre-blue-planet",
+          "hxh-eq-grande-protection-d-aura",
+          "hxh-eq-sabre-du-garde-royal"
+        ]
+      }
+    },
+    {
+      "vague": 23,
+      "normal": {
+        "budget": 3059,
+        "places_ennemies": 6,
+        "rangs": [
+          486,
+          471,
+          528,
+          529,
+          515,
+          530
+        ],
+        "armes_ennemies": [
+          "hxh-eq-couteau-du-candidat-hunter",
+          "hxh-eq-pieces-de-gotoh",
+          "hxh-eq-fusil-de-yorknew",
+          "hxh-eq-epee-de-verite"
+        ]
+      },
+      "elite": {
+        "budget": 3192,
+        "places_ennemies": 6,
+        "rangs": [
+          532,
+          532,
+          532,
+          532,
+          532,
+          532
+        ],
+        "armes_ennemies": [
+          "hxh-eq-sabre-du-garde-royal",
+          "hxh-eq-pistolet-de-pakunoda",
+          "hxh-eq-tachi-de-kite",
+          "hxh-eq-sort-accompany",
+          "hxh-eq-sabre-du-garde-royal"
+        ]
+      },
+      "boss": {
+        "budget": 3325,
+        "places_ennemies": 7,
+        "rangs": [
+          343,
+          408,
+          481,
+          527,
+          526,
+          516,
+          524
+        ],
+        "armes_ennemies": [
+          "hxh-eq-epee-de-verite",
+          "hxh-eq-yo-yos-de-killua",
+          "hxh-eq-pistolet-de-pakunoda",
+          "hxh-eq-aiguilles-d-illumi",
+          "hxh-eq-souffle-de-l-ange"
+        ]
+      }
+    },
+    {
+      "vague": 24,
+      "normal": {
+        "budget": 3192,
+        "places_ennemies": 6,
+        "rangs": [
+          532,
+          532,
+          532,
+          532,
+          532,
+          532
+        ],
+        "armes_ennemies": [
+          "hxh-eq-parapluie-epee-de-feitan",
+          "hxh-eq-telephone-black-voice",
+          "hxh-eq-fusil-des-mafieux-du-black-whale",
+          "hxh-eq-grande-protection-d-aura"
+        ]
+      },
+      "elite": {
+        "budget": 3325,
+        "places_ennemies": 7,
+        "rangs": [
+          229,
+          474,
+          527,
+          502,
+          530,
+          532,
+          531
+        ],
+        "armes_ennemies": [
+          "hxh-eq-fusil-des-mafieux-du-black-whale",
+          "hxh-eq-pistolet-de-pakunoda",
+          "hxh-eq-antennes-black-voice",
+          "hxh-eq-fusil-de-yorknew",
+          "hxh-eq-sabre-du-garde-royal"
+        ]
+      },
+      "boss": {
+        "budget": 3458,
+        "places_ennemies": 7,
+        "rangs": [
+          335,
+          519,
+          525,
+          509,
+          518,
+          524,
+          528
+        ],
+        "armes_ennemies": [
+          "hxh-eq-pistolet-des-gardes-kakin",
+          "hxh-eq-tachi-de-kite",
+          "hxh-eq-canne-a-peche-de-gon",
+          "hxh-eq-fouets-electriques-de-riehlvelt",
+          "hxh-eq-cartes-de-hisoka"
+        ]
+      }
+    },
+    {
+      "vague": 25,
+      "normal": {
+        "budget": 3325,
+        "places_ennemies": 7,
+        "rangs": [
+          383,
+          431,
+          521,
+          487,
+          445,
+          531,
+          527
+        ],
+        "armes_ennemies": [
+          "hxh-eq-cartes-de-hisoka",
+          "hxh-eq-lance-de-goz",
+          "hxh-eq-telephone-black-voice",
+          "hxh-eq-canne-a-peche-de-gon"
+        ]
+      },
+      "elite": {
+        "budget": 3458,
+        "places_ennemies": 7,
+        "rangs": [
+          446,
+          464,
+          448,
+          513,
+          529,
+          532,
+          526
+        ],
+        "armes_ennemies": [
+          "hxh-eq-grande-protection-d-aura",
+          "hxh-eq-grand-calumet-de-morel",
+          "hxh-eq-canne-a-peche-de-gon",
+          "hxh-eq-ciseaux-de-binolt",
+          "hxh-eq-eventail-de-kalluto"
+        ]
+      },
+      "boss": {
+        "budget": 3591,
+        "places_ennemies": 7,
+        "rangs": [
+          509,
+          458,
+          513,
+          530,
+          527,
+          522,
+          532
+        ],
+        "armes_ennemies": [
+          "hxh-eq-flute-de-melody",
+          "hxh-eq-fusil-de-la-brigade-de-surveillance",
+          "hxh-eq-grande-protection-d-aura",
+          "hxh-eq-pierre-blue-planet",
+          "hxh-eq-eventail-de-kalluto"
+        ]
+      }
+    }
+  ]
+}

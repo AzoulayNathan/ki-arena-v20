@@ -1,0 +1,750 @@
+[
+  {
+    "query": "Cymbal",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_2439.html",
+    "title": "[Weekly ☆ Character Showcase #146: Cymbal!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2024/02/chara146_1.jpg",
+    "file": "assets/v23/portraits/cymbal.webp",
+    "sourceSize": [
+      400,
+      410
+    ],
+    "sha256": "71356b9be1340acd6167e5484eb7d923081f0c8647abebe861a43018f90e65db",
+    "downloaded": true,
+    "actualPerson": "DB:cymbal",
+    "localSha256": "2a25611f6ec515b6c1d3c930c268fd986149d642ead38945cdef6118378759e9",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Monaka",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_3996.html",
+    "title": "[Weekly ☆ Character Showcase #242: Monaka from Dragon Ball Super!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2026/01/chara242_1.jpg",
+    "file": "assets/v23/portraits/monaka.webp",
+    "sourceSize": [
+      233,
+      500
+    ],
+    "sha256": "0f16e8112d9b11802e8bf82bd4df6f7a8d019d84c5a07ee167e6402c21cb2935",
+    "downloaded": true,
+    "actualPerson": "DB:monaka",
+    "localSha256": "e90b053cfe32330e70c507bc133bed3bc2ede4a37aacc4fa4b903b097cf36cb1",
+    "cards": 0,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Bora",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_1617.html",
+    "title": "[Weekly ☆ Character Showcase #88: Bora!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2023/01/chara88_1.jpg",
+    "file": "assets/v23/portraits/bora.webp",
+    "sourceSize": [
+      400,
+      470
+    ],
+    "sha256": "af8f4937913045007523559a764fbc72a02598acf1b01f878059253674545646",
+    "downloaded": true,
+    "actualPerson": "DB:bora",
+    "localSha256": "c2a3be71dac0bdb48d1ecabe346a791ddb504c32c247f86f5b9026a0bc2b1b4b",
+    "cards": 0,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Giran",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_1789.html",
+    "title": "[Weekly ☆ Character Showcase #99: Giran from the Goku Training Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2023/03/chara99_1.jpg",
+    "file": "assets/v23/portraits/giran.webp",
+    "sourceSize": [
+      400,
+      377
+    ],
+    "sha256": "19fd8a14b5b9bffe60b7564f6ac0b7875a5193720e55cfb7467ada810eaf514d",
+    "downloaded": true,
+    "actualPerson": "DB:giran",
+    "localSha256": "38cd738593006bc935baf176fe6f2b0e06a14d0420be166e47709d031cd73eea",
+    "cards": 0,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Grandpa Gohan",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_612.html",
+    "title": "[Weekly ☆ Character Showcase #26: Grandpa Gohan!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/10/chara26_1.jpg",
+    "file": "assets/v23/portraits/grand-pere-gohan.webp",
+    "sourceSize": [
+      308,
+      500
+    ],
+    "sha256": "c72d4bf8ec1984eb34081aa0b6adafd47e16b700be9df51de872a258fcb92ef2",
+    "downloaded": true,
+    "actualPerson": "DB:grand-pere-gohan",
+    "localSha256": "5a0b02d41a1d1a34f1741d79350e96d87c67627d874168bd8b187cf092fcc682",
+    "cards": 2,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Bulma",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_3933.html",
+    "title": "[Weekly ☆ Character Showcase #238: Bulma from the Goku Training Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2025/12/chara238_1.jpg",
+    "file": "assets/v23/portraits/bulma.webp",
+    "sourceSize": [
+      199,
+      500
+    ],
+    "sha256": "49a96daeb16a67f7435a13ee60dcdcbbc77b85a32784d5419585d52f63f98787",
+    "downloaded": true,
+    "actualPerson": "DB:bulma",
+    "localSha256": "e01bf30ea823301d827806203da458164979cc08faa52f35a333f2afd9afcb8e",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Vegeta",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_3929.html",
+    "title": "[Weekly ☆ Character Showcase #237: Vegeta from the Saiyan Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2025/12/chara237_1.jpg",
+    "file": "assets/v23/portraits/vegeta.webp",
+    "sourceSize": [
+      306,
+      500
+    ],
+    "sha256": "7629bef13ceb9758bb26453347360bca50cb5f3cb290f7bacf4aefd17fb72f48",
+    "downloaded": true,
+    "actualPerson": "DB:vegeta",
+    "localSha256": "c1a7991a30cb258273f2cd0de627573bd4afc4fede4da39f00d39d83c9721fd7",
+    "cards": 25,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Majin Buu",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_4397.html",
+    "title": "[Weekly ☆ Character Showcase #270: Tenshinhan From the Majin Buu Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2026/08/chara270_1.jpg",
+    "file": "assets/v23/portraits/tenshinhan.webp",
+    "sourceSize": [
+      203,
+      500
+    ],
+    "sha256": "179c912a4dc6746737f7c8a3e173afdde34510cc9f2abbbaa3bd85809c7d8a0e",
+    "downloaded": true,
+    "actualPerson": "DB:tenshinhan",
+    "localSha256": "f724b39205ea50e82f80acb3394fb845fbe1f6284153522bf88b4e9acbc10fc9",
+    "cards": 5,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Piccolo",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_4437.html",
+    "title": "[Weekly ☆ Character Showcase #273: Taopaipai from the Great Demon King Piccolo Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2026/09/chara273_1.jpg",
+    "file": "assets/v23/portraits/tao-pai-pai.webp",
+    "sourceSize": [
+      210,
+      500
+    ],
+    "sha256": "d7f0aa071718ccc77e2934a25ae5e2d3893dfd3bd380b406f0c135eb99c17ef6",
+    "downloaded": true,
+    "actualPerson": "DB:tao-pai-pai",
+    "localSha256": "e0c1f5f7089c28751bf357dd46dc8117b1730ffbc09f33465e223762f62ab832",
+    "cards": 2,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Yamcha",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_3753.html",
+    "title": "[Weekly ☆ Character Showcase #231: Yamcha from the Android Cell Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2025/10/chara231_1.jpg",
+    "file": "assets/v23/portraits/yamcha.webp",
+    "sourceSize": [
+      392,
+      518
+    ],
+    "sha256": "d842ba78f0976259975c2ba85112bf950384287c7be4ebfb4cfd449e70ca7131",
+    "downloaded": true,
+    "actualPerson": "DB:yamcha",
+    "localSha256": "00acbe3731dd6e1467f40fe88ef5cf76a9d8f8f9fc26f85fd8a0aa08308a213c",
+    "cards": 5,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Pilaf",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_777.html",
+    "title": "[Weekly ☆ Character Showcase #36: Pilaf from the Goku Training Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/12/chara36_1.jpg",
+    "file": "assets/v23/portraits/pilaf.webp",
+    "sourceSize": [
+      349,
+      500
+    ],
+    "sha256": "31dbdca481e25b737a9b6b8b0f19f85449b94053e453e4276b02e701de7af53d",
+    "downloaded": true,
+    "actualPerson": "DB:pilaf",
+    "localSha256": "438dda33be78be40e822a9b9b20dd94606382f0634e2139f2542576cbd04db0d",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Future Bulma",
+    "status": "OK_REFERENCE",
+    "rights": "Source officielle ; contenu protégé, aucune licence commerciale revendiquée.",
+    "page": "https://en.dragon-ball-official.com/news/01_2351.html",
+    "title": "[Weekly ☆ Character Showcase #141: Bulma from Trunks: The Story - The Lone Warrior!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2023/12/chara141_1.jpg",
+    "file": "assets/v23/portraits/bulma-du-futur.webp",
+    "sourceSize": [
+      400,
+      431
+    ],
+    "sha256": "413a164e944482a0b947d7ee5df57f857cc8661b22864b556bb2c101dd17b3ee",
+    "downloaded": true,
+    "actualPerson": "DB:bulma-du-futur",
+    "localSha256": "faab8e3ea6f6000f3fc1277951cb6a261781aa75a661130434ed3d57b5a9d626",
+    "cards": 0,
+    "review": "Identité contrôlée visuellement ; dimensions et provenance conservées ; référence partagée seulement."
+  },
+  {
+    "query": "Kamesennin",
+    "person": "DB:tortue-geniale",
+    "page": "https://en.dragon-ball-official.com/news/01_141.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #3: Goku Training Arc&#039;s Kamesennin!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/05/chara3_1.jpg",
+    "file": "assets/v23/portraits/tortue-geniale.webp",
+    "sourceSize": [
+      359,
+      405
+    ],
+    "sourceSha256": "7d61486c39b0eb4eab6b00284e68408af05da77427763bca90a06ed1ba41667f",
+    "downloaded": true,
+    "actualPerson": "DB:tortue-geniale",
+    "localSha256": "25709a1a553e41b1a04938caefce888d13c4340d7ee7486f99c5f4188fa83ce4",
+    "cards": 4,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Android 18",
+    "person": "DB:c-18",
+    "page": "https://en.dragon-ball-official.com/news/01_181.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #6! Android 18 from the Android and Cell Arcs!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/COLUMNS/2021/06/chara6_1.jpg",
+    "file": "assets/v23/portraits/c-18.webp",
+    "sourceSize": [
+      518,
+      405
+    ],
+    "sourceSha256": "0f97cf721b4981bf1c043332f187553d08e78d99656659567f1b675dbe26dd9a",
+    "downloaded": true,
+    "actualPerson": "DB:c-18",
+    "localSha256": "0bae9c8c7657de24eb7ca2c1cd4621ec7b49761ef6c7e807ca086a977b168373",
+    "cards": 5,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Cabba",
+    "person": "DB:cabba",
+    "page": "https://en.dragon-ball-official.com/news/01_271.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #9: Cabba from Dragon Ball Super!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/06/chara9_1.jpg",
+    "file": "assets/v23/portraits/cabba.webp",
+    "sourceSize": [
+      488,
+      405
+    ],
+    "sourceSha256": "1b728e051b627498576b8cd4cc3e2bafec25a86f37665535d51b709c69361833",
+    "downloaded": true,
+    "actualPerson": "DB:cabba",
+    "localSha256": "10c7cc8a5e1907937e65f6da3d02b762290e616b4b4c911fdef71911710f660b",
+    "cards": 3,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Yajirobe",
+    "person": "DB:yajirobe",
+    "page": "https://en.dragon-ball-official.com/news/01_355.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #12: Great Demon King Piccolo Arc&#039;s Yajirobe!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/07/chara12_1.jpg",
+    "file": "assets/v23/portraits/yajirobe.webp",
+    "sourceSize": [
+      379,
+      500
+    ],
+    "sourceSha256": "7f4cab2ae20b147c831bb1fae781835c22e508eb5088bcc8d0a6615fba7ebc12",
+    "downloaded": true,
+    "actualPerson": "DB:yajirobe",
+    "localSha256": "a8cf3b027097a7de65597561cc6f8420c0139e824fb38be3f082093294e935d8",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Krillin",
+    "person": "DB:krilin",
+    "page": "https://en.dragon-ball-official.com/news/01_371.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #13: Goku Training Arc&#039;s Krillin!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/07/chara13_1.jpg",
+    "file": "assets/v23/portraits/krilin.webp",
+    "sourceSize": [
+      258,
+      405
+    ],
+    "sourceSha256": "e4845b362237a0c9677af4140dd5eca82a5a6fa6a6aa44e08e5dcd7c56cef471",
+    "downloaded": true,
+    "actualPerson": "DB:krilin",
+    "localSha256": "229256c6b2cafe24680304266963e30bed4db03af98c8c6781cfdfa47a1fc3a9",
+    "cards": 8,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Gohan",
+    "person": "DB:gohan",
+    "page": "https://en.dragon-ball-official.com/news/01_1166.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #58: Gohan from the Android/Cell Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/06/chara58_1.jpg",
+    "file": "assets/v23/portraits/gohan.webp",
+    "sourceSize": [
+      295,
+      500
+    ],
+    "sourceSha256": "2c7ff9c954298501855525399f57b614e7f744c1f58e2aeb7f2c68c4a5b82907",
+    "downloaded": true,
+    "actualPerson": "DB:gohan",
+    "localSha256": "56596aea0fabf3f847f00e9fba1015f25550ded78a1b47c4da65e4f07efaeb5c",
+    "cards": 19,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Raditz",
+    "person": "DB:raditz",
+    "page": "https://en.dragon-ball-official.com/news/01_504.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #21: Raditz!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/09/chara21_1.jpg",
+    "file": "assets/v23/portraits/raditz.webp",
+    "sourceSize": [
+      178,
+      405
+    ],
+    "sourceSha256": "35c42c896b169db6b1042bf6ec058642348093583a8373f633c0b22693d64c46",
+    "downloaded": true,
+    "actualPerson": "DB:raditz",
+    "localSha256": "5d29bb9d47c40a7ed7a92702b2ab3135e7bee8121efd80fecd30fbb5bd848df4",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Frieza",
+    "person": "DB:freezer",
+    "page": "https://en.dragon-ball-official.com/news/01_576.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #23: First Form Frieza!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/10/chara23_1.jpg",
+    "file": "assets/v23/portraits/freezer.webp",
+    "sourceSize": [
+      399,
+      500
+    ],
+    "sourceSha256": "ef47f4d901fb1c3ae9793eb03078ca37d94b22be630a9ef2d4cd79fc2d00c5e6",
+    "downloaded": true,
+    "actualPerson": "DB:freezer",
+    "localSha256": "490699a6ec518146d6c1c9aeb5f2466b72b06c532d4da9fa3bd6119a470e7fba",
+    "cards": 13,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Enma",
+    "person": "DB:roi-enma",
+    "page": "https://en.dragon-ball-official.com/news/01_656.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #28: Enma from the Saiyan Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/11/chara28_1.jpg",
+    "file": "assets/v23/portraits/roi-enma.webp",
+    "sourceSize": [
+      398,
+      405
+    ],
+    "sourceSha256": "c1b4de4acc59bf3e0f75faa7aed026dce8954c2d7ef16f89f1529bf6af7ac76d",
+    "downloaded": true,
+    "actualPerson": "DB:roi-enma",
+    "localSha256": "04e5b88cb8487ed7e9101a6726c0df1282daec84c07ff64d24e88fdff55dfe6f",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Kaio North",
+    "person": "DB:kaio-du-nord",
+    "page": "https://en.dragon-ball-official.com/news/01_657.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #29: Kaio North from the Saiyan Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/11/chara29_1.jpg",
+    "file": "assets/v23/portraits/kaio-du-nord.webp",
+    "sourceSize": [
+      438,
+      405
+    ],
+    "sourceSha256": "e7ea410672a42dd8fd559457a7a2426f3be1d62723cd6d1b96b334651cae6ee3",
+    "downloaded": true,
+    "actualPerson": "DB:kaio-du-nord",
+    "localSha256": "5d5e48c92e883b45c4c9db176518551d1cf93e3f65a7935702591c9f7b5e2e11",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Beerus",
+    "person": "DB:beerus",
+    "page": "https://en.dragon-ball-official.com/news/01_689.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #30: Beerus from Dragon Ball Z: Battle of Gods!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/11/chara30_1.jpg",
+    "file": "assets/v23/portraits/beerus.webp",
+    "sourceSize": [
+      214,
+      500
+    ],
+    "sourceSha256": "58ca7aa8bb46f500bb8825bd06922dba25f04b50ac50b95930c9d320f8d754f2",
+    "downloaded": true,
+    "actualPerson": "DB:beerus",
+    "localSha256": "185ea9a2e6d0905218f8963b3211e38be1fcd83575be36484e830963a6bb5058",
+    "cards": 3,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Nappa",
+    "person": "DB:nappa",
+    "page": "https://en.dragon-ball-official.com/news/01_759.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #33: Nappa!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/12/chara33_1.jpg",
+    "file": "assets/v23/portraits/nappa.webp",
+    "sourceSize": [
+      362,
+      405
+    ],
+    "sourceSha256": "ec81e5506e27104a7316049445e80724ae2fda8a796898853cbf89cbca5499ea",
+    "downloaded": true,
+    "actualPerson": "DB:nappa",
+    "localSha256": "229e8065e91f86f41fb92dd941d32d83e9607f55b680f430613a06be4b3825cd",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Dabura",
+    "person": "DB:dabra",
+    "page": "https://en.dragon-ball-official.com/news/01_760.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #34: Dabura!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/12/chara34_1.jpg",
+    "file": "assets/v23/portraits/dabra.webp",
+    "sourceSize": [
+      377,
+      500
+    ],
+    "sourceSha256": "327097d6a9e130ac30030fc6175df0009a612268436ce371bcf9416ce20d2a75",
+    "downloaded": true,
+    "actualPerson": "DB:dabra",
+    "localSha256": "a8f61765e315d5307c46491215b85fdf1b67d296c9413dc5f9466d3ec1abf9a5",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Babidi",
+    "person": "DB:babidi",
+    "page": "https://en.dragon-ball-official.com/news/01_776.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #35: Babidi!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/12/chara35_1.jpg",
+    "file": "assets/v23/portraits/babidi.webp",
+    "sourceSize": [
+      392,
+      405
+    ],
+    "sourceSha256": "c3bf5b1ca45470928b8c50aeb90011074e92f49ac9dce658b72f863ad3918e55",
+    "downloaded": true,
+    "actualPerson": "DB:babidi",
+    "localSha256": "bb1cf0a938ddfaca8148a4b27b642cae4d68e5f9ddbf21f37aeca22039c2d491",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Android 17",
+    "person": "DB:c-17",
+    "page": "https://en.dragon-ball-official.com/news/01_838.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #39: Android 17 from the Android / Cell Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/01/chara39_1.jpg",
+    "file": "assets/v23/portraits/c-17.webp",
+    "sourceSize": [
+      173,
+      500
+    ],
+    "sourceSha256": "c3b4bb2efa5379f910acea4a64785059659189fcefee05d4d77d683cc93f7bfc",
+    "downloaded": true,
+    "actualPerson": "DB:c-17",
+    "localSha256": "62ace33f8c5b8adf046aad0d6f31e8af8aa77b7d0ad555693035d41fa80a05d1",
+    "cards": 6,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Android 16",
+    "person": "DB:c-16",
+    "page": "https://en.dragon-ball-official.com/news/01_839.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #40: Android 16!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/01/chara40_1.jpg",
+    "file": "assets/v23/portraits/c-16.webp",
+    "sourceSize": [
+      195,
+      500
+    ],
+    "sourceSha256": "994b021b5e02614d767eb17076f563ac5b908842a15b8fbbc2eafb5d20128d7b",
+    "downloaded": true,
+    "actualPerson": "DB:c-16",
+    "localSha256": "9df7438482fd3ee3c21f2bf23b7a43872e484df4a2212fb6a2a336d287f00c6a",
+    "cards": 2,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Android 8",
+    "person": "DB:c-8",
+    "page": "https://en.dragon-ball-official.com/news/01_870.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #41: Android 8 from the Red Ribbon Army Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/02/chara41_1.jpg",
+    "file": "assets/v23/portraits/c-8.webp",
+    "sourceSize": [
+      518,
+      392
+    ],
+    "sourceSha256": "74968f59d0b1b8454db6ddc6c45485c783cba1c56b40ee06109642c8c40f8053",
+    "downloaded": true,
+    "actualPerson": "DB:c-8",
+    "localSha256": "02eacca625f41a49cb338d8426018381c71f1847a590db5c4c8f6aaf8e493a23",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Piccolo",
+    "person": "DB:piccolo",
+    "page": "https://en.dragon-ball-official.com/news/01_1178.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #59: Piccolo from the Saiyan Arc!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/06/chara59_1.jpg",
+    "file": "assets/v23/portraits/piccolo.webp",
+    "sourceSize": [
+      400,
+      498
+    ],
+    "sourceSha256": "90abec5420f6ef4e62605744fac0a04d774bea8832891828f710a9fb48ed9b03",
+    "downloaded": true,
+    "actualPerson": "DB:piccolo",
+    "localSha256": "121f90dcaef85b3a668c67ff9a5636118907e5f9a5fb35c0d5e5091b3bb68e3c",
+    "cards": 4,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Goten",
+    "person": "DB:goten",
+    "page": "https://en.dragon-ball-official.com/news/01_1226.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #61: Goten!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/07/chara61_1.jpg",
+    "file": "assets/v23/portraits/goten.webp",
+    "sourceSize": [
+      395,
+      500
+    ],
+    "sourceSha256": "47bbd60052b41bf9fda35339082745213c099c31e98409762708a0643502d750",
+    "downloaded": true,
+    "actualPerson": "DB:goten",
+    "localSha256": "484fa104d0289d4446f39ceca575364845663286d1b01c2fdedf0fa79772f7ae",
+    "cards": 2,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Cell",
+    "person": "DB:cell",
+    "page": "https://en.dragon-ball-official.com/news/01_1257.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #63: Perfect Cell!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/07/chara63_1.jpg",
+    "file": "assets/v23/portraits/cell.webp",
+    "sourceSize": [
+      354,
+      500
+    ],
+    "sourceSha256": "88b39e1dd07deb5c4754f6eeb98080a45d39661efbf2061832f53d98dc4e3ffd",
+    "downloaded": true,
+    "actualPerson": "DB:cell",
+    "localSha256": "6226c3498db3c046ff5100dd533c28b10744103a778fc2efe4d82f2849d19e84",
+    "cards": 7,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Mr Satan",
+    "person": "DB:mister-satan",
+    "page": "https://en.dragon-ball-official.com/news/01_1268.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #64: Mr. Satan!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/07/chara64_1.jpg",
+    "file": "assets/v23/portraits/mister-satan.webp",
+    "sourceSize": [
+      198,
+      405
+    ],
+    "sourceSha256": "8a46b55bb29eab909740c4e7f91f1a328fa37f4782ac69f793238b7459ac4a92",
+    "downloaded": true,
+    "actualPerson": "DB:mister-satan",
+    "localSha256": "7ac8948cd3315fabcd796135d7adafd2fdf1e70cd7ee2b4387e8685435043bcf",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Zeno",
+    "person": "DB:zen-o",
+    "page": "https://en.dragon-ball-official.com/news/01_1350.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #70: Zeno!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/08/chara70_1.jpg",
+    "file": "assets/v23/portraits/zen-o.webp",
+    "sourceSize": [
+      385,
+      500
+    ],
+    "sourceSha256": "8145b690db9c1f1bcb064dd98f5d1bebcddbbff4aea4c01c17893fd400d6bf02",
+    "downloaded": true,
+    "actualPerson": "DB:zen-o",
+    "localSha256": "a6d5cc77305e89de4f850a39b72722e6dd78f7f9627a28d69e2127df312bd509",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Bulla",
+    "person": "DB:bra",
+    "page": "https://en.dragon-ball-official.com/news/01_1373.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #72: Bulla!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/09/chara72_1.jpg",
+    "file": "assets/v23/portraits/bra.webp",
+    "sourceSize": [
+      256,
+      500
+    ],
+    "sourceSha256": "e961f13f366e8ee0a6ee0112786f1e321e49dfac8da45333c456141cf9a7f94a",
+    "downloaded": true,
+    "actualPerson": "DB:bra",
+    "localSha256": "5aed2f07586cb706df54f1f4437e9d7899826a1eb5d782227d959723f67f8f90",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Uub",
+    "person": "DB:oob",
+    "page": "https://en.dragon-ball-official.com/news/01_1459.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #78: Uub!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/10/chara78_1.jpg",
+    "file": "assets/v23/portraits/oob.webp",
+    "sourceSize": [
+      374,
+      500
+    ],
+    "sourceSha256": "f339d8e0e5e9d68d9978a9716ae27e6f7597aab34365b681044c1a1600928855",
+    "downloaded": true,
+    "actualPerson": "DB:oob",
+    "localSha256": "90f27dce0ba066385f668972b1605638bacbb179aa4b4e9f8d26e6fe5b5d1372",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Recoome",
+    "person": "DB:recoome",
+    "page": "https://en.dragon-ball-official.com/news/01_1458.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #79: Recoome!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/10/chara79_1.jpg",
+    "file": "assets/v23/portraits/recoome.webp",
+    "sourceSize": [
+      385,
+      500
+    ],
+    "sourceSha256": "9748e047aae3adf86333fcda51f8b146881cc2e455a3a8bafe63bbb10ebf3429",
+    "downloaded": true,
+    "actualPerson": "DB:recoome",
+    "localSha256": "64bb86f767c5c5b4ec0e0942bf7fd4fb30d25e9a87b37ca297cc0f70d44a1e65",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  },
+  {
+    "query": "Toninjinka",
+    "person": "DB:lapin-carotte",
+    "page": "https://en.dragon-ball-official.com/news/01_1528.html",
+    "status": "OK_REFERENCE",
+    "rights": "Illustration de source officielle protégée ; aucune licence commerciale conférée.",
+    "title": "[Weekly ☆ Character Showcase #82: Toninjinka!] | DRAGON BALL OFFICIAL SITE",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/11/chara82_1.jpg",
+    "file": "assets/v23/portraits/lapin-carotte.webp",
+    "sourceSize": [
+      400,
+      474
+    ],
+    "sourceSha256": "45d48357d83ab0b77952c7dec9f143ff382914f671067f193a7fd5bcb4041477",
+    "downloaded": true,
+    "actualPerson": "DB:lapin-carotte",
+    "localSha256": "97697e6c3b7d886d7ed3cac0f2d5eb38ddc295c26aa374defb16ca71be41c19e",
+    "cards": 1,
+    "review": "Identité contrôlée visuellement ; référence du personnage, pas certification de chaque transformation."
+  }
+]

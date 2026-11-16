@@ -1,0 +1,401 @@
+[
+  {
+    "name": "chichi-child",
+    "page": "https://en.dragon-ball-official.com/news/01_133.html",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2021/05/chara002_1_2.jpg",
+    "file": "assets/v21/portraits/chichi-child.webp",
+    "width": 163,
+    "height": 350,
+    "crop": [
+      0,
+      0,
+      163,
+      350
+    ],
+    "localSha256": "ba7b979f8e3328deefdca2a788aff0e32b176e81994bef42d0771389771da3c5",
+    "reviewedPixelSha256": "129f0868e6dbf4fdee50afc669b2f8b6fe6df82d4f6a63d8091d5738d4a0bf17",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "draculaman",
+    "page": "https://en.dragon-ball-official.com/news/01_3599.html",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2025/07/chara221_1.jpg",
+    "file": "assets/v21/portraits/draculaman.webp",
+    "width": 583,
+    "height": 700,
+    "crop": [
+      0,
+      0,
+      583,
+      700
+    ],
+    "localSha256": "4d963b24bbd8ebacc367a1c27b40a8dbc2ac88276483d40089b2012f179d27f9",
+    "reviewedPixelSha256": "64d68e17e2282514aaac7a46b34dd8533c8afacbf1cf02ae844ba9df2362925d",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "shu",
+    "page": "https://en.dragon-ball-official.com/news/01_810.html",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/01/chara37_1_2__2.jpg",
+    "file": "assets/v21/portraits/shu.webp",
+    "width": 400,
+    "height": 433,
+    "crop": [
+      0,
+      0,
+      400,
+      433
+    ],
+    "localSha256": "222a9f57461af8e793942c73e1c124205cb4753fe28623846ce008eab90b4109",
+    "reviewedPixelSha256": "289d3349b74d9b56dc0f8abf5cc6c245998ddfd77b624bd3d47501f2fe3bb136",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "akkuman",
+    "page": "https://en.dragon-ball-official.com/news/01_2009.html",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2023/07/chara115_1.jpg",
+    "file": "assets/v21/portraits/akkuman.webp",
+    "width": 400,
+    "height": 484,
+    "crop": [
+      0,
+      0,
+      400,
+      484
+    ],
+    "localSha256": "e547ba68eb887255e7028aea7ce0afae4a76244d6f6d9f7a3eb4e2391d85bcc0",
+    "reviewedPixelSha256": "8d63937bfa92a289c045e845a3343f1099ea78de90d6ed185ec2afaa621021e7",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "mai",
+    "page": "https://en.dragon-ball-official.com/news/01_811.html",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2022/01/chara38_1.jpg",
+    "file": "assets/v21/portraits/mai.webp",
+    "width": 400,
+    "height": 428,
+    "crop": [
+      0,
+      0,
+      400,
+      428
+    ],
+    "localSha256": "5a13464ee12f8e7fd3b64a06204b99b5d4b3fec1b0cc4e210b59ae146b6f4ada",
+    "reviewedPixelSha256": "e5fa1af1a3d6d0b7b60ff0aad4d6bce3cf14f1837ede784951d757848891edff",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "goku-child",
+    "page": "https://en.dragon-ball-official.com/news/01_1866.html",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2023/05/chara104_01.jpg",
+    "file": "assets/v21/portraits/goku-child.webp",
+    "width": 400,
+    "height": 488,
+    "crop": [
+      0,
+      0,
+      400,
+      488
+    ],
+    "localSha256": "ad8bfc45d61f320d4195f28abfb735d6d5c8d1979ac51fc10539d3adabc5137b",
+    "reviewedPixelSha256": "bdfa6a9b2e69eecb8d52a7970b4da16752c854bac6c4f4103af6bdc63d791599",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "inoshikacho",
+    "page": "https://en.dragon-ball-official.com/news/01_2200.html",
+    "url": "https://en.dragon-ball-official.com/dragonball/jp/news/2023/10/chara128_1.jpg",
+    "file": "assets/v21/portraits/inoshikacho.webp",
+    "width": 400,
+    "height": 300,
+    "crop": [
+      0,
+      0,
+      400,
+      300
+    ],
+    "localSha256": "f0813cada94b7aeae2ef0932eb206b0c3c773a9d1e15c2ff8cac6bf643d11c96",
+    "reviewedPixelSha256": "d9d6cc0f9d379eb3d05761c64a471e4faf2cb5239348e522a5452591cb7d4c9a",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "gon",
+    "page": "https://www.ntv.co.jp/hunterhunter/character/gon.html",
+    "url": "https://www.ntv.co.jp/hunterhunter/character/images/main_gon.gif",
+    "file": "assets/v21/portraits/gon.webp",
+    "width": 699,
+    "height": 485,
+    "crop": [
+      0,
+      0,
+      216,
+      485
+    ],
+    "localSha256": "4db9fdf02bd2cfef2b7dc7df1c18bfa642644799bd4e11fd8671eef4edc577f0",
+    "reviewedPixelSha256": "0dcdbbd1f439d022232400b0df352761c58df668be8ba95cfd3de8a005d46cb7",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "hxh-kaito",
+    "page": "https://www.ntv.co.jp/hunterhunter/character/kaito.html",
+    "url": "https://www.ntv.co.jp/hunterhunter/character/images/main_kaito.gif",
+    "file": "assets/v21/portraits/hxh-kaito.webp",
+    "width": 675,
+    "height": 450,
+    "crop": [
+      0,
+      0,
+      209,
+      450
+    ],
+    "localSha256": "f995215cb08e4c2d38732a7ac0019b5a24fa1ba6839accf2d74be90db186996f",
+    "reviewedPixelSha256": "8c50d70bcef82295ad33bf613cb1ce1aa300591eb00ad3fd6654c381311cb4cc",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "hxh-hisoka",
+    "page": "https://www.ntv.co.jp/hunterhunter/character/hisoka.html",
+    "url": "https://www.ntv.co.jp/hunterhunter/character/images/main_hisoka.gif",
+    "file": "assets/v21/portraits/hxh-hisoka.webp",
+    "width": 722,
+    "height": 478,
+    "crop": [
+      0,
+      0,
+      223,
+      478
+    ],
+    "localSha256": "e1ae4199415e9016939c3803cac52839c85157228bfa1fecfa750c9d117bb30a",
+    "reviewedPixelSha256": "7c470825381d37737bde8aa532b1d0d5a27ce30f9fcd73de3508d71f8440bb3b",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "hxh-kurapika",
+    "page": "https://www.ntv.co.jp/hunterhunter/character/kurapika.html",
+    "url": "https://www.ntv.co.jp/hunterhunter/character/images/main_kurapika.gif",
+    "file": "assets/v21/portraits/hxh-kurapika.webp",
+    "width": 690,
+    "height": 488,
+    "crop": [
+      0,
+      0,
+      213,
+      488
+    ],
+    "localSha256": "3c637b5abe29f8e2174934e315c8d16761c7c2e4a73674eed1280fad318b6166",
+    "reviewedPixelSha256": "6870cced8d57381250fa1eaadff60143c8fa7d17ebf36bd428482fd6c54e9cad",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "hxh-reorio",
+    "page": "https://www.ntv.co.jp/hunterhunter/character/reorio.html",
+    "url": "https://www.ntv.co.jp/hunterhunter/character/images/main_reorio.gif",
+    "file": "assets/v21/portraits/hxh-reorio.webp",
+    "width": 684,
+    "height": 485,
+    "crop": [
+      0,
+      0,
+      212,
+      485
+    ],
+    "localSha256": "b98a7bfaa446ee1ee202535ad40137f4f710528574d61ea2a4e314b746a087f3",
+    "reviewedPixelSha256": "8548a3f3e7893e2b70e68a3b0255c161f8ccfa78e4a3bfeecf7268322f937486",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "hxh-kirua",
+    "page": "https://www.ntv.co.jp/hunterhunter/character/kirua.html",
+    "url": "https://www.ntv.co.jp/hunterhunter/character/images/main_kirua.gif",
+    "file": "assets/v21/portraits/hxh-kirua.webp",
+    "width": 675,
+    "height": 450,
+    "crop": [
+      0,
+      0,
+      209,
+      450
+    ],
+    "localSha256": "01515f638062f6c1374475a798539747f1308643647a77e8a245e941f6333001",
+    "reviewedPixelSha256": "34866714d6cd1cb7d52f3ba104c6bbd42e6d5c1fbc3245ef702ed2c8259198a6",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "naruto-naruto-front",
+    "page": "https://www.tv-tokyo.co.jp/contents/naruto/chara.html",
+    "url": "https://www.tv-tokyo.co.jp/contents/naruto/images/chara_naruto_a.gif",
+    "file": "assets/v21/portraits/naruto-naruto-front.webp",
+    "width": 119,
+    "height": 300,
+    "crop": [
+      0,
+      0,
+      119,
+      300
+    ],
+    "localSha256": "fd98297fcc4a21e16cf5bce358df0ef28e3fd3f25efcbf2a279bfac7e342d323",
+    "reviewedPixelSha256": "30d0887a510d22daf4987c68a4d02dd966d4acd1aaa64deaa8cb37c9f84c51b2",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "naruto-sakura-front",
+    "page": "https://www.tv-tokyo.co.jp/contents/naruto/chara.html",
+    "url": "https://www.tv-tokyo.co.jp/contents/naruto/images/chara_sakura_a.gif",
+    "file": "assets/v21/portraits/naruto-sakura-front.webp",
+    "width": 82,
+    "height": 300,
+    "crop": [
+      0,
+      0,
+      82,
+      300
+    ],
+    "localSha256": "7ef27d4fb648e0a727de6b9e2859e7698a51a00c9adbd5ae432f59c1a840bd30",
+    "reviewedPixelSha256": "959314dbe15e1f41a8eda9897d35f332492ace56035a7de09fee96652188fae3",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "naruto-kakasi",
+    "page": "https://www.tv-tokyo.co.jp/contents/naruto/chara.html",
+    "url": "https://www.tv-tokyo.co.jp/contents/naruto/images/chara_kakasi_b.gif",
+    "file": "assets/v21/portraits/naruto-kakasi.webp",
+    "width": 160,
+    "height": 300,
+    "crop": [
+      0,
+      0,
+      160,
+      300
+    ],
+    "localSha256": "2777efec6cef31e6d326a04681f3f0f1639ecd34c26d3f627daf0d48f85fbf78",
+    "reviewedPixelSha256": "80101416e3c7de22ed231a9a0349cd3a906de1762ec7d04ca6b057ec3843b42b",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "naruto-sasuke",
+    "page": "https://www.tv-tokyo.co.jp/contents/naruto/chara.html",
+    "url": "https://www.tv-tokyo.co.jp/contents/naruto/images/chara_sasuke_b.gif",
+    "file": "assets/v21/portraits/naruto-sasuke.webp",
+    "width": 140,
+    "height": 300,
+    "crop": [
+      0,
+      0,
+      140,
+      300
+    ],
+    "localSha256": "9c368c6e4d696703285fb6faec7e3a78814c5ceedc5e4ff9fa41869b27ef19cb",
+    "reviewedPixelSha256": "c28aa8d0254401ac7df3c5dfba5ff67680987558ac57bc7d579a59f0687ea7a0",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "naruto-chiyoba",
+    "page": "https://www.tv-tokyo.co.jp/contents/naruto/chara.html",
+    "url": "https://www.tv-tokyo.co.jp/contents/naruto/images/chara_chiyoba_b.gif",
+    "file": "assets/v21/portraits/naruto-chiyoba.webp",
+    "width": 160,
+    "height": 300,
+    "crop": [
+      0,
+      0,
+      160,
+      300
+    ],
+    "localSha256": "6bccd523e0b616bacbea7617ce9cba6d1d4bbc2bdce72b3d68a4c4c7a05df57b",
+    "reviewedPixelSha256": "471d40d09602db9cef6b67c26e4f29623d46699a5bf60250af3eaecf4071832c",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "naruto-ebizo",
+    "page": "https://www.tv-tokyo.co.jp/contents/naruto/chara.html",
+    "url": "https://www.tv-tokyo.co.jp/contents/naruto/images/chara_ebizo_b.gif",
+    "file": "assets/v21/portraits/naruto-ebizo.webp",
+    "width": 170,
+    "height": 300,
+    "crop": [
+      0,
+      0,
+      170,
+      300
+    ],
+    "localSha256": "66a13e9af28f6f1fe032ab7a353ad2d297675f5929679309cb6cfd4858c87754",
+    "reviewedPixelSha256": "ed95d3d1b716433475347e56d8f4adaa57daa68f69289e42b19a1fc2fb91dda5",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "naruto-deidara",
+    "page": "https://www.tv-tokyo.co.jp/contents/naruto/chara.html",
+    "url": "https://www.tv-tokyo.co.jp/contents/naruto/images/chara_deidara_b.gif",
+    "file": "assets/v21/portraits/naruto-deidara.webp",
+    "width": 149,
+    "height": 300,
+    "crop": [
+      0,
+      0,
+      149,
+      300
+    ],
+    "localSha256": "d8f9ddff2ea4eedb33d6a65c47e1ccffc159030ba8fd45599113de703bd12e2d",
+    "reviewedPixelSha256": "804ac142864d5872bab25a29067ee32edcda3571e8ba45c5bec4e5cb8a76d357",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  },
+  {
+    "name": "naruto-sasori",
+    "page": "https://www.tv-tokyo.co.jp/contents/naruto/chara.html",
+    "url": "https://www.tv-tokyo.co.jp/contents/naruto/images/chara_sasori_b.gif",
+    "file": "assets/v21/portraits/naruto-sasori.webp",
+    "width": 144,
+    "height": 300,
+    "crop": [
+      0,
+      0,
+      144,
+      300
+    ],
+    "localSha256": "1dc2161fc9cd5d850fa147a7bd316528a6ece7b2cfc8a07a2bcea88e0375fdd0",
+    "reviewedPixelSha256": "cb623e507283782f60cc01c1692eb61dbc8decef844a9392ebd3fe034947fa89",
+    "review": "IDENTITE_CONTROLEE_VISUELLEMENT",
+    "license": "Illustration des ayants droit ; aucune licence commerciale accordée par cette collecte",
+    "usage": "Référence de personnage ; ne certifie pas chaque variante de forme"
+  }
+]
