@@ -66,7 +66,7 @@ body.v22-app.v21-app.arena-v10.arena-v11 .v22-small-note{font-size:13px!importan
 /* Authored event staging: swipe compares, buttons commit. */
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-event>header{text-align:center;margin:18px auto 28px;max-width:830px}
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-event h1{font:italic 900 clamp(33px,4vw,53px) 'Arena Display'!important;margin:10px 0!important;color:#163547!important}
-body.v22-app.v21-app.arena-v10.arena-v11 .v22-event header p{font-size:17px!important;line-height:1.4!important}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-event header p{font-size:clamp(18px,2.1vw,22px)!important;line-height:1.45!important}
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-choices:has(>article:nth-child(3)){grid-template-columns:repeat(3,minmax(0,1fr))}
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-choices.single{grid-template-columns:minmax(0,780px);justify-content:center}
@@ -74,8 +74,8 @@ body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-option{min-height:420px;posi
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-choice-number{position:absolute;top:20px;left:24px;font:italic 900 52px 'Arena Display';color:#fff6df9f}
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-option>div{width:100%}
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-option h2{font:900 32px/1.05 'Arena Display'!important;color:#fff4dc!important;margin:12px 0!important}
-body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-option p{font-size:16px!important;color:#dae9e2!important;max-width:390px;line-height:1.4!important;min-height:44px}
-body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-option small{display:block;color:#ffd395;font-size:14px;margin:9px 0}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-option p{font-size:clamp(17px,1.9vw,20px)!important;color:#dae9e2!important;max-width:420px;line-height:1.45!important;min-height:48px}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-option small{display:block;color:#ffd395;font-size:clamp(15px,1.6vw,17px);margin:9px 0;line-height:1.4}
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-event-option button{margin-top:10px}
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-swipe-hint{display:none}
 /* One bag and one formation. Selected gear exposes only the relevant comparisons. */
@@ -124,7 +124,8 @@ body.v22-app.v21-app.arena-v10.arena-v11 .finish-gold .v21-card-copy>strong{colo
 body.v22-app.v21-app.arena-v10.arena-v11 .v21-face.finish-gold{box-shadow:0 0 0 1px #ffe5a7,1px 6px 0 #74522544,0 8px 25px #e1aa4d2b!important}
 body.v22-app.v21-app.arena-v10.arena-v11 .v22-special-mark{position:absolute;right:8px;top:17%;z-index:4;background:#eac56d;color:#1c3541;border:1px solid #fff4ba;border-radius:4px;padding:4px 6px;font:900 clamp(9px,4.8cqw,13px) 'Arena Display';box-shadow:0 2px 7px #11243655}
 body.v22-app.v21-app.arena-v10.arena-v11 .v21-atk svg{width:.85em;height:.85em;display:inline-block;vertical-align:middle;fill:currentColor}
-body.v22-app.v21-app.arena-v10.arena-v11 .v21-face.finish-gold:hover .v21-reflection{background:linear-gradient(110deg,transparent 35%,#fff2bd55 48%,transparent 62%);animation:v22-foil .8s ease-out 1}
+body.v22-app.v21-app.arena-v10.arena-v11 .v21-face.finish-gold:hover .v21-reflection,body.v22-app.v21-app.arena-v10.arena-v11 .v192-reveal-card.v22-pack-unique-holo .v21-reflection,body.v22-app.v21-app.arena-v10.arena-v11 .v192-reveal-card.revealed[data-special="1"] .v21-reflection{background:linear-gradient(110deg,transparent 35%,#fff2bd55 48%,transparent 62%);animation:v22-foil .8s ease-out 1}
+body.v22-app.v21-app.arena-v10.arena-v11 .v192-reveal-card.v22-pack-unique-holo{filter:saturate(1.08) brightness(1.04)}
 body.v22-app.v21-app.arena-v10.arena-v11 .v21-face .v21-card-top>span{font-size:clamp(9px,4cqw,12px)!important}
 body.v22-app.v21-app.arena-v10.arena-v11 .v21-face .v21-signature{font-size:clamp(10px,4.2cqw,13px)!important}
 body.v22-app.v21-app.arena-v10.arena-v11 .v21-face.rarity-legendary .v21-card-form,body.v22-app.v21-app.arena-v10.arena-v11 .v21-face.rarity-epic .v21-card-form{display:none}

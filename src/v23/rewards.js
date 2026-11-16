@@ -33,9 +33,7 @@ export function chooseBundleReward23(r,index,replaceUid=null,expectedToken=null)
  const c=registry(r.worlds,r.statsMode);let earned;
  if(o.kind==='hero'){
   const hero=c.byId.get(o.id);if(!hero||r.units.some(u=>c.byId.get(u.cardId).person===hero.person))return false;
-  let gone=null;if(r.units.length>=8){const i=r.units.findIndex(u=>u.uid===replaceUid);if(i<0)return false;gone=r.units[i];r.units.splice(i,1);}
-  const unit=addHero(r,o.id,o.finish);if(!unit){if(gone)r.units.push(gone);return false;}
-  if(gone)(r.departed??=[]).push({...gone,weapon:null,armor:null,reason:'reward-swap'});
+  const unit=addHero(r,o.id,o.finish);if(!unit)return false;
   earned={type:'hero',cardId:o.id,finish:o.finish,uid:unit.uid};
  }else if(o.kind==='weapon'){
   if(!c.byItem.get(o.id)?.ok||!r.units.some(u=>c.byId.get(u.cardId).universe===c.byItem.get(o.id).universe))return false;

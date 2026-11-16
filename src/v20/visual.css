@@ -75,10 +75,13 @@
 .v20-app .v17-reward-visual{height:200px!important;background:linear-gradient(#fff7df14,#17373320),var(--reward-scene) center/cover!important;border-bottom:1px solid #c7ccb6}
 .v20-app .v17-reward-visual.v19-reward-card{height:275px!important;background:#e5eadd!important;display:grid;place-items:center;padding:16px}.v20-app .v17-reward-visual .v19-face{height:240px!important;width:160px!important}
 .v20-app .v17-reward-caption{padding:20px!important}.v20-app .v17-reward-caption h2{font-size:31px!important;color:#233b38!important}.v20-app .v17-reward-caption p{font-size:12px!important;color:#536b59!important;line-height:1.5}
-.v20-app[data-phase=rest] .a-reward{min-height:250px!important;position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:25px!important;color:#fff4d8!important;background:#1a3a40!important}
-.v20-app[data-phase=rest] .a-reward:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#102c3488,#102c34cc),var(--v20-rest-art,var(--scene)) center/cover;z-index:-2}
-.v20-app[data-phase=rest] .a-reward:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#153a3ef2,transparent 70%);z-index:-1}
-.v20-app[data-phase=rest] .a-reward h2,.v20-app[data-phase=rest] .a-reward p,.v20-app[data-phase=rest] .a-reward b{color:#fff3d8!important;position:relative;z-index:1}
+.v20-app[data-phase=rest] .a-reward{min-height:250px!important;position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:8px;padding:28px 24px!important;color:#fff4d8!important;background:#1a3a40!important;overflow:hidden}
+.v20-app[data-phase=rest] .a-reward:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#102c3488,#102c34cc),var(--v20-rest-art,var(--scene)) center/cover;z-index:0;pointer-events:none}
+.v20-app[data-phase=rest] .a-reward:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#153a3ef2 8%,transparent 72%);z-index:1;pointer-events:none}
+.v20-app[data-phase=rest] .a-reward>span{position:absolute;top:16px;right:18px;z-index:3;font-size:28px;opacity:.85;line-height:1}
+.v20-app[data-phase=rest] .a-reward h2,.v20-app[data-phase=rest] .a-reward p,.v20-app[data-phase=rest] .a-reward b{color:#fff3d8!important;position:relative;z-index:3;margin:0;max-width:92%;text-shadow:0 1px 2px #0a1c22aa}
+.v20-app[data-phase=rest] .a-reward h2{font-size:clamp(22px,3vw,30px)!important;line-height:1.15}
+.v20-app[data-phase=rest] .a-reward p{font-size:15px!important;line-height:1.35;opacity:.95}
 .v20-app[data-phase=rest] .a-reward:nth-child(2):before{filter:hue-rotate(28deg) saturate(1.05)}
 /* Arcade, parties and collection receive the same finish. */
 .v20-app .v16-arcade-heading,.v20-app .p-hero,.v20-app .c-heading,.v20-app .a-pantheon>header{border:1px solid #b9c7b1!important;border-radius:18px!important;padding:34px!important;min-height:210px!important;background:linear-gradient(90deg,#faf4e8fa,#faf4e8e0 48%,#faf4e844),var(--v20-archive) center/cover!important;position:relative;isolation:isolate}
@@ -250,8 +253,9 @@
 .v20-top-card{width:min(200px,28vw);border:2px solid #e7c986;border-radius:16px;background:linear-gradient(180deg,#fffaf0,#f3ead4);padding:12px 12px 16px;box-shadow:0 14px 34px #10263028;cursor:pointer;transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column;align-items:center;gap:10px;color:#243e38}
 .v20-top-card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 22px 44px #10263038}
 .v20-top-card-label{font:700 11px 'Arena Text';letter-spacing:.16em;text-transform:uppercase;color:#8a6a2e}
-.v20-top-card-face{width:100%;aspect-ratio:2/3;border-radius:10px;overflow:hidden;border:1px solid #d4c89f;background:#1a3038}
-.v20-top-card-face img{width:100%;height:100%;object-fit:cover;display:block}
+.v20-top-card-face{width:100%;aspect-ratio:2/3;border-radius:10px;overflow:hidden;border:1px solid #d4c89f;background:#1a3038;display:grid;place-items:center}
+.v20-top-card-face img,.v20-top-card-face .v19-face,.v20-top-card-face .v21-face{width:100%;height:100%;object-fit:cover;display:block}
+.v20-top-card-face .v19-face,.v20-top-card-face .v21-face{aspect-ratio:2/3}
 .v20-top-card b{font:700 15px 'Arena Display';text-align:center;line-height:1.2}
 .v20-bilan-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:36px 0 18px!important}
 .v20-bilan-pack,.v20-bilan-restart{min-height:64px!important;padding:18px 34px!important;font-size:20px!important;font-weight:800!important;border-radius:14px!important;letter-spacing:.02em}

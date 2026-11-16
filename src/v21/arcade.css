@@ -56,8 +56,8 @@ body.v21-app.arena-v10.arena-v11 .rarity-rare .v21-card-form,body.v21-app.arena-
 body.v21-app.arena-v10.arena-v11 .rarity-rare .v21-card-copy{padding-top:22%}
 body.v21-app.arena-v10.arena-v11 .rarity-epic .v21-card-copy,body.v21-app.arena-v10.arena-v11 .rarity-legendary .v21-card-copy{padding-top:19%}
 body.v21-app.arena-v10.arena-v11 .rarity-epic .v21-card-copy>strong,body.v21-app.arena-v10.arena-v11 .rarity-legendary .v21-card-copy>strong{margin-bottom:9px}
-body.v21-app.arena-v10.arena-v11 .v21-equipment .v21-card-art{background:radial-gradient(at 50% 30%,#f8f0d7,#a9c5c6)}
-body.v21-app.arena-v10.arena-v11 .v21-equipment .v21-card-art img{object-fit:contain!important;object-position:center 30%!important;padding:15% 7% 30%}
+body.v21-app.arena-v10.arena-v11 .v21-equipment .v21-card-art{background:#233c48}
+body.v21-app.arena-v10.arena-v11 .v21-equipment .v21-card-art img{object-fit:cover!important;object-position:50% 28%!important;padding:0!important}
 body.v21-app.arena-v10.arena-v11 .a-card-info,body.v21-app.arena-v10.arena-v11 .v193-unit-label,body.v21-app.arena-v10.arena-v11 .a-card-hp-heart{display:none!important}
 body.v21-app.arena-v10.arena-v11 .a-card{background:transparent!important;border:0!important;box-shadow:none!important;rotate:0deg!important;transform:none;perspective:900px}
 body.v21-app.arena-v10.arena-v11 .v14-thumb .v21-face{border-width:1px!important;border-radius:5px!important;box-shadow:none!important}

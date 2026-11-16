@@ -12,7 +12,7 @@ function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&l
 function memoryFace(u,seed){
  let h;try{h=registry([u.universe||String(u.cardId).split(':')[0]],u.statsMode||'raw').byId.get(u.cardId);}catch{}
  if(!h)return '<span class="a-help">Carte introuvable</span>';
- return cardMarkup21({...h,...Object.fromEntries(['attack','maxHp','speed'].filter(k=>Number.isFinite(u[k])).map(k=>[k,u[k]]))},{seed,edition:u.finish||u.edition,statsResolved:Number.isFinite(u.attack),legacyEffects:!['21.0.0','22.0.0'].includes(u.combatVersion)});
+ return cardMarkup21({...h,...Object.fromEntries(['attack','maxHp','speed'].filter(k=>Number.isFinite(u[k])).map(k=>[k,u[k]]))},{seed,skin:u.finish||u.edition,edition:u.finish||u.edition,statsResolved:Number.isFinite(u.attack),legacyEffects:!['21.0.0','22.0.0'].includes(u.combatVersion)});
 }
 
 export function bilanMarkup(receipt,{seed=''}={}){

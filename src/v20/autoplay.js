@@ -65,8 +65,7 @@ export function autoStep(r,h){
   if(r.phase==='reward'&&r.contentVersion==='22.0.0'){
     const choices=r.rewards.map((x,i)=>({x,i})).filter(({x,i})=>!x.disabled&&(r.rewardLockedIndex==null||r.rewardLockedIndex===i));
     const pick=choices.length?choices[liveInt(r,0,choices.length-1)]:null;
-    const swapUid=r.units.length>=8?pickRand([...r.units])?.uid:null;
-    return pick?!!chooseReward(r,pick.i,swapUid):false;
+    return pick?!!chooseReward(r,pick.i,null):false;
   }
   if(r.phase==='reward'){
     const rewards=r.rewards||[];
@@ -86,18 +85,13 @@ export function autoStep(r,h){
   if(r.phase==='shop'&&r.contentVersion==='22.0.0'){
     const c=registry(r.worlds,r.statsMode),weak=Math.min(...r.units.slice(0,5).map(power));
     const upgrade=r.shop.map((o,i)=>({o,i})).filter(({o})=>!o.disabled&&!o.bought&&o.kind==='hero'&&r.coins>=o.price&&(r.units.length<5||power(c.byId.get(o.id))*(o.finish==='gold'?1.1:1)>weak*1.15)).sort((a,b)=>power(c.byId.get(b.o.id))-power(c.byId.get(a.o.id)))[0];
-    if(upgrade)return !!buy(r,upgrade.i,r.units.length>=8?[...r.units].sort((a,b)=>power(a)-power(b))[0].uid:null);
-    if(!r.careBought&&r.coins>=30&&r.units.some(u=>u.hp<u.maxHp*.6))return !!buyCare(r);
-    const weapon=r.shop.map((o,i)=>({o,i})).find(({o})=>!o.disabled&&!o.bought&&o.kind==='weapon'&&r.coins>=o.price&&r.units.some(u=>c.byId.get(u.cardId).universe===o.universe&&r.items.filter(it=>{const g=c.byItem.get(it.cardId);return g?.universe===o.universe&&['arme','outil'].includes(g.category);}).length<r.units.slice(0,5).filter(x=>c.byId.get(x.cardId).universe===o.universe).length));
-    if(weapon)return !!buy(r,weapon.i);
+    if(upgrade)return !!buy(r,upgrade.i,null);
+    const gear=r.shop.map((o,i)=>({o,i})).find(({o})=>!o.disabled&&!o.bought&&(o.kind==='weapon'||o.kind==='object')&&r.coins>=o.price);
+    if(gear)return !!buy(r,gear.i);
     return !!leaveNode(r);
   }
   if(r.phase==='shop'){
-    if(!r.careBought&&r.coins>=30&&r.units.some(u=>u.hp<u.maxHp)){
-      buyCare(r);
-      return true;
-    }
-    const affordable=(r.shop||[]).map((o,i)=>({o,i})).filter(x=>!x.o.bought&&r.coins>=x.o.price&&!x.o.disabled&&(x.o.kind!=='hero'||r.units.length<8));
+    const affordable=(r.shop||[]).map((o,i)=>({o,i})).filter(x=>!x.o.bought&&r.coins>=x.o.price&&!x.o.disabled);
     if(affordable.length&&Math.random()<.45){
       buy(r,pickRand(affordable).i);
       return true;

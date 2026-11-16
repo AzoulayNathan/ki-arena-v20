@@ -1,6 +1,6 @@
 import {registry,WORLDS} from '../arena/catalog.js';
 import {seedState,shuffle} from '../survival/random.js';
-import {runArenaBattle} from '../arena/battle.js';
+import {runArenaBattle} from '../v22/battle.js';
 export const PARTY_VERSION=1;
 export const PARTY_KEY='kiarena:party:v13';
 export const RARITIES={common:'Commune',uncommon:'Peu commune',rare:'Rare',epic:'Épique',legendary:'Légendaire'};

@@ -1,6 +1,9 @@
-/* Separate round engine. The historical V8 battle.js remains byte-identical.
- * DB effect definitions are read from CARD_MAP through catalog. HXH vague effects
- * use the explicit editorial rules documented in DECISIONS_V9.md. */
+/* Survival keeps its historical deploy/round card loop for equipment actions.
+ * Shared arena resolution (arcade / minis / solo) lives in v22/battle.js — re-exported here
+ * so survival tooling can call the same engine without a third combat system. */
+import {runArenaBattle} from '../v22/battle.js';
+export {runArenaBattle};
+export function resolveArenaEncounter(teamA,teamB,opts){return runArenaBattle(teamA,teamB,opts);}
 import {isRefinedRun} from './economy.js';
 import {catalog} from './catalog.js';
 import {random,pick} from './random.js';

@@ -20,11 +20,8 @@ export function ensureStarterPack(world='DB',storage=globalThis.localStorage){
   const w=['DB','HXH','NARUTO','ONEPIECE'].includes(world)?world:'DB';
   const c=registry([w]),cards=[],id='starter:v20:'+w;
   for(let i=0;i<PACK_SIZE;i++){
-    const seed='WELCOME-V22:'+freshId()+':'+i,rarity=rarityForRoll(randomInt(0,99)),pool=c.heroes.filter(h=>h.rarity===rarity);
-    const use=pool.length?pool:c.heroes;
-    const hero=use[randomInt(0,use.length-1)];
-    const finish=rollFinish({randomMode:'live'});
-    cards.push({id:hero.id,finish,rarity:hero.rarity||rarity,seed,universe:hero.universe});
+    const seed='WELCOME-V22:'+freshId()+':'+i,rarity=rarityForRoll(randomInt(0,99)),finish=rollFinish({randomMode:'live'});
+    cards.push(rollPackCard(c,rarity,finish,seed,w,()=>randomInt(0,99)));
   }
   const pack={id,worlds:[w],cards,opened:false,starter:true};
   state.claims.push(pack);
@@ -32,7 +29,16 @@ export function ensureStarterPack(world='DB',storage=globalThis.localStorage){
   return pack;
 }
 /** One five-card booster after a resolved fight. No floor history, no rerolls. */
-export function rewardPack(r,storage=globalThis.localStorage){if(!r||r.phase!=='end'||!r.history?.length)return null;const state=collectionState(storage),id=r.runInstanceId||r.runId,existing=state.claims.find(p=>p.id===id);if(existing)return existing;const c=registry(r.worlds),cards=[];for(let i=0;i<PACK_SIZE;i++){const seed=r.seed+':pack:'+id+':'+i,rarity=rarityForRoll(cosmeticHash(seed)%100),pool=c.heroes.filter(h=>h.rarity===rarity);if(!pool.length)throw Error('Pool de rareté indisponible');const hero=pool[cosmeticHash(seed+':hero')%pool.length];const finish=dropFinish(seed,hero.id);cards.push({id:hero.id,finish,rarity,seed,universe:hero.universe});}const pack={id,worlds:[...r.worlds],cards,opened:false};state.claims.push(pack);storage.setItem(KEY,JSON.stringify(state));return pack;}
+function rollPackCard(c,rarity,finish,seed,universeHint,roll){
+ const inWorld=g=>!universeHint||(Array.isArray(universeHint)?!universeHint.length||universeHint.includes(g.universe):g.universe===universeHint);
+ const wantWeapon=roll()<20,weapons=(c.weapons||[]).filter(g=>g.rarity===rarity&&inWorld(g));
+ if(wantWeapon&&weapons.length){const g=weapons[roll()%weapons.length];return {id:g.id,finish:finish??dropFinish(seed,g.id),rarity:g.rarity||rarity,seed,universe:g.universe,kind:'weapon'};}
+ const pool=c.heroes.filter(h=>h.rarity===rarity&&inWorld(h));
+ const use=pool.length?pool:c.heroes.filter(inWorld);
+ if(!use.length)throw Error('Pool de rareté indisponible');
+ const hero=use[roll()%use.length];return {id:hero.id,finish:finish??dropFinish(seed,hero.id),rarity:hero.rarity||rarity,seed,universe:hero.universe,kind:'hero'};
+}
+export function rewardPack(r,storage=globalThis.localStorage){if(!r||r.phase!=='end'||!r.history?.length)return null;const state=collectionState(storage),id=r.runInstanceId||r.runId,existing=state.claims.find(p=>p.id===id);if(existing)return existing;const c=registry(r.worlds),cards=[];for(let i=0;i<PACK_SIZE;i++){const seed=r.seed+':pack:'+id+':'+i,rarity=rarityForRoll(cosmeticHash(seed)%100),roll=n=>cosmeticHash(seed+':r'+n)%100;cards.push(rollPackCard(c,rarity,null,seed,r.worlds,()=>roll(cards.length)));}const pack={id,worlds:[...r.worlds],cards,opened:false};state.claims.push(pack);storage.setItem(KEY,JSON.stringify(state));return pack;}
 /** Single atomic write before reveal; closing/crashing cannot duplicate rewards. */
 export function openPack(id,storage=globalThis.localStorage){const state=collectionState(storage),p=state.claims.find(x=>x.id===id);if(!p)throw Error('Pack introuvable.');if(p.opened)return p;for(const o of p.cards)addToCollection(state,{...o,bump:true});p.opened=true;storage.setItem(KEY,JSON.stringify(state));return p;}
 export function pendingPacks(storage=globalThis.localStorage){return collectionState(storage).claims.filter(p=>!p.opened);}

@@ -77,7 +77,7 @@ export function validate(r){
   if(r.poolHash!==c.hash||r.N!==c.N||!['draft','roster','map','prepare','combat','reward','shop','rest','event','result','end','prestige'].includes(r.phase))throw Error('Pool ou phase invalide.');
   if(!Number.isInteger(r.rng)||typeof r.seed!=='string'||!r.seed.length||r.seed.length>120||!Number.isInteger(r.revision)||r.revision<0||!Number.isFinite(r.coins)||r.coins<0)throw Error('Métadonnées invalides.');
   for(const key of ['units','dead','items','nodes','trail','offers','history','rewards','shop','passives'])if(!Array.isArray(r[key]))throw Error('Run incomplète.');
-  if(r.units.length>8||new Set([...r.units,...r.dead].map(u=>u.uid)).size!==r.units.length+r.dead.length)throw Error('Effectif invalide.');
+  if(new Set([...r.units,...r.dead].map(u=>u.uid)).size!==r.units.length+r.dead.length)throw Error('Effectif invalide.');
   for(const u of [...r.units,...r.dead])if(!c.byId.has(u.cardId)||![u.hp,u.maxHp,u.attack,u.speed,u.level,u.wins].every(Number.isFinite)||u.hp<0||u.hp>u.maxHp||u.maxHp<1||u.attack<1||u.speed<0||u.level<1||u.level>5)throw Error('Combattant invalide.');
   if(r.units.some(u=>u.hp<=0)||r.dead.some(u=>u.hp!==0)||new Set(r.items.map(g=>g.uid)).size!==r.items.length||r.items.some(g=>!c.byItem.get(g.cardId)?.ok))throw Error('Inventaire ou KO invalide.');
   const assigned=new Set();

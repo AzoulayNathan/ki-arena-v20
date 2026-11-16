@@ -62,7 +62,7 @@ function shelf(){
     <div class="v192-pack-actions">
       ${available.length?'<button class="v20-pack-cta" data-pack="open">Déchirer le pack →</button>':allPending.length?'<button class="v20-pack-cta" data-pack="open-any">Aller au pack disponible ('+allPending.length+') →</button>':'<p>Termine un combat d’expédition pour gagner de nouveaux boosters.</p>'}
       ${last?'<button data-pack="replay">Revoir mon dernier pack</button>':''}
-      <details><summary>Chances d’obtention</summary><p>Par carte : commune 33 % · peu commune 27 % · rare 21 % · épique 15 % · légendaire 4 %.<br>Édition spéciale : 10 % (+10 % stats en jeu). Tirages indépendants dans les univers de la run.</p></details>
+      <details><summary>Chances d’obtention</summary><p>Par carte : commune 33 % · peu commune 27 % · rare 21 % · épique 15 % · légendaire 4 %.<br>20 % de chance d’obtenir une arme à la place d’un héros · édition UNIQUE : 10 % (foil + stats +10 % en jeu). Tirages indépendants dans les univers de la run.</p></details>
     </div>
   </section>`;
 }
@@ -114,7 +114,7 @@ function reveal(i){
   b.setAttribute('aria-pressed','true');
   b.setAttribute('aria-label','Agrandir '+(h.name||o.id));
   paint();
-  playUiCue('reveal',o.rarity,o.finish==='gold'||o.finish==='special');b.classList.add('just-revealed');setTimeout(()=>b.classList.remove('just-revealed'),550);if(['epic','legendary'].includes(o.rarity)||o.finish==='gold'){const title=document.createElement('b');title.className='v22-pack-rarity-word';title.textContent=o.finish==='gold'?'SPÉCIALE +10 %':o.rarity==='legendary'?'LÉGENDAIRE !':'ÉPIQUE !';b.append(title);}
+  playUiCue('reveal',o.rarity,o.finish==='gold'||o.finish==='special');b.classList.add('just-revealed');if(o.finish==='gold'||o.finish==='special')b.classList.add('v22-pack-unique-holo');setTimeout(()=>b.classList.remove('just-revealed'),550);if(['epic','legendary'].includes(o.rarity)||o.finish==='gold'||o.finish==='special'){const title=document.createElement('b');title.className='v22-pack-rarity-word';title.textContent=o.finish==='gold'||o.finish==='special'?'UNIQUE':o.rarity==='legendary'?'LÉGENDAIRE !':'ÉPIQUE !';b.append(title);}
   if(revealed.size===current.cards.length)playUiCue('complete',o.rarity,current.cards.some(x=>x.finish==='gold'));
   const st=overlay.querySelector('#v192-reveal-status');
   if(st)st.textContent=revealed.size+' / '+current.cards.length+' cartes révélées · Clique une carte révélée pour la voir en grand.';
