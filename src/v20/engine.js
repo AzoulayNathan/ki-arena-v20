@@ -17,7 +17,6 @@ import {registry,ARENA_VERSION,NORMALIZATION} from './catalog.js';
 import {seedState,int,pick,shuffle} from '../v22/random.js';
 import {distributeExact} from '../survival/encounter.js';
 import {rankBudget} from './difficulty.js';
-import {distinctWithout} from '../survival/boss.js';
 import {runArenaBattle} from './battle.js';
 import {ACT_LENGTH,MAP_ROWS,BOSS_ROW,DRAFT_BANDS,DRAFT_OFFERS,virtualToLocalRank,waveFromDepth,isSpecialEdition} from '../arena/rules.js';
 import {beginEvent,applyEventChoice} from './events.js';
@@ -165,53 +164,15 @@ export function chooseDraft(r,id){
   if(r.step===8)r.phase='map';else ensureDraft(r);
   return true;
 }
-const BOSS_NAMES={DB:/freezer|cell|buu|boo|broly|jiren|vegeta|tao pai pai|beerus|zamasu|goku black|hit\b|moro/i,HXH:/hisoka|illumi|chrollo|meruem|neferpitou|netero|feitan|uvogin|shaiapouf|menthuthuyoupi/i,NARUTO:/madara|kaguya|pain|nagato|orochimaru|obito|itachi/i,ONEPIECE:/kaido|kaidō|big mom|linlin|doflamingo|crocodile|akainu|teach|katakuri|\bimu\b|enel|ener/i};
-const bossCandidateCache=new Map(),enemyGearCache=new Map();
-function softBossAllowed(c){return c.rarity!=='legendary'&&c.rarity!=='epic';}
-function demoteSoftBossRanks(cat,ranks,B){
-  const used=new Set(ranks);
-  const next=ranks.map(rank=>{
-    const h=cat.heroes[rank-1];
-    if(!h||softBossAllowed(h))return rank;
-    const alt=cat.heroes.filter(c=>softBossAllowed(c)&&!used.has(c.poolRank)).sort((a,b)=>Math.abs(a.poolRank-rank)-Math.abs(b.poolRank-rank)||b.poolRank-a.poolRank)[0];
-    if(!alt)return rank;
-    used.delete(rank);used.add(alt.poolRank);return alt.poolRank;
-  });
-  let diff=B-next.reduce((a,b)=>a+b,0);
-  for(let guard=0;guard<500&&diff;guard++){
-    let moved=false;
-    for(let i=0;i<next.length&&diff;i++){
-      const step=diff>0?1:-1,cand=next[i]+step;
-      if(cand<1||cand>cat.N||used.has(cand))continue;
-      const h=cat.heroes[cand-1];if(!softBossAllowed(h))continue;
-      used.delete(next[i]);used.add(cand);next[i]=cand;diff-=step;moved=true;
-    }
-    if(!moved)break;
-  }
-  return next;
-}
-function arenaRanks(r,cat,B,k,kind,wave=99){
-  const soft=kind==='boss'&&wave<15;
-  const raw=distributeExact(r,cat.N,B,k);
-  const fallback=soft?demoteSoftBossRanks(cat,raw,B):raw;
-  if(kind!=='boss'||new Set(fallback).size<k||k<2)return fallback;
-  const candidateKey=cat.key+'|'+B+'|'+k+(soft?'|soft':'');
-  let candidates=isCurrentRules(r)?bossCandidateCache.get(candidateKey):null;
-  if(!candidates)candidates=cat.heroes.filter(c=>BOSS_NAMES[c.universe].test(c.name)&&(!soft||softBossAllowed(c))&&c.poolRank>=Math.ceil(B/k)&&B-c.poolRank>=(k-1)*k/2&&B-c.poolRank<=(k-1)*(2*c.poolRank-k)/2);
-  if(isCurrentRules(r))bossCandidateCache.set(candidateKey,candidates);
-  for(const c of shuffle(r,candidates)){
-    const rest=isCurrentRules(r)?distributeExact(r,c.poolRank-1,B-c.poolRank,k-1):distinctWithout(r,c.poolRank-1,B-c.poolRank,k-1,c.poolRank);
-    if(!rest)continue;
-    const ranks=shuffle(r,[c.poolRank,...rest]);
-    return soft?demoteSoftBossRanks(cat,ranks,B):ranks;
-  }
-  return fallback;
+const enemyGearCache=new Map();
+function arenaRanks(r,cat,B,k){
+  return distributeExact(r,cat.N,B,k);
 }
 export function makeEncounter(r,node){if(r.contentVersion==='22.0.0')r.rng=randomInt(0,0xffffffff);
   const cat=runCatalog(r);
   let wave=depthWave(r,node.row);
   if(r.omenDanger&&['normal','elite','boss'].includes(node.kind)){wave+=1;r.omenDanger=false;}
-  const kind=node.kind,baseB=rankBudget(cat.N,wave,kind),B=scaleBudget(baseB,r.prestigeDiff||0),k=Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3)),ranks=arenaRanks(r,cat,B,k,kind,wave),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,r.prestigeDiff||0)),count=Math.min(k,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
+  const kind=node.kind,baseB=rankBudget(cat.N,wave,kind),B=scaleBudget(baseB,r.prestigeDiff||0),k=Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3)),ranks=arenaRanks(r,cat,B,k),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,r.prestigeDiff||0)),count=Math.min(k,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
   const enemies=ranks.map((rank,i)=>({...unit(r,cat.heroes[rank-1]),uid:'enemy'+i,rank,...(r.contentVersion==='22.0.0'?{edition:'normal',finish:'black'}:{})})),items=[];
   for(let i=0;i<count;i++){const c=cat.byId.get(enemies[i].cardId),key=cat.key+'|'+c.universe+'|'+tier;let pool=isCurrentRules(r)?enemyGearCache.get(key):null;if(!pool){pool=cat.gear.filter(g=>g.universe===c.universe&&g.tier<=tier&&g.category!=='consommable');if(isCurrentRules(r))enemyGearCache.set(key,pool);}if(pool.length){const g=pick(r,pool);enemies[i][g.category==='armure'?'armor':'weapon']=g.id;items.push(g.id);}}
   return {nodeId:node.id,wave,kind,budget:B,ranks,tier,enemies,items};
