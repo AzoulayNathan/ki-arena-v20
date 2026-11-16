@@ -6,7 +6,9 @@ import {freshId,pick} from '../v22/random.js';
 
 export const REWARD_SCHEMA=3;
 export const hasRewardBundle=r=>r?.rewardSchema===REWARD_SCHEMA&&r.rewardBundle?.schema===REWARD_SCHEMA;
-function cardDraft(r,kind){
+export const isBossReward=r=>!!r?.rewardBundle?.boss;
+
+function cardDraft(r,kind,{boss=false}={}){
  const used=new Set(),poolWorlds=[...new Set(r.units.map(u=>registry(r.worlds,r.statsMode).byId.get(u.cardId).universe))].sort();
  if(kind==='gear'){
   const offers=['midA','midB','mystery'].map((band,i)=>{
@@ -17,7 +19,8 @@ function cardDraft(r,kind){
   if(offers.every(o=>o.disabled))offers.push({type:'coins',amount:30+3*contextPower(r).v,title:'Provisions de route',text:'Aucun équipement disponible dans ce palier. Compensation en zénis.',disabled:false});
   return {kind:'gear',offers};
  }
- const offers=['midA','midB','mystery'].map((band,i)=>{const o=drawCard(r,kind,band,{exclude:used});if(o.id){used.add(o.id);if(kind==='hero')used.add('person:'+o.person);}return {...o,poolWorlds,type:i===2?'mystery':kind==='hero'?'recruit':'item',revealed:i<2,title:i===2?'Le destin caché':kind==='hero'?'Un nouvel allié':'Une nouvelle arme'};});
+ const bands=boss?['midA','midB','mystery']:['midA','midB','mystery'];
+ const offers=bands.map((band,i)=>{const o=drawCard(r,kind,band,{exclude:used});if(o.id){used.add(o.id);if(kind==='hero')used.add('person:'+o.person);}return {...o,poolWorlds,type:boss?'item':(i===2?'mystery':kind==='hero'?'recruit':'item'),revealed:boss||i<2,title:boss?(kind==='hero'?'Allié du boss':'Arme du boss'):(i===2?'Le destin caché':kind==='hero'?'Un nouvel allié':'Une nouvelle arme')};});
  if(offers.every(o=>o.disabled))offers.push({type:'coins',amount:30+3*contextPower(r).v,title:'Provisions de route',text:'Aucun candidat disponible dans ce palier. Compensation en zénis.',disabled:false});
  return {kind,offers};
 }
@@ -26,19 +29,63 @@ function boonDraft(r){
  if(offers.every(x=>x.disabled))offers.push({type:'coins',amount:25+3*contextPower(r).v,title:'Provisions de route',text:'Équipe en pleine santé et toutes les reliques du palier déjà acquises.',disabled:false});
  return {kind:'boon',offers};
 }
-function prepareStage(r){const b=r.rewardBundle,s=b.stage;let stage=b.stages[s];if(!stage.ready){stage=s===2?boonDraft(r):cardDraft(r,stage.kind);stage.ready=true;b.stages[s]=stage;for(const [i,o]of stage.offers.entries())o.claimToken=b.id+':'+s+':'+i;}r.rewards=stage.offers;return stage.offers;}
+function relicPairDraft(r){
+ const exclude=new Set(),offers=[];
+ for(let i=0;i<2;i++){
+  const id=drawRelic(r,{exclude});
+  if(!id)break;
+  exclude.add(id);
+  offers.push({type:'relic',id,title:i===0?'Première relique':'Seconde relique',disabled:false,revealed:true});
+ }
+ if(!offers.length)offers.push({type:'coins',amount:40+4*contextPower(r).v,title:'Provisions de route',text:'Toutes les reliques de ce palier sont déjà acquises.',disabled:false});
+ else if(offers.length===1)offers.push({type:'coins',amount:25+3*contextPower(r).v,title:'Provisions de route',text:'Une seule relique restait dans ce palier.',disabled:false});
+ return {kind:'relic',offers};
+}
+function prepareStage(r){
+ const b=r.rewardBundle,s=b.stage;let stage=b.stages[s];
+ if(!stage.ready){
+  if(b.boss){
+   if(s===2)stage=relicPairDraft(r);
+   else stage=cardDraft(r,stage.kind,{boss:true});
+  }else stage=s===2?boonDraft(r):cardDraft(r,stage.kind);
+  stage.ready=true;b.stages[s]=stage;
+  for(const [i,o]of stage.offers.entries())o.claimToken=b.id+':'+s+':'+i;
+ }
+ r.rewards=stage.offers;return stage.offers;
+}
+function fullHealTeam(r){for(const u of r.units)if(u.hp>0)u.hp=u.maxHp;}
 export function beginRewards23(r){
  if(hasRewardBundle(r)&&r.rewardBundle.node===r.current)return r.rewardBundle.stages[r.rewardBundle.stage]?.offers||[];
- r.rewardBundle={schema:REWARD_SCHEMA,id:freshId(),node:r.current,context:contextPower(r),stage:0,claims:[],stages:['hero','gear','boon'].map(kind=>({kind,ready:false,offers:[]}))};
+ const boss=contextPower(r).kind==='boss';
+ if(boss)fullHealTeam(r);
+ r.rewardBundle={schema:REWARD_SCHEMA,id:freshId(),node:r.current,context:contextPower(r),stage:0,claims:[],boss,stages:(boss?['hero','weapon','relic']:['hero','gear','boon']).map(kind=>({kind,ready:false,offers:[]}))};
  r.rewardClaimed=false;r.rewardLockedIndex=null;return prepareStage(r);
+}
+function grantBossPack(r,stage){
+ const c=registry(r.worlds,r.statsMode),cards=[];
+ for(const o of stage.offers){
+  if(o.disabled||!o.kind)continue;
+  if(o.kind==='hero'){
+   const hero=c.byId.get(o.id);if(!hero||r.units.some(u=>c.byId.get(u.cardId).person===hero.person))continue;
+   const unit=addHero(r,o.id,o.finish);if(unit)cards.push({cardId:o.id,finish:o.finish,uid:unit.uid});
+  }else if(o.kind==='weapon'){
+   const g=c.byItem.get(o.id);if(!g?.ok||!r.units.some(u=>c.byId.get(u.cardId).universe===g.universe))continue;
+   const item=addItem(r,o.id,o.finish);if(item)cards.push({cardId:o.id,finish:o.finish,uid:item.uid,category:g.category});
+  }
+ }
+ return cards;
 }
 export function chooseBundleReward23(r,index,replaceUid=null,expectedToken=null){
  const b=r.rewardBundle;
  if(r.phase!=='reward'||!hasRewardBundle(r)||b.node!==r.current||b.stage>=3||r.rewardClaimed||!Number.isInteger(index)||r.nodes.find(n=>n.id===r.current)?.done)return false;
  const o=r.rewards[index];if(!o||o.disabled||expectedToken&&expectedToken!==o.claimToken||r.rewardLockedIndex!=null&&r.rewardLockedIndex!==index)return false;
  if(JSON.stringify(o)!==JSON.stringify(b.stages[b.stage].offers[index])||b.claims.some(c=>c.stage===b.stage))return false;
- const c=registry(r.worlds,r.statsMode);let earned;
- if(o.kind==='hero'){
+ const stage=b.stages[b.stage],c=registry(r.worlds,r.statsMode);let earned;
+ if(b.boss&&(stage.kind==='hero'||stage.kind==='weapon')&&o.kind){
+  const cards=grantBossPack(r,stage);
+  if(!cards.length)return false;
+  earned={type:stage.kind==='hero'?'hero_pack':'weapon_pack',cards};
+ }else if(o.kind==='hero'){
   const hero=c.byId.get(o.id);if(!hero||r.units.some(u=>c.byId.get(u.cardId).person===hero.person))return false;
   const unit=addHero(r,o.id,o.finish);if(!unit)return false;
   earned={type:'hero',cardId:o.id,finish:o.finish,uid:unit.uid};
@@ -61,17 +108,22 @@ export function validateRewards23(r){
  const b=r.rewardBundle;if(!b){if(r.phase==='reward'&&r.pending)throw Error('Récompenses de combat absentes.');return;}
  if(b.schema!==3||typeof b.id!=='string'||b.node!==r.current||!Number.isInteger(b.stage)||b.stage<0||b.stage>3||!Array.isArray(b.claims)||b.claims.length!==b.stage||!Array.isArray(b.stages)||b.stages.length!==3)throw Error('Parcours de récompenses invalide.');
  if(b.claims.some((x,i)=>x.stage!==i||!x.token?.startsWith(b.id+':'+i+':'))||new Set(b.claims.map(x=>x.token)).size!==b.claims.length)throw Error('Récompense répétée.');
- const c=registry(r.worlds,r.statsMode),actual=contextPower(r);
+ const c=registry(r.worlds,r.statsMode),actual=contextPower(r),boss=!!b.boss;
+ if(boss!==(actual.kind==='boss'))throw Error('Contexte boss incohérent.');
  if(['N','v','kind','budget','k','maxRelicTier'].some(k=>b.context[k]!==actual[k]))throw Error('Contexte de butin invalide.');
+ const expectedKinds=boss?['hero','weapon','relic']:['hero','gear','boon'];
  for(const [s,stage]of b.stages.entries()){
-  if(stage.kind!==['hero','gear','boon'][s]||!Array.isArray(stage.offers))throw Error('Draft de récompense invalide.');if(s>b.stage){if(stage.ready||stage.offers.length)throw Error('Draft futur déjà ouvert.');continue;}if(!stage.ready||!stage.offers.length)throw Error('Draft actif absent.');
+  if(stage.kind!==expectedKinds[s]||!Array.isArray(stage.offers))throw Error('Draft de récompense invalide.');if(s>b.stage){if(stage.ready||stage.offers.length)throw Error('Draft futur déjà ouvert.');continue;}if(!stage.ready||!stage.offers.length)throw Error('Draft actif absent.');
   const seen=new Set(),people=new Set();
   for(const [i,o]of stage.offers.entries()){
    if(o.claimToken!==b.id+':'+s+':'+i)throw Error('Jeton de récompense invalide.');if(o.disabled)continue;
    if(o.kind){
-    const expectedKind=s===0?'hero':(o.kind==='object'?'object':'weapon');
-    if(o.kind!==expectedKind&&!(s===1&&(o.kind==='weapon'||o.kind==='object')))throw Error('Carte de récompense invalide.');
-    if(o.revealed!==(i<2)||o.type!==(i===2?'mystery':s===0?'recruit':'item')||!['black','white','gold'].includes(o.finish)||seen.has(o.id))throw Error('Carte de récompense invalide.');seen.add(o.id);
+    const expectedKind=s===0?'hero':(boss?'weapon':(o.kind==='object'?'object':'weapon'));
+    if(o.kind!==expectedKind&&!( !boss&&s===1&&(o.kind==='weapon'||o.kind==='object')))throw Error('Carte de récompense invalide.');
+    if(boss){
+     if(!o.revealed||!['black','white','gold'].includes(o.finish)||seen.has(o.id))throw Error('Carte de récompense invalide.');
+    }else if(o.revealed!==(i<2)||o.type!==(i===2?'mystery':s===0?'recruit':'item')||!['black','white','gold'].includes(o.finish)||seen.has(o.id))throw Error('Carte de récompense invalide.');
+    seen.add(o.id);
     if(s===0){
      const full=c.heroes.slice().sort((a,b)=>((a.attack+a.maxHp+a.speed)-(b.attack+b.maxHp+b.speed))||(a.id<b.id?-1:a.id>b.id?1:0));
      const rank=full.findIndex(x=>x.id===o.id)+1;
@@ -87,7 +139,13 @@ export function validateRewards23(r){
      const full=objectPool(r);const rank=full.findIndex(x=>x.id===o.id)+1;if(!rank||!c.byItem.get(o.id)||!['outil','consommable'].includes(c.byItem.get(o.id).category))throw Error('Objet de récompense invalide.');
     }
    }else if(o.type==='relic'&&(!RELIC_BY_ID.has(o.id)||RELIC_BY_ID.get(o.id).tier>b.context.maxRelicTier))throw Error('Relique hors palier.');
-   else if(!['heal','relic','coins'].includes(o.type))throw Error('Gain inconnu.');
+   else if(boss&&s===2&&!['relic','coins'].includes(o.type))throw Error('Gain boss invalide.');
+   else if(!boss&&!['heal','relic','coins'].includes(o.type))throw Error('Gain inconnu.');
+  }
+  if(boss&&s===2){
+   const relics=stage.offers.filter(o=>!o.disabled&&o.type==='relic');
+   if(relics.length>2)throw Error('Trop de reliques boss.');
+   if(new Set(relics.map(o=>o.id)).size!==relics.length)throw Error('Reliques boss dupliquées.');
   }
  }
  if(r.phase==='reward'&&JSON.stringify(r.rewards)!==JSON.stringify(b.stages[b.stage]?.offers||[]))throw Error('Étape de récompense désynchronisée.');
