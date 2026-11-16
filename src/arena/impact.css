@@ -237,13 +237,13 @@
 .a-emblems{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0;}
 .a-emblem{border:1px solid rgba(255,200,120,.35);padding:.2rem .55rem;border-radius:999px;font-size:.72rem;letter-spacing:.04em;}
 .a-memory-card{margin:0;width:84px;}
-.a-memory-card img{width:84px;height:118px;object-fit:cover;border-radius:10px;display:block;}
+.a-memory-card>img{width:84px;height:118px;object-fit:cover;border-radius:10px;display:block;}
 .a-memory-card figcaption{font-size:.68rem;text-align:center;margin-top:.25rem;}
 .a-memory-card.is-gone{opacity:.55;filter:grayscale(.4);}
 .a-bilan-team,.a-honor-row{display:flex;flex-wrap:wrap;gap:.7rem;}
 .a-bilan-honors{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;}
 .a-honor-card{background:rgba(10,16,24,.75);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:.8rem;animation:a-honor-in 1s ease;}
-.a-honor-art img{width:100%;max-width:160px;aspect-ratio:2/3;object-fit:cover;border-radius:12px;}
+.a-honor-art>img{width:100%;max-width:160px;aspect-ratio:2/3;object-fit:cover;border-radius:12px;}
 .a-bilan-tabs{display:flex;gap:.4rem;flex-wrap:wrap;}
 .a-tab{border:1px solid rgba(255,255,255,.15);background:transparent;color:inherit;border-radius:999px;padding:.35rem .8rem;cursor:pointer;}
 .a-tab.active{border-color:#53cfff;background:rgba(83,207,255,.12);}

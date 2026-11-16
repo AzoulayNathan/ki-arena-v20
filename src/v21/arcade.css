@@ -331,6 +331,9 @@ body.v21-app.arena-v10.arena-v11 .v20-top-card-face>.v21-face{width:min(100%,190
 body.v21-app.arena-v10.arena-v11 .v20-top-card-face{display:grid!important;place-items:center!important;height:auto!important;min-height:0!important;aspect-ratio:2/3!important}
 body.v21-app.arena-v10.arena-v11 .a-honor-art>.v21-face{width:min(100%,170px)!important;height:auto!important;margin:auto!important;display:block!important}
 body.v21-app.arena-v10.arena-v11 .a-honor-art{height:auto!important;display:grid!important;gap:10px!important;place-items:center!important}
+body.v21-app.arena-v10.arena-v11 .a-honor-art .v21-card-art img,body.v21-app.arena-v10.arena-v11 .a-memory-card .v21-card-art img,body.v21-app.arena-v10.arena-v11 .v20-top-card-face .v21-card-art img{max-width:none!important;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:50% 18%!important;border-radius:0!important}
+body.v21-app.arena-v10.arena-v11 .a-honor-card{overflow:visible!important}
+body.v21-app.arena-v10.arena-v11 .v20-top-card-face{overflow:visible!important;height:auto!important}
 body.v21-app.arena-v10.arena-v11 .a-bilan-team{display:flex!important;justify-content:center!important;flex-wrap:wrap!important;gap:15px!important}
 body.v21-app.arena-v10.arena-v11 .a-memory-card{flex:0 0 145px!important;width:145px!important;margin:0!important}
 body.v21-app.arena-v10.arena-v11 .a-combat-team .v21-atk,body.v21-app.arena-v10.arena-v11 .a-combat-team .v21-speed{display:none!important}

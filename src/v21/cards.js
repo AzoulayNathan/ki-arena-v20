@@ -1,15 +1,23 @@
 import {equipmentIcon} from '../v22/equipment-art.js';
 import {reviewedArt} from './reviewed-art.js';
 import {plainFinish,dropFinish} from './finish.js';
-import {rawPortraitUrl,equipmentArtUrl,asset} from '../v19/media.js';
+import {rawPortraitUrl,equipmentArtUrl,asset,cardArtFallbackChain,hasLocalAsset} from '../v19/media.js';
 import {normalizeEdition,RARITY_NAMES} from '../v19/card-spec.js';
 import {combatEffects} from './effects.js';
+import {registry,WORLDS} from '../v19/catalog.js';
 const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const glyph=t=>/heal|regen|life/.test(t)?'＋':/shield|guard|intercept/.test(t)?'⬡':/stun|weaken/.test(t)?'ϟ':/counter/.test(t)?'↶':/focus|critical/.test(t)?'◎':'✦';
+function heroArtUrl(h,seed='ARENA'){
+ const reviewed=reviewedArt(h);if(reviewed?.path&&hasLocalAsset(reviewed.path))return asset(reviewed.path);
+ const candidate=rawPortraitUrl(h,{seed});
+ if(candidate&&!/assets\/(?:cards(?:[-/])|stylized\/)/.test(candidate))return candidate;
+ const chain=cardArtFallbackChain(h,{seed,raw:true});
+ const preferred=chain.find(u=>u&&!/assets\/(?:cards(?:[-/])|stylized\/)/.test(u));
+ return preferred||candidate||chain[0]||'';
+}
 export function cardMarkup21(h,{seed='ARENA',skin,edition,equipment=false,legacyEffects=true,statsResolved=false}={}){
  const explicit=skin||h._collectionSkin||edition,finish=normalizeEdition(explicit)==='special'?'gold':['black','white'].includes(explicit)?explicit:explicit==='normal'?plainFinish(seed,h.id):dropFinish(seed,h.id),special=finish==='gold',rarity=h.rarity||'common',level=1+['common','uncommon','rare','epic','legendary'].indexOf(rarity);
- const reviewed=equipment?null:reviewedArt(h),candidate=equipment?'':rawPortraitUrl(h,{seed});
- const art=equipment?(equipmentArtUrl(h)||asset(equipmentIcon(h))):/assets\/(?:cards(?:[-/])|stylized\/)/.test(candidate)?'':candidate;
+ const art=equipment?(equipmentArtUrl(h)||asset(equipmentIcon(h))):heroArtUrl(h,seed);
  const effects=equipment||legacyEffects?(h.effects||[]):combatEffects(h),signature=effects[0];
  const specialMul=special&&!equipment&&!statsResolved&&!h.specialApplied&&(skin==='gold'||h._collectionSkin==='gold')?1.1:1;
  const atk=equipment?(h.atk?'+'+h.atk+'%':'—'):Math.round((h.attack||0)*specialMul),hp=equipment?(h.shield?'+'+h.shield+'%':'—'):Math.round((h.currentHp??h.maxHp??0)*specialMul),vit=equipment?h.category:Math.round((h.speed||0)*specialMul);
@@ -17,7 +25,20 @@ export function cardMarkup21(h,{seed='ARENA',skin,edition,equipment=false,legacy
 }
 let installed=false;
 export function hydrateCards21(root=document){
- root.querySelectorAll('.v21-face').forEach(el=>el.dataset.ready='true');
+ root.querySelectorAll('.v21-face').forEach(el=>{
+  el.dataset.ready='true';
+  if(el.dataset.equipment==='1')return;
+  const art=el.querySelector('.v21-card-art');if(!art)return;
+  const img=art.querySelector('img');if(img&&!img.hidden&&!art.classList.contains('missing'))return;
+  let h;try{h=registry(WORLDS).byId.get(el.dataset.cardId);}catch{}
+  if(!h)return;
+  const url=heroArtUrl(h,el.dataset.v19Seed||'ARENA');if(!url){art.classList.add('missing');return;}
+  const next=img||Object.assign(document.createElement('img'),{alt:h.name,loading:'lazy',decoding:'async'});
+  next.hidden=false;next.src=url;
+  next.onerror=()=>{next.hidden=true;art.classList.add('missing');};
+  if(!img)art.prepend(next);
+  art.classList.remove('missing');
+ });
  if(installed)return;installed=true;let frame=0,pending=null;
  const reduced=()=>matchMedia('(prefers-reduced-motion:reduce)').matches;
  document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||reduced())return;const card=e.target.closest('.v21-face');if(!card||card.closest('.a-battlefield,.v14-thumb'))return;const b=card.getBoundingClientRect();pending={card,x:(e.clientX-b.left)/b.width*2-1,y:(e.clientY-b.top)/b.height*2-1};if(!frame)frame=requestAnimationFrame(()=>{frame=0;if(!pending)return;const {card,x,y}=pending;card.style.setProperty('--rx',-y*5+'deg');card.style.setProperty('--ry',x*8+'deg');card.style.setProperty('--shine-x',(x+1)*50+'%');card.style.setProperty('--shine-y',(y+1)*50+'%');});},{passive:true});
