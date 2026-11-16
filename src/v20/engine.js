@@ -3,7 +3,7 @@ import {runArenaBattle as runBattle22} from '../v22/battle.js';
 import {battleCard22} from '../v22/adapter.js';
 import {ensureDraft22,chooseDraft22} from '../v22/draft.js';
 import {effectiveGear} from '../v22/power.js';
-import {rewardOptions22,chooseReward22,stockShop22,buy22,buyShopHeal22,SHOP_HEAL_PRICE,coinGain,sellItemPrice22} from '../v22/economy.js';
+import {rewardOptions22,chooseReward22,stockShop22,buy22,buyShopHeal22,rerollShop22,SHOP_HEAL_PRICE,SHOP_REROLL_PRICE,coinGain,sellItemPrice22} from '../v22/economy.js';
 import {relicValue} from '../v22/relics.js';
 import {beginEvent22,applyEvent22} from '../v22/events.js';
 import {freshId,randomInt} from '../v22/random.js';
@@ -233,18 +233,30 @@ export function claimPrestige(r,diffLevel){
   finalizeRun(r,{retreat:false});
   return true;
 }
-function equipSlotFor(g,u,items,c){
-  if(g.category==='arme')return 'weapon';
-  if(g.category==='armure')return 'armor';
-  if(g.category!=='outil')return 'weapon';
-  const w=items.find(x=>x.uid===u.weapon),a=items.find(x=>x.uid===u.armor);
-  const wCat=w&&c.byItem.get(w.cardId)?.category,aCat=a&&c.byItem.get(a.cardId)?.category;
-  if(!u.weapon||wCat==='outil')return 'weapon';
-  if(!u.armor||aCat==='outil')return 'armor';
-  // Arme + armure déjà posées : l'outil remplace l'armure → arme + outil.
-  return 'armor';
+function slotCat(items,c,uid){const e=items.find(x=>x.uid===uid);return e&&c.byItem.get(e.cardId)?.category;}
+/** Deux emplacements : arme+armure, arme+outil ou outil+armure. Jamais deux armes / deux armures. */
+function resolveEquipSlots(g,u,items,c){
+  const wCat=slotCat(items,c,u.weapon),aCat=slotCat(items,c,u.armor);
+  if(g.category==='arme'){
+    // Si un outil occupe l'arme, le décaler vers l'armure libre (ou l'armure-outil).
+    if(wCat==='outil'&&(!u.armor||aCat==='outil'))return {slot:'weapon',moveToolTo:'armor'};
+    return {slot:'weapon'};
+  }
+  if(g.category==='armure'){
+    if(aCat==='outil'&&(!u.weapon||wCat==='outil'))return {slot:'armor',moveToolTo:'weapon'};
+    return {slot:'armor'};
+  }
+  if(g.category==='outil'){
+    if(!u.weapon)return {slot:'weapon'};
+    if(!u.armor)return {slot:'armor'};
+    if(wCat==='outil')return {slot:'weapon'};
+    if(aCat==='outil')return {slot:'armor'};
+    // Arme + armure déjà posées : l'outil remplace l'armure → arme + outil.
+    return {slot:'armor'};
+  }
+  return {slot:'weapon'};
 }
-export function equip(r,itemUid,unitUid){if(['combat','end'].includes(r.phase))return false;const c=registry(r.worlds,r.statsMode),entry=r.items.find(g=>g.uid===itemUid),g=c.byItem.get(entry?.cardId),u=r.units.find(u=>u.uid===unitUid);if(!g?.ok||!u||c.byId.get(u.cardId).universe!==g.universe)return false;if(g.category==='consommable'){if(g.effect!=='heal'||u.hp>=u.maxHp)return false;u.hp=Math.min(u.maxHp,u.hp+Math.round(u.maxHp*g.heal/100));r.items=r.items.filter(x=>x!==entry);return true;}const slot=equipSlotFor(g,u,r.items,c),same=u[slot]===itemUid;for(const other of r.units){if(other.weapon===itemUid)other.weapon=null;if(other.armor===itemUid)other.armor=null;}u[slot]=same?null:itemUid;return true;}
+export function equip(r,itemUid,unitUid){if(['combat','end'].includes(r.phase))return false;const c=registry(r.worlds,r.statsMode),entry=r.items.find(g=>g.uid===itemUid),g=c.byItem.get(entry?.cardId),u=r.units.find(u=>u.uid===unitUid);if(!g?.ok||!u||c.byId.get(u.cardId).universe!==g.universe)return false;if(g.category==='consommable'){if(g.effect!=='heal'||u.hp>=u.maxHp)return false;u.hp=Math.min(u.maxHp,u.hp+Math.round(u.maxHp*g.heal/100));r.items=r.items.filter(x=>x!==entry);return true;}const plan=resolveEquipSlots(g,u,r.items,c),same=u[plan.slot]===itemUid;for(const other of r.units){if(other.weapon===itemUid)other.weapon=null;if(other.armor===itemUid)other.armor=null;}if(same){u[plan.slot]=null;return true;}if(plan.moveToolTo&&u[plan.slot]){const toolUid=u[plan.slot];u[plan.moveToolTo]=toolUid;}u[plan.slot]=itemUid;return true;}
 export function itemSellPrice(r,itemUid){if(r.contentVersion==='22.0.0')return sellItemPrice22(r,itemUid);const c=registry(r.worlds,r.statsMode),entry=r.items.find(g=>g.uid===itemUid),g=c.byItem.get(entry?.cardId);if(!g||g.category==='consommable')return null;return Math.max(1,Math.floor((25+(g.tier||1)*15)*0.5));}
 export function sellItem(r,itemUid){if(r.contentVersion==='22.0.0'?r.phase!=='shop':['combat','end'].includes(r.phase))return false;const price=itemSellPrice(r,itemUid);if(price==null)return false;for(const u of r.units){if(u.weapon===itemUid)u.weapon=null;if(u.armor===itemUid)u.armor=null;}r.items=r.items.filter(x=>x.uid!==itemUid);r.coins+=price;return true;}
 export function gearFor(r,u,enemy=false){const c=registry(r.worlds,r.statsMode);return ['weapon','armor'].map(k=>{const entry=r.items.find(g=>g.uid===u[k]),g=enemy?c.byItem.get(u[k]):c.byItem.get(entry?.cardId);return r.contentVersion==='22.0.0'&&!enemy&&g?effectiveGear(g,entry):g;}).filter(Boolean);}
@@ -288,7 +300,7 @@ export function resolveEvent(r,choice){
 }
 export function buy(r,index,replaceUid=null){if(r.contentVersion==='22.0.0')return buy22(r,index,replaceUid);if(r.phase!=='shop')return false;const o=r.shop[index];if(!o||o.bought||r.coins<o.price)return false;r.coins-=o.price;o.bought=true;r.items.push({uid:'g'+(++r.uid),cardId:o.id});return true;}
 export function buyCare(r,unitUid){if(r.contentVersion==='22.0.0')return buyShopHeal22(r,unitUid);if(r.phase!=='shop'||r.careBought||r.coins<30||!r.units.some(u=>u.hp<u.maxHp))return false;r.coins-=30;r.careBought=true;heal(r,.35);return true;}
-export {SHOP_HEAL_PRICE,buyShopHeal22};
+export {SHOP_HEAL_PRICE,SHOP_REROLL_PRICE,buyShopHeal22,rerollShop22,stockShop22};
 export function swapActive(r,uid,index){if(!['map','prepare'].includes(r.phase)||index<0||index>4)return false;const n=r.units.findIndex(u=>u.uid===uid);if(n<5||!r.units[index])return false;[r.units[n],r.units[index]]=[r.units[index],r.units[n]];return true;}
 
 export function finalizeRun(r,{retreat=false}={}){flushCollectionUnlocks(r);if(retreat)r.voluntaryRetreat=true;r.phase='end';r.receipt=buildRunReceipt(r);return r.receipt;}
