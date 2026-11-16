@@ -43,3 +43,15 @@ export function rewardPack(r,storage=globalThis.localStorage){if(!r||r.phase!=='
 export function openPack(id,storage=globalThis.localStorage){const state=collectionState(storage),p=state.claims.find(x=>x.id===id);if(!p)throw Error('Pack introuvable.');if(p.opened)return p;for(const o of p.cards)addToCollection(state,{...o,bump:true});p.opened=true;storage.setItem(KEY,JSON.stringify(state));return p;}
 export function pendingPacks(storage=globalThis.localStorage){return collectionState(storage).claims.filter(p=>!p.opened);}
 export function hasUnlockedCards(storage=globalThis.localStorage){return collectionState(storage).cards.length>0;}
+/** Creator atelier: mint unopened boosters (unlimited while creator mode is on). */
+export function grantCreatorPacks(count=1,worlds=['DB'],storage=globalThis.localStorage){
+ const n=Math.max(1,Math.min(20,Number(count)||1)),ws=(Array.isArray(worlds)&&worlds.length?worlds:['DB']).filter(w=>['DB','HXH','NARUTO','ONEPIECE'].includes(w));
+ const state=collectionState(storage),minted=[];
+ for(let p=0;p<n;p++){
+  const w=ws[p%ws.length],c=registry([w]),cards=[],id='creator:'+freshId();
+  for(let i=0;i<PACK_SIZE;i++){const seed='CREATOR:'+id+':'+i,rarity=rarityForRoll(randomInt(0,99)),finish=rollFinish({randomMode:'live'});cards.push(rollPackCard(c,rarity,finish,seed,w,()=>randomInt(0,99)));}
+  const pack={id,worlds:[w],cards,opened:false,creator:true};state.claims.push(pack);minted.push(pack);
+ }
+ try{storage.setItem(KEY,JSON.stringify(state));}catch{}
+ return minted;
+}

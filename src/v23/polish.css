@@ -66,3 +66,7 @@ body.v22-app.v21-app.arena-v10.arena-v11 .a-honor-art>.v21-face .v21-card-art im
 body.v22-app.v21-app.arena-v10.arena-v11 .a-honor-card,body.v22-app.v21-app.arena-v10.arena-v11 .v20-top-card-face{overflow:visible!important}
 body.v22-app.v21-app.arena-v10.arena-v11 .v20-memory-fallback{display:grid;place-items:center;aspect-ratio:2/3;background:#e8eee6;border-radius:10px;min-height:160px}
 body.v22-app.v21-app.arena-v10.arena-v11 .v20-memory-fallback strong{font:700 64px/1 'Arena Display';color:#5c8b95;opacity:.75}
+body.v22-app.v21-app.arena-v10.arena-v11 .v191-copy-badge{display:inline-block;margin-top:4px;padding:3px 8px;border-radius:999px;background:#e8f1ea;color:#1f5a4a;font-weight:700;font-size:12px}
+body.v22-app.v21-app.arena-v10.arena-v11 .v191-pack-pending{display:block;margin-top:8px;color:#49656a}
+body.v22-app.v21-app.arena-v10.arena-v11 .v19-creator-packs{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:14px 0}
+body.v22-app.v21-app.arena-v10.arena-v11 .v19-creator-packs label{display:flex;flex-direction:column;gap:4px;font-size:13px}
