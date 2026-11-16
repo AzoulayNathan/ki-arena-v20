@@ -48,3 +48,20 @@ body.v22-app.v21-app.arena-v10.arena-v11 .v23-victory .v22-eye:hover,body.v22-ap
  body.v22-app.v21-app.arena-v10.arena-v11 .v23-victory .v22-loot-cards>article{flex-basis:min(66vw,250px)}
 }
 body.v22-app.v21-app.arena-v10.arena-v11 .v23-earned>span:not(:first-child){color:#244b43!important}
+/* Merchant single-target heal chips. */
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-market-heal{margin:28px 0 18px;padding:18px 20px;border:1px solid #d9c5a5;border-radius:14px;background:#fff8ec}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-market-heal h2{margin:6px 0;font:italic 900 28px 'Arena Display';color:#18394c}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-market-heal p{margin:0 0 14px;color:#49656a}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-heal-targets{display:flex;flex-wrap:wrap;gap:10px}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-heal-chip{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:140px;padding:12px 14px;border:1px solid #c9d5c8;border-radius:12px;background:#fff;cursor:pointer;text-align:left}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-heal-chip:disabled{opacity:.45;cursor:not-allowed}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-heal-chip b{font:700 15px/1.2 'Arena Display';color:#18394c}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-heal-chip small{color:#5a7278}
+body.v22-app.v21-app.arena-v10.arena-v11 .v22-heal-chip em{font-style:normal;font-size:12px;color:#2f7a63;font-weight:700}
+/* Bilan contribution cards must show the full V21 face. */
+body.v22-app.v21-app.arena-v10.arena-v11 .a-honor-row{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+body.v22-app.v21-app.arena-v10.arena-v11 .a-honor-art{display:block!important;width:100%}
+body.v22-app.v21-app.arena-v10.arena-v11 .a-honor-art .v19-face,body.v22-app.v21-app.arena-v10.arena-v11 .a-honor-art .v21-face,body.v22-app.v21-app.arena-v10.arena-v11 .v20-top-card-face .v19-face,body.v22-app.v21-app.arena-v10.arena-v11 .v20-top-card-face .v21-face,body.v22-app.v21-app.arena-v10.arena-v11 .a-memory-card .v19-face,body.v22-app.v21-app.arena-v10.arena-v11 .a-memory-card .v21-face{width:100%!important;max-width:220px;margin:0 auto;display:block}
+body.v22-app.v21-app.arena-v10.arena-v11 .a-honor-art img,body.v22-app.v21-app.arena-v10.arena-v11 .v20-top-card-face img,body.v22-app.v21-app.arena-v10.arena-v11 .a-memory-card img{width:100%!important;height:auto!important;aspect-ratio:2/3;object-fit:cover;border-radius:10px;display:block}
+body.v22-app.v21-app.arena-v10.arena-v11 .v20-memory-fallback{display:grid;place-items:center;aspect-ratio:2/3;background:#e8eee6;border-radius:10px;min-height:160px}
+body.v22-app.v21-app.arena-v10.arena-v11 .v20-memory-fallback strong{font:700 64px/1 'Arena Display';color:#5c8b95;opacity:.75}

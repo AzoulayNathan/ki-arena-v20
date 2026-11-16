@@ -3,7 +3,7 @@ import {runArenaBattle as runBattle22} from '../v22/battle.js';
 import {battleCard22} from '../v22/adapter.js';
 import {ensureDraft22,chooseDraft22} from '../v22/draft.js';
 import {effectiveGear} from '../v22/power.js';
-import {rewardOptions22,chooseReward22,stockShop22,buy22,coinGain,sellItemPrice22} from '../v22/economy.js';
+import {rewardOptions22,chooseReward22,stockShop22,buy22,buyShopHeal22,SHOP_HEAL_PRICE,coinGain,sellItemPrice22} from '../v22/economy.js';
 import {relicValue} from '../v22/relics.js';
 import {beginEvent22,applyEvent22} from '../v22/events.js';
 import {freshId,randomInt} from '../v22/random.js';
@@ -167,12 +167,12 @@ export function chooseDraft(r,id){
 }
 const BOSS_NAMES={DB:/freezer|cell|buu|boo|broly|jiren|vegeta|tao pai pai|beerus|zamasu|goku black|hit\b|moro/i,HXH:/hisoka|illumi|chrollo|meruem|neferpitou|netero|feitan|uvogin|shaiapouf|menthuthuyoupi/i,NARUTO:/madara|kaguya|pain|nagato|orochimaru|obito|itachi/i,ONEPIECE:/kaido|kaidō|big mom|linlin|doflamingo|crocodile|akainu|teach|katakuri|\bimu\b|enel|ener/i};
 const bossCandidateCache=new Map(),enemyGearCache=new Map();
-function arenaRanks(r,cat,B,k,kind){
+function arenaRanks(r,cat,B,k,kind,wave=99){
   const fallback=distributeExact(r,cat.N,B,k);
   if(kind!=='boss'||new Set(fallback).size<k||k<2)return fallback;
-  const candidateKey=cat.key+'|'+B+'|'+k;
+  const soft=wave<15,candidateKey=cat.key+'|'+B+'|'+k+(soft?'|noleg':'');
   let candidates=isCurrentRules(r)?bossCandidateCache.get(candidateKey):null;
-  if(!candidates)candidates=cat.heroes.filter(c=>BOSS_NAMES[c.universe].test(c.name)&&c.poolRank>=Math.ceil(B/k)&&B-c.poolRank>=(k-1)*k/2&&B-c.poolRank<=(k-1)*(2*c.poolRank-k)/2);
+  if(!candidates)candidates=cat.heroes.filter(c=>BOSS_NAMES[c.universe].test(c.name)&&(!soft||c.rarity!=='legendary')&&c.poolRank>=Math.ceil(B/k)&&B-c.poolRank>=(k-1)*k/2&&B-c.poolRank<=(k-1)*(2*c.poolRank-k)/2);
   if(isCurrentRules(r))bossCandidateCache.set(candidateKey,candidates);
   for(const c of shuffle(r,candidates)){const rest=isCurrentRules(r)?distributeExact(r,c.poolRank-1,B-c.poolRank,k-1):distinctWithout(r,c.poolRank-1,B-c.poolRank,k-1,c.poolRank);if(rest)return shuffle(r,[c.poolRank,...rest]);}
   return fallback;
@@ -181,7 +181,7 @@ export function makeEncounter(r,node){if(r.contentVersion==='22.0.0')r.rng=rando
   const cat=runCatalog(r);
   let wave=depthWave(r,node.row);
   if(r.omenDanger&&['normal','elite','boss'].includes(node.kind)){wave+=1;r.omenDanger=false;}
-  const kind=node.kind,baseB=rankBudget(cat.N,wave,kind),B=scaleBudget(baseB,r.prestigeDiff||0),k=Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3)),ranks=arenaRanks(r,cat,B,k,kind),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,r.prestigeDiff||0)),count=Math.min(k,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
+  const kind=node.kind,baseB=rankBudget(cat.N,wave,kind),B=scaleBudget(baseB,r.prestigeDiff||0),k=Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3)),ranks=arenaRanks(r,cat,B,k,kind,wave),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,r.prestigeDiff||0)),count=Math.min(k,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
   const enemies=ranks.map((rank,i)=>({...unit(r,cat.heroes[rank-1]),uid:'enemy'+i,rank,...(r.contentVersion==='22.0.0'?{edition:'normal',finish:'black'}:{})})),items=[];
   for(let i=0;i<count;i++){const c=cat.byId.get(enemies[i].cardId),key=cat.key+'|'+c.universe+'|'+tier;let pool=isCurrentRules(r)?enemyGearCache.get(key):null;if(!pool){pool=cat.gear.filter(g=>g.universe===c.universe&&g.tier<=tier&&g.category!=='consommable');if(isCurrentRules(r))enemyGearCache.set(key,pool);}if(pool.length){const g=pick(r,pool);enemies[i][g.category==='armure'?'armor':'weapon']=g.id;items.push(g.id);}}
   return {nodeId:node.id,wave,kind,budget:B,ranks,tier,enemies,items};
@@ -285,7 +285,8 @@ export function resolveEvent(r,choice){
   return leaveNode(r);
 }
 export function buy(r,index,replaceUid=null){if(r.contentVersion==='22.0.0')return buy22(r,index,replaceUid);if(r.phase!=='shop')return false;const o=r.shop[index];if(!o||o.bought||r.coins<o.price)return false;r.coins-=o.price;o.bought=true;r.items.push({uid:'g'+(++r.uid),cardId:o.id});return true;}
-export function buyCare(r){if(r.phase!=='shop'||r.careBought||r.coins<30||!r.units.some(u=>u.hp<u.maxHp))return false;r.coins-=30;r.careBought=true;heal(r,.35);return true;}
+export function buyCare(r,unitUid){if(r.contentVersion==='22.0.0')return buyShopHeal22(r,unitUid);if(r.phase!=='shop'||r.careBought||r.coins<30||!r.units.some(u=>u.hp<u.maxHp))return false;r.coins-=30;r.careBought=true;heal(r,.35);return true;}
+export {SHOP_HEAL_PRICE,buyShopHeal22};
 export function swapActive(r,uid,index){if(!['map','prepare'].includes(r.phase)||index<0||index>4)return false;const n=r.units.findIndex(u=>u.uid===uid);if(n<5||!r.units[index])return false;[r.units[n],r.units[index]]=[r.units[index],r.units[n]];return true;}
 
 export function finalizeRun(r,{retreat=false}={}){flushCollectionUnlocks(r);if(retreat)r.voluntaryRetreat=true;r.phase='end';r.receipt=buildRunReceipt(r);return r.receipt;}

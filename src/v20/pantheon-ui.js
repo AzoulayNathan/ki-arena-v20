@@ -10,9 +10,11 @@ import {FRANCHISES} from '../franchises.js';
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 
 function memoryFace(u,seed){
- let h;try{h=registry([u.universe||String(u.cardId).split(':')[0]],u.statsMode||'raw').byId.get(u.cardId);}catch{}
- if(!h)return '<span class="a-help">Carte introuvable</span>';
- return cardMarkup21({...h,...Object.fromEntries(['attack','maxHp','speed'].filter(k=>Number.isFinite(u[k])).map(k=>[k,u[k]]))},{seed,skin:u.finish||u.edition,edition:u.finish||u.edition,statsResolved:Number.isFinite(u.attack),legacyEffects:!['21.0.0','22.0.0'].includes(u.combatVersion)});
+ const worlds=u.universe?[u.universe]:String(u.cardId||'').includes(':')?[String(u.cardId).split(':')[0]]:['DB','HXH','NARUTO','ONEPIECE'];
+ let h;try{h=registry(worlds,u.statsMode||'raw').byId.get(u.cardId);}catch{}
+ if(!h)try{h=registry(['DB','HXH','NARUTO','ONEPIECE'],u.statsMode||'raw').byId.get(u.cardId);}catch{}
+ if(!h){const letter=esc((u.name||'?').trim().charAt(0).toUpperCase()||'?');return `<span class="a-placeholder v20-memory-fallback" aria-hidden="true"><strong>${letter}</strong><small>Portrait manquant</small></span>`;}
+ return cardMarkup21({...h,...Object.fromEntries(['attack','maxHp','speed'].filter(k=>Number.isFinite(u[k])).map(k=>[k,u[k]]))},{seed,skin:u.finish||u.edition||'black',edition:u.finish||u.edition||'black',statsResolved:Number.isFinite(u.attack),legacyEffects:!['21.0.0','22.0.0'].includes(u.combatVersion)});
 }
 
 export function bilanMarkup(receipt,{seed=''}={}){
