@@ -64,6 +64,12 @@ export function runArenaBattle(teamA,teamB,{seed='ki-v2',rules='canon',maxRounds
      return 0;
     }
    }
+   // Esquive de base 5 % uniquement sans compétence / équipement d'esquive.
+   if(!defender.effects.some(e=>e.type==='dodge')&&rng()<0.05){
+    emit('dodge',`${defender.name} esquive !`,defender,actor,{effect:'base-dodge'});
+    const c=unused(defender,'counter')[0];if(c&&actor.alive){consume(defender,c);emit('skill',`${defender.name} · ${c.name} !`,defender,actor,{effect:c.key});impact(defender,actor,c.multiplier||.7,{reaction:true,ability:c});}
+    return 0;
+   }
   }
   dmg=Math.round(dmg*defender.statuses.filter(s=>s.type==='expose').reduce((m,s)=>m*(1+s.amount),1));
   const absorbed=Math.min(defender.shield*(actor.effects.some(e=>e.type==='gear_pierce')?.5:1),dmg);defender.shield-=absorbed;
@@ -144,7 +150,7 @@ export function runArenaBattle(teamA,teamB,{seed='ki-v2',rules='canon',maxRounds
    const pinned=targets.find(x=>x.statuses.some(st=>st.type==='taunt'));
    const focus=unused(f,'focus')[0];
    // Cible aléatoire parmi tous les adversaires vivants, sauf effet contraire (provocation / focus).
-   const target=pinned||(focus?(consume(f,focus),weak):selectRandom(targets.some(t=>t.index<2)?targets.filter(t=>t.index<2):targets,rng));
+   const target=pinned||(focus?(consume(f,focus),weak):selectRandom(targets,rng));
    emit('attack',`${f.name} attaque ${target.name}`,f,target);
    // Effets standards après l'attaque : entièrement automatiques, usage unique.
    impact(f,target,1);

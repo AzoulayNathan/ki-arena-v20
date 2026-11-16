@@ -167,14 +167,44 @@ export function chooseDraft(r,id){
 }
 const BOSS_NAMES={DB:/freezer|cell|buu|boo|broly|jiren|vegeta|tao pai pai|beerus|zamasu|goku black|hit\b|moro/i,HXH:/hisoka|illumi|chrollo|meruem|neferpitou|netero|feitan|uvogin|shaiapouf|menthuthuyoupi/i,NARUTO:/madara|kaguya|pain|nagato|orochimaru|obito|itachi/i,ONEPIECE:/kaido|kaidō|big mom|linlin|doflamingo|crocodile|akainu|teach|katakuri|\bimu\b|enel|ener/i};
 const bossCandidateCache=new Map(),enemyGearCache=new Map();
+function softBossAllowed(c){return c.rarity!=='legendary'&&c.rarity!=='epic';}
+function demoteSoftBossRanks(cat,ranks,B){
+  const used=new Set(ranks);
+  const next=ranks.map(rank=>{
+    const h=cat.heroes[rank-1];
+    if(!h||softBossAllowed(h))return rank;
+    const alt=cat.heroes.filter(c=>softBossAllowed(c)&&!used.has(c.poolRank)).sort((a,b)=>Math.abs(a.poolRank-rank)-Math.abs(b.poolRank-rank)||b.poolRank-a.poolRank)[0];
+    if(!alt)return rank;
+    used.delete(rank);used.add(alt.poolRank);return alt.poolRank;
+  });
+  let diff=B-next.reduce((a,b)=>a+b,0);
+  for(let guard=0;guard<500&&diff;guard++){
+    let moved=false;
+    for(let i=0;i<next.length&&diff;i++){
+      const step=diff>0?1:-1,cand=next[i]+step;
+      if(cand<1||cand>cat.N||used.has(cand))continue;
+      const h=cat.heroes[cand-1];if(!softBossAllowed(h))continue;
+      used.delete(next[i]);used.add(cand);next[i]=cand;diff-=step;moved=true;
+    }
+    if(!moved)break;
+  }
+  return next;
+}
 function arenaRanks(r,cat,B,k,kind,wave=99){
-  const fallback=distributeExact(r,cat.N,B,k);
+  const soft=kind==='boss'&&wave<15;
+  const raw=distributeExact(r,cat.N,B,k);
+  const fallback=soft?demoteSoftBossRanks(cat,raw,B):raw;
   if(kind!=='boss'||new Set(fallback).size<k||k<2)return fallback;
-  const soft=wave<15,candidateKey=cat.key+'|'+B+'|'+k+(soft?'|noleg':'');
+  const candidateKey=cat.key+'|'+B+'|'+k+(soft?'|soft':'');
   let candidates=isCurrentRules(r)?bossCandidateCache.get(candidateKey):null;
-  if(!candidates)candidates=cat.heroes.filter(c=>BOSS_NAMES[c.universe].test(c.name)&&(!soft||c.rarity!=='legendary')&&c.poolRank>=Math.ceil(B/k)&&B-c.poolRank>=(k-1)*k/2&&B-c.poolRank<=(k-1)*(2*c.poolRank-k)/2);
+  if(!candidates)candidates=cat.heroes.filter(c=>BOSS_NAMES[c.universe].test(c.name)&&(!soft||softBossAllowed(c))&&c.poolRank>=Math.ceil(B/k)&&B-c.poolRank>=(k-1)*k/2&&B-c.poolRank<=(k-1)*(2*c.poolRank-k)/2);
   if(isCurrentRules(r))bossCandidateCache.set(candidateKey,candidates);
-  for(const c of shuffle(r,candidates)){const rest=isCurrentRules(r)?distributeExact(r,c.poolRank-1,B-c.poolRank,k-1):distinctWithout(r,c.poolRank-1,B-c.poolRank,k-1,c.poolRank);if(rest)return shuffle(r,[c.poolRank,...rest]);}
+  for(const c of shuffle(r,candidates)){
+    const rest=isCurrentRules(r)?distributeExact(r,c.poolRank-1,B-c.poolRank,k-1):distinctWithout(r,c.poolRank-1,B-c.poolRank,k-1,c.poolRank);
+    if(!rest)continue;
+    const ranks=shuffle(r,[c.poolRank,...rest]);
+    return soft?demoteSoftBossRanks(cat,ranks,B):ranks;
+  }
   return fallback;
 }
 export function makeEncounter(r,node){if(r.contentVersion==='22.0.0')r.rng=randomInt(0,0xffffffff);
@@ -242,7 +272,18 @@ export function claimPrestige(r,diffLevel){
   finalizeRun(r,{retreat:false});
   return true;
 }
-export function equip(r,itemUid,unitUid){if(['combat','end'].includes(r.phase))return false;const c=registry(r.worlds,r.statsMode),entry=r.items.find(g=>g.uid===itemUid),g=c.byItem.get(entry?.cardId),u=r.units.find(u=>u.uid===unitUid);if(!g?.ok||!u||c.byId.get(u.cardId).universe!==g.universe)return false;if(g.category==='consommable'){if(g.effect!=='heal'||u.hp>=u.maxHp)return false;u.hp=Math.min(u.maxHp,u.hp+Math.round(u.maxHp*g.heal/100));r.items=r.items.filter(x=>x!==entry);return true;}const slot=g.category==='armure'?'armor':'weapon',same=u[slot]===itemUid;for(const other of r.units)if(other[slot]===itemUid)other[slot]=null;u[slot]=same?null:itemUid;return true;}
+function equipSlotFor(g,u,items,c){
+  if(g.category==='arme')return 'weapon';
+  if(g.category==='armure')return 'armor';
+  if(g.category!=='outil')return 'weapon';
+  const w=items.find(x=>x.uid===u.weapon),a=items.find(x=>x.uid===u.armor);
+  const wCat=w&&c.byItem.get(w.cardId)?.category,aCat=a&&c.byItem.get(a.cardId)?.category;
+  if(!u.weapon||wCat==='outil')return 'weapon';
+  if(!u.armor||aCat==='outil')return 'armor';
+  // Arme + armure déjà posées : l'outil remplace l'armure → arme + outil.
+  return 'armor';
+}
+export function equip(r,itemUid,unitUid){if(['combat','end'].includes(r.phase))return false;const c=registry(r.worlds,r.statsMode),entry=r.items.find(g=>g.uid===itemUid),g=c.byItem.get(entry?.cardId),u=r.units.find(u=>u.uid===unitUid);if(!g?.ok||!u||c.byId.get(u.cardId).universe!==g.universe)return false;if(g.category==='consommable'){if(g.effect!=='heal'||u.hp>=u.maxHp)return false;u.hp=Math.min(u.maxHp,u.hp+Math.round(u.maxHp*g.heal/100));r.items=r.items.filter(x=>x!==entry);return true;}const slot=equipSlotFor(g,u,r.items,c),same=u[slot]===itemUid;for(const other of r.units){if(other.weapon===itemUid)other.weapon=null;if(other.armor===itemUid)other.armor=null;}u[slot]=same?null:itemUid;return true;}
 export function itemSellPrice(r,itemUid){if(r.contentVersion==='22.0.0')return sellItemPrice22(r,itemUid);const c=registry(r.worlds,r.statsMode),entry=r.items.find(g=>g.uid===itemUid),g=c.byItem.get(entry?.cardId);if(!g||g.category==='consommable')return null;return Math.max(1,Math.floor((25+(g.tier||1)*15)*0.5));}
 export function sellItem(r,itemUid){if(r.contentVersion==='22.0.0'?r.phase!=='shop':['combat','end'].includes(r.phase))return false;const price=itemSellPrice(r,itemUid);if(price==null)return false;for(const u of r.units){if(u.weapon===itemUid)u.weapon=null;if(u.armor===itemUid)u.armor=null;}r.items=r.items.filter(x=>x.uid!==itemUid);r.coins+=price;return true;}
 export function gearFor(r,u,enemy=false){const c=registry(r.worlds,r.statsMode);return ['weapon','armor'].map(k=>{const entry=r.items.find(g=>g.uid===u[k]),g=enemy?c.byItem.get(u[k]):c.byItem.get(entry?.cardId);return r.contentVersion==='22.0.0'&&!enemy&&g?effectiveGear(g,entry):g;}).filter(Boolean);}

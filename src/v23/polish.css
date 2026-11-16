@@ -2,12 +2,9 @@
 .v23-boss-claim{display:flex;justify-content:center;margin:18px 0 8px}
 .v23-boss-claim .a-button{min-height:48px;padding:14px 22px;font-weight:800}
 .v23-boss-loot .v22-card-pick[disabled]{opacity:1;filter:none;cursor:default}
-.v23-record-chip{display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:7px 12px 7px 10px;border:1px solid #ffb45a88;border-radius:999px;background:linear-gradient(180deg,#2a1a12e6,#18100ce8);box-shadow:0 0 18px #ff6a2033,inset 0 0 12px #ff9a4022;color:#ffe7c2;max-width:min(100%,340px)}
-.v23-record-chip.is-empty{display:none}
-.v23-record-copy{display:grid;gap:2px;text-align:left;line-height:1.2}
-.v23-record-copy b{font:800 10px/1 var(--a-display,Arena Display,Impact,sans-serif);letter-spacing:.18em;color:#ffd27a}
-.v23-record-copy span{font-size:11px;color:#ffe9d0}
-.v23-record-live{font-style:normal;font-size:9px;letter-spacing:.14em;font-weight:800;color:#ffb24a}
+.v23-record-chip{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:4px 10px 4px 8px;border:0;border-radius:999px;background:transparent;box-shadow:none;color:#ffe7c2}
+.v23-record-chip.is-empty{opacity:.45}
+.v23-record-num{font:800 22px/1 var(--a-display,Arena Display,Impact,sans-serif);color:#ffd27a;text-shadow:0 0 10px #ff6a2066}
 .v23-flames{position:relative;width:18px;height:22px;flex:0 0 auto}
 .v23-flames i{position:absolute;bottom:0;left:50%;width:7px;height:14px;border-radius:50% 50% 20% 20%;background:linear-gradient(#fff3a8,#ff8a1a 55%,#ff3b00);transform:translateX(-50%);animation:v23-flame 0.7s ease-in-out infinite;opacity:.95;filter:drop-shadow(0 0 4px #ff6a20)}
 .v23-flames i:nth-child(1){left:30%;animation-delay:-.2s;height:12px;width:6px}
