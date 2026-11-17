@@ -31,10 +31,13 @@ export function powerBounds(r,kind,band='midA',initial=false){
   const b=INITIAL_BANDS[band];
   return {...absoluteBounds(poolN,scaleRef(b[0],poolN)||(band==='mystery'?1:scaleRef(b[0],poolN)),scaleRef(b[1],poolN)||1),centre:scaleRef(30,poolN)};
  }
+ // Map hero-pool actBase (N≈600) onto the target pool so tiny weapon catalogs
+ // do not clamp a centre of ~30 into their legendary tip (e.g. DB weapons N=21).
  const threat=contextPower(r);
- const centre=Math.max(1,Math.round(threat.base||threat.centre||1));
+ const heroCentre=Math.max(1,threat.base||threat.centre||1);
+ const centre=Math.max(1,Math.round(heroCentre*poolN/Math.max(1,threat.N||600)));
  const span=REWARD_SPAN[band]||10;
- const scaledSpan=Math.max(1,scaleRef(span,poolN)||span);
+ const scaledSpan=Math.max(1,scaleRef(span,poolN)||1);
  return {...absoluteBounds(poolN,centre-scaledSpan,centre+scaledSpan),centre};
 }
 export function drawCard(r,kind,band='midA',{initial=false,exclude=new Set(),sameWorld=null,allowOwned=false}={}){

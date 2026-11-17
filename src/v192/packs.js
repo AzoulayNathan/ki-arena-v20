@@ -62,7 +62,7 @@ function shelf(){
     <div class="v192-pack-actions">
       ${available.length?'<button class="v20-pack-cta" data-pack="open">Déchirer le pack →</button>':allPending.length?'<button class="v20-pack-cta" data-pack="open-any">Aller au pack disponible ('+allPending.length+') →</button>':'<p>Termine un combat d’expédition pour gagner de nouveaux boosters.</p>'}
       ${last?'<button data-pack="replay">Revoir mon dernier pack</button>':''}
-      <details><summary>Chances d’obtention</summary><p>Par carte : commune 33 % · peu commune 27 % · rare 21 % · épique 15 % · légendaire 4 %.<br>20 % de chance d’obtenir une arme à la place d’un héros · édition UNIQUE : 10 % (foil + stats +10 % en jeu). Tirages indépendants dans les univers de la run.</p></details>
+      <details><summary>Chances d’obtention</summary><p>Par carte : commune 50 % · peu commune 28 % · rare 14 % · épique 6 % · légendaire 2 %.<br>20 % de chance d’obtenir une arme à la place d’un héros · édition UNIQUE : 10 % (foil + stats +10 % en jeu). Tirages indépendants dans les univers de la run.</p></details>
     </div>
   </section>`;
 }

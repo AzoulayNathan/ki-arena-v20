@@ -84,3 +84,13 @@ body.v22-app.v21-app.arena-v10.arena-v11 .v191-copy-badge{display:inline-block;m
 body.v22-app.v21-app.arena-v10.arena-v11 .v191-pack-pending{display:block;margin-top:8px;color:#49656a}
 body.v22-app.v21-app.arena-v10.arena-v11 .v19-creator-packs{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:14px 0}
 body.v22-app.v21-app.arena-v10.arena-v11 .v19-creator-packs label{display:flex;flex-direction:column;gap:4px;font-size:13px}
+
+/* Combat + inspect: speed and equipped gear */
+.v193-unit-label small{display:block;margin-top:2px;font-size:11px;letter-spacing:.02em;opacity:.92}
+.v20-inspect-vit{margin:10px 0 0;font-size:15px;color:#2c4a40}
+.v20-inspect-gear{margin-top:16px}
+.v20-inspect-gear-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.v20-inspect-gear-card{display:flex;flex-direction:column;align-items:center;gap:6px;border:0;background:transparent;cursor:pointer;max-width:140px;padding:0}
+.v20-inspect-gear-card .v21-card,.v20-inspect-gear-card .a-card{transform:scale(.72);transform-origin:top center;margin-bottom:-40px}
+.v20-inspect-gear-card b{font-size:12px;text-align:center}
+body.v22-app.v21-app.arena-v10.arena-v11 .v20-inspect-vit{color:#d7ebe1}
