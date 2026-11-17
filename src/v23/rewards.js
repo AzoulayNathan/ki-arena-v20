@@ -1,5 +1,5 @@
 import {registry} from '../v20/catalog.js';
-import {drawCard,addHero,addItem,contextPower,powerBounds,bounds} from '../v22/power.js';
+import {drawCard,addHero,addItem,contextPower,powerBounds} from '../v22/power.js';
 import {drawObject,objectPool} from '../v22/economy.js';
 import {drawRelic,RELIC_BY_ID} from '../v22/relics.js';
 import {freshId,pick} from '../v22/random.js';
@@ -127,13 +127,13 @@ export function validateRewards23(r){
     if(s===0){
      const full=c.heroes.slice().sort((a,b)=>((a.attack+a.maxHp+a.speed)-(b.attack+b.maxHp+b.speed))||(a.id<b.id?-1:a.id>b.id?1:0));
      const rank=full.findIndex(x=>x.id===o.id)+1;
-     const centre=powerBounds(r,'hero',o.band).centre,mult=o.band==='mystery'?[.5,1.5]:o.band==='midB'?[.65,1.2]:[.8,1.1],expected=bounds(full.length,centre*mult[0],Math.min(1,centre*mult[1]));
+     const expected=powerBounds(r,'hero',o.band);
      if(!rank||rank!==o.globalRank||full.length!==o.sourceSize||rank<o.bounds.lo||rank>o.bounds.hi||o.bounds.lo!==expected.lo||o.bounds.hi!==expected.hi||o.poolWorlds.some(w=>!r.worlds.includes(w)))throw Error('Puissance de récompense invalide.');
      const person=c.byId.get(o.id).person;if(people.has(person))throw Error('Identité répétée dans une offre.');people.add(person);
     }else if(o.kind==='weapon'){
      const full=c.weapons.filter(g=>o.poolWorlds?.includes(g.universe)).slice().sort((a,b)=>(((a.atk||0)+(a.shield||0)+(a.heal||0))-((b.atk||0)+(b.shield||0)+(b.heal||0)))||(a.id<b.id?-1:a.id>b.id?1:0));
      const rank=full.findIndex(x=>x.id===o.id)+1;
-     const centre=powerBounds(r,'weapon',o.band).centre,mult=o.band==='mystery'?[.5,1.5]:o.band==='midB'?[.65,1.2]:[.8,1.1],expected=bounds(full.length,centre*mult[0],Math.min(1,centre*mult[1]));
+     const expected=powerBounds(r,'weapon',o.band);
      if(!rank||rank!==o.globalRank||full.length!==o.sourceSize||rank<o.bounds.lo||rank>o.bounds.hi||o.bounds.lo!==expected.lo||o.bounds.hi!==expected.hi||o.poolWorlds.some(w=>!r.worlds.includes(w)))throw Error('Puissance de récompense invalide.');
     }else if(o.kind==='object'){
      const full=objectPool(r);const rank=full.findIndex(x=>x.id===o.id)+1;if(!rank||!c.byItem.get(o.id)||!['outil','consommable'].includes(c.byItem.get(o.id).category))throw Error('Objet de récompense invalide.');

@@ -16,7 +16,7 @@ import {MIXED_RULES,ensureMixedDraft,chooseMixedDraft} from '../v16/draft.js';
 import {registry,ARENA_VERSION,NORMALIZATION} from './catalog.js';
 import {seedState,int,pick,shuffle} from '../v22/random.js';
 import {distributeExact} from '../survival/encounter.js';
-import {rankBudget} from './difficulty.js';
+import {rankBudget,actBudget,actEnemyCap,actIndexFromWave,rollEncounterRanks} from './difficulty.js';
 import {runArenaBattle} from './battle.js';
 import {ACT_LENGTH,MAP_ROWS,BOSS_ROW,DRAFT_BANDS,DRAFT_OFFERS,virtualToLocalRank,waveFromDepth,isSpecialEdition} from '../arena/rules.js';
 import {beginEvent,applyEventChoice} from './events.js';
@@ -166,16 +166,22 @@ export function chooseDraft(r,id){
 }
 const enemyGearCache=new Map();
 function arenaRanks(r,cat,B,k){
+  if(r.contentVersion==='22.0.0')return shuffle(r,rollEncounterRanks(r,cat.N,B,k,int));
   return distributeExact(r,cat.N,B,k);
 }
 export function makeEncounter(r,node){if(r.contentVersion==='22.0.0')r.rng=randomInt(0,0xffffffff);
   const cat=runCatalog(r);
   let wave=depthWave(r,node.row);
   if(r.omenDanger&&['normal','elite','boss'].includes(node.kind)){wave+=1;r.omenDanger=false;}
-  const kind=node.kind,baseB=rankBudget(cat.N,wave,kind),B=scaleBudget(baseB,r.prestigeDiff||0),k=Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3)),ranks=arenaRanks(r,cat,B,k),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,r.prestigeDiff||0)),count=Math.min(k,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
-  const enemies=ranks.map((rank,i)=>({...unit(r,cat.heroes[rank-1]),uid:'enemy'+i,rank,...(r.contentVersion==='22.0.0'?{edition:'normal',finish:'black'}:{})})),items=[];
+  const kind=node.kind;
+  const act=r.contentVersion==='22.0.0'?actIndexFromWave(wave):(r.act||0);
+  const baseB=r.contentVersion==='22.0.0'?actBudget(cat.N,act,kind):rankBudget(cat.N,wave,kind);
+  const B=scaleBudget(baseB,r.prestigeDiff||0);
+  const k=r.contentVersion==='22.0.0'?Math.min(B,actEnemyCap(act)):Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3));
+  const ranks=arenaRanks(r,cat,B,k),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,r.prestigeDiff||0)),count=Math.min(ranks.length,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
+  const enemies=ranks.map((rank,i)=>({...unit(r,cat.heroes[Math.min(cat.N,Math.max(1,rank))-1]),uid:'enemy'+i,rank:Math.min(cat.N,Math.max(1,rank)),...(r.contentVersion==='22.0.0'?{edition:'normal',finish:'black'}:{})})),items=[];
   for(let i=0;i<count;i++){const c=cat.byId.get(enemies[i].cardId),key=cat.key+'|'+c.universe+'|'+tier;let pool=isCurrentRules(r)?enemyGearCache.get(key):null;if(!pool){pool=cat.gear.filter(g=>g.universe===c.universe&&g.tier<=tier&&g.category!=='consommable');if(isCurrentRules(r))enemyGearCache.set(key,pool);}if(pool.length){const g=pick(r,pool);enemies[i][g.category==='armure'?'armor':'weapon']=g.id;items.push(g.id);}}
-  return {nodeId:node.id,wave,kind,budget:B,ranks,tier,enemies,items};
+  return {nodeId:node.id,wave,kind,budget:B,ranks:enemies.map(e=>e.rank),tier,enemies,items,act};
 }
 export function enterNode(r,id){
   if(!availableNodes(r).includes(id)||r.nodes.find(n=>n.id===id)?.done||r.trail.includes(id))return false;

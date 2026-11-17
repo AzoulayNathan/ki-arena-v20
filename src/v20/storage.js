@@ -13,16 +13,18 @@ import {MIXED_RULES,validateMixedDraft} from '../v16/draft.js';
 import {registry,ARENA_VERSION,NORMALIZATION} from './catalog.js';
 import {ACT_LENGTH,MAP_NODES,BOSS_ROW} from '../arena/rules.js';
 import {generateMap,runCatalog} from './engine.js';
-import {rankBudget} from './difficulty.js';
+import {rankBudget,actBudget,actIndexFromWave} from './difficulty.js';
 import {scaleBudget,PRESTIGE_MAX} from './prestige.js';
 function budgetOk(N,wave,kind,budget,prestigeDiff=0){
   const base=N/4*(wave+({normal:0,elite:1,boss:2}[kind]));
   const scaled=rankBudget(N,wave,kind);
+  const act=actIndexFromWave(wave);
+  const byAct=actBudget(N,act,kind);
   const legacy=Math.round(base);
   const prev=Math.max(1,Math.round(base*0.75));
-  if(budget===scaled||budget===legacy||budget===prev)return true;
+  if(budget===scaled||budget===legacy||budget===prev||budget===byAct)return true;
   const pd=Math.max(0,Math.min(PRESTIGE_MAX,prestigeDiff|0));
-  for(let d=0;d<=pd;d++)if(budget===scaleBudget(scaled,d))return true;
+  for(let d=0;d<=pd;d++)if(budget===scaleBudget(scaled,d)||budget===scaleBudget(byAct,d))return true;
   return false;
 }
 export const SAVE_KEY='kiarena:arena:v14:';
