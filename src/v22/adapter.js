@@ -1,5 +1,10 @@
 import {registry} from '../v20/catalog.js';
 import {effects22} from './effects.js';
-export function battleCard22(r,u,enemy,gearFor){const c=registry(r.worlds,r.statsMode).byId.get(u.cardId),gs=gearFor(r,u,enemy),atk=gs.reduce((s,g)=>s+(g.atk||0)/100,0),hp=gs.filter(g=>g.effect==='hp').reduce((s,g)=>s+(g.shield||0)/100,0),base={...c,effects:c.effects.map(e=>({...e,key:c.id+':'+e.key}))};
- const gearBase=[];for(const g of gs){const key='item:'+g.id;const type={stun:'stun',evade:'dodge',counter:'counter'}[g.effect];if(type)gearBase.push({key:key+':core',type,name:g.name,chance:type==='dodge'?.25:1,multiplier:.65});if(g.effect==='pierce')gearBase.push({key,type:'gear_pierce',name:g.name});if(g.heal)gearBase.push({key:key+':heal',type:'heal_ally',amount:g.heal/100,name:g.name});if(g.shield&&g.effect!=='hp')gearBase.push({key:key+':shield',type:'shield',amount:g.shield/100,name:g.name});}
- return {...c,attack:Math.round(u.attack*(1+atk)),maxHp:Math.round(u.maxHp*(1+hp)),speed:u.speed,effects:[...effects22(r,u,base,gs,enemy),...gearBase]};}
+export function battleCard22(r,u,enemy,gearFor){
+ const c=registry(r.worlds,r.statsMode).byId.get(u.cardId),gs=gearFor(r,u,enemy);
+ const atk=gs.reduce((s,g)=>s+(g.atk||0)/100,0);
+ const hp=gs.filter(g=>g.effect==='hp').reduce((s,g)=>s+(g.shield||0)/100,0);
+ const base={...c,effects:c.effects.map(e=>({...e,key:c.id+':'+e.key}))};
+ // Stats from gear + full effect stack (name mastery + every CSV field) via effects22/weaponEffects.
+ return {...c,attack:Math.round(u.attack*(1+atk)),maxHp:Math.round(u.maxHp*(1+hp)),speed:u.speed,effects:effects22(r,u,base,gs,enemy)};
+}

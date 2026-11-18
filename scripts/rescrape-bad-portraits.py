@@ -22,10 +22,17 @@ def query_for(card):
     franchise = FRANCHISE.get(card['universe'], card['universe'])
     form = (card.get('form') or '').strip()
     name = (card.get('name') or '').strip()
-    parts = [f'"{name}"']
-    if form and form.lower() not in ('base', 'base manga'):
-        parts.append(f'"{form}"')
-    parts += [franchise, 'character', 'portrait']
+    # Prefer ASCII tokens so Bing URLs stay stable; keep form words for differentiation.
+    import unicodedata
+    def ascii(s):
+        s = unicodedata.normalize('NFKD', s)
+        return ''.join(ch for ch in s if not unicodedata.combining(ch)).replace('—','-').replace('–','-')
+    parts = [f'"{ascii(name)}"']
+    if form:
+        # Drop ultra-generic lone "Base"; keep saga/form cues.
+        if form.lower() not in ('base', 'base manga'):
+            parts.append(ascii(form))
+    parts += [ascii(franchise), 'anime', 'character']
     return ' '.join(parts)
 
 def save_webp(data: bytes, dest: Path):
