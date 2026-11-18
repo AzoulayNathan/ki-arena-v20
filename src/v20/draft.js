@@ -30,9 +30,13 @@ export function initialPool(worlds,statsMode){
   return heroCache.get(c.key);
 }
 
+function weaponPower(g){
+  // Tier first so zero-stat epic/rare (e.g. HXH needles) never rank as starter-weak.
+  return (g.tier||1)*1000+((g.atk||0)+(g.shield||0)+(g.heal||0));
+}
 export function weaponPool(worlds,statsMode){
   const c=registry(worlds,statsMode);
-  if(!weaponCache.has(c.key))weaponCache.set(c.key,[...c.weapons].sort((a,b)=>((a.atk||0)+(a.shield||0)+(a.heal||0))-((b.atk||0)+(b.shield||0)+(b.heal||0))||(a.tier||0)-(b.tier||0)||(a.id<b.id?-1:1)).map((g,i)=>({...g,globalRank:i+1})));
+  if(!weaponCache.has(c.key))weaponCache.set(c.key,[...c.weapons].sort((a,b)=>weaponPower(a)-weaponPower(b)||(a.id<b.id?-1:1)).map((g,i)=>({...g,globalRank:i+1})));
   return weaponCache.get(c.key);
 }
 
@@ -82,8 +86,10 @@ function generateWeapons(r){
   const represented=new Set(r.units.map(u=>c.byId.get(u.cardId).universe));
   return ['midA','midB','mystery'].map((band,i)=>{
     const bounds=weaponBounds(band,full.length);
+    const legal=g=>g.tier<=2&&!ownedIds.has(g.id)&&!offered.has(g.id)&&(represented.size?represented.has(g.universe):true);
     // Start draft: weak physical gear only (tier ≤2), never epic/legendary.
-    const gear=full.filter(g=>g.globalRank>=bounds.lo&&g.globalRank<=bounds.hi&&g.tier<=2&&!ownedIds.has(g.id)&&!offered.has(g.id)&&(represented.size?represented.has(g.universe):true));
+    let gear=full.filter(g=>g.globalRank>=bounds.lo&&g.globalRank<=bounds.hi&&legal(g));
+    if(!gear.length)gear=full.filter(legal).slice(0,Math.max(3,bounds.hi));
     const base={token:'start-'+r.step+'-'+i+'-'+r.rng.toString(36),kind:'weapon',band,revealed:i<2,typeRoll:1,safety:false,sourceSize:full.length,bounds};
     if(!gear.length)return {...base,id:null,disabled:true,reason:'Aucune arme disponible ici.'};
     const g=pick(r,gear);offered.add(g.id);

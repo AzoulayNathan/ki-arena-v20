@@ -7,7 +7,11 @@ export const INITIAL_BANDS={midA:[20,40],midB:[10,50],mystery:[0,60]};
 const REWARD_SPAN={midA:10,midB:20,mystery:30};
 const poolCache=new Map();
 export function sortedPool(r,kind){const c=registry(r.worlds,r.statsMode),represented=new Set(r.units.map(u=>c.byId.get(u.cardId)?.universe)),key=c.key+'|'+kind+'|'+(kind==='weapon'?[...represented].sort().join(','):'');if(poolCache.has(key))return poolCache.get(key);const out= [...(kind==='hero'?c.heroes:c.weapons.filter(g=>!represented.size||represented.has(g.universe)))].sort((a,b)=>score(a,kind)-score(b,kind)||(a.id<b.id?-1:a.id>b.id?1:0)).map((x,i)=>({...x,globalRank:i+1}));poolCache.set(key,out);return out;}
-function score(x,k){return k==='hero'?x.attack+x.maxHp+x.speed:(x.atk||0)+(x.shield||0)+(x.heal||0);}
+function score(x,k){
+  if(k==='hero')return x.attack+x.maxHp+x.speed;
+  // Tier-major score: zero-stat rare/epic must not outrank starter commons.
+  return (x.tier||1)*1000+((x.atk||0)+(x.shield||0)+(x.heal||0));
+}
 /** Same fractional windows for heroes/weapons; minimum three neighbouring ranks for tiny catalogs. */
 export function bounds(N,lo,hi){let a=Math.max(1,Math.round(lo*N)),b=Math.max(a,Math.min(N,Math.round(hi*N)));if(b-a+1<Math.min(3,N)){b=Math.min(N,a+2);a=Math.max(1,b-2);}return {lo:a,hi:b};}
 export function absoluteBounds(poolN,lo,hi){
