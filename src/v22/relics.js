@@ -1,6 +1,6 @@
 import {contextPower} from './power.js';
 import {pick,int} from './random.js';
-const make=(id,name,tier,icon,text,type,params={},target='leader')=>({id,name,tier,icon,text,type,params,target,origin:'EDITORIAL_PROPOSE',asset:'assets/v22/relics/'+id+'.svg'});
+const make=(id,name,tier,icon,text,type,params={},target='leader')=>({id,name,tier,icon,text,type,params,target,origin:'EDITORIAL_PROPOSE',asset:'assets/v22/relics/'+id+'.webp'});
 export const RELICS=Object.freeze([
  make('bastion','Sceau du bastion',1,'shield','Avant-garde : bouclier de 12 % au départ.','shield',{amount:.12},'front'),
  make('echo','Cloche des échos',1,'bell','Le soutien soigne le plus blessé de 8 % tous les 3 tours joués.','heal_ally',{amount:.08,cycle:'action',every:3},'support'),
