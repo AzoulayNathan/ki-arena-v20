@@ -67,11 +67,13 @@ function generateHeroes(r){
   });
 }
 
+/** Same N=600 reference bands as heroes (*N/600), with a min window for tiny weapon catalogs. */
 function weaponBounds(band,N){
-  // Same 50–70 / 35–85 / 15–100 ratios, mapped onto the actual weapon pool size.
   const b=DRAFT_BANDS[band],n=Math.max(1,N);
-  const lo=Math.max(1,Math.round(b.lo/100*n)),hi=Math.max(lo,Math.round(b.hi/100*n));
-  return {lo,hi:Math.min(n,hi)};
+  let lo=Math.max(1,Math.round(b.lo*n/600));
+  let hi=Math.max(lo,Math.min(n,Math.round(b.hi*n/600)));
+  if(hi-lo+1<Math.min(3,n)){hi=Math.min(n,lo+2);lo=Math.max(1,hi-2);}
+  return {lo,hi};
 }
 function generateWeapons(r){
   const c=registry(r.worlds,r.statsMode),full=weaponPool(r.worlds,r.statsMode);
@@ -80,7 +82,8 @@ function generateWeapons(r){
   const represented=new Set(r.units.map(u=>c.byId.get(u.cardId).universe));
   return ['midA','midB','mystery'].map((band,i)=>{
     const bounds=weaponBounds(band,full.length);
-    const gear=full.filter(g=>g.globalRank>=bounds.lo&&g.globalRank<=bounds.hi&&g.tier<=4&&!ownedIds.has(g.id)&&!offered.has(g.id)&&(represented.size?represented.has(g.universe):true));
+    // Start draft: weak physical gear only (tier ≤2), never epic/legendary.
+    const gear=full.filter(g=>g.globalRank>=bounds.lo&&g.globalRank<=bounds.hi&&g.tier<=2&&!ownedIds.has(g.id)&&!offered.has(g.id)&&(represented.size?represented.has(g.universe):true));
     const base={token:'start-'+r.step+'-'+i+'-'+r.rng.toString(36),kind:'weapon',band,revealed:i<2,typeRoll:1,safety:false,sourceSize:full.length,bounds};
     if(!gear.length)return {...base,id:null,disabled:true,reason:'Aucune arme disponible ici.'};
     const g=pick(r,gear);offered.add(g.id);

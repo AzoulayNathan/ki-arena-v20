@@ -29,7 +29,10 @@ export function powerBounds(r,kind,band='midA',initial=false){
  const full=sortedPool(r,kind),poolN=full.length;
  if(initial){
   const b=INITIAL_BANDS[band];
-  return {...absoluteBounds(poolN,scaleRef(b[0],poolN)||(band==='mystery'?1:scaleRef(b[0],poolN)),scaleRef(b[1],poolN)||1),centre:scaleRef(30,poolN)};
+  // Absolute ranks on the N=600 reference, scaled with poolN/600 (never treat 20..60 as percents).
+  const lo=Math.max(band==='mystery'?1:0,scaleRef(b[0],poolN));
+  const hi=Math.max(1,scaleRef(b[1],poolN)||1);
+  return {...absoluteBounds(poolN,lo||1,hi),centre:Math.max(1,scaleRef(30,poolN)||1)};
  }
  // Map hero-pool actBase (N≈600) onto the target pool so tiny weapon catalogs
  // do not clamp a centre of ~30 into their legendary tip (e.g. DB weapons N=21).
@@ -42,7 +45,7 @@ export function powerBounds(r,kind,band='midA',initial=false){
 }
 export function drawCard(r,kind,band='midA',{initial=false,exclude=new Set(),sameWorld=null,allowOwned=false}={}){
  const c=registry(r.worlds,r.statsMode),full=sortedPool(r,kind),b=powerBounds(r,kind,band,initial),usedPersons=new Set([...r.units,...r.dead,...(r.departed||[])].map(u=>c.byId.get(u.cardId)?.person)),represented=new Set(r.units.map(u=>c.byId.get(u.cardId)?.universe));
- const legal=full.filter(x=>x.globalRank>=b.lo&&x.globalRank<=b.hi&&!exclude.has(x.id)&&!exclude.has('person:'+x.person)&&(!sameWorld||x.universe===sameWorld)&&(kind==='hero'?!usedPersons.has(x.person)&&(initial?x.rarity!=='legendary':true):(!represented.size||represented.has(x.universe)))&&(!initial||!r.useCollection||kind!=='hero'||!r.collectionIds?.length||r.collectionIds.includes(x.id)));
+ const legal=full.filter(x=>x.globalRank>=b.lo&&x.globalRank<=b.hi&&!exclude.has(x.id)&&!exclude.has('person:'+x.person)&&(!sameWorld||x.universe===sameWorld)&&(kind==='hero'?!usedPersons.has(x.person)&&(initial?x.rarity!=='legendary':true):(!represented.size||represented.has(x.universe))&&(!initial||(x.tier||1)<=2))&&(!initial||!r.useCollection||kind!=='hero'||!r.collectionIds?.length||r.collectionIds.includes(x.id)));
  if(!legal.length)return {kind,band,disabled:true,bounds:b,reason:'Aucun candidat compatible dans cette tranche.'};
  const x=pick(r,legal);return {kind,band,id:x.id,person:x.person,globalRank:x.globalRank,sourceSize:full.length,bounds:b,universe:x.universe,finish:rollFinish(r),disabled:false};
 }
