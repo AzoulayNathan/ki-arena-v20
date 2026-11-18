@@ -1,5 +1,5 @@
 import {runIsStale23} from '../v23/save-guard.js';
-import {currentLane,setLane,clearLane,versionGateMarkup,ensureVersionGateStyle,CLASSIC_URL} from '../v23/version-gate.js';
+import {currentLane,setLane,clearLane,versionGateMarkup,ensureVersionGateStyle,classicHref,CLASSIC_FALLBACK_URL} from '../v23/version-gate.js';
 import {weaponEffects} from '../v22/effects.js';
 import {effectiveGear} from '../v22/power.js';
 import {effectText} from '../v22/text.js';
@@ -325,7 +325,7 @@ if(a==='bilan-tab'){document.querySelectorAll('.a-bilan-panel').forEach(p=>p.hid
 if(a==='new-run'){page='setup';run=null;lastReceipt=null;render();return;}
 if(a==='retreat'){if(run)openModal('retreat');return;}if(a==='confirm-retreat'){modal=null;mutate(r=>finalizeRun(r,{retreat:true}));return;}
 if(a==='version-new'){setLane('new');page='home';render();toast('Nouvelle version · V12 + JoJo');return;}
-if(a==='version-classic'){setLane('classic');location.href=CLASSIC_URL;return;}
+if(a==='version-classic'){clearLane();const dest=classicHref();fetch(dest,{method:'HEAD',cache:'no-store'}).then(r=>{location.href=r.ok?dest:CLASSIC_FALLBACK_URL;}).catch(()=>{location.href=CLASSIC_FALLBACK_URL;});return;}
 if(a==='version-switch'){clearLane();page='version-gate';modal=null;render();return;}
 if(a==='skip'){paused=false;clearTimeout(timer);stopEffects(true);clearSpotlight(document.querySelector('.a-battlefield'));viewEvent=null;if(mutate(completeCombat,contextToken(run)))announceProgression(run);return;}if(a==='pause'){paused=!paused;if(paused){clearTimeout(timer);stopEffects(true);clearSpotlight(document.querySelector('.a-battlefield'));}render();if(!paused)schedule();return;}if(a==='speed'){speed=[1,2,4,8][([1,2,4,8].indexOf(speed)+1)%4];clearTimeout(timer);render();schedule();return;}
  if(a==='event-preview'){selectedEvent=el.dataset.scene;render();return;}

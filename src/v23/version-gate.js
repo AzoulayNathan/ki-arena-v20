@@ -1,8 +1,11 @@
-/** Choix de voie au lancement : précédente (live) vs nouvelle (V12 + JoJo). */
+/** Choix de voie au lancement : précédente (/classic) vs nouvelle (V12 + JoJo). */
 export const LANE_KEY='kiarena:release-lane';
-export const CLASSIC_URL='https://ki-arena-v20.pages.dev/';
+/** Same-origin classic snapshot — never the production root (that is already V23). */
+export const CLASSIC_URL='./classic/';
+/** Immutable pre-V12 CF deploy — used only if /classic/ is unreachable. */
+export const CLASSIC_FALLBACK_URL='https://f3d4d42d.ki-arena-v20.pages.dev/';
 export const NEW_LABEL='Nouvelle · V12 + JoJo';
-export const CLASSIC_LABEL='Précédente · build en ligne';
+export const CLASSIC_LABEL='Précédente · build classique';
 
 export function currentLane(){
  try{return localStorage.getItem(LANE_KEY)||'';}catch{return '';}
@@ -14,12 +17,20 @@ export function clearLane(){
  try{localStorage.removeItem(LANE_KEY);}catch{}
 }
 
+export function classicHref(){
+ try{
+  return new URL(CLASSIC_URL,location.href).href;
+ }catch{
+  return CLASSIC_FALLBACK_URL;
+ }
+}
+
 export function versionGateMarkup(){
  return `<section class="v23-version-gate" aria-label="Choix de version">
   <div class="v23-version-card">
    <p class="v23-version-kicker">KI ARENA · MISE À JOUR</p>
    <h1>Quelle version jouer&nbsp;?</h1>
-   <p>La précédente reste disponible en ligne. La nouvelle apporte le catalogue V12, JoJo, draft 5+2, butin boss 1-sur-3, level-up illimité et évolutions.</p>
+   <p>La précédente reste disponible sous <code>/classic/</code>. La nouvelle apporte le catalogue V12, JoJo, draft 5+2, butin boss 1-sur-3, level-up illimité et évolutions.</p>
    <div class="v23-version-actions">
     <button type="button" class="a-button light" data-a="version-classic">${CLASSIC_LABEL}</button>
     <button type="button" class="a-button primary" data-a="version-new">${NEW_LABEL}</button>
@@ -38,6 +49,7 @@ export function versionGateStyles(){
 .v23-version-kicker{letter-spacing:.18em;font-size:.72rem;opacity:.7;margin:0 0 .6rem;}
 .v23-version-card h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 .75rem;line-height:1.15;}
 .v23-version-card p{margin:0 0 1.1rem;line-height:1.45;opacity:.9;}
+.v23-version-card code{font-size:.9em;opacity:.85;}
 .v23-version-actions{display:grid;gap:.7rem;}
 .v23-version-actions .a-button{width:100%;justify-content:center;}
 .v23-version-note{margin:1rem 0 0;font-size:.85rem;opacity:.65;}`;
