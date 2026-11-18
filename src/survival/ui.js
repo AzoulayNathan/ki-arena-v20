@@ -101,7 +101,7 @@ export function installSurvivalUI(config){env=config;
   if(action==='selectItem'){U.selected=el.dataset.id;env.render();return;}
   if(action==='cancelItem'){U.selected=null;env.render();return;}
   if(action==='tab'){U.recycle=null;U.tab=el.dataset.id;const open=document.querySelector('.sv-drawer')?.open;env.render();if(open)document.querySelector('.sv-drawer').open=true;return;}
-  if(action==='speed'){U.speed=U.speed===1?2:1;env.render();return;}
+  if(action==='speed'){U.speed=[1,2,4,8][([1,2,4,8].indexOf(U.speed)+1)%4];env.render();return;}
   if(action==='skip'){U.skip=!U.skip;if(U.busy&&U.skip)finish();else env.render();return;}
   if(action==='finishAnim'){finish();return;}
   if(action==='stop'){U.stop=true;env.render();document.querySelector('.sv-drawer').open=true;return;}
