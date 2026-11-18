@@ -6,7 +6,8 @@ import {registry} from './catalog.js';
 import {LOCAL_ASSETS} from './asset-index.js';
 import {isSpecialEdition,worldAssetKey} from '../arena/rules.js';
 // Quarantine: verified wrong image / wrong form in the supplied pack. Originals retained on disk.
-const REJECTED_PORTRAITS=new Set([...AUDITED_REJECTED_PORTRAITS,'assets/portraits-naruto/nar-sakura-haruno-ninja-medecin.webp','assets/portraits-naruto/nar-sakura-haruno-sceau-byakugo.webp','assets/portraits-naruto/nar-sakura-haruno-genin.webp','assets/portraits-db/chichi-db-enfant-combattante.webp','assets/portraits-db/draculaman-db-guerrier-de-baba.webp','assets/portraits-db/mai-db-pilaf-gang.webp','assets/portraits-db/akkuman-db-combattant-du-palais-d-enma.webp','assets/portraits-db/goku-db-23e-tenkaichi-technique-meteore.webp']);
+// Only keep confirmed wrong non-DB faces here. DB scrapes must display (no stylized SVG quarantine).
+const REJECTED_PORTRAITS=new Set([...AUDITED_REJECTED_PORTRAITS,'assets/portraits-naruto/nar-sakura-haruno-ninja-medecin.webp','assets/portraits-naruto/nar-sakura-haruno-sceau-byakugo.webp','assets/portraits-naruto/nar-sakura-haruno-genin.webp']);
 let dbPromise;
 export function mediaDb(){if(!dbPromise)dbPromise=new Promise((resolve,reject)=>{const q=indexedDB.open('kiarena-local-media',1);q.onupgradeneeded=()=>q.result.createObjectStore('files');q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);});return dbPromise;}
 export async function putMedia(key,blob){const db=await mediaDb();return new Promise((resolve,reject)=>{const tx=db.transaction('files','readwrite');tx.objectStore('files').put(blob,key);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});}
@@ -56,11 +57,10 @@ export function cardArtFallbackChain(card,opts={}){
  card=fullCard(card);if(!opts.raw){const face=globalThis.KI_V19_CARD_FACE?.(card,opts);if(face)return [face];}const world=card?.universe,id=card?.sourceId||String(card?.id||'').split(':').pop(),special=opts.preferSpecial!==false&&isSpecialEdition(opts.seed||'ARENA',card?.id),urls=[];
  const key=card?.id;if(key&&mediaCache.has(key))urls.push(mediaCache.get(key));const srcKey=world&&id?world+':'+id:null;if(srcKey&&mediaCache.has(srcKey))urls.push(mediaCache.get(srcKey));
  for(const variant of special?['special','arena','normal']:['arena','normal']){const imported=mediaCache.get('studio:'+world+':'+id+':'+variant);if(imported)urls.push(imported);}
- // Portraits scrapés d'abord, puis faces carte, puis cache / stylized.
+ // Portraits scrapés d'abord, puis faces carte. Jamais les SVG stylized (templates moches).
  urls.push(...portraitArtCandidates(card).map(asset));
  urls.push(...cardArtCandidates(card,opts).map(asset));
-
- const fallback=card?.universe==='DB'&&card?.sourceId?'assets/stylized/'+card.sourceId+'.svg':null;if(fallback&&hasLocalAsset(fallback))urls.push(asset(fallback));return [...new Set(urls.filter(Boolean))];
+ return [...new Set(urls.filter(Boolean))];
 }
 
 export function equipmentArtUrl(item){
@@ -94,6 +94,6 @@ export function rawPortraitUrl(card,opts={}){
   if(portrait[0])return asset(portrait[0]);
   const local=cardArtCandidates(card,{...opts,preferSpecial:opts.preferSpecial!==false});
   if(local[0])return asset(local[0]);
-  const fallback='assets/stylized/'+id+'.svg';
-  return card.universe==='DB'&&hasLocalAsset(fallback)?asset(fallback):'';
+  // Do not fall back to assets/stylized/*.svg templates.
+  return '';
 }
