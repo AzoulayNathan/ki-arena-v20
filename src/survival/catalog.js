@@ -52,7 +52,8 @@ export function catalog(universe){
  const heroes=ordered.map((h,i)=>{
   const rank=h.rank||i+1;
   const rarity=rarityFromRank(rank,N);
-  const raw=universe==='DB'?(CARD_MAP.get(h.id)?.effects||[]):(h.signature||[]).map((e,i)=>({...e,key:h.id+':'+i,editorial:true}));
+  const fromMap=CARD_MAP.get(h.id)?.effects;
+  const raw=(fromMap&&fromMap.length?fromMap:(h.signature||[])).map((e,i)=>({...e,key:e.key||h.id+':'+i,editorial:e.editorial!==false}));
   return {...h,rank,rarity,effects:normalizeEffects(h.id,raw,rarity)};
  });
  return cached[universe]={...d,heroes,byId:new Map(heroes.map(x=>[x.id,x])),byItem:new Map(d.items.map(x=>[x.id,x])),gear:d.items.filter(x=>x.allowed),weapons:d.items.filter(x=>x.draft).sort((a,b)=>a.tier-b.tier||(a.id<b.id?-1:1)),N};

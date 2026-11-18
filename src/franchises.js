@@ -44,6 +44,17 @@ export const FRANCHISES = Object.freeze({
     ink: '#0b1c3d',
     tone: 'blue',
   },
+  JOJO: {
+    id: 'JOJO',
+    name: 'JoJo’s Bizarre Adventure',
+    short: 'JOJO',
+    tagline: '240 stands · Parts 1–6',
+    icon: '◈',
+    color: '#8b5cf6',
+    accent: '#f0abfc',
+    ink: '#1e1033',
+    tone: 'violet',
+  },
 });
 
 export const FRANCHISE_IDS = Object.keys(FRANCHISES);
@@ -53,4 +64,7 @@ export function franchiseOf(id) {
 export function franchiseCssVars(id) {
   const f = franchiseOf(id);
   return `--fr-color:${f.color};--fr-accent:${f.accent};--fr-ink:${f.ink}`;
+}
+export function worldAssetKey(universe) {
+  return ({ DB: 'db', HXH: 'hxh', NARUTO: 'naruto', ONEPIECE: 'onepiece', JOJO: 'jojo' })[universe] || String(universe).toLowerCase();
 }

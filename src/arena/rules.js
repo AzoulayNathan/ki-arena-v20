@@ -38,5 +38,5 @@ export function isSpecialEdition(seed, cardId) {
 }
 
 export function worldAssetKey(universe) {
-  return ({ DB: 'db', HXH: 'hxh', NARUTO: 'naruto', ONEPIECE: 'onepiece' })[universe] || String(universe).toLowerCase();
+  return ({ DB: 'db', HXH: 'hxh', NARUTO: 'naruto', ONEPIECE: 'onepiece', JOJO: 'jojo' })[universe] || String(universe).toLowerCase();
 }

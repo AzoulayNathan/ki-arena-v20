@@ -3,7 +3,7 @@ import {registry} from '../v20/catalog.js';
 import {drawCard,addHero,addItem,contextPower,effectiveGear,sortedPool} from './power.js';
 import {drawRelic,relicValue,RELIC_BY_ID} from './relics.js';
 import {pick,shuffle,rollFinish} from './random.js';
-export function coinGain(r){const p=contextPower(r),base=24+3*p.v+(p.kind==='boss'?24:p.kind==='elite'?12:0);return Math.round(base*(1+relicValue(r,'victory_coins')));}
+export function coinGain(r){const p=contextPower(r),base=24+3*p.v+(p.kind==='boss'?48:p.kind==='elite'?12:0);return Math.round(base*(p.kind==='boss'?1.35:1)*(1+relicValue(r,'victory_coins')));}
 export function rewardOptions22(r){
  if(r.rewardSchema===3&&r.pending)return beginRewards23(r);
  const used=new Set(),cards=['hero','weapon',pick(r,['hero','weapon'])].map((kind,i)=>{const o=drawCard(r,kind,i===2?'mystery':'midA',{exclude:used});if(o.id)used.add(o.id);return {...o,type:i===2?'mystery':kind==='hero'?'recruit':'item',revealed:i<2,title:i===2?'Le destin caché':kind==='hero'?'Un nouvel allié':'Une nouvelle arme'};});

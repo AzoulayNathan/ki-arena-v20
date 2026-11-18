@@ -19,8 +19,8 @@ function cardDraft(r,kind,{boss=false}={}){
   if(offers.every(o=>o.disabled))offers.push({type:'coins',amount:30+3*contextPower(r).v,title:'Provisions de route',text:'Aucun équipement disponible dans ce palier. Compensation en zénis.',disabled:false});
   return {kind:'gear',offers};
  }
- const bands=boss?['midA','midB','mystery']:['midA','midB','mystery'];
- const offers=bands.map((band,i)=>{const o=drawCard(r,kind,band,{exclude:used});if(o.id){used.add(o.id);if(kind==='hero')used.add('person:'+o.person);}return {...o,poolWorlds,type:boss?'item':(i===2?'mystery':kind==='hero'?'recruit':'item'),revealed:boss||i<2,title:boss?(kind==='hero'?'Allié du boss':'Arme du boss'):(i===2?'Le destin caché':kind==='hero'?'Un nouvel allié':'Une nouvelle arme')};});
+ const bands=['midA','midB','mystery'];
+ const offers=bands.map((band,i)=>{const o=drawCard(r,kind,band,{exclude:used});if(o.id){used.add(o.id);if(kind==='hero')used.add('person:'+o.person);}return {...o,poolWorlds,type:i===2?'mystery':kind==='hero'?'recruit':'item',revealed:i<2,title:i===2?'Le destin caché':boss?(kind==='hero'?'Allié du boss':'Arme du boss'):(kind==='hero'?'Un nouvel allié':'Une nouvelle arme')};});
  if(offers.every(o=>o.disabled))offers.push({type:'coins',amount:30+3*contextPower(r).v,title:'Provisions de route',text:'Aucun candidat disponible dans ce palier. Compensation en zénis.',disabled:false});
  return {kind,offers};
 }
@@ -35,10 +35,10 @@ function relicPairDraft(r){
   const id=drawRelic(r,{exclude});
   if(!id)break;
   exclude.add(id);
-  offers.push({type:'relic',id,title:i===0?'Première relique':'Seconde relique',disabled:false,revealed:true});
+  offers.push({type:'relic',id,title:i===0?'Relique révélée':'Relique mystère',disabled:false,revealed:i===0});
  }
  if(!offers.length)offers.push({type:'coins',amount:40+4*contextPower(r).v,title:'Provisions de route',text:'Toutes les reliques de ce palier sont déjà acquises.',disabled:false});
- else if(offers.length===1)offers.push({type:'coins',amount:25+3*contextPower(r).v,title:'Provisions de route',text:'Une seule relique restait dans ce palier.',disabled:false});
+ else if(offers.length===1)offers.push({type:'coins',amount:25+3*contextPower(r).v,title:'Provisions de route',text:'Une seule relique restait dans ce palier.',disabled:false,revealed:true});
  return {kind:'relic',offers};
 }
 function prepareStage(r){
@@ -61,31 +61,13 @@ export function beginRewards23(r){
  r.rewardBundle={schema:REWARD_SCHEMA,id:freshId(),node:r.current,context:contextPower(r),stage:0,claims:[],boss,stages:(boss?['hero','weapon','relic']:['hero','gear','boon']).map(kind=>({kind,ready:false,offers:[]}))};
  r.rewardClaimed=false;r.rewardLockedIndex=null;return prepareStage(r);
 }
-function grantBossPack(r,stage){
- const c=registry(r.worlds,r.statsMode),cards=[];
- for(const o of stage.offers){
-  if(o.disabled||!o.kind)continue;
-  if(o.kind==='hero'){
-   const hero=c.byId.get(o.id);if(!hero||r.units.some(u=>c.byId.get(u.cardId).person===hero.person))continue;
-   const unit=addHero(r,o.id,o.finish);if(unit)cards.push({cardId:o.id,finish:o.finish,uid:unit.uid});
-  }else if(o.kind==='weapon'){
-   const g=c.byItem.get(o.id);if(!g?.ok||!r.units.some(u=>c.byId.get(u.cardId).universe===g.universe))continue;
-   const item=addItem(r,o.id,o.finish);if(item)cards.push({cardId:o.id,finish:o.finish,uid:item.uid,category:g.category});
-  }
- }
- return cards;
-}
 export function chooseBundleReward23(r,index,replaceUid=null,expectedToken=null){
  const b=r.rewardBundle;
  if(r.phase!=='reward'||!hasRewardBundle(r)||b.node!==r.current||b.stage>=3||r.rewardClaimed||!Number.isInteger(index)||r.nodes.find(n=>n.id===r.current)?.done)return false;
  const o=r.rewards[index];if(!o||o.disabled||expectedToken&&expectedToken!==o.claimToken||r.rewardLockedIndex!=null&&r.rewardLockedIndex!==index)return false;
  if(JSON.stringify(o)!==JSON.stringify(b.stages[b.stage].offers[index])||b.claims.some(c=>c.stage===b.stage))return false;
  const stage=b.stages[b.stage],c=registry(r.worlds,r.statsMode);let earned;
- if(b.boss&&(stage.kind==='hero'||stage.kind==='weapon')&&o.kind){
-  const cards=grantBossPack(r,stage);
-  if(!cards.length)return false;
-  earned={type:stage.kind==='hero'?'hero_pack':'weapon_pack',cards};
- }else if(o.kind==='hero'){
+ if(o.kind==='hero'){
   const hero=c.byId.get(o.id);if(!hero||r.units.some(u=>c.byId.get(u.cardId).person===hero.person))return false;
   const unit=addHero(r,o.id,o.finish);if(!unit)return false;
   earned={type:'hero',cardId:o.id,finish:o.finish,uid:unit.uid};
@@ -120,9 +102,7 @@ export function validateRewards23(r){
    if(o.kind){
     const expectedKind=s===0?'hero':(boss?'weapon':(o.kind==='object'?'object':'weapon'));
     if(o.kind!==expectedKind&&!( !boss&&s===1&&(o.kind==='weapon'||o.kind==='object')))throw Error('Carte de récompense invalide.');
-    if(boss){
-     if(!o.revealed||!['black','white','gold'].includes(o.finish)||seen.has(o.id))throw Error('Carte de récompense invalide.');
-    }else if(o.revealed!==(i<2)||o.type!==(i===2?'mystery':s===0?'recruit':'item')||!['black','white','gold'].includes(o.finish)||seen.has(o.id))throw Error('Carte de récompense invalide.');
+    if(o.revealed!==(i<2)||o.type!==(i===2?'mystery':s===0?'recruit':'item')||!['black','white','gold'].includes(o.finish)||seen.has(o.id))throw Error('Carte de récompense invalide.');
     seen.add(o.id);
     if(s===0){
      const full=c.heroes.slice().sort((a,b)=>((a.attack+a.maxHp+a.speed)-(b.attack+b.maxHp+b.speed))||(a.id<b.id?-1:a.id>b.id?1:0));
@@ -131,7 +111,8 @@ export function validateRewards23(r){
      if(!rank||rank!==o.globalRank||full.length!==o.sourceSize||rank<o.bounds.lo||rank>o.bounds.hi||o.bounds.lo!==expected.lo||o.bounds.hi!==expected.hi||o.poolWorlds.some(w=>!r.worlds.includes(w)))throw Error('Puissance de récompense invalide.');
      const person=c.byId.get(o.id).person;if(people.has(person))throw Error('Identité répétée dans une offre.');people.add(person);
     }else if(o.kind==='weapon'){
-     const full=c.weapons.filter(g=>o.poolWorlds?.includes(g.universe)).slice().sort((a,b)=>(((a.atk||0)+(a.shield||0)+(a.heal||0))-((b.atk||0)+(b.shield||0)+(b.heal||0)))||(a.id<b.id?-1:a.id>b.id?1:0));
+     const score=g=>((g.tier||1)*1000)+((g.atk||0)+(g.shield||0)+(g.heal||0));
+     const full=c.weapons.filter(g=>o.poolWorlds?.includes(g.universe)).slice().sort((a,b)=>score(a)-score(b)||(a.id<b.id?-1:a.id>b.id?1:0));
      const rank=full.findIndex(x=>x.id===o.id)+1;
      const expected=powerBounds(r,'weapon',o.band);
      if(!rank||rank!==o.globalRank||full.length!==o.sourceSize||rank<o.bounds.lo||rank>o.bounds.hi||o.bounds.lo!==expected.lo||o.bounds.hi!==expected.hi||o.poolWorlds.some(w=>!r.worlds.includes(w)))throw Error('Puissance de récompense invalide.');
@@ -146,6 +127,7 @@ export function validateRewards23(r){
    const relics=stage.offers.filter(o=>!o.disabled&&o.type==='relic');
    if(relics.length>2)throw Error('Trop de reliques boss.');
    if(new Set(relics.map(o=>o.id)).size!==relics.length)throw Error('Reliques boss dupliquées.');
+   if(relics.length===2&&!(relics[0].revealed===true&&relics[1].revealed===false))throw Error('Reliques boss : 1 révélée + 1 mystère.');
   }
  }
  if(r.phase==='reward'&&JSON.stringify(r.rewards)!==JSON.stringify(b.stages[b.stage]?.offers||[]))throw Error('Étape de récompense désynchronisée.');

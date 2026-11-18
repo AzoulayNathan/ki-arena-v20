@@ -1,14 +1,15 @@
 /* Pure visual vocabulary. No gameplay state, RNG or catalog mutation. */
 import {asset} from '../arena/media.js';
-export const ORDER=['DB','HXH','NARUTO','ONEPIECE'];
+export const ORDER=['DB','HXH','NARUTO','ONEPIECE','JOJO'];
 export const THEMES={
  DB:{title:'Dragon Ball',kicker:'LE SOUFFLE DES SOMMETS',line:'Repousse l’horizon. Écris ta légende.',color:'#f7923e',rgb:'247,146,62',paper:'#f6f1e6',ink:'#182f36',file:'db',mark:'sun'},
  HXH:{title:'Hunter × Hunter',kicker:'L’APPEL DE L’INCONNU',line:'Le prochain détour change tout.',color:'#c2d778',rgb:'194,215,120',paper:'#f0f2e5',ink:'#193a33',file:'hxh',mark:'compass'},
  NARUTO:{title:'Naruto',kicker:'LES LIENS QUI DEMEURENT',line:'Avance avec ceux qui comptent.',color:'#f18060',rgb:'241,128,96',paper:'#f5eee6',ink:'#302e3c',file:'naruto',mark:'wind'},
- ONEPIECE:{title:'One Piece',kicker:'L’HORIZON N’ATTEND PAS',line:'Ta route commence au-delà du rivage.',color:'#70ced7',rgb:'112,206,215',paper:'#eff3ed',ink:'#173744',file:'onepiece',mark:'sail'}
+ ONEPIECE:{title:'One Piece',kicker:'L’HORIZON N’ATTEND PAS',line:'Ta route commence au-delà du rivage.',color:'#70ced7',rgb:'112,206,215',paper:'#eff3ed',ink:'#173744',file:'onepiece',mark:'sail'},
+ JOJO:{title:'JoJo',kicker:'UN STAND. UNE VOLONTÉ.',line:'La bizarre aventure continue.',color:'#a78bfa',rgb:'167,139,250',paper:'#f3eef8',ink:'#1e1033',file:'jojo',mark:'sun'}
 };
 export const theme=id=>THEMES[id]||THEMES.DB;
-export const loop=(id,n)=>ORDER[((ORDER.indexOf(id)+n)%4+4)%4];
+export const loop=(id,n)=>ORDER[((ORDER.indexOf(id)+n)%ORDER.length+ORDER.length)%ORDER.length];
 export const horizon=id=>'assets/v15/worlds/'+theme(id).file+'-horizon.webp';
 export const arena=id=>'assets/v15/battles/'+theme(id).file+'-arena.webp';
 export function scene(kind,id){const name={shop:'market',merchant:'market',rest:'camp',event:'crossroads',treasure:'treasure',reward:'treasure',result:'camp',end:'crossroads'}[kind];return name?'assets/v15/scenes/'+name+'.webp':arena(id);}
@@ -17,7 +18,8 @@ const COPY={
  DB:[['Le souffle des vallées','Un premier rival. Un groupe encore neuf. La route s’ouvre.'],['L’épreuve du canyon','Le soleil pèse. Chaque allié compte davantage.'],['Au-delà des terres connues','Le monde s’élargit. Les adversaires ne reculent plus.'],['L’écho des deux lunes','Loin des siens, l’équipe garde son cap.'],['Le silence des hauteurs','Plus personne ne parle avant la rencontre.'],['Le dernier éclair','La tempête n’efface pas les pas des survivants.']],
  HXH:[['Le début de la piste','L’inconnu ne donne aucune promesse.'],['Le prix du détour','Les chemins faciles se font rares. Choisis ton risque.'],['L’autre rive','Le terrain change. La vigilance devient un lien.'],['Une piste sous deux lunes','Ce que tu ne vois pas pèse sur chaque décision.'],['Au-dessus des certitudes','L’instinct ne suffit plus. Prépare tes alliés.'],['L’épreuve sans témoin','Il reste ta décision et ceux qui te suivent.']],
  NARUTO:[['Ceux qui prennent la route','Le premier pas se fait ensemble. La suite se mérite.'],['Sous la poussière','Les traces se perdent. Les liens se resserrent.'],['Une promesse au large','Chaque détour rappelle pourquoi l’équipe avance.'],['La veille silencieuse','À la nuit tombée, personne ne baisse sa garde.'],['Le poids de la promesse','Ce que tu protèges devient ta force.'],['Les liens dans l’orage','La route éprouve tous ceux qui restent.']],
- ONEPIECE:[['Le premier horizon','Un groupe, une direction. Le voyage n’attend plus.'],['Le vent contraire','Le cap tient quand la route se referme.'],['L’archipel des possibles','Chaque île promet quelque chose. Aucune ne donne tout.'],['La traversée des deux lunes','La nuit est vaste. Le groupe garde sa boussole.'],['Là où le ciel commence','Les détours mènent plus haut qu’espéré.'],['Au cœur du grain','L’orage passe. Le voyage continue.']]
+ ONEPIECE:[['Le premier horizon','Un groupe, une direction. Le voyage n’attend plus.'],['Le vent contraire','Le cap tient quand la route se referme.'],['L’archipel des possibles','Chaque île promet quelque chose. Aucune ne donne tout.'],['La traversée des deux lunes','La nuit est vaste. Le groupe garde sa boussole.'],['Là où le ciel commence','Les détours mènent plus haut qu’espéré.'],['Au cœur du grain','L’orage passe. Le voyage continue.']],
+ JOJO:[['Le premier Stand','La route bizarre s’ouvre. Choisis ton porte-Stand.'],['Une menace posée','L’ennemi ne crie pas. Il impose son rythme.'],['Liens et trahisons','Chaque allié compte. Chaque Stand révèle un secret.'],['Sous deux lunes','La nuit allonge les ombres. Tiens ton cap.'],['L’épreuve du destin','Plus rien n’est simple. Prépare ton équipe.'],['Le dernier cri','La volonté décide. Ton Stand répond.']]
 };
 export function story(id,act=0){return COPY[ORDER.includes(id)?id:'DB'][((act%6)+6)%6];}
 export function pressure(run){if(!run)return {level:0,label:'L’aventure attend',line:'Choisis ton horizon.'};const n=run.nodes?.find(n=>n.id===run.current),boss=run.pending?.kind==='boss'||n?.kind==='boss',won=boss&&run.phase==='reward',level=boss?5:Math.min(4,(run.act||0)+Math.floor(Math.max(0,n?.row||0)/3)+(run.pending?.kind==='elite'?1:0));return {level,label:won?'Le gardien est tombé':['La route s’ouvre','La pression monte','Terrain hostile','Le danger se rapproche','Sans droit à l’erreur','Le gardien t’attend'][level],line:won?'Ton équipe a franchi un seuil.':boss?'Un passage. Une équipe. Tiens bon.':run.act>0?'Ceux qui restent connaissent le prix de la route.':'Chaque décision dessine la suite.'};}
