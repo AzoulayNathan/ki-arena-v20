@@ -15,10 +15,10 @@ export const MODES=Object.freeze([
  ['relay','ARCADE · MÉMOIRE','Le relais des signes','Observe, retiens, puis retrouve la séquence.','extra','relay','hall'],
  ['keep','ENTRE AMIS · AUDACE','Garder ou tenter','Ton allié idéal est-il le prochain ?','party','keep','event'],
  ['preferences','ENTRE AMIS · DILEMMES','Le duel des goûts','Vos favoris. Vos désaccords. Vos révélations.','party','preferences','recruit'],
- ['collection','COLLECTION · QUATRE MONDES','Tous les destins.','Explore les combattants. Retrouve tes favoris.','collection','','horizon'],
+ ['collection','COLLECTION · CINQ MONDES','Tous les destins.','Explore les combattants. Retrouve tes favoris.','collection','','horizon'],
  ['pantheon','PANTHÉON · SOUVENIRS','Vos légendes restent.','Les équipes qui ont marqué ton aventure.','pantheon','','gates'],
 ]);
-export function recruitment(world){return 'assets/v16/'+({DB:'db',HXH:'hxh',NARUTO:'naruto',ONEPIECE:'onepiece'}[world]||'db')+'-recruit.webp';}
+export function recruitment(world){return 'assets/v16/'+({DB:'db',HXH:'hxh',NARUTO:'naruto',ONEPIECE:'onepiece',JOJO:'jojo'}[world]||'db')+'-recruit.webp';}
 export function modeArt(role,world){return role==='recruit'?recruitment(world):role==='hall'?'assets/v16/arcade-hall.webp':role==='gates'?'assets/v16/tournament-gates.webp':role==='arena'?arena(world):role==='horizon'?horizon(world):scene(role,world);}
 function tile(mode,world,saves,fixed=false){const[key,sub,title,line,action,id,art]=mode,resume=fixed&&saves[world],attrs=resume?`data-a="resume" data-worlds="${saves[world].join(',')}"`:action==='extra'?`data-v15-game="open" data-id="${id}"`:`data-a="${action}" ${action==='party'?`data-party-mode="${id}"`:`data-id="${id}"`}`;return `<article role="button" tabindex="0" class="v16-mode ${key} ${fixed?'v17-solo':''}" data-mode-key="${key}" data-mode-art="${art}" ${attrs} data-world="${world}" style="--mode-art:url('${asset(modeArt(art,world))}')"><span>${sub}</span><h3>${fixed?'Ton expédition.':title}</h3><p>${fixed?(resume?'Reprendre la route':'Composer ton équipe'):line}</p>${resume?`<button class="v17-new-run" data-a="setup" data-world="${world}">Nouvelle aventure ↗</button>`:''}</article>`;}
 let saveLookup={};
