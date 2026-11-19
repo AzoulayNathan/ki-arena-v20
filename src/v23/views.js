@@ -1,12 +1,10 @@
 import {offerFace,E} from '../v22/views.js';
 import {RELIC_BY_ID} from '../v22/relics.js';
 import {registry} from '../v20/catalog.js';
-import {souffranceOf} from '../v20/difficulty.js';
 
 export function actBoonMarkup23(r,hud,asset){
  const offers=r.actBoon?.offers||r.rewards||[];
- const s=souffranceOf(r);
- return `${hud}<section class="v22-loot v23-victory v23-act-boon" data-reward-stage="act" aria-label="Choix de début d’acte"><header class="v22-screen-head"><span class="v22-victory-seal" aria-hidden="true">◈</span><span class="a-eyebrow">ACTE ${r.act+1} · LE CHAPITRE S’OUVRE</span><h1 tabindex="-1">Trois chemins. Un seul.</h1><p>Le gardien est tombé. Avant la nouvelle carte : soigne l’équipe, prends une relique, ou ouvre un trésor digne d’un élite de cet acte.${s?` La Souffrance est à ${s}.`:''}</p></header>
+ return `${hud}<section class="v22-loot v23-victory v23-act-boon" data-reward-stage="act" aria-label="Choix de début d’acte"><header class="v22-screen-head"><span class="v22-victory-seal" aria-hidden="true">◈</span><span class="a-eyebrow">ACTE ${r.act+1} · LE CHAPITRE S’OUVRE</span><h1 tabindex="-1">Trois chemins. Un seul.</h1><p>Le gardien est tombé. Avant la nouvelle carte : soigne l’équipe, prends une relique, ou ouvre un trésor digne d’un élite de cet acte.</p></header>
  <div class="v22-loot-alternatives v23-boons v23-act-choices">${offers.map((o,i)=>{
   const art=o.type==='heal'?'rest':o.type==='relic'?'observatory':'treasure';
   const icon=o.type==='heal'?'＋':o.type==='relic'?'◇':'◆';

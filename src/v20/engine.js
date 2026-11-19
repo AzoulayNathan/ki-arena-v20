@@ -17,7 +17,7 @@ import {MIXED_RULES,ensureMixedDraft,chooseMixedDraft} from '../v16/draft.js';
 import {registry,ARENA_VERSION,NORMALIZATION} from './catalog.js';
 import {seedState,int,pick,shuffle} from '../v22/random.js';
 import {distributeExact} from '../survival/encounter.js';
-import {rankBudget,actBudget,actEnemyCap,actIndexFromWave,rollEncounterRanks,threatAct,gainSouffrance,souffranceOf} from './difficulty.js';
+import {rankBudget,actBudget,actIndexFromWave,waveEnemyCap,rollEncounterRanks} from './difficulty.js';
 import {runArenaBattle} from './battle.js';
 import {ACT_LENGTH,MAP_ROWS,BOSS_ROW,DRAFT_BANDS,DRAFT_OFFERS,virtualToLocalRank,waveFromDepth,isSpecialEdition} from '../arena/rules.js';
 import {beginEvent,applyEventChoice} from './events.js';
@@ -175,16 +175,17 @@ export function makeEncounter(r,node){if(r.contentVersion==='22.0.0')r.rng=rando
   let wave=depthWave(r,node.row);
   if(r.omenDanger&&['normal','elite','boss'].includes(node.kind)){wave+=1;r.omenDanger=false;}
   const kind=node.kind;
-  const mapAct=r.contentVersion==='22.0.0'?actIndexFromWave(wave):(r.act||0);
-  // Souffrance raises the effective act used for budgets, caps and enemy gear.
-  const act=r.contentVersion==='22.0.0'?threatAct(r,mapAct):mapAct;
+  const act=r.contentVersion==='22.0.0'?actIndexFromWave(wave):(r.act||0);
   const baseB=r.contentVersion==='22.0.0'?actBudget(cat.N,act,kind):rankBudget(cat.N,wave,kind);
   const B=scaleBudget(baseB,r.prestigeDiff||0);
-  const k=r.contentVersion==='22.0.0'?Math.min(B,actEnemyCap(act)):Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3));
-  const ranks=arenaRanks(r,cat,B,k),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,(r.prestigeDiff||0)+souffranceOf(r))),count=Math.min(ranks.length,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
+  const waveCap=r.contentVersion==='22.0.0'?waveEnemyCap(wave,act):null;
+  const k=r.contentVersion==='22.0.0'
+    ?(waveCap==null?B:Math.min(B,waveCap))
+    :Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3));
+  const ranks=arenaRanks(r,cat,B,waveCap==null&&r.contentVersion==='22.0.0'?null:k),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,r.prestigeDiff||0)),count=Math.min(ranks.length,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
   const enemies=ranks.map((rank,i)=>({...unit(r,cat.heroes[Math.min(cat.N,Math.max(1,rank))-1]),uid:'enemy'+i,rank:Math.min(cat.N,Math.max(1,rank)),...(r.contentVersion==='22.0.0'?{edition:'normal',finish:'black'}:{})})),items=[];
   for(let i=0;i<count;i++){const c=cat.byId.get(enemies[i].cardId),key=cat.key+'|'+c.universe+'|'+tier;let pool=isCurrentRules(r)?enemyGearCache.get(key):null;if(!pool){pool=cat.gear.filter(g=>g.universe===c.universe&&g.tier<=tier&&g.category!=='consommable');if(isCurrentRules(r))enemyGearCache.set(key,pool);}if(pool.length){const g=pick(r,pool);enemies[i][g.category==='armure'?'armor':'weapon']=g.id;items.push(g.id);}}
-  return {nodeId:node.id,wave,kind,budget:B,ranks:enemies.map(e=>e.rank),tier,enemies,items,act:mapAct,threatAct:act,souffrance:souffranceOf(r)};
+  return {nodeId:node.id,wave,kind,budget:B,ranks:enemies.map(e=>e.rank),tier,enemies,items,act};
 }
 export function enterNode(r,id){
   if(!availableNodes(r).includes(id)||r.nodes.find(n=>n.id===id)?.done||r.trail.includes(id))return false;
@@ -283,7 +284,7 @@ function flushCollectionUnlocks(r){
  const cat=registry(r.worlds,r.statsMode),played=new Set(r.playedCardIds||[]),boss=new Set(r.bossRosterCardIds||[]);
  for(const id of played){if(!boss.has(id))continue;const h=cat.byId.get(id);if(!h)continue;const u=[...(r.units||[]),...(r.dead||[]),...(r.departed||[]),...(r.finalTeam||[])].find(x=>x.cardId===id);const finish=r.contentVersion==='22.0.0'?(u?.finish||'black'):(u?.edition==='special'||isSpecialEdition(r.seed,h.id))?'gold':'black';try{unlockCard({id:h.id,finish,rarity:h.rarity,seed:r.seed+':run:'+h.id,universe:h.universe});}catch{}}
 }
-export function completeCombat(r){if(r.phase!=='combat'||!r.combat)return false;const {result,played}=r.combat;r.finalTeam=r.units.map(u=>({...u,role:played.includes(u.uid)?'active':'reserve'}));r.lastCombatLedger=emptyLedger();(r.combatVersion===COMBAT_VERSION||r.contentVersion==='22.0.0'?modernMetrics:historicalMetrics)(r.lastCombatLedger,result,{combatId:r.seed+':last:'+r.history.length,playedMap:Object.fromEntries(played.map((uid,i)=>['A-'+i,uid]))});let fallen=0;for(let i=0;i<played.length;i++){const u=r.units.find(x=>x.uid===played[i]),f=result.final.find(f=>f.uid==='A-'+i);if(!u)continue;if(!f.alive){fallen++;u.hp=0;const lost=[];for(const slot of['weapon','armor']){const itemUid=u[slot];if(!itemUid)continue;lost.push(itemUid);u[slot]=null;}if(lost.length)r.items=r.items.filter(x=>!lost.includes(x.uid));r.dead.push({...u,weapon:null,armor:null});r.units=r.units.filter(x=>x!==u);}else u.hp=Math.max(1,Math.round(u.maxHp*f.hp/f.maxHp));}if(r.contentVersion==='22.0.0'&&fallen)gainSouffrance(r,1,'ally-fallen');r.highestResolvedEncounterDepth=Math.max(r.highestResolvedEncounterDepth||0,r.act*10+(r.nodes.find(n=>n.id===r.current)?.row||0)+1);const win=result.winner==='A';r.history.push({node:r.current,wave:r.wave,kind:r.pending.kind,win,rounds:result.rounds,alive:r.units.length,souffrance:souffranceOf(r)});
+export function completeCombat(r){if(r.phase!=='combat'||!r.combat)return false;const {result,played}=r.combat;r.finalTeam=r.units.map(u=>({...u,role:played.includes(u.uid)?'active':'reserve'}));r.lastCombatLedger=emptyLedger();(r.combatVersion===COMBAT_VERSION||r.contentVersion==='22.0.0'?modernMetrics:historicalMetrics)(r.lastCombatLedger,result,{combatId:r.seed+':last:'+r.history.length,playedMap:Object.fromEntries(played.map((uid,i)=>['A-'+i,uid]))});for(let i=0;i<played.length;i++){const u=r.units.find(x=>x.uid===played[i]),f=result.final.find(f=>f.uid==='A-'+i);if(!u)continue;if(!f.alive){u.hp=0;const lost=[];for(const slot of['weapon','armor']){const itemUid=u[slot];if(!itemUid)continue;lost.push(itemUid);u[slot]=null;}if(lost.length)r.items=r.items.filter(x=>!lost.includes(x.uid));r.dead.push({...u,weapon:null,armor:null});r.units=r.units.filter(x=>x!==u);}else u.hp=Math.max(1,Math.round(u.maxHp*f.hp/f.maxHp));}r.highestResolvedEncounterDepth=Math.max(r.highestResolvedEncounterDepth||0,r.act*10+(r.nodes.find(n=>n.id===r.current)?.row||0)+1);const win=result.winner==='A';r.history.push({node:r.current,wave:r.wave,kind:r.pending.kind,win,rounds:result.rounds,alive:r.units.length});
  (r.combatVersion===COMBAT_VERSION||r.contentVersion==='22.0.0'?modernMetrics:historicalMetrics)(r.metrics||(r.metrics=emptyLedger()),result,{combatId:r.seed+':'+r.current+':'+r.history.length,playedMap:Object.fromEntries(played.map((uid,i)=>['A-'+i,uid]))});
  r.rosterSnapshots=r.rosterSnapshots||[];r.rosterSnapshots.push({node:r.current,wave:r.wave,kind:r.pending.kind,win,units:played.map((uid,i)=>{const u=[...r.units,...r.dead].find(u=>u.uid===uid);return {uid,cardId:u?.cardId,status:r.dead.some(d=>d.uid===uid)?'dead':'alive',battleUid:'A-'+i};})});
  r.playedCardIds=r.playedCardIds||[];r.bossRosterCardIds=r.bossRosterCardIds||[];

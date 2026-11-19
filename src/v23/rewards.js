@@ -1,5 +1,5 @@
 import {registry} from '../v20/catalog.js';
-import {actBudget,threatAct} from '../v20/difficulty.js';
+import {actBudget} from '../v20/difficulty.js';
 import {scaleBudget} from '../v20/prestige.js';
 import {drawCard,addHero,addItem,contextPower,powerBounds} from '../v22/power.js';
 import {drawObject,objectPool} from '../v22/economy.js';
@@ -77,11 +77,11 @@ export function chooseBundleReward23(r,index,replaceUid=null,expectedToken=null)
  return true;
 }
 
-/** Elite-power treasure for the act just started (threatAct of current act, kind elite). */
+/** Elite-power treasure for the act just started. */
 function eliteTreasureDraft(r){
- const c=registry(r.worlds,r.statsMode),N=c.N,act=threatAct(r,r.act|0);
+ const c=registry(r.worlds,r.statsMode),N=c.N,act=r.act|0;
  const saved=r.pending;
- r.pending={nodeId:null,wave:Math.max(1,(r.act|0)*10+1),kind:'elite',budget:scaleBudget(actBudget(N,act,'elite'),r.prestigeDiff||0),ranks:[],tier:Math.min(5,2+(r.act|0)),enemies:[],items:[],act:r.act|0,threatAct:act};
+ r.pending={nodeId:null,wave:Math.max(1,act*10+1),kind:'elite',budget:scaleBudget(actBudget(N,act,'elite'),r.prestigeDiff||0),ranks:[],tier:Math.min(5,2+act),enemies:[],items:[],act};
  const used=new Set();
  let o=drawCard(r,'weapon','midA',{exclude:used});
  if(o.disabled)o=drawObject(r,{exclude:used,band:'midA'});
