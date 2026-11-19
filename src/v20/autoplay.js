@@ -62,10 +62,12 @@ export function autoStep(r,h){
     autoEquipAll(r,{equip,registry});
     return !!startCombat(r);
   }
-  if(r.phase==='reward'&&r.contentVersion==='22.0.0'){
+  if((r.phase==='reward'||r.phase==='act-boon')&&r.contentVersion==='22.0.0'){
     const choices=r.rewards.map((x,i)=>({x,i})).filter(({x,i})=>!x.disabled&&(r.rewardLockedIndex==null||r.rewardLockedIndex===i));
-    const pick=choices.length?choices[liveInt(r,0,choices.length-1)]:null;
-    return pick?!!chooseReward(r,pick.i,null):false;
+    // Prefer full heal at act start when wounded, else any legal pick.
+    const prefer=r.phase==='act-boon'?choices.find(({x})=>x.type==='heal'&&!x.disabled):null;
+    const pick=prefer||(choices.length?choices[liveInt(r,0,choices.length-1)]:null);
+    return pick?!!chooseReward(r,pick.i,null,pick.x.claimToken||null):false;
   }
   if(r.phase==='reward'){
     const rewards=r.rewards||[];

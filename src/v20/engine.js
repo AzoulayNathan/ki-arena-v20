@@ -1,4 +1,4 @@
-import {chooseBundleReward23,hasRewardBundle} from '../v23/rewards.js';
+import {chooseBundleReward23,hasRewardBundle,beginActBoon23,chooseActBoon23,hasActBoon} from '../v23/rewards.js';
 import {runArenaBattle as runBattle22} from '../v22/battle.js';
 import {battleCard22} from '../v22/adapter.js';
 import {ensureDraft22,chooseDraft22} from '../v22/draft.js';
@@ -17,7 +17,7 @@ import {MIXED_RULES,ensureMixedDraft,chooseMixedDraft} from '../v16/draft.js';
 import {registry,ARENA_VERSION,NORMALIZATION} from './catalog.js';
 import {seedState,int,pick,shuffle} from '../v22/random.js';
 import {distributeExact} from '../survival/encounter.js';
-import {rankBudget,actBudget,actEnemyCap,actIndexFromWave,rollEncounterRanks} from './difficulty.js';
+import {rankBudget,actBudget,actEnemyCap,actIndexFromWave,rollEncounterRanks,threatAct,gainSouffrance,souffranceOf} from './difficulty.js';
 import {runArenaBattle} from './battle.js';
 import {ACT_LENGTH,MAP_ROWS,BOSS_ROW,DRAFT_BANDS,DRAFT_OFFERS,virtualToLocalRank,waveFromDepth,isSpecialEdition} from '../arena/rules.js';
 import {beginEvent,applyEventChoice} from './events.js';
@@ -175,14 +175,16 @@ export function makeEncounter(r,node){if(r.contentVersion==='22.0.0')r.rng=rando
   let wave=depthWave(r,node.row);
   if(r.omenDanger&&['normal','elite','boss'].includes(node.kind)){wave+=1;r.omenDanger=false;}
   const kind=node.kind;
-  const act=r.contentVersion==='22.0.0'?actIndexFromWave(wave):(r.act||0);
+  const mapAct=r.contentVersion==='22.0.0'?actIndexFromWave(wave):(r.act||0);
+  // Souffrance raises the effective act used for budgets, caps and enemy gear.
+  const act=r.contentVersion==='22.0.0'?threatAct(r,mapAct):mapAct;
   const baseB=r.contentVersion==='22.0.0'?actBudget(cat.N,act,kind):rankBudget(cat.N,wave,kind);
   const B=scaleBudget(baseB,r.prestigeDiff||0);
   const k=r.contentVersion==='22.0.0'?Math.min(B,actEnemyCap(act)):Math.min(B,wave>=10?Math.max(5,Math.ceil(B/cat.N)):Math.max(Math.ceil(B/cat.N),kind==='boss'?5:kind==='elite'?4:3));
-  const ranks=arenaRanks(r,cat,B,k),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,r.prestigeDiff||0)),count=Math.min(ranks.length,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
+  const ranks=arenaRanks(r,cat,B,k),tier=Math.min(5,1+Math.floor((wave-1)/5)+(kind==='boss'?1:0)+Math.min(2,(r.prestigeDiff||0)+souffranceOf(r))),count=Math.min(ranks.length,Math.floor((wave-1)/5)+(kind==='normal'?0:1));
   const enemies=ranks.map((rank,i)=>({...unit(r,cat.heroes[Math.min(cat.N,Math.max(1,rank))-1]),uid:'enemy'+i,rank:Math.min(cat.N,Math.max(1,rank)),...(r.contentVersion==='22.0.0'?{edition:'normal',finish:'black'}:{})})),items=[];
   for(let i=0;i<count;i++){const c=cat.byId.get(enemies[i].cardId),key=cat.key+'|'+c.universe+'|'+tier;let pool=isCurrentRules(r)?enemyGearCache.get(key):null;if(!pool){pool=cat.gear.filter(g=>g.universe===c.universe&&g.tier<=tier&&g.category!=='consommable');if(isCurrentRules(r))enemyGearCache.set(key,pool);}if(pool.length){const g=pick(r,pool);enemies[i][g.category==='armure'?'armor':'weapon']=g.id;items.push(g.id);}}
-  return {nodeId:node.id,wave,kind,budget:B,ranks:enemies.map(e=>e.rank),tier,enemies,items,act};
+  return {nodeId:node.id,wave,kind,budget:B,ranks:enemies.map(e=>e.rank),tier,enemies,items,act:mapAct,threatAct:act,souffrance:souffranceOf(r)};
 }
 export function enterNode(r,id){
   if(!availableNodes(r).includes(id)||r.nodes.find(n=>n.id===id)?.done||r.trail.includes(id))return false;
@@ -196,7 +198,8 @@ export function enterNode(r,id){
   return true;
 }
 export function leaveNode(r){
-  if(r.phase==='reward'&&hasRewardBundle(r)&&r.rewardBundle.stage<3)return false;
+  const stages=r.rewardBundle?.stages?.length||3;
+  if(r.phase==='reward'&&hasRewardBundle(r)&&r.rewardBundle.stage<stages)return false;
   if(!['rest','event','shop','reward','result'].includes(r.phase))return false;
   const node=r.nodes.find(n=>n.id===r.current);
   if(!node||node.done)return false;
@@ -208,15 +211,20 @@ export function leaveNode(r){
   if(bossCleared){
     r.act++;
     r.current=null;
-    // Entrée ACTE 10 (act===9) : portail prestige / survie infinie.
-    if(r.act===9&&!r.endless){
-      r.phase='prestige';
-      r.nodes=generateMap(r.seed,r.act,r);markRareNodes(r);
+    r.legacyMap=false;r.nodes=generateMap(r.seed,r.act,r);markRareNodes(r);
+    // Début d’acte : soin complet / relique / trésor d’élite (plus à la fin du boss).
+    if(r.rewardSchema===3||r.contentVersion==='22.0.0'){
+      beginActBoon23(r);
       return true;
     }
-    r.legacyMap=false;r.nodes=generateMap(r.seed,r.act,r);markRareNodes(r);
+    if(r.act===9&&!r.endless){r.phase='prestige';return true;}
   }
   r.phase='map';r.rewardClaimed=false;r.rewardLockedIndex=null;
+  return true;
+}
+export function chooseActStart(r,index,expectedToken=null){
+  if(!chooseActBoon23(r,index,expectedToken))return false;
+  if(r.act===9&&!r.endless&&r.phase==='map'){r.phase='prestige';}
   return true;
 }
 /** Continuer en survie infinie depuis le portail prestige (ACTE 10+). */
@@ -275,7 +283,7 @@ function flushCollectionUnlocks(r){
  const cat=registry(r.worlds,r.statsMode),played=new Set(r.playedCardIds||[]),boss=new Set(r.bossRosterCardIds||[]);
  for(const id of played){if(!boss.has(id))continue;const h=cat.byId.get(id);if(!h)continue;const u=[...(r.units||[]),...(r.dead||[]),...(r.departed||[]),...(r.finalTeam||[])].find(x=>x.cardId===id);const finish=r.contentVersion==='22.0.0'?(u?.finish||'black'):(u?.edition==='special'||isSpecialEdition(r.seed,h.id))?'gold':'black';try{unlockCard({id:h.id,finish,rarity:h.rarity,seed:r.seed+':run:'+h.id,universe:h.universe});}catch{}}
 }
-export function completeCombat(r){if(r.phase!=='combat'||!r.combat)return false;const {result,played}=r.combat;r.finalTeam=r.units.map(u=>({...u,role:played.includes(u.uid)?'active':'reserve'}));r.lastCombatLedger=emptyLedger();(r.combatVersion===COMBAT_VERSION||r.contentVersion==='22.0.0'?modernMetrics:historicalMetrics)(r.lastCombatLedger,result,{combatId:r.seed+':last:'+r.history.length,playedMap:Object.fromEntries(played.map((uid,i)=>['A-'+i,uid]))});for(let i=0;i<played.length;i++){const u=r.units.find(x=>x.uid===played[i]),f=result.final.find(f=>f.uid==='A-'+i);if(!u)continue;if(!f.alive){u.hp=0;const lost=[];for(const slot of['weapon','armor']){const itemUid=u[slot];if(!itemUid)continue;lost.push(itemUid);u[slot]=null;}if(lost.length)r.items=r.items.filter(x=>!lost.includes(x.uid));r.dead.push({...u,weapon:null,armor:null});r.units=r.units.filter(x=>x!==u);}else u.hp=Math.max(1,Math.round(u.maxHp*f.hp/f.maxHp));}r.highestResolvedEncounterDepth=Math.max(r.highestResolvedEncounterDepth||0,r.act*10+(r.nodes.find(n=>n.id===r.current)?.row||0)+1);const win=result.winner==='A';r.history.push({node:r.current,wave:r.wave,kind:r.pending.kind,win,rounds:result.rounds,alive:r.units.length});
+export function completeCombat(r){if(r.phase!=='combat'||!r.combat)return false;const {result,played}=r.combat;r.finalTeam=r.units.map(u=>({...u,role:played.includes(u.uid)?'active':'reserve'}));r.lastCombatLedger=emptyLedger();(r.combatVersion===COMBAT_VERSION||r.contentVersion==='22.0.0'?modernMetrics:historicalMetrics)(r.lastCombatLedger,result,{combatId:r.seed+':last:'+r.history.length,playedMap:Object.fromEntries(played.map((uid,i)=>['A-'+i,uid]))});let fallen=0;for(let i=0;i<played.length;i++){const u=r.units.find(x=>x.uid===played[i]),f=result.final.find(f=>f.uid==='A-'+i);if(!u)continue;if(!f.alive){fallen++;u.hp=0;const lost=[];for(const slot of['weapon','armor']){const itemUid=u[slot];if(!itemUid)continue;lost.push(itemUid);u[slot]=null;}if(lost.length)r.items=r.items.filter(x=>!lost.includes(x.uid));r.dead.push({...u,weapon:null,armor:null});r.units=r.units.filter(x=>x!==u);}else u.hp=Math.max(1,Math.round(u.maxHp*f.hp/f.maxHp));}if(r.contentVersion==='22.0.0'&&fallen)gainSouffrance(r,1,'ally-fallen');r.highestResolvedEncounterDepth=Math.max(r.highestResolvedEncounterDepth||0,r.act*10+(r.nodes.find(n=>n.id===r.current)?.row||0)+1);const win=result.winner==='A';r.history.push({node:r.current,wave:r.wave,kind:r.pending.kind,win,rounds:result.rounds,alive:r.units.length,souffrance:souffranceOf(r)});
  (r.combatVersion===COMBAT_VERSION||r.contentVersion==='22.0.0'?modernMetrics:historicalMetrics)(r.metrics||(r.metrics=emptyLedger()),result,{combatId:r.seed+':'+r.current+':'+r.history.length,playedMap:Object.fromEntries(played.map((uid,i)=>['A-'+i,uid]))});
  r.rosterSnapshots=r.rosterSnapshots||[];r.rosterSnapshots.push({node:r.current,wave:r.wave,kind:r.pending.kind,win,units:played.map((uid,i)=>{const u=[...r.units,...r.dead].find(u=>u.uid===uid);return {uid,cardId:u?.cardId,status:r.dead.some(d=>d.uid===uid)?'dead':'alive',battleUid:'A-'+i};})});
  r.playedCardIds=r.playedCardIds||[];r.bossRosterCardIds=r.bossRosterCardIds||[];
@@ -284,7 +292,7 @@ export function completeCombat(r){if(r.phase!=='combat'||!r.combat)return false;
  if(!win||!r.units.length){flushCollectionUnlocks(r);r.phase='end';r.endReason='combat-loss';r.rewards=[];r.receipt=buildRunReceipt(r);return true;}if(r.contentVersion==='22.0.0'){let coins=coinGain(r);if(r.debtReward){coins=Math.floor(coins/2);r.debtReward=false;}r.coins+=coins;r.lastCoinGain=coins;r.rewardClaimed=false;applyCombatProgression22(r,played);}else{for(const u of r.units){u.hp=Math.min(u.maxHp,u.hp+Math.round(u.maxHp*.25));if(!played.includes(u.uid))continue;u.wins++;const level=1+[2,5,9,14].filter(n=>u.wins>=n).length;if(level>u.level){const factor=Math.pow(1.1,level-u.level),ratio=u.hp/u.maxHp;u.level=level;u.attack=Math.round(u.attack*factor);u.maxHp=Math.round(u.maxHp*factor);u.speed=Math.round(u.speed*factor);u.hp=Math.round(u.maxHp*ratio);}}}r.rewards=rewardOptions(r,r.pending.kind==='boss');r.phase='reward';return true;}
 export function rewardOptions(r,prestige=false){if(r.contentVersion==='22.0.0')return rewardOptions22(r);const c=registry(r.worlds,r.statsMode),owned=new Set(r.items.map(g=>g.cardId)),pMul=1+0.15*Math.max(0,r.prestigeDiff||0),coinBase=prestige?90:40,choices=[{type:'coins',amount:Math.round(coinBase*pMul),title:prestige?'Bourse du boss':'Zénis',text:'+'+(Math.round(coinBase*pMul))+' zénis'+(pMul>1?' · prestige':'' )}];if(r.debtReward){choices[0].amount=Math.max(0,Math.floor(choices[0].amount/2));choices[0].text=choices[0].text+' (dette)';}
  if(r.units.some(u=>u.hp<u.maxHp))choices.push({type:'heal',amount:.35,title:'Second souffle',text:'Rend 35% des PV max aux vivants'});const gear=c.gear.filter(g=>!owned.has(g.id)&&g.tier<=Math.min(5,2+Math.floor(r.wave/5)+(prestige?1:0))&&r.units.some(u=>c.byId.get(u.cardId).universe===g.universe));if(gear.length){const g=pick(r,gear);choices.push({type:'item',id:g.id,title:g.name,text:g.category+' · équipement conservé'});}if(r.units.length<8&&r.pending?.enemies){const seen=r.pending.enemies.map(u=>c.byId.get(u.cardId)).filter(ca=>![...r.units,...r.dead,...(r.departed||[])].some(u=>c.byId.get(u.cardId).person===ca.person));if(seen.length){const ca=pick(r,seen);choices.push({type:'recruit',id:ca.id,title:ca.name,text:'Recruter cet adversaire · réserve si équipe pleine'});}}if(prestige&&!r.passives.includes('force'))choices.push({type:'passive',id:'force',title:'Esprit d’équipe',text:'+50% ATQ de run · proposition éditoriale'});if(choices.length<3)choices.push({type:'training',title:'Précision collective',text:'+2% ATQ aux vivants · bonus éditorial de run'});if(choices.length<3)choices.push({type:'vigor',title:'Endurance collective',text:'+2% PV max, ratio préservé · bonus éditorial de run'});const options=[choices[0],...shuffle(r,choices.slice(1)).slice(0,2)];if(isCurrentRules(r)&&r.units.length<5){const rescue=choices.find(x=>x.type==='recruit');if(rescue&&!options.some(x=>x.type==='recruit'))options[options.length-1]=rescue;}return options;}
-export function chooseReward(r,index,replaceUid=null,expectedToken=null){if(hasRewardBundle(r)){if(!chooseBundleReward23(r,index,replaceUid,expectedToken))return false;return r.rewardBundle.stage<3?true:leaveNode(r);}if(r.contentVersion==='22.0.0'){if(!chooseReward22(r,index,replaceUid))return false;return leaveNode(r);}if(r.phase!=='reward'||!Number.isInteger(index)||!r.rewards[index]||r.nodes.find(n=>n.id===r.current)?.done||!r.nodes.some(n=>n.id===r.current))return false;const rw=r.rewards[index],c=registry(r.worlds,r.statsMode);if(rw.type==='coins'){r.coins+=rw.amount;if(r.debtReward)r.debtReward=false;}if(rw.type==='heal')heal(r,rw.amount);if(rw.type==='item')r.items.push({uid:'g'+(++r.uid),cardId:rw.id});if(rw.type==='recruit')r.units.push(unit(r,c.byId.get(rw.id)));if(rw.type==='passive')r.passives.push(rw.id);if(rw.type==='training')for(const u of r.units)u.attack=Math.round(u.attack*1.02);if(rw.type==='vigor')for(const u of r.units){const ratio=u.hp/u.maxHp;u.maxHp=Math.round(u.maxHp*1.02);u.hp=Math.max(1,Math.round(u.maxHp*ratio));}return leaveNode(r);}
+export function chooseReward(r,index,replaceUid=null,expectedToken=null){if(r.phase==='act-boon')return chooseActStart(r,index,expectedToken);if(hasRewardBundle(r)){if(!chooseBundleReward23(r,index,replaceUid,expectedToken))return false;const need=r.rewardBundle.stages?.length||3;return r.rewardBundle.stage<need?true:leaveNode(r);}if(r.contentVersion==='22.0.0'){if(!chooseReward22(r,index,replaceUid))return false;return leaveNode(r);}if(r.phase!=='reward'||!Number.isInteger(index)||!r.rewards[index]||r.nodes.find(n=>n.id===r.current)?.done||!r.nodes.some(n=>n.id===r.current))return false;const rw=r.rewards[index],c=registry(r.worlds,r.statsMode);if(rw.type==='coins'){r.coins+=rw.amount;if(r.debtReward)r.debtReward=false;}if(rw.type==='heal')heal(r,rw.amount);if(rw.type==='item')r.items.push({uid:'g'+(++r.uid),cardId:rw.id});if(rw.type==='recruit')r.units.push(unit(r,c.byId.get(rw.id)));if(rw.type==='passive')r.passives.push(rw.id);if(rw.type==='training')for(const u of r.units)u.attack=Math.round(u.attack*1.02);if(rw.type==='vigor')for(const u of r.units){const ratio=u.hp/u.maxHp;u.maxHp=Math.round(u.maxHp*1.02);u.hp=Math.max(1,Math.round(u.maxHp*ratio));}return leaveNode(r);}
 export function heal(r,pct){for(const u of r.units)if(u.hp>0)u.hp=Math.min(u.maxHp,u.hp+Math.round(u.maxHp*pct));}
 export function rest(r,choice){if(r.phase!=='rest')return false;if(choice==='heal')heal(r,.25);else if(choice==='train')for(const u of r.units)u.attack=Math.round(u.attack*1.03);else return false;return leaveNode(r);}
 export function resolveEvent(r,choice){

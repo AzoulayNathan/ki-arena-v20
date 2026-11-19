@@ -7,6 +7,27 @@ export function actIndexFromWave(wave){
  return Math.floor((wave-1)/10);
 }
 
+/** Souffrance: each point raises threat by one act-notch (encounters, loot, drafts). */
+export function souffranceOf(r){
+ return Math.max(0,Math.floor(Number(r?.souffrance)||0));
+}
+
+/** Map act + Souffrance → effective difficulty act. */
+export function threatAct(r,mapAct=null){
+ const base=Number.isInteger(mapAct)?mapAct
+  :(Number.isInteger(r?.pending?.act)?r.pending.act
+  :(Number.isInteger(r?.act)?r.act:0));
+ return Math.max(0,base+souffranceOf(r));
+}
+
+export function gainSouffrance(r,amount=1,reason=''){
+ const n=Math.max(0,Math.floor(Number(amount)||0));
+ if(!n)return 0;
+ r.souffrance=souffranceOf(r)+n;
+ r.lastSouffranceGain={amount:n,reason:String(reason||''),at:r.souffrance};
+ return n;
+}
+
 export function actBase(N,act,kind){
  if(!Number.isInteger(N)||N<1||!Number.isInteger(act)||act<0||!['normal','elite','boss'].includes(kind))throw Error('Rencontre invalide');
  const step=N/10;
